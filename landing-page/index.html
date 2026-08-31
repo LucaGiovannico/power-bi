@@ -1,0 +1,1116 @@
+<!DOCTYPE html>
+<html lang="it">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Power BI Consultant & Data Analyst | Dina Fiorentino</title>
+
+    <link rel="stylesheet" href="../assets/css/style.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Limelight&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Poppins:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="../Images/favicon/apple-touch-icon.png"
+    />
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="../Images/favicon/favicon-32x32.png"
+    />
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="../Images/favicon/favicon-16x16.png"
+    />
+
+    <link rel="manifest" href="../Images/favicon/site.webmanifest" />
+
+    <link rel="icon" href="../Images/favicon/favicon.ico" />
+  </head>
+
+  <body>
+    <!--INIZIO SEZIONE NAVBAR-->
+    <header class="site-header">
+      <nav class="navbar" aria-label="Navigazione principale">
+        <a
+          href="./index.html"
+          class="navbar__brand"
+          aria-label="Torna alla homepage"
+        >
+          <span class="navbar__monogram" aria-hidden="true">DF</span>
+
+          <span class="navbar__identity">
+            <span class="navbar__name">Dina Fiorentino</span>
+            <span class="navbar__role">
+              Data Analyst &amp; Power BI Consultant
+            </span>
+          </span>
+        </a>
+        <div class="navbar__menu">
+          <ul class="navbar__list">
+            <li><a href="#services__id">Servizi</a></li>
+            <li><a href="#projects__id">Progetti</a></li>
+            <li><a href="#about__id">Chi sono</a></li>
+            <li><a href="#contacts__id">Contatti</a></li>
+          </ul>
+        </div>
+
+        <div class="navbar__actions">
+          <div class="navbar-right">
+            <div
+              class="language-selector"
+              data-it="./index.html"
+              data-en="./index-en.html"
+            >
+              <button
+                type="button"
+                class="language-selector__button"
+                onclick="toggleLanguageMenu(event)"
+                aria-haspopup="true"
+                aria-expanded="false"
+                aria-controls="languageMenu"
+              >
+                🇮🇹
+                <span>IT</span>
+                <span class="language-selector__arrow">▾</span>
+              </button>
+
+              <div class="language-selector__menu" id="languageMenu">
+                <button type="button" onclick="setLanguage('it')">
+                  🇮🇹 Italiano
+                </button>
+
+                <button type="button" onclick="setLanguage('en')">
+                  🇬🇧 English
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <!--FINE SEZIONE NAVBAR-->
+
+    <main>
+      <!--INIZIO SEZIONE HEADER-->
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="box_container">
+          <div class="hero__tag box_dataStrategy">
+            <span>data strategy</span>
+          </div>
+
+          <div class="hero__tag hero__tag--power-bi">
+            <span>Power BI</span>
+          </div>
+
+          <div class="hero__tag hero__tag--business-intelligence">
+            <span>business intelligence</span>
+          </div>
+        </div>
+
+        <div class="hero__title-wrapper">
+          <h1 id="hero-title">
+            I dati raccontano tutto, <br />
+            ma senza i giusti <span class="text-gradient">strumenti</span>
+            <br />
+            restano solo numeri.
+          </h1>
+        </div>
+
+        <div class="hero__subtitle">
+          <p>
+            Quando volumi di dati, KPI e report crescono, Excel diventa un
+            limite. <br />
+            Decisioni, controllo e visibilità sul business diventano più
+            difficili da gestire.
+          </p>
+        </div>
+
+        <div class="hero__actions">
+          <button
+            type="button"
+            class="button button--primary js-open-contact-form"
+          >
+            <i class="fa-regular fa-calendar"></i>
+            Prenota una consulenza gratuita
+          </button>
+
+          <button type="button" class="button button--secondary">
+            <i class="fa-solid fa-play"></i>
+            Visiona il mio CV
+          </button>
+        </div>
+
+        <p class="hero__trust">
+          Dashboard intuitive • KPI chiari • Reporting automatico
+        </p>
+
+        <div class="box__demo">
+          <span>Power BI dashboard demo</span>
+        </div>
+
+        <div class="hero__image-wrapper">
+          <img
+            class="hero__image"
+            src="../assets/images/Screenshot 2026-05-01 alle 16.52.12.webp"
+            alt="Immagine di esempio di una dashboard Power BI"
+            loading="lazy"
+          />
+        </div>
+
+        <div class="hero__features">
+          <article class="hero__feature-card">
+            <div class="hero__feature-icon">
+              <i class="fa-solid fa-area-chart"></i>
+            </div>
+
+            <p class="hero__feature-title">
+              Dashboard su misura <br />
+              <span class="hero__feature-text">
+                KPI, vendite, margini e performance in un'unica vista chiara e
+                su misura per i tuoi obiettivi.
+              </span>
+            </p>
+          </article>
+
+          <article class="hero__feature-card">
+            <div class="hero__feature-icon">
+              <i class="fa-solid fa-refresh"></i>
+            </div>
+
+            <p class="hero__feature-title">
+              Reporting automatico <br />
+              <span class="hero__feature-text">
+                Meno file manuali, dati sempre aggiornati e disponibili quando
+                servono.
+              </span>
+            </p>
+          </article>
+
+          <article class="hero__feature-card">
+            <div class="hero__feature-icon">
+              <i class="fa-solid fa-rocket"></i>
+            </div>
+
+            <p class="hero__feature-title">
+              KPI realmente utili <br />
+              <span class="hero__feature-text">
+                Monitori solo ciò che davvero influenza le tue decisioni e la
+                crescita del business.
+              </span>
+            </p>
+          </article>
+
+          <article class="hero__feature-card">
+            <div class="hero__feature-icon">
+              <i class="fa-solid fa-heart"></i>
+            </div>
+
+            <p class="hero__feature-title">
+              Supporto consulenziale <br />
+              <span class="hero__feature-text">
+                Ti aiuto a leggere i numeri e trasformarli in azioni concrete
+                per il tuo business.
+              </span>
+            </p>
+          </article>
+        </div>
+      </section>
+      <!--FINE SEZIONE HEADER-->
+
+      <!--INIZIO SEZIONE CHI SONO-->
+      <section class="about" id="about__id" aria-labelledby="about-title">
+        <div class="about__image-wrapper">
+          <img
+            class="about__image"
+            src="../assets/images/0D0374EE-EEDA-43EF-ABCB-D7F2D1D0B168.PNG"
+            alt="Ritratto professionale di Dina Fiorentino"
+            loading="lazy"
+          />
+        </div>
+
+        <div class="about__stats" aria-label="Statistiche professionali">
+          <div class="about__stat">
+            <h2
+              class="about__stats-number js-counter"
+              data-target="5"
+              data-prefix="+"
+            >
+              0
+            </h2>
+            <p>anni di esperienza</p>
+          </div>
+
+          <div class="about__stat">
+            <h2
+              class="about__stats-number js-counter"
+              data-target="30"
+              data-prefix="+"
+            >
+              0
+            </h2>
+            <p>progetti completati</p>
+          </div>
+
+          <div class="about__stat">
+            <h2
+              class="about__stats-number js-counter"
+              data-target="100"
+              data-suffix="%"
+            >
+              0
+            </h2>
+            <p>focus su KPI utili</p>
+          </div>
+        </div>
+
+        <div class="about__content">
+          <p class="about__eyebrow">Chi sono</p>
+
+          <h2 class="about__title" id="about-title">
+            Analisi dei dati. <br />
+            Visione del business. <br />
+            <span class="text-gradient">Risultati concreti.</span>
+          </h2>
+
+          <p class="card__text">
+            Sono una Data Analyst specializzata in Power BI. <br />
+            Aiuto aziende e professionisti a trasformare dati complessi in
+            strumenti di lettura semplici, chiari e utili per decidere meglio.
+            <br />
+            Il mio obiettivo è creare dashboard e sistemi di reporting che
+            facciano risparmiare tempo, migliorino il controllo del business e
+            rendano i dati davvero utilizzabili.
+          </p>
+
+          <div class="about__tools">
+            <div class="about__tools-row">
+              <div class="about__tool-card">
+                <div class="about__tool-icon">
+                  <i class="fa-solid fa-chart-line"></i>
+                </div>
+                <p class="about__tool-name">Power BI <br /></p>
+              </div>
+
+              <div class="about__tool-card">
+                <div class="about__tool-icon">
+                  <i class="fa-solid fa-code"></i>
+                </div>
+                <p class="about__tool-name">DAX <br /></p>
+              </div>
+            </div>
+
+            <div class="about__tools-row">
+              <div class="about__tool-card">
+                <div class="about__tool-icon">
+                  <i class="fa-regular fa-file-excel"></i>
+                </div>
+                <p class="about__tool-name">Excel <br /></p>
+              </div>
+
+              <div class="about__tool-card">
+                <div class="about__tool-icon">
+                  <i class="fa-solid fa-wand-magic-sparkles"></i>
+                </div>
+                <p class="about__tool-name">KPI Design<br /></p>
+              </div>
+            </div>
+
+            <div class="about__tools-row">
+              <div class="about__tool-card">
+                <div class="about__tool-icon">
+                  <i class="fa-solid fa-person-chalkboard"></i>
+                </div>
+                <p class="about__tool-name">Storytelling <br /></p>
+              </div>
+
+              <div class="about__tool-card">
+                <div class="about__tool-icon">
+                  <i class="fa-solid fa-layer-group"></i>
+                </div>
+                <p class="about__tool-name">Data Modeling<br /></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!--FINE SEZIONE CHI SONO-->
+
+      <!--INIZIO SEZIONE IL PROBLEMA-->
+      <section class="problem" aria-labelledby="problem-title">
+        <h3 class="problem__eyebrow">IL PROBLEMA</h3>
+
+        <h2 class="problem__title" id="problem-title">
+          Quando i dati non sono chiari, <br />
+          ogni decisione <span class="text-gradient">costa di più.</span>
+        </h2>
+
+        <div class="problem__cards">
+          <article class="problem__card">
+            <div class="problem__icon problem__icon--excel">
+              <i class="fa-regular fa-file-excel"></i>
+            </div>
+
+            <p class="card__title">Report manuali</p>
+            <p class="card__text">
+              Ore perse ogni settimana per preparare report che potrebbero
+              essere automatizzati.
+            </p>
+          </article>
+
+          <article class="problem__card">
+            <div class="problem__icon problem__icon--folder">
+              <i class="fa-regular fa-folder-open"></i>
+            </div>
+
+            <p class="card__title">Dati sparsi</p>
+            <p class="card__text">
+              Informazioni frammentate in file e strumenti diversi che non
+              comunicano tra loro.
+            </p>
+          </article>
+
+          <article class="problem__card">
+            <div class="problem__icon problem__icon--question">
+              <i class="fa-regular fa-circle-question"></i>
+            </div>
+
+            <p class="card__title">KPI poco chiari</p>
+            <p class="card__text">
+              Numeri difficili da interpretare e poco collegati agli obiettivi
+              reali.
+            </p>
+          </article>
+
+          <article class="problem__card">
+            <div class="problem__icon problem__icon--clock">
+              <i class="fa-regular fa-clock"></i>
+            </div>
+
+            <p class="card__title">Decisioni lente</p>
+            <p class="card__text">
+              Problemi scoperti tardi e opportunità perse.
+            </p>
+          </article>
+        </div>
+      </section>
+      <!--FINE SEZIONE IL PROBLEMA-->
+
+      <!--INIZIO SEZIONE SERVIZI-->
+      <section
+        class="services"
+        id="services__id"
+        aria-labelledby="services-title"
+      >
+        <h3 class="services__eyebrow">I MIEI SERVIZI</h3>
+
+        <h2 class="services__title" id="services-title">
+          Soluzioni data-driven <br />
+          pensate per il <span class="text-gradient">tuo business.</span>
+        </h2>
+
+        <div class="services__cards">
+          <article class="services__card">
+            <div class="services__icon services__icon--chart">
+              <i class="fa-solid fa-chart-simple"></i>
+            </div>
+
+            <p class="card__title">Dashboard Power BI su misura</p>
+            <p class="card__text">
+              Dashboard intuitive per monitorare KPI, margini, vendite e
+              performance in tempo reale.
+            </p>
+
+            <a
+              class="button--services services__link"
+              href="../services/dashboard-powerBI.html"
+              aria-label="Scopri il servizio Dashboard Power BI su misura"
+            >
+              <span aria-hidden="true">→</span>
+            </a>
+          </article>
+
+          <article class="services__card">
+            <div class="services__icon services__icon--bolt">
+              <i class="fa-solid fa-bolt-lightning"></i>
+            </div>
+
+            <p class="card__title">Reporting automatizzato</p>
+            <p class="card__text">
+              Automatizzo report ricorrenti partendo da Excel, gestionali e
+              altre fonti dati aziendali.
+            </p>
+
+            <a
+              class="button--services services__link"
+              href="../services/reporting-automatizzato.html"
+              aria-label="Scopri il servizio Reporting automatizzato"
+            >
+              <span aria-hidden="true">→</span>
+            </a>
+          </article>
+
+          <article class="services__card">
+            <div class="services__icon services__icon--target">
+              <i class="fa-solid fa-bullseye"></i>
+            </div>
+
+            <p class="card__title">KPI design & monitoraggio</p>
+            <p class="card__text">
+              Definisco KPI chiari e dashboard pensate per capire cosa sta
+              funzionando e cosa no.
+            </p>
+
+            <a
+              class="button--services services__link"
+              href="../services/kpi-design-monitoraggio.html"
+              aria-label="Scopri il servizio KPI design & monitoraggio"
+            >
+              <span aria-hidden="true">→</span>
+            </a>
+          </article>
+
+          <article class="services__card">
+            <div class="services__icon services__icon--modeling">
+              <i class="fa-solid fa-diagram-project"></i>
+            </div>
+
+            <p class="card__title">Data modeling & integrazione</p>
+            <p class="card__text">
+              Organizzo, pulisco e collego i tuoi dati per creare una base
+              affidabile e scalabile.
+            </p>
+
+            <a
+              class="button--services services__link"
+              href="../services/data-modeling-integrazione.html"
+              aria-label="Scopri il servizio Data modeling & integrazione"
+            >
+              <span aria-hidden="true">→</span>
+            </a>
+          </article>
+        </div>
+      </section>
+      <!--FINE SEZIONE SERVIZI-->
+
+      <!--INIZIO SEZIONE PROGETTI-->
+      <section
+        class="projects-section"
+        id="projects__id"
+        aria-labelledby="projects-title"
+      >
+        <div class="projects">
+          <div class="projects__intro">
+            <h3 class="projects__eyebrow">PROGETTI SELEZIONATI</h3>
+
+            <h2 class="projects__title" id="projects-title">
+              Dashboard & Case Studies
+            </h2>
+
+            <h3 class="projects__subtitle">
+              Dashboard Power BI, sistemi di reporting e concept progettati per
+              migliorare controllo, monitoraggio e analisi delle performance.
+            </h3>
+          </div>
+        </div>
+
+        <div class="projects__cards">
+          <article class="projects__card">
+            <div class="projects__preview">
+              <div class="projects__preview-inner">
+                <img
+                  src="../assets/images/MATTAVELLI FOTO 2.PNG"
+                  alt="Preview Dashboard Power BI Business Plan & Financial Analysis"
+                  loading="lazy"
+                />
+              </div>
+            </div>
+
+            <div class="projects__content">
+              <div>
+                <div class="projects__card--category">
+                  <span class="projects__category">REAL PROJECT</span>
+                </div>
+
+                <p class="card__title">Business Plan & Financial Analysis</p>
+
+                <p class="card__projects-text">
+                  Dashboard Power BI sviluppata per supportare attività di
+                  revisione contabile, analisi finanziaria e monitoraggio delle
+                  performance aziendali.
+                </p>
+              </div>
+
+              <div class="projects__bottom">
+                <div class="projects__tags">
+                  <span class="projects__tag">Power BI</span>
+                  <span class="projects__tag">Finance</span>
+                  <span class="projects__tag">Business Planning</span>
+                </div>
+
+                <a href="/projects/business-plan.html" class="projects__link">
+                  Scopri il progetto →
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <article class="projects__card">
+            <div class="projects__preview">
+              <div class="projects__preview-inner">
+                <img
+                  src="../assets/images/FOTO CONTEST 2.PNG"
+                  alt="Preview Dashboard Power BI Hotel Market & Insights"
+                  loading="lazy"
+                />
+              </div>
+            </div>
+
+            <div class="projects__content">
+              <div>
+                <div class="projects__card--category">
+                  <span class="projects__category">AWARD WINNING</span>
+                </div>
+
+                <p class="card__title">Hotel Market & Insights</p>
+
+                <p class="card__projects-text">
+                  Dashboard Power BI premiata per chiarezza visiva, storytelling
+                  e capacità di trasformare dati complessi in insight strategici
+                  per il settore hospitality.
+                </p>
+              </div>
+
+              <div class="projects__bottom">
+                <div class="projects__tags">
+                  <span class="projects__tag">Power BI</span>
+                  <span class="projects__tag">Storytelling</span>
+                  <span class="projects__tag">Hotel Analytics</span>
+                </div>
+
+                <a
+                  href="../projects/hotel-market-insights.html"
+                  class="projects__link"
+                >
+                  Scopri il progetto →
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <article class="projects__card">
+            <div class="projects__preview">
+              <div class="projects__preview-inner">
+                <img
+                  src="../assets/images/sales-performance-forecast-dashboard.png"
+                  alt="Preview Dashboard Power BI Sales Forecast & KPI Monitoring"
+                  loading="lazy"
+                />
+              </div>
+            </div>
+
+            <div class="projects__content">
+              <div>
+                <div class="projects__card--category">
+                  <span class="projects__category">CONCEPT DASHBOARD</span>
+                </div>
+
+                <p class="card__title">Sales Forecast & KPI Monitoring</p>
+
+                <p class="card__projects-text">
+                  Concept dashboard Power BI progettata per monitorare vendite,
+                  trend commerciali, forecast e KPI strategici in tempo reale.
+                </p>
+              </div>
+
+              <div class="projects__bottom">
+                <div class="projects__tags">
+                  <span class="projects__tag">Power BI</span>
+                  <span class="projects__tag">Sales Analytics</span>
+                  <span class="projects__tag">Forecasting</span>
+                </div>
+
+                <a
+                  href="../projects/sales-performance-forecast.html"
+                  class="projects__link"
+                >
+                  Scopri il case study →
+                </a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+      <!--FINE SEZIONE PROGETTI-->
+
+      <!--INIZIO SEZIONE IL MIO METODO-->
+      <section class="method" aria-labelledby="method-title">
+        <h3 class="method__eyebrow">IL MIO METODO</h3>
+
+        <h2 class="method__title" id="method-title">
+          Un metodo chiaro, <br />
+          <span class="text-gradient">dai dati alle decisioni.</span>
+        </h2>
+
+        <div class="method__cards">
+          <article class="method__card">
+            <div class="method__number">
+              <p>01</p>
+            </div>
+
+            <p class="card__title">Analisi e strategia</p>
+            <p class="card__text">
+              Capisco le tue esigenze, i tuoi obiettivi e definisco KPI che
+              contano davvero.
+            </p>
+          </article>
+
+          <article class="method__card">
+            <div class="method__number">
+              <p>02</p>
+            </div>
+
+            <p class="card__title">Raccolta e preparazione</p>
+            <p class="card__text">
+              Organizzo e preparo i dati per creare una base affidabile, pulita
+              e scalabile.
+            </p>
+          </article>
+
+          <article class="method__card">
+            <div class="method__number">
+              <p>03</p>
+            </div>
+
+            <p class="card__title">Sviluppo dashboard</p>
+            <p class="card__text">
+              Progetto dashboard Power BI intuitive, pensate per supportare
+              decisioni rapide e consapevoli.
+            </p>
+          </article>
+
+          <article class="method__card">
+            <div class="method__number">
+              <p>04</p>
+            </div>
+
+            <p class="card__title">Consegna e ottimizzazione</p>
+            <p class="card__text">
+              Consegno il lavoro, guido il cliente nell'utilizzo e la affino per
+              migliorare i risultati nel tempo.
+            </p>
+          </article>
+        </div>
+      </section>
+      <!--FINE SEZIONE IL MIO METODO-->
+
+      <!--INIZIO SEZIONE I BENEFICI-->
+      <section class="benefits-section" aria-labelledby="benefits-title">
+        <div class="benefits">
+          <div class="benefits__intro">
+            <h3 class="benefits__eyebrow">I BENEFICI</h3>
+
+            <h2 class="benefits__title" id="benefits-title">
+              Cosa ottieni con dati <br />
+              chiari, utili e <span class="text-gradient">affidabili.</span>
+            </h2>
+          </div>
+
+          <div class="benefits__cards">
+            <article class="benefits__card">
+              <div class="benefits__icon benefits__icon--time">
+                <i class="fa-regular fa-clock"></i>
+              </div>
+
+              <p class="card__title">Meno tempo</p>
+              <p class="card__text">
+                Report automatici e aggiornati, senza attività manuali
+                ripetitive.
+              </p>
+            </article>
+
+            <article class="benefits__card">
+              <div class="benefits__icon benefits__icon--control">
+                <i class="fa-regular fa-eye"></i>
+              </div>
+
+              <p class="card__title">Più controllo</p>
+              <p class="card__text">
+                Numeri, KPI e performance sempre sotto controllo in un'unica
+                vista.
+              </p>
+            </article>
+
+            <article class="benefits__card">
+              <div class="benefits__icon benefits__icon--decision">
+                <i class="fa-regular fa-circle-check"></i>
+              </div>
+
+              <p class="card__title">Decisioni migliori</p>
+              <p class="card__text">
+                Insight chiari per capire cosa sta succedendo e agire prima.
+              </p>
+            </article>
+
+            <article class="benefits__card">
+              <div class="benefits__icon benefits__icon--errors">
+                <i class="fa-solid fa-arrow-trend-down"></i>
+              </div>
+
+              <p class="card__title">Meno errori</p>
+              <p class="card__text">
+                Dati organizzati e modelli solidi riducono incongruenze e dubbi.
+              </p>
+            </article>
+
+            <article class="benefits__card">
+              <div class="benefits__icon benefits__icon--alignment">
+                <i class="fa-solid fa-align-center"></i>
+              </div>
+
+              <p class="card__title">Più allineamento</p>
+              <p class="card__text">
+                Tutti lavorano sugli stessi numeri, con una lettura condivisa.
+              </p>
+            </article>
+
+            <article class="benefits__card">
+              <div class="benefits__icon benefits__icon--serenity">
+                <i class="fa-regular fa-face-smile-beam"></i>
+              </div>
+
+              <p class="card__title">Più serenità</p>
+              <p class="card__text">
+                Sai dove intervenire, cosa migliorare e quali priorità seguire.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+      <!--FINE SEZIONE I BENEFICI-->
+
+      <!--INIZIO SEZIONE CTA-->
+      <section class="cta" id="contacts__id" aria-labelledby="cta-title">
+        <div class="cta__card">
+          <div class="cta__content">
+            <h2 class="cta__title" id="cta-title">
+              Vuoi prendere decisioni migliori <br />
+              con dati chiari e sempre aggiornati?
+            </h2>
+
+            <h3 class="cta__text">
+              Prenota una call gratuita: analizziamo insieme le tue esigenze e
+              capiamo quali dashboard o report possono aiutarti a decidere
+              meglio.
+            </h3>
+          </div>
+
+          <div class="cta__actions">
+            <div class="cta__button-wrapper">
+              <button
+                type="button"
+                class="button button--primary cta__button js-open-contact-form"
+                id="openContactForm"
+              >
+                <i class="fa-regular fa-calendar"></i>
+                Prenota una consulenza gratuita
+              </button>
+            </div>
+
+            <div class="cta__contacts">
+              <div class="cta__contact cta__contact--linkedin">
+                <i class="fa-brands fa-linkedin-in"></i>
+                <a
+                  href="https://www.linkedin.com/in/dina-fiorentino/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  LinkedIn
+                </a>
+              </div>
+
+              <div class="cta__contact cta__contact--mail">
+                <i class="fa-regular fa-envelope-open"></i>
+                <a href="mailto:dinafiorentino.consulting@outlook.it">
+                  Inviami una mail
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!--FINE SEZIONE CTA-->
+
+      <!--INIZIO SEZIONE FORM-->
+      <div
+        class="form-modal"
+        id="contactFormModal"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="contactFormTitle"
+      >
+        <div class="form-modal__overlay" id="closeContactForm"></div>
+
+        <div class="form-modal__card">
+          <button
+            type="button"
+            class="form-modal__close"
+            id="closeContactFormButton"
+            aria-label="Chiudi il modulo di contatto"
+          >
+            ×
+          </button>
+
+          <p class="form-modal__eyebrow">CONSULENZA GRATUITA</p>
+
+          <h2 class="form-modal__title" id="contactFormTitle">
+            Raccontami il tuo progetto
+          </h2>
+
+          <p class="form-modal__text">
+            Compila il modulo e descrivi brevemente le tue esigenze. Ti
+            ricontatterò per capire come rendere più chiari KPI, report e
+            dashboard.
+          </p>
+
+          <form
+            id="contactForm"
+            action="https://formspree.io/f/xkoandwa"
+            method="POST"
+            class="contact-form"
+          >
+            <div class="form-grid">
+              <div class="form-group">
+                <label for="name">Nome e Cognome *</label>
+                <input
+                  id="name"
+                  type="text"
+                  name="name"
+                  placeholder="Mario Rossi"
+                  required
+                />
+              </div>
+
+              <div class="form-group">
+                <label for="email">Email *</label>
+                <input
+                  id="email"
+                  type="email"
+                  name="email"
+                  placeholder="nome@azienda.it"
+                  required
+                />
+              </div>
+
+              <div class="form-group">
+                <label for="phone">Telefono / WhatsApp</label>
+                <input
+                  id="phone"
+                  type="tel"
+                  name="phone"
+                  placeholder="+39 333 1234567"
+                />
+              </div>
+
+              <div class="form-group">
+                <label for="company">Azienda</label>
+                <input
+                  id="company"
+                  type="text"
+                  name="company"
+                  placeholder="Nome azienda"
+                />
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="goal">Obiettivo principale *</label>
+              <select id="goal" name="goal" required>
+                <option value="">Seleziona un obiettivo</option>
+                <option value="Dashboard Power BI">Dashboard Power BI</option>
+                <option value="Reporting automatico">
+                  Reporting automatico
+                </option>
+                <option value="KPI e monitoraggio">KPI e monitoraggio</option>
+                <option value="Analisi finanziaria">Analisi finanziaria</option>
+                <option value="Data modeling">Data modeling</option>
+                <option value="Altro">Altro</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="message">Messaggio *</label>
+              <textarea
+                id="message"
+                name="message"
+                rows="5"
+                placeholder="Descrivi brevemente la situazione attuale, le difficoltà che stai incontrando e cosa vorresti migliorare."
+                required
+              ></textarea>
+            </div>
+
+            <p class="form-privacy-note">
+              I dati inseriti saranno utilizzati esclusivamente per rispondere
+              alla tua richiesta di contatto e valutare una possibile
+              collaborazione.
+            </p>
+
+            <label class="privacy-check">
+              <input type="checkbox" name="privacy" required />
+              <span>
+                Ho letto e accetto la
+                <a
+                  href="./privacy.html"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Privacy Policy
+                </a>
+                e autorizzo il trattamento dei miei dati per essere ricontattato
+                in merito alla richiesta inviata.
+              </span>
+            </label>
+
+            <button type="submit" class="contact-form__button">
+              Prenota una consulenza gratuita
+            </button>
+
+            <p id="formSuccessMessage" class="form-success-message">
+              Grazie! La richiesta è stata inviata correttamente. Ti
+              ricontatterò al più presto.
+            </p>
+          </form>
+        </div>
+      </div>
+      <!--FINE SEZIONE FORM-->
+    </main>
+
+    <!--INIZIO SEZIONE FOOTER-->
+    <footer class="footer">
+      <div class="footer__main">
+        <div class="footer__brand-block">
+          <a
+            href="./index.html"
+            class="footer__brand"
+            aria-label="Torna alla homepage"
+          >
+            <span class="footer__monogram" aria-hidden="true">DF</span>
+
+            <span class="footer__identity">
+              <span class="footer__name">Dina Fiorentino</span>
+              <span class="footer__role"
+                >Data Analyst &amp; Power BI Consultant</span
+              >
+            </span>
+          </a>
+          <p class="footer__description">
+            Dashboard, reporting e modelli dati progettati per trasformare
+            informazioni complesse in decisioni più chiare.
+          </p>
+
+          <div class="footer__socials" aria-label="Contatti professionali">
+            <a
+              href="https://www.linkedin.com/in/dina-fiorentino/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Profilo LinkedIn di Dina Fiorentino"
+            >
+              <i class="fa-brands fa-linkedin-in" aria-hidden="true"></i>
+              <span>LinkedIn</span>
+            </a>
+
+            <a
+              href="mailto:dinafiorentino.consulting@outlook.it"
+              aria-label="Invia una email a Dina Fiorentino"
+            >
+              <i class="fa-regular fa-envelope" aria-hidden="true"></i>
+              <span>Email</span>
+            </a>
+          </div>
+        </div>
+
+        <nav class="footer__column" aria-label="Navigazione footer">
+          <p class="footer__heading">Esplora</p>
+          <a href="#services__id">Servizi</a>
+          <a href="#projects__id">Progetti</a>
+          <a href="#about__id">Chi sono</a>
+          <a href="#contacts__id">Contatti</a>
+        </nav>
+
+        <div class="footer__column footer__column--services">
+          <p class="footer__heading">Servizi</p>
+          <a href="../services/dashboard-powerBI.html">Dashboard Power BI</a>
+          <a href="../services/reporting-automatizzato.html"
+            >Reporting automatizzato</a
+          >
+          <a href="../services/kpi-design-monitoraggio.html">KPI design</a>
+          <a href="../services/data-modeling-integrazione.html"
+            >Data modeling</a
+          >
+        </div>
+
+        <div class="footer__column footer__column--contact">
+          <p class="footer__heading">Collaboriamo</p>
+          <p>
+            Disponibile per progetti di analisi dati, dashboard e reporting
+            aziendale.
+          </p>
+
+          <button
+            type="button"
+            class="footer__contact-button js-open-contact-form"
+          >
+            Parliamo del tuo progetto
+            <span aria-hidden="true">→</span>
+          </button>
+        </div>
+      </div>
+
+      <div class="footer__bottom">
+        <p class="copyright__text">
+          © 2026 Dina Fiorentino. Tutti i diritti riservati.
+        </p>
+
+        <nav class="privacy__box" aria-label="Link legali e lingua">
+          <a href="./privacy.html?from=portfolio" class="privacy__text">
+            Privacy
+          </a>
+          <a href="./cookie.html?from=portfolio" class="cookie__text">
+            Cookie
+          </a>
+          <a href="./index-en.html" class="footer__language">English</a>
+        </nav>
+      </div>
+    </footer>
+    <!--FINE SEZIONE FOOTER-->
+
+    <button
+      id="back__to-top"
+      class="back__to-top"
+      type="button"
+      aria-label="Torna all'inizio"
+    >
+      ↥
+    </button>
+
+    <script src="../assets/js/script.js"></script>
+  </body>
+</html>

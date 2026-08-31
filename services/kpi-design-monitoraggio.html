@@ -1,0 +1,1290 @@
+<!DOCTYPE html>
+
+<html lang="it">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>KPI Design & Monitoraggio | Dina Fiorentino</title>
+    <meta
+      name="description"
+      content="Servizio di KPI Design e monitoraggio per definire indicatori chiari, misurabili e realmente utili agli obiettivi aziendali."
+    />
+
+    <link rel="stylesheet" href="../assets/css/services.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Limelight&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Poppins:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="../Images/favicon/apple-touch-icon.png"
+    />
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="../Images/favicon/favicon-32x32.png"
+    />
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="../Images/favicon/favicon-16x16.png"
+    />
+
+    <link rel="manifest" href="../Images/favicon/site.webmanifest" />
+
+    <link rel="icon" href="../Images/favicon/favicon.ico" />
+  </head>
+
+  <body class="service-page">
+    <header class="service-hero" id="top">
+      <div class="service-hero__content">
+        <div class="service-hero__navigation">
+          <a
+            href="../landing-page/index.html#services__id"
+            class="service-hero__back-link"
+          >
+            ↤ Torna ai servizi
+          </a>
+
+          <div
+            class="language-selector service-hero__language-selector"
+            data-it="./kpi-design-monitoraggio.html"
+            data-en="./kpi-design-monitoraggio-en.html"
+          >
+            <button
+              type="button"
+              class="language-selector__button"
+              onclick="toggleLanguageMenu(event);"
+              aria-haspopup="true"
+              aria-expanded="false"
+              aria-controls="languageMenu"
+            >
+              🇮🇹 <span>IT</span>
+              <span class="language-selector__arrow">▾</span>
+            </button>
+
+            <div class="language-selector__menu" id="languageMenu">
+              <button type="button" onclick="setLanguage('it')">
+                🇮🇹 Italiano
+              </button>
+              <button type="button" onclick="setLanguage('en')">
+                🇬🇧 English
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <p class="service-hero__eyebrow">KPI Design & Monitoraggio</p>
+
+        <h1 class="service-hero__title">
+          Misura ciò che conta davvero.
+          <span class="text-gradient">Non tutto quello che puoi misurare.</span>
+        </h1>
+
+        <p class="service-hero__subtitle">
+          Molte aziende raccolgono enormi quantità di dati, ma senza indicatori
+          chiari è difficile capire cosa sta realmente funzionando. Definisco
+          KPI su misura che trasformano obiettivi e dati in decisioni più
+          consapevoli.
+        </p>
+
+        <div class="service-hero__actions">
+          <button
+            type="button"
+            class="button button--primary service-hero__button js-open-contact-form"
+          >
+            <i class="fa-regular fa-calendar"></i>
+            Prenota una consulenza gratuita
+          </button>
+
+          <a
+            href="../landing-page/index.html#projects__id"
+            class="button button--secondary service-hero__button"
+          >
+            Scopri i progetti
+            <i class="fa-solid fa-arrow-right"></i>
+          </a>
+        </div>
+
+        <ul class="service-hero__highlights" aria-label="Punti di forza">
+          <li class="service-hero__highlight">
+            <i class="fa-solid fa-circle-check"></i>
+            KPI personalizzati
+          </li>
+          <li class="service-hero__highlight">
+            <i class="fa-solid fa-circle-check"></i>
+            Obiettivi misurabili
+          </li>
+          <li class="service-hero__highlight">
+            <i class="fa-solid fa-circle-check"></i>
+            Monitoraggio continuo
+          </li>
+        </ul>
+      </div>
+
+      <div class="service-hero__visual">
+        <div class="service-hero__image-frame">
+          <img
+            class="service-hero__image"
+            src="../assets/images/Screenshot 2026-06-21 alle 17.48.40.png"
+            alt="Dashboard con KPI progettati per il monitoraggio delle performance aziendali"
+          />
+        </div>
+        <p class="service-hero__visual-caption">
+          Esempio di monitoraggio KPI executive
+        </p>
+      </div>
+    </header>
+
+    <main>
+      <section
+        class="service-problem-section"
+        id="service-problem"
+        aria-labelledby="service-problem-title"
+      >
+        <div class="service-problem">
+          <div class="section-header">
+            <p class="section-eyebrow">Il problema non sono i dati</p>
+            <h2 class="section-title" id="service-problem-title">
+              Hai già i numeri.
+              <span class="text-gradient"
+                >Manca capire quali contano davvero.</span
+              >
+            </h2>
+            <p class="section-subtitle">
+              Le aziende raccolgono molte metriche, ma spesso mancano
+              definizioni condivise, priorità chiare e un collegamento diretto
+              tra indicatori e obiettivi. Il risultato è un sistema di
+              misurazione difficile da interpretare e utilizzare.
+            </p>
+          </div>
+
+          <div class="service-problem__grid">
+            <article class="service-problem__card">
+              <div class="service-problem__icon">
+                <i class="fa-solid fa-folder-tree"></i>
+              </div>
+              <h3 class="service-problem__title">Troppi indicatori</h3>
+              <p class="service-problem__text">
+                Quando tutto viene misurato, diventa difficile distinguere i
+                segnali realmente utili dalle metriche che aggiungono soltanto
+                rumore.
+              </p>
+            </article>
+
+            <article class="service-problem__card">
+              <div class="service-problem__icon">
+                <i class="fa-solid fa-bullseye"></i>
+              </div>
+              <h3 class="service-problem__title">KPI poco definiti</h3>
+              <p class="service-problem__text">
+                Formula, perimetro, frequenza e fonte non sono documentati,
+                quindi lo stesso indicatore può assumere significati diversi.
+              </p>
+            </article>
+
+            <article class="service-problem__card">
+              <div class="service-problem__icon">
+                <i class="fa-regular fa-clock"></i>
+              </div>
+              <h3 class="service-problem__title">Obiettivi poco misurabili</h3>
+              <p class="service-problem__text">
+                Gli obiettivi restano generici e non vengono tradotti in target,
+                scadenze e criteri verificabili.
+              </p>
+            </article>
+
+            <article class="service-problem__card">
+              <div class="service-problem__icon">
+                <i class="fa-solid fa-magnifying-glass-chart"></i>
+              </div>
+              <h3 class="service-problem__title">
+                Decisioni basate sull’intuizione
+              </h3>
+              <p class="service-problem__text">
+                In assenza di riferimenti condivisi, priorità e valutazioni
+                dipendono più dalle percezioni che da evidenze confrontabili.
+              </p>
+            </article>
+          </div>
+
+          <div class="service-problem__statement">
+            <span class="service-problem__statement-icon">
+              <i class="fa-solid fa-lightbulb"></i>
+            </span>
+            <p>
+              Un buon KPI non aggiunge complessità:
+              <strong>rende evidente ciò che conta davvero.</strong>
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section
+        class="service-value-section"
+        id="service-value"
+        aria-labelledby="service-value-title"
+      >
+        <div class="service-value">
+          <div class="section-header">
+            <p class="section-eyebrow">Un linguaggio comune per il business</p>
+            <h2 class="section-title" id="service-value-title">
+              Un KPI efficace non descrive solo il passato.
+              <span class="text-gradient">Ti aiuta a decidere il futuro.</span>
+            </h2>
+            <p class="section-subtitle">
+              Ogni indicatore viene definito per rispondere a una domanda
+              concreta, misurare un obiettivo e rendere interpretabili
+              risultati, scostamenti e priorità.
+            </p>
+          </div>
+
+          <div class="service-value__grid">
+            <article class="service-value__item">
+              <div class="service-value__icon">
+                <i class="fa-solid fa-crosshairs"></i>
+              </div>
+              <div class="service-value__content">
+                <h3 class="service-value__title">
+                  KPI collegati agli obiettivi
+                </h3>
+                <p class="service-value__text">
+                  Ogni indicatore viene associato a un risultato atteso, a una
+                  responsabilità e a una decisione concreta.
+                </p>
+              </div>
+            </article>
+
+            <article class="service-value__item">
+              <div class="service-value__icon">
+                <i class="fa-solid fa-eye"></i>
+              </div>
+              <div class="service-value__content">
+                <h3 class="service-value__title">Definizioni condivise</h3>
+                <p class="service-value__text">
+                  Formula, fonte, frequenza, perimetro e significato vengono
+                  documentati per eliminare interpretazioni divergenti.
+                </p>
+              </div>
+            </article>
+
+            <article class="service-value__item">
+              <div class="service-value__icon">
+                <i class="fa-solid fa-filter-circle-dollar"></i>
+              </div>
+              <div class="service-value__content">
+                <h3 class="service-value__title">Monitoraggio continuo</h3>
+                <p class="service-value__text">
+                  Gli indicatori vengono osservati con una frequenza coerente
+                  con il fenomeno e con la velocità delle decisioni.
+                </p>
+              </div>
+            </article>
+
+            <article class="service-value__item">
+              <div class="service-value__icon">
+                <i class="fa-solid fa-gauge-high"></i>
+              </div>
+              <div class="service-value__content">
+                <h3 class="service-value__title">Trend e confronti</h3>
+                <p class="service-value__text">
+                  Storico, target, benchmark e variazioni aiutano a interpretare
+                  il dato nel contesto corretto.
+                </p>
+              </div>
+            </article>
+
+            <article class="service-value__item">
+              <div class="service-value__icon">
+                <i class="fa-solid fa-wand-magic-sparkles"></i>
+              </div>
+              <div class="service-value__content">
+                <h3 class="service-value__title">Alert e soglie</h3>
+                <p class="service-value__text">
+                  Livelli di attenzione e criteri di intervento rendono
+                  immediatamente visibili scostamenti e situazioni anomale.
+                </p>
+              </div>
+            </article>
+
+            <article class="service-value__item">
+              <div class="service-value__icon">
+                <i class="fa-solid fa-layer-group"></i>
+              </div>
+              <div class="service-value__content">
+                <h3 class="service-value__title">
+                  Decisioni supportate dai dati
+                </h3>
+                <p class="service-value__text">
+                  Un sistema di misurazione condiviso riduce discussioni sui
+                  numeri e concentra il confronto sulle azioni.
+                </p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section
+        class="service-monitoring-section"
+        id="service-monitoring"
+        aria-labelledby="service-monitoring-title"
+      >
+        <div class="service-monitoring">
+          <div class="section-header">
+            <p class="section-eyebrow">Cosa possiamo definire insieme</p>
+            <h2 class="section-title" id="service-monitoring-title">
+              Ogni azienda misura obiettivi diversi.
+              <span class="text-gradient"
+                >I KPI vengono costruiti sui tuoi.</span
+              >
+            </h2>
+            <p class="section-subtitle">
+              Non esiste un set universale di KPI. Gli indicatori vengono
+              definiti in base agli obiettivi, ai processi, alle responsabilità
+              e alla disponibilità effettiva dei dati.
+            </p>
+          </div>
+
+          <div class="service-monitoring__grid">
+            <article class="service-monitoring__area">
+              <div class="service-monitoring__header">
+                <span class="service-monitoring__icon">
+                  <i class="fa-solid fa-chart-line"></i>
+                </span>
+                <div>
+                  <p class="service-monitoring__label">Area 01</p>
+                  <h3 class="service-monitoring__title">Commerciale</h3>
+                </div>
+              </div>
+              <p class="service-monitoring__text">
+                Controlla vendite, marginalità e andamento commerciale per
+                individuare opportunità, rischi e priorità.
+              </p>
+              <ul class="service-monitoring__metrics">
+                <li>Ricavi</li>
+                <li>Marginalità</li>
+                <li>Pipeline</li>
+                <li>Tasso di conversione</li>
+                <li>Valore medio ordine</li>
+              </ul>
+            </article>
+
+            <article class="service-monitoring__area">
+              <div class="service-monitoring__header">
+                <span class="service-monitoring__icon">
+                  <i class="fa-solid fa-coins"></i>
+                </span>
+                <div>
+                  <p class="service-monitoring__label">Area 02</p>
+                  <h3 class="service-monitoring__title">Finance</h3>
+                </div>
+              </div>
+              <p class="service-monitoring__text">
+                Leggi l’equilibrio economico e finanziario collegando costi,
+                redditività, liquidità e risultati.
+              </p>
+              <ul class="service-monitoring__metrics">
+                <li>EBITDA</li>
+                <li>Margine operativo</li>
+                <li>Liquidità</li>
+                <li>Flusso di cassa</li>
+                <li>Scostamento dal budget</li>
+              </ul>
+            </article>
+
+            <article class="service-monitoring__area">
+              <div class="service-monitoring__header">
+                <span class="service-monitoring__icon">
+                  <i class="fa-solid fa-gears"></i>
+                </span>
+                <div>
+                  <p class="service-monitoring__label">Area 03</p>
+                  <h3 class="service-monitoring__title">Operations</h3>
+                </div>
+              </div>
+              <p class="service-monitoring__text">
+                Monitora efficienza, capacità operativa e qualità dei processi
+                lungo le attività più importanti.
+              </p>
+              <ul class="service-monitoring__metrics">
+                <li>Lead Time</li>
+                <li>Produttività</li>
+                <li>Capacità utilizzata</li>
+                <li>Tasso di errore</li>
+                <li>Tempo di ciclo</li>
+              </ul>
+            </article>
+
+            <article class="service-monitoring__area">
+              <div class="service-monitoring__header">
+                <span class="service-monitoring__icon">
+                  <i class="fa-solid fa-bullhorn"></i>
+                </span>
+                <div>
+                  <p class="service-monitoring__label">Area 04</p>
+                  <h3 class="service-monitoring__title">Marketing</h3>
+                </div>
+              </div>
+              <p class="service-monitoring__text">
+                Valuta l’efficacia delle attività di acquisizione e il
+                contributo reale delle campagne ai risultati aziendali.
+              </p>
+              <ul class="service-monitoring__metrics">
+                <li>CAC</li>
+                <li>CPL</li>
+                <li>ROAS</li>
+                <li>Tasso di conversione</li>
+                <li>Lead generati</li>
+              </ul>
+            </article>
+
+            <article class="service-monitoring__area">
+              <div class="service-monitoring__header">
+                <span class="service-monitoring__icon">
+                  <i class="fa-solid fa-building"></i>
+                </span>
+                <div>
+                  <p class="service-monitoring__label">Area 05</p>
+                  <h3 class="service-monitoring__title">Direzione</h3>
+                </div>
+              </div>
+              <p class="service-monitoring__text">
+                Riunisci gli indicatori più importanti per supportare controllo
+                strategico, allineamento e decisioni rapide.
+              </p>
+              <ul class="service-monitoring__metrics">
+                <li>Risultato vs target</li>
+                <li>Scostamenti</li>
+                <li>Trend</li>
+                <li>Forecast</li>
+                <li>Indice di rischio</li>
+              </ul>
+            </article>
+
+            <article
+              class="service-monitoring__area service-monitoring__area--custom"
+            >
+              <div class="service-monitoring__header">
+                <span class="service-monitoring__icon">
+                  <i class="fa-solid fa-sliders"></i>
+                </span>
+                <div>
+                  <p class="service-monitoring__label">Area 06</p>
+                  <h3 class="service-monitoring__title">KPI personalizzati</h3>
+                </div>
+              </div>
+              <p class="service-monitoring__text">
+                Ogni indicatore viene definito in funzione del tuo settore,
+                delle tue priorità e delle domande a cui devi rispondere.
+              </p>
+              <ul class="service-monitoring__metrics">
+                <li>Formula KPI</li>
+                <li>Fonte dati</li>
+                <li>Target</li>
+                <li>Soglie</li>
+                <li>Alert</li>
+              </ul>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section
+        class="service-inclusions-section"
+        id="service-inclusions"
+        aria-labelledby="service-inclusions-title"
+      >
+        <div class="service-inclusions">
+          <div class="service-inclusions__intro">
+            <p class="section-eyebrow">Cosa comprende il servizio</p>
+            <h2 class="section-title" id="service-inclusions-title">
+              Non ricevi un semplice elenco di indicatori.
+              <span class="text-gradient"
+                >Ricevi un sistema di misurazione progettato per supportare le
+                decisioni.</span
+              >
+            </h2>
+            <p class="service-inclusions__description">
+              Il progetto comprende gli elementi necessari per rendere la
+              soluzione comprensibile, affidabile e concretamente utilizzabile
+              nella quotidianità aziendale.
+            </p>
+          </div>
+
+          <div class="service-inclusions__grid">
+            <article class="service-inclusions__item">
+              <span class="service-inclusions__icon">
+                <i class="fa-solid fa-chart-pie"></i>
+              </span>
+              <div>
+                <h3 class="service-inclusions__title">
+                  Analisi degli obiettivi aziendali
+                </h3>
+                <p class="service-inclusions__text">
+                  Traduzione delle priorità strategiche e operative in risultati
+                  misurabili.
+                </p>
+              </div>
+            </article>
+
+            <article class="service-inclusions__item">
+              <span class="service-inclusions__icon">
+                <i class="fa-solid fa-bullseye"></i>
+              </span>
+              <div>
+                <h3 class="service-inclusions__title">
+                  Definizione dei KPI strategici
+                </h3>
+                <p class="service-inclusions__text">
+                  Selezione degli indicatori necessari per valutare obiettivi e
+                  performance.
+                </p>
+              </div>
+            </article>
+
+            <article class="service-inclusions__item">
+              <span class="service-inclusions__icon">
+                <i class="fa-solid fa-plug-circle-bolt"></i>
+              </span>
+              <div>
+                <h3 class="service-inclusions__title">
+                  Standardizzazione delle metriche
+                </h3>
+                <p class="service-inclusions__text">
+                  Definizione condivisa di formule, fonti, frequenze e
+                  perimetri.
+                </p>
+              </div>
+            </article>
+
+            <article class="service-inclusions__item">
+              <span class="service-inclusions__icon">
+                <i class="fa-solid fa-database"></i>
+              </span>
+              <div>
+                <h3 class="service-inclusions__title">
+                  Documentazione dei KPI
+                </h3>
+                <p class="service-inclusions__text">
+                  Creazione di schede KPI o data dictionary consultabili.
+                </p>
+              </div>
+            </article>
+
+            <article class="service-inclusions__item">
+              <span class="service-inclusions__icon">
+                <i class="fa-solid fa-filter"></i>
+              </span>
+              <div>
+                <h3 class="service-inclusions__title">
+                  Sistema di monitoraggio
+                </h3>
+                <p class="service-inclusions__text">
+                  Organizzazione degli indicatori in un sistema di monitoraggio
+                  coerente con ruoli, frequenze decisionali e responsabilità
+                  aziendali.
+                </p>
+              </div>
+            </article>
+
+            <article class="service-inclusions__item">
+              <span class="service-inclusions__icon">
+                <i class="fa-solid fa-gauge"></i>
+              </span>
+              <div>
+                <h3 class="service-inclusions__title">
+                  Soglie, target e alert
+                </h3>
+                <p class="service-inclusions__text">
+                  Definizione dei livelli attesi e dei criteri di attenzione.
+                </p>
+              </div>
+            </article>
+
+            <article class="service-inclusions__item">
+              <span class="service-inclusions__icon">
+                <i class="fa-solid fa-person-chalkboard"></i>
+              </span>
+              <div>
+                <h3 class="service-inclusions__title">Revisione periodica</h3>
+                <p class="service-inclusions__text">
+                  Verifica della rilevanza degli indicatori e aggiornamento del
+                  framework.
+                </p>
+              </div>
+            </article>
+
+            <article class="service-inclusions__item">
+              <span class="service-inclusions__icon">
+                <i class="fa-solid fa-headset"></i>
+              </span>
+              <div>
+                <h3 class="service-inclusions__title">
+                  Formazione e supporto iniziale
+                </h3>
+                <p class="service-inclusions__text">
+                  Condivisione delle definizioni e supporto all’adozione.
+                </p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section
+        class="service-custom-section"
+        id="service-custom"
+        aria-labelledby="service-custom-title"
+      >
+        <div class="service-custom">
+          <div class="service-custom__content">
+            <p class="section-eyebrow">Perché su misura</p>
+            <h2
+              class="section-title service-custom__title"
+              id="service-custom-title"
+            >
+              Un KPI genera valore
+              <span class="text-gradient">solo se orienta una decisione.</span>
+            </h2>
+            <p class="service-custom__text">
+              Due aziende possono raccogliere dati simili e avere obiettivi,
+              responsabilità e priorità completamente diverse. Per questo il
+              sistema di KPI viene costruito intorno ai processi reali, alle
+              decisioni da supportare e alle persone che dovranno utilizzarlo.
+            </p>
+            <p class="service-custom__closing">
+              Il risultato non è semplicemente avere più numeri:
+              <strong>è avere criteri migliori per decidere.</strong>
+            </p>
+          </div>
+
+          <div class="service-custom__principles">
+            <article class="service-custom__principle">
+              <span class="service-custom__number">01</span>
+              <div>
+                <h3 class="service-custom__principle-title">
+                  Ogni numero ha un significato
+                </h3>
+                <p class="service-custom__principle-text">
+                  Ogni KPI viene associato a una definizione, una formula, una
+                  fonte, una frequenza e una responsabilità precise.
+                </p>
+              </div>
+            </article>
+
+            <article class="service-custom__principle">
+              <span class="service-custom__number">02</span>
+              <div>
+                <h3 class="service-custom__principle-title">
+                  Criteri condivisi
+                </h3>
+                <p class="service-custom__principle-text">
+                  Reparti e responsabili utilizzano le stesse definizioni,
+                  riducendo interpretazioni divergenti e discussioni
+                  sull’origine dei numeri.
+                </p>
+              </div>
+            </article>
+
+            <article class="service-custom__principle">
+              <span class="service-custom__number">03</span>
+              <div>
+                <h3 class="service-custom__principle-title">
+                  Evoluzione nel tempo
+                </h3>
+                <p class="service-custom__principle-text">
+                  Indicatori, target e soglie possono essere rivisti quando
+                  cambiano strategia, processi o priorità, senza perdere
+                  coerenza con il framework esistente.
+                </p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section
+        class="service-fit-section"
+        id="service-fit"
+        aria-labelledby="service-fit-title"
+      >
+        <div class="service-fit">
+          <div class="section-header">
+            <p class="section-eyebrow">La soluzione adatta</p>
+            <h2 class="section-title" id="service-fit-title">
+              È il servizio giusto
+              <span class="text-gradient">per la tua situazione?</span>
+            </h2>
+            <p class="section-subtitle">
+              Un sistema di KPI genera valore quando serve allineare obiettivi,
+              responsabilità e criteri di valutazione attraverso indicatori
+              realmente condivisi.
+            </p>
+          </div>
+
+          <div class="service-fit__grid">
+            <article class="service-fit__column service-fit__column--positive">
+              <div class="service-fit__heading">
+                <span class="service-fit__heading-icon">
+                  <i class="fa-solid fa-circle-check"></i>
+                </span>
+                <h3 class="service-fit__title">È ideale se...</h3>
+              </div>
+
+              <ul class="service-fit__list">
+                <li>Vuoi definire KPI realmente utili.</li>
+                <li>Ogni reparto utilizza indicatori diversi.</li>
+                <li>Hai dashboard ma non sai quali numeri guardare.</li>
+                <li>Vuoi misurare obiettivi concreti.</li>
+                <li>Cerchi una metodologia condivisa.</li>
+                <li>Vuoi rendere confrontabili risultati e performance.</li>
+              </ul>
+            </article>
+
+            <article class="service-fit__column service-fit__column--negative">
+              <div class="service-fit__heading">
+                <span class="service-fit__heading-icon">
+                  <i class="fa-solid fa-circle-xmark"></i>
+                </span>
+                <h3 class="service-fit__title">
+                  Probabilmente non è ciò che cerchi se...
+                </h3>
+              </div>
+
+              <ul class="service-fit__list">
+                <li>Hai bisogno soltanto di creare una dashboard.</li>
+                <li>Vuoi copiare KPI standard senza adattarli al business.</li>
+                <li>Non hai interesse a definire obiettivi misurabili.</li>
+                <li>Cerchi una soluzione pronta senza analisi.</li>
+              </ul>
+            </article>
+          </div>
+
+          <div class="service-fit__note">
+            <i class="fa-solid fa-comments"></i>
+            <p>
+              Non sei sicuro che sia il servizio adatto? Durante il primo
+              confronto valuteremo obiettivi, indicatori utilizzati e criticità
+              attuali per capire se è necessario progettare, revisionare o
+              standardizzare il tuo sistema di KPI.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section
+        class="service-faq-section"
+        id="service-faq"
+        aria-labelledby="service-faq-title"
+      >
+        <div class="service-faq">
+          <div class="section-header">
+            <p class="section-eyebrow">Domande frequenti</p>
+            <h2 class="section-title" id="service-faq-title">
+              Tutto ciò che vuoi sapere
+              <span class="text-gradient">prima di iniziare.</span>
+            </h2>
+            <p class="section-subtitle">
+              Le risposte ai dubbi più comuni sulla selezione, definizione,
+              revisione e monitoraggio degli indicatori aziendali.
+            </p>
+          </div>
+
+          <div class="service-faq__list">
+            <article class="service-faq__item">
+              <h3 class="service-faq__heading">
+                <button
+                  type="button"
+                  class="service-faq__question"
+                  aria-expanded="false"
+                  aria-controls="faq-answer-1"
+                >
+                  <span>Quanti KPI è consigliabile monitorare?</span>
+                  <i class="fa-solid fa-plus" aria-hidden="true"></i>
+                </button>
+              </h3>
+              <div class="service-faq__answer" id="faq-answer-1" hidden>
+                <p>
+                  Non esiste un numero valido per tutti. È preferibile un
+                  insieme limitato di KPI realmente collegati agli obiettivi e
+                  alle responsabilità del destinatario. Durante l’analisi
+                  distingueremo KPI strategici, operativi e metriche di
+                  approfondimento.
+                </p>
+              </div>
+            </article>
+
+            <article class="service-faq__item">
+              <h3 class="service-faq__heading">
+                <button
+                  type="button"
+                  class="service-faq__question"
+                  aria-expanded="false"
+                  aria-controls="faq-answer-2"
+                >
+                  <span>I KPI cambiano nel tempo?</span>
+                  <i class="fa-solid fa-plus" aria-hidden="true"></i>
+                </button>
+              </h3>
+              <div class="service-faq__answer" id="faq-answer-2" hidden>
+                <p>
+                  Sì. Un sistema di monitoraggio efficace evolve insieme al
+                  business. Nuovi obiettivi, nuovi processi o nuove fonti dati
+                  possono richiedere l'introduzione di indicatori differenti
+                  senza compromettere il framework di misurazione già definito.
+                </p>
+              </div>
+            </article>
+
+            <article class="service-faq__item">
+              <h3 class="service-faq__heading">
+                <button
+                  type="button"
+                  class="service-faq__question"
+                  aria-expanded="false"
+                  aria-controls="faq-answer-3"
+                >
+                  <span>Ogni settore utilizza KPI diversi?</span>
+                  <i class="fa-solid fa-plus" aria-hidden="true"></i>
+                </button>
+              </h3>
+              <div class="service-faq__answer" id="faq-answer-3" hidden>
+                <p>
+                  Assolutamente sì. Un'azienda manifatturiera, una società di
+                  servizi o un e-commerce hanno obiettivi completamente
+                  differenti. Per questo ogni progetto parte dall'analisi del
+                  processo e dalla definizione degli indicatori realmente utili
+                  per prendere decisioni.
+                </p>
+              </div>
+            </article>
+
+            <article class="service-faq__item">
+              <h3 class="service-faq__heading">
+                <button
+                  type="button"
+                  class="service-faq__question"
+                  aria-expanded="false"
+                  aria-controls="faq-answer-4"
+                >
+                  <span>Possiamo partire dai report esistenti?</span>
+                  <i class="fa-solid fa-plus" aria-hidden="true"></i>
+                </button>
+              </h3>
+              <div class="service-faq__answer" id="faq-answer-4" hidden>
+                <p>
+                  Sì. Report Excel, gestionali e dashboard esistenti
+                  rappresentano spesso un ottimo punto di partenza. Analizziamo
+                  ciò che già utilizzi e individuiamo quali indicatori
+                  mantenere, migliorare o sostituire.
+                </p>
+              </div>
+            </article>
+
+            <article class="service-faq__item">
+              <h3 class="service-faq__heading">
+                <button
+                  type="button"
+                  class="service-faq__question"
+                  aria-expanded="false"
+                  aria-controls="faq-answer-5"
+                >
+                  <span>È possibile aggiungere nuovi KPI in futuro?</span>
+                  <i class="fa-solid fa-plus" aria-hidden="true"></i>
+                </button>
+              </h3>
+              <div class="service-faq__answer" id="faq-answer-5" hidden>
+                <p>
+                  Sì. Il framework viene progettato per evolvere insieme al
+                  business. Nuovi indicatori, reparti, responsabilità o
+                  obiettivi possono essere integrati mantenendo coerenti
+                  definizioni, formule e criteri di monitoraggio.
+                </p>
+              </div>
+            </article>
+
+            <article class="service-faq__item">
+              <h3 class="service-faq__heading">
+                <button
+                  type="button"
+                  class="service-faq__question"
+                  aria-expanded="false"
+                  aria-controls="faq-answer-6"
+                >
+                  <span>È necessario utilizzare Power BI?</span>
+                  <i class="fa-solid fa-plus" aria-hidden="true"></i>
+                </button>
+              </h3>
+              <div class="service-faq__answer" id="faq-answer-6" hidden>
+                <p>
+                  No. Il metodo di progettazione dei KPI è indipendente dallo
+                  strumento utilizzato. Power BI è la soluzione che utilizzo più
+                  frequentemente, ma il modello può essere adattato anche ad
+                  altri sistemi di Business Intelligence quando necessario.
+                </p>
+              </div>
+            </article>
+            <article class="service-faq__item">
+              <h3 class="service-faq__heading">
+                <button
+                  type="button"
+                  class="service-faq__question"
+                  aria-expanded="false"
+                  aria-controls="faq-answer-7"
+                >
+                  <span>Come scegli quali KPI monitorare?</span>
+                  <i class="fa-solid fa-plus" aria-hidden="true"></i>
+                </button>
+              </h3>
+              <div class="service-faq__answer" id="faq-answer-7" hidden>
+                <p>
+                  Non parto dall'elenco delle metriche disponibili, ma dalle
+                  decisioni che devono essere prese. Ogni KPI viene selezionato
+                  perché aiuta a valutare un obiettivo, individuare un problema
+                  o misurare un risultato concreto.
+                </p>
+              </div>
+            </article>
+          </div>
+
+          <p class="service-faq__portfolio-link">
+            Vuoi vedere alcuni progetti già realizzati?
+            <a href="../landing-page/index.html#projects__id">
+              Consulta i progetti selezionati →
+            </a>
+          </p>
+        </div>
+      </section>
+
+      <section class="cta-section service-cta-section" id="contacts__id">
+        <div class="cta service-cta">
+          <div class="cta__content">
+            <p class="service-cta__eyebrow">Partiamo dagli obiettivi</p>
+            <h2 class="cta__title">
+              Le decisioni migliori iniziano dagli indicatori giusti.
+            </h2>
+            <p class="cta__text">
+              Se oggi reparti e persone utilizzano indicatori diversi, possiamo
+              costruire un framework condiviso che colleghi obiettivi, formule,
+              target e responsabilità.
+            </p>
+
+            <div class="cta__actions">
+              <div class="cta__button-wrapper">
+                <button
+                  type="button"
+                  class="button button--primary cta__button"
+                  id="openContactForm"
+                >
+                  <i class="fa-regular fa-calendar"></i>
+                  Prenota una consulenza gratuita
+                </button>
+              </div>
+            </div>
+
+            <p class="service-cta__note">
+              Analizzeremo insieme la situazione, le fonti disponibili e gli
+              obiettivi da monitorare per capire quale soluzione sia più adatta.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <div
+        class="form-modal"
+        id="contactFormModal"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="contactFormTitle"
+        aria-hidden="true"
+      >
+        <div class="form-modal__overlay" id="closeContactForm"></div>
+
+        <div class="form-modal__card">
+          <button
+            type="button"
+            class="form-modal__close"
+            id="closeContactFormButton"
+            aria-label="Chiudi il modulo di contatto"
+          >
+            ×
+          </button>
+
+          <p class="form-modal__eyebrow">Consulenza gratuita</p>
+
+          <h2 class="form-modal__title" id="contactFormTitle">
+            Raccontami i tuoi obiettivi
+          </h2>
+
+          <p class="form-modal__text">
+            Descrivimi brevemente la situazione attuale, i dati disponibili e
+            ciò che vorresti monitorare. Ti ricontatterò per valutare insieme la
+            soluzione più adatta.
+          </p>
+
+          <form
+            id="contactForm"
+            action="https://formspree.io/f/xkoandwa"
+            method="POST"
+            class="contact-form"
+          >
+            <input
+              type="hidden"
+              name="service"
+              value="KPI Design & Monitoraggio"
+            />
+
+            <div class="form-grid">
+              <div class="form-group">
+                <label for="name">Nome e Cognome *</label>
+                <input
+                  id="name"
+                  type="text"
+                  name="name"
+                  autocomplete="name"
+                  placeholder="Mario Rossi"
+                  required
+                />
+              </div>
+
+              <div class="form-group">
+                <label for="email">Email *</label>
+                <input
+                  id="email"
+                  type="email"
+                  name="email"
+                  autocomplete="email"
+                  placeholder="nome@azienda.it"
+                  required
+                />
+              </div>
+
+              <div class="form-group">
+                <label for="phone">Telefono / WhatsApp</label>
+                <input
+                  id="phone"
+                  type="tel"
+                  name="phone"
+                  autocomplete="tel"
+                  placeholder="+39 333 1234567"
+                />
+              </div>
+
+              <div class="form-group">
+                <label for="company">Azienda</label>
+                <input
+                  id="company"
+                  type="text"
+                  name="company"
+                  autocomplete="organization"
+                  placeholder="Nome azienda"
+                />
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="goal">Esigenza principale *</label>
+              <select id="goal" name="goal" required>
+                <option value="">Seleziona un’esigenza</option>
+                <option value="Definire KPI strategici">
+                  Definire KPI strategici
+                </option>
+                <option value="Standardizzare metriche esistenti">
+                  Standardizzare metriche esistenti
+                </option>
+                <option value="Misurare obiettivi aziendali">
+                  Misurare obiettivi aziendali
+                </option>
+                <option value="Creare un sistema di monitoraggio">
+                  Creare un sistema di monitoraggio
+                </option>
+                <option value="Rivedere KPI e dashboard esistenti">
+                  Rivedere KPI e dashboard esistenti
+                </option>
+                <option value="Altro">Altro</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="message">Messaggio *</label>
+              <textarea
+                id="message"
+                name="message"
+                rows="5"
+                placeholder="Descrivi gli obiettivi da misurare, gli indicatori utilizzati oggi e le principali difficoltà di interpretazione."
+                required
+              ></textarea>
+            </div>
+
+            <p class="form-privacy-note">
+              I dati inseriti saranno utilizzati esclusivamente per rispondere
+              alla richiesta e valutare una possibile collaborazione.
+            </p>
+
+            <label class="privacy-check">
+              <input type="checkbox" name="privacy" required />
+              <span>
+                Ho letto e accetto la
+                <a
+                  href="../landing-page/privacy.html?from=kpi-design-monitoraggio"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Privacy Policy </a
+                >.
+              </span>
+            </label>
+
+            <button type="submit" class="contact-form__button">
+              Prenota una consulenza gratuita
+            </button>
+
+            <p
+              id="formSuccessMessage"
+              class="form-success-message"
+              aria-live="polite"
+            >
+              Grazie! La richiesta è stata inviata correttamente. Ti
+              ricontatterò al più presto.
+            </p>
+          </form>
+        </div>
+      </div>
+    </main>
+
+    <!--INIZIO SEZIONE FOOTER-->
+    <footer class="footer">
+      <div class="footer__main">
+        <div class="footer__brand-block">
+          <a
+            href="./index.html"
+            class="footer__brand"
+            aria-label="Torna alla homepage"
+          >
+            <span class="footer__monogram" aria-hidden="true">DF</span>
+
+            <span class="footer__identity">
+              <span class="footer__name">Dina Fiorentino</span>
+              <span class="footer__role"
+                >Data Analyst &amp; Power BI Consultant</span
+              >
+            </span>
+          </a>
+          <p class="footer__description">
+            Dashboard, reporting e modelli dati progettati per trasformare
+            informazioni complesse in decisioni più chiare.
+          </p>
+
+          <div class="footer__socials" aria-label="Contatti professionali">
+            <a
+              href="https://www.linkedin.com/in/dina-fiorentino/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Profilo LinkedIn di Dina Fiorentino"
+            >
+              <i class="fa-brands fa-linkedin-in" aria-hidden="true"></i>
+              <span>LinkedIn</span>
+            </a>
+
+            <a
+              href="mailto:dinafiorentino.consulting@outlook.it"
+              aria-label="Invia una email a Dina Fiorentino"
+            >
+              <i class="fa-regular fa-envelope" aria-hidden="true"></i>
+              <span>Email</span>
+            </a>
+          </div>
+        </div>
+
+        <nav class="footer__column" aria-label="Navigazione footer">
+          <p class="footer__heading">Esplora</p>
+          <a href="../landing-page/index.html#services__id">Servizi</a>
+          <a href="../landing-page/index.html#projects__id">Progetti</a>
+          <a href="../landing-page/index.html#about__id">Chi sono</a>
+          <a href="../landing-page/index.html#contacts__id">Contatti</a>
+        </nav>
+
+        <div class="footer__column footer__column--services">
+          <p class="footer__heading">Servizi</p>
+          <a href="../services/dashboard-powerBI.html">Dashboard Power BI</a>
+          <a href="../services/reporting-automatizzato.html"
+            >Reporting automatizzato</a
+          >
+          <a href="../services/kpi-design-monitoraggio.html">KPI design</a>
+          <a href="../services/data-modeling-integrazione.html"
+            >Data modeling</a
+          >
+        </div>
+
+        <div class="footer__column footer__column--contact">
+          <p class="footer__heading">Collaboriamo</p>
+          <p>
+            Disponibile per progetti di analisi dati, dashboard e reporting
+            aziendale.
+          </p>
+
+          <button
+            type="button"
+            class="footer__contact-button js-open-contact-form"
+          >
+            Parliamo del tuo progetto
+            <span aria-hidden="true">→</span>
+          </button>
+        </div>
+      </div>
+
+      <div class="footer__bottom">
+        <p class="copyright__text">
+          © 2026 Dina Fiorentino. Tutti i diritti riservati.
+        </p>
+
+        <nav class="privacy__box" aria-label="Link legali e lingua">
+          <a
+            href="../landing-page/privacy.html?from=kpi-design-monitoraggio"
+            class="privacy__text"
+          >
+            Privacy
+          </a>
+
+          <a
+            href="../landing-page/cookie.html?from=kpi-design-monitoraggio"
+            class="cookie__text"
+          >
+            Cookie
+          </a>
+
+          <a href="./kpi-design-monitoraggio-en.html" class="footer__language">
+            English
+          </a>
+        </nav>
+      </div>
+    </footer>
+    <!--FINE SEZIONE FOOTER-->
+
+    <button
+      id="back__to-top"
+      class="back__to-top"
+      type="button"
+      aria-label="Torna all’inizio"
+    >
+      <i class="fa-solid fa-arrow-up" aria-hidden="true"></i>
+    </button>
+
+    <script src="../assets/js/script.js"></script>
+  </body>
+</html>

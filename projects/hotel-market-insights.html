@@ -1,0 +1,1087 @@
+<!DOCTYPE html>
+<html lang="it">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Hotel Market Analysis & Revenue Insights | Dina Fiorentino</title>
+
+    <link rel="stylesheet" href="../assets/css/projects.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Poppins:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="../Images/favicon/apple-touch-icon.png"
+    />
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="../Images/favicon/favicon-32x32.png"
+    />
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="../Images/favicon/favicon-16x16.png"
+    />
+
+    <link rel="manifest" href="../Images/favicon/site.webmanifest" />
+
+    <link rel="icon" href="../Images/favicon/favicon.ico" />
+  </head>
+
+  <body>
+    <!--INIZIO SEZIONE HERO-->
+    <header class="hero">
+      <div class="hero__content">
+        <div class="hero__navigation">
+          <a
+            href="../landing-page/index.html#projects__id"
+            class="hero__back-link"
+          >
+            ↤ Torna a i progetti
+          </a>
+
+          <div
+            class="language-selector hero__language-selector"
+            data-it="./hotel-market-insights.html"
+            data-en="./hotel-market-insights-en.html"
+          >
+            <button
+              type="button"
+              class="language-selector__button"
+              onclick="toggleLanguageMenu(event);"
+              aria-haspopup="true"
+              aria-expanded="false"
+              aria-controls="languageMenu"
+            >
+              🇮🇹
+              <span>IT</span>
+              <span class="language-selector__arrow">▾</span>
+            </button>
+
+            <div class="language-selector__menu" id="languageMenu">
+              <button type="button" onclick="setLanguage('it')">
+                🇮🇹 Italiano
+              </button>
+              <button type="button" onclick="setLanguage('en')">
+                🇬🇧 English
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <p class="hero__eyebrow">🥇 WINNING PROJECT</p>
+
+        <h1 class="hero__title">
+          Hotel Market Analysis<br />
+          <span class="text-gradient">& Revenue Insights</span>
+        </h1>
+
+        <p class="hero__subtitle">
+          Dashboard PowerBI premiata per l'analisi delle performance hotel,
+          progettata per individuare cali di revenue, dipendenza dai canali OTA
+          e opportunità di miglioramento su occupancy, ADR e RevPar.
+        </p>
+
+        <div class="hero__cards">
+          <div class="hero__card">
+            <span class="hero__card-label">Settore</span>
+            <span class="hero__card-value">Hospitality</span>
+          </div>
+
+          <div class="hero__card">
+            <span class="hero__card-label">Tool</span>
+            <span class="hero__card-value">Power BI</span>
+          </div>
+
+          <div class="hero__card">
+            <span class="hero__card-label">Risultato</span>
+            <span class="hero__card-value">1° posto</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero__visual">
+        <img
+          class="hero__image"
+          src="../assets/images/Screenshot 2026-06-21 alle 17.48.40.png"
+          alt="Anteprima dashboard Power BI Sales Performance e Forecast"
+        />
+      </div>
+    </header>
+    <!--FINE SEZIONE HERO -->
+
+    <main>
+      <!--INIZIO SEZIONE SNAPSHOT-->
+      <section class="snapshot-section" id="executive-snapshot">
+        <div class="snapshot">
+          <div class="section-header">
+            <p class="section-eyebrow">Executive Snapshot</p>
+
+            <h2 class="section-title">
+              I numeri chiave
+              <span class="text-gradient">dell’analisi.</span>
+            </h2>
+
+            <p class="section-subtitle">
+              Una sintesi delle principali evidenze emerse dal confronto
+              2023–2024: calo dei ricavi, riduzione dell’occupazione, dipendenza
+              dai canali OTA e contrazione della redditività per camera
+              disponibile.
+            </p>
+          </div>
+
+          <div class="snapshot__grid">
+            <article class="snapshot__card">
+              <div class="snapshot__icon">
+                <i class="fa-solid fa-wallet"></i>
+              </div>
+
+              <div class="snapshot__content">
+                <p class="snapshot__label">Revenue 2024</p>
+                <h3 class="snapshot__value">€4,03M</h3>
+                <p class="snapshot__trend snapshot__trend--negative">
+                  -12% YoY
+                </p>
+                <p class="snapshot__text">
+                  Ricavi in contrazione rispetto al 2023, con necessità di
+                  individuare le cause del calo.
+                </p>
+              </div>
+            </article>
+
+            <article class="snapshot__card">
+              <div class="snapshot__icon">
+                <i class="fa-solid fa-bed"></i>
+              </div>
+
+              <div class="snapshot__content">
+                <p class="snapshot__label">Occupancy Rate</p>
+                <h3 class="snapshot__value">78%</h3>
+                <p class="snapshot__trend snapshot__trend--negative">
+                  -11% YoY
+                </p>
+                <p class="snapshot__text">
+                  Riduzione del tasso di occupazione, soprattutto nella parte
+                  finale dell’anno.
+                </p>
+              </div>
+            </article>
+
+            <article class="snapshot__card">
+              <div class="snapshot__icon">
+                <i class="fa-solid fa-earth-europe"></i>
+              </div>
+
+              <div class="snapshot__content">
+                <p class="snapshot__label">OTA Share</p>
+                <h3 class="snapshot__value">45%</h3>
+                <p class="snapshot__trend snapshot__trend--neutral">
+                  Main channel
+                </p>
+                <p class="snapshot__text">
+                  I canali OTA dominano il mix di prenotazione, evidenziando una
+                  dipendenza dai canali intermediati.
+                </p>
+              </div>
+            </article>
+
+            <article class="snapshot__card">
+              <div class="snapshot__icon">
+                <i class="fa-solid fa-chart-column"></i>
+              </div>
+
+              <div class="snapshot__content">
+                <p class="snapshot__label">RevPAR 2024</p>
+                <h3 class="snapshot__value">€408</h3>
+                <p class="snapshot__trend snapshot__trend--negative">
+                  -13% YoY
+                </p>
+                <p class="snapshot__text">
+                  Calo della redditività per camera disponibile, indicatore
+                  chiave per il revenue management.
+                </p>
+              </div>
+            </article>
+
+            <article class="snapshot__card">
+              <div class="snapshot__icon">
+                <i class="fa-solid fa-clock"></i>
+              </div>
+
+              <div class="snapshot__content">
+                <p class="snapshot__label">Lead Time Avg</p>
+                <h3 class="snapshot__value">45 gg</h3>
+                <p class="snapshot__trend snapshot__trend--neutral">
+                  Booking behavior
+                </p>
+                <p class="snapshot__text">
+                  Analisi dell’anticipo di prenotazione per leggere domanda e
+                  prenotazioni last minute.
+                </p>
+              </div>
+            </article>
+
+            <article class="snapshot__card snapshot__card--award">
+              <div class="snapshot__icon">
+                <i class="fa-solid fa-trophy"></i>
+              </div>
+
+              <div class="snapshot__content">
+                <p class="snapshot__label">Contest Result</p>
+                <h3 class="snapshot__value">1° posto</h3>
+                <p class="snapshot__trend snapshot__trend--positive">
+                  Winning project
+                </p>
+                <p class="snapshot__text">
+                  Dashboard premiata per data storytelling, chiarezza dei KPI e
+                  supporto decisionale.
+                </p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+      <!--FINE SEZIONE SNAPSHOT-->
+
+      <section class="dashboard-section" id="dashboard-preview">
+        <div class="dashboard">
+          <div class="section-header">
+            <p class="section-eyebrow">Dashboard Preview</p>
+
+            <h2 class="section-title">
+              Una vista completa delle
+              <span class="text-gradient">hotel performance</span>
+            </h2>
+
+            <p class="section-subtitle">
+              La dashboard integra revenue analysis, occupancy trends, booking
+              channels e metriche di redditività in un’unica vista decisionale.
+            </p>
+          </div>
+
+          <div class="dashboard__carousel">
+            <button
+              class="carousel__arrow carousel__arrow--left"
+              type="button"
+              aria-label="Immagine precedente"
+            >
+              &#10094;
+            </button>
+
+            <div class="carousel__viewport">
+              <div class="carousel__track">
+                <img
+                  class="dashboard__image"
+                  src="../assets/images/FOTO CONTEST 2.PNG"
+                  data-full="../assets/images/FOTO CONTEST 2.PNG"
+                  alt="Dashboard Power BI 2024 con revenue, occupancy, OTA share, RevPAR e raccomandazioni operative"
+                  tabindex="0"
+                />
+
+                <img
+                  class="dashboard__image"
+                  src="../assets/images/FOTO CONTEST 2023.PNG"
+                  data-full="../assets/images/FOTO CONTEST 2023.PNG"
+                  alt="Dashboard Power BI 2023 con confronto revenue, occupancy, canali di prenotazione e redditività"
+                  tabindex="0"
+                />
+              </div>
+            </div>
+
+            <button
+              class="carousel__arrow carousel__arrow--right"
+              type="button"
+              aria-label="Immagine successiva"
+            >
+              &#10095;
+            </button>
+          </div>
+
+          <p class="dashboard__hint">
+            Clicca sulla dashboard per visualizzarla a schermo intero.
+          </p>
+        </div>
+      </section>
+
+      <div class="dashboard-lightbox" aria-hidden="true">
+        <button
+          class="dashboard-lightbox__close"
+          type="button"
+          aria-label="Chiudi anteprima dashboard"
+        >
+          &times;
+        </button>
+
+        <button
+          class="dashboard-lightbox__arrow dashboard-lightbox__arrow--left"
+          type="button"
+          aria-label="Dashboard precedente"
+        >
+          &#10094;
+        </button>
+
+        <div class="dashboard-lightbox__content">
+          <img class="dashboard-lightbox__image" src="" alt="" />
+        </div>
+
+        <button
+          class="dashboard-lightbox__arrow dashboard-lightbox__arrow--right"
+          type="button"
+          aria-label="Dashboard successiva"
+        >
+          &#10095;
+        </button>
+      </div>
+
+      <section class="context-section" id="project-context">
+        <div class="context">
+          <div class="section-header section-header--compact">
+            <p class="section-eyebrow">Il contesto</p>
+
+            <h2 class="section-title">
+              Capire un mercato in
+              <span class="text-gradient">continua evoluzione</span>
+            </h2>
+
+            <p class="section-subtitle">
+              L’hospitality è un settore guidato da stagionalità, pricing
+              dinamico e canali di prenotazione sempre più frammentati. Per
+              leggere correttamente le performance di un hotel, non basta
+              osservare i ricavi: è necessario collegare occupancy, ADR, RevPAR,
+              lead time e distribuzione dei canali in un’unica vista analitica.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="challenge-section" id="business-challenge">
+        <div class="challenge">
+          <div class="section-header">
+            <p class="section-eyebrow">Business Challenge</p>
+
+            <h2 class="section-title">
+              Le criticità da
+              <span class="text-gradient">risolvere</span>
+            </h2>
+
+            <p class="section-subtitle">
+              L’analisi 2024 evidenzia tre aree critiche: calo dei ricavi,
+              dipendenza dai canali intermediati e pressione sulla redditività.
+            </p>
+          </div>
+
+          <div class="challenge__cards">
+            <article class="challenge__card">
+              <div class="challenge__icon challenge__icon--negative">
+                <i class="fa-solid fa-arrow-trend-down"></i>
+              </div>
+
+              <h3 class="challenge__card-title">Revenue Decline</h3>
+
+              <p class="challenge__card-text">
+                Calo del fatturato YoY e necessità di capire le cause alla base
+                della contrazione.
+              </p>
+            </article>
+
+            <article class="challenge__card">
+              <div class="challenge__icon challenge__icon--channel">
+                <i class="fa-solid fa-earth-europe"></i>
+              </div>
+
+              <h3 class="challenge__card-title">OTA Dependency</h3>
+
+              <p class="challenge__card-text">
+                Forte peso dei canali intermediati, con possibile impatto su
+                marginalità e controllo commerciale.
+              </p>
+            </article>
+
+            <article class="challenge__card">
+              <div class="challenge__icon challenge__icon--margin">
+                <i class="fa-solid fa-percent"></i>
+              </div>
+
+              <h3 class="challenge__card-title">Margin Reduction</h3>
+
+              <p class="challenge__card-text">
+                Riduzione del RevPAR e necessità di monitorare ADR, occupancy e
+                redditività in modo integrato.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="approach-section" id="analytical-approach">
+        <div class="approach">
+          <div class="section-header">
+            <p class="section-eyebrow">Analytical Approach</p>
+
+            <h2 class="section-title">
+              Dal dato grezzo
+              <span class="text-gradient">all’insight decisionale.</span>
+            </h2>
+
+            <p class="section-subtitle">
+              Il progetto è stato sviluppato seguendo un processo analitico
+              strutturato: dalla definizione dei KPI hospitality fino alla
+              lettura degli scostamenti e alla generazione di raccomandazioni
+              operative.
+            </p>
+          </div>
+
+          <div class="approach__steps">
+            <article class="approach__step">
+              <div class="approach__header">
+                <div class="approach__icon approach__icon--kpi">
+                  <i class="fa-solid fa-bullseye"></i>
+                </div>
+
+                <h3 class="approach__step-title">Definizione KPI</h3>
+              </div>
+
+              <p class="approach__step-text">
+                Selezione delle metriche core per misurare performance,
+                redditività e comportamento della domanda.
+              </p>
+
+              <div class="approach__tags">
+                <span>Revenue</span>
+                <span>ADR</span>
+                <span>RevPAR</span>
+              </div>
+            </article>
+
+            <article class="approach__step">
+              <div class="approach__header">
+                <div class="approach__icon approach__icon--trend">
+                  <i class="fa-solid fa-chart-line"></i>
+                </div>
+
+                <h3 class="approach__step-title">Analisi YoY</h3>
+              </div>
+
+              <p class="approach__step-text">
+                Confronto tra 2023 e 2024 per individuare trend, scostamenti e
+                segnali critici nelle performance.
+              </p>
+
+              <div class="approach__tags">
+                <span>Revenue gap</span>
+                <span>Occupancy</span>
+                <span>RevPAR</span>
+              </div>
+            </article>
+
+            <article class="approach__step">
+              <div class="approach__header">
+                <div class="approach__icon approach__icon--channel">
+                  <i class="fa-solid fa-diagram-project"></i>
+                </div>
+
+                <h3 class="approach__step-title">Analisi canali</h3>
+              </div>
+
+              <p class="approach__step-text">
+                Analisi del booking mix per leggere il peso dei canali
+                intermediati e il contributo dei canali diretti.
+              </p>
+
+              <div class="approach__tags">
+                <span>OTA</span>
+                <span>Website</span>
+                <span>CRO</span>
+              </div>
+            </article>
+
+            <article class="approach__step">
+              <div class="approach__header">
+                <div class="approach__icon approach__icon--insight">
+                  <i class="fa-solid fa-lightbulb"></i>
+                </div>
+
+                <h3 class="approach__step-title">Insight generation</h3>
+              </div>
+
+              <p class="approach__step-text">
+                Traduzione dell’analisi in insight utili per pricing,
+                distribuzione e decisioni di revenue management.
+              </p>
+
+              <div class="approach__tags">
+                <span>Pricing</span>
+                <span>Distribution</span>
+                <span>Actions</span>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="solution-section" id="solution-developed">
+        <div class="solution">
+          <div class="solution__content">
+            <p class="section-eyebrow">La soluzione sviluppata</p>
+
+            <h2 class="section-title solution__title">
+              Una dashboard progettata per trasformare dati in
+              <span class="text-gradient">decisioni.</span>
+            </h2>
+
+            <p class="solution__text">
+              La dashboard è stata sviluppata per supportare il processo
+              decisionale nel settore hospitality, integrando indicatori di
+              performance, analisi dei canali di prenotazione e dinamiche di
+              domanda in un’unica vista strategica.
+            </p>
+
+            <div class="solution__lists">
+              <ul>
+                <li class="solution__list">
+                  Monitoraggio Revenue, ADR, RevPAR e Occupancy
+                </li>
+                <li class="solution__list">
+                  Analisi delle performance per canale
+                </li>
+                <li class="solution__list">
+                  Studio di booking window e lead time
+                </li>
+                <li class="solution__list">
+                  Confronti Year-over-Year e trend stagionali
+                </li>
+                <li class="solution__list">
+                  Individuazione di criticità e opportunità di crescita
+                </li>
+                <li class="solution__list">
+                  Insight strategici e raccomandazioni data-driven
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="solution__visual">
+            <div class="solution__card solution__card--main">
+              <span class="solution__tag">Performance</span>
+              <img
+                src="../assets/images/Total-revenue.png"
+                alt="Grafico Total Revenue della dashboard hotel"
+              />
+            </div>
+
+            <div class="solution__cards-row">
+              <div class="solution__card">
+                <span class="solution__tag">Canali</span>
+                <img
+                  src="../assets/images/OTA.png"
+                  alt="Grafico OTA della dashboard hotel"
+                />
+              </div>
+
+              <div class="solution__card">
+                <span class="solution__tag">Redditività</span>
+                <img
+                  src="../assets/images/RevPAR.png"
+                  alt="Grafico RevPAR della dashboard hotel"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="kpi-section" id="kpi-framework">
+        <div class="kpi">
+          <div class="section-header">
+            <p class="section-eyebrow">KPI Framework</p>
+
+            <h2 class="section-title">
+              Ogni metrica critica
+              <span class="text-gradient">nel giusto contesto.</span>
+            </h2>
+
+            <p class="section-subtitle">
+              Gli indicatori della dashboard sono stati organizzati in tre aree
+              di lettura: performance economica, comportamento di prenotazione e
+              distribuzione dei canali.
+            </p>
+          </div>
+
+          <div class="kpi__framework">
+            <article class="kpi__area">
+              <div class="kpi__area-top">
+                <div class="kpi__icon kpi__icon--performance">
+                  <i class="fa-solid fa-chart-line"></i>
+                </div>
+
+                <div>
+                  <p class="kpi__area-label">Area 01</p>
+                  <h3 class="kpi__area-title">Performance</h3>
+                </div>
+              </div>
+
+              <p class="kpi__area-text">
+                Misura l’andamento economico dell’hotel e la capacità di
+                generare ricavi rispetto all’occupazione disponibile.
+              </p>
+
+              <p class="kpi__metrics">
+                Revenue <span>•</span> Occupancy <span>•</span> ADR
+                <span>•</span> RevPAR
+              </p>
+            </article>
+
+            <article class="kpi__area">
+              <div class="kpi__area-top">
+                <div class="kpi__icon kpi__icon--booking">
+                  <i class="fa-solid fa-calendar-check"></i>
+                </div>
+
+                <div>
+                  <p class="kpi__area-label">Area 02</p>
+                  <h3 class="kpi__area-title">Booking Behavior</h3>
+                </div>
+              </div>
+
+              <p class="kpi__area-text">
+                Analizza il comportamento della domanda, l’anticipo di
+                prenotazione e il mix delle camere vendute.
+              </p>
+
+              <p class="kpi__metrics">
+                Lead Time <span>•</span> Booking Window <span>•</span> Room Mix
+                <span>•</span> Demand
+              </p>
+            </article>
+
+            <article class="kpi__area">
+              <div class="kpi__area-top">
+                <div class="kpi__icon kpi__icon--distribution">
+                  <i class="fa-solid fa-diagram-project"></i>
+                </div>
+
+                <div>
+                  <p class="kpi__area-label">Area 03</p>
+                  <h3 class="kpi__area-title">Distribution</h3>
+                </div>
+              </div>
+
+              <p class="kpi__area-text">
+                Evidenzia il peso dei canali di prenotazione nel revenue mix e
+                aiuta a leggere dipendenza OTA, performance direct e controllo
+                commerciale.
+              </p>
+
+              <p class="kpi__metrics">
+                Channel Mix <span>•</span> OTA <span>•</span> Website
+                <span>•</span> CRO
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="outcome-section" id="project-outcome">
+        <div class="outcome">
+          <div class="section-header">
+            <p class="section-eyebrow">Risultati del progetto</p>
+
+            <h2 class="section-title">
+              Trasformare i dati in
+              <span class="text-gradient">valore strategico</span>
+            </h2>
+
+            <p class="section-subtitle">
+              Il progetto ha tradotto i principali segnali di performance in una
+              vista decisionale chiara, premiata per data storytelling,
+              struttura dei KPI e capacità di supportare analisi
+              executive-level.
+            </p>
+          </div>
+
+          <div class="outcome__cards">
+            <article class="outcome__card">
+              <div class="outcome__icon">
+                <i class="fa-solid fa-earth-europe"></i>
+              </div>
+
+              <p
+                class="outcome__number js-counter"
+                data-prefix=""
+                data-target="45"
+                data-suffix="%"
+              >
+                0
+              </p>
+
+              <p class="outcome__text">OTA share analizzata</p>
+            </article>
+
+            <article class="outcome__card">
+              <div class="outcome__icon">
+                <i class="fa-solid fa-layer-group"></i>
+              </div>
+
+              <p
+                class="outcome__number js-counter"
+                data-prefix="+"
+                data-target="8"
+                data-suffix=""
+              >
+                0
+              </p>
+
+              <p class="outcome__text">KPI integrati</p>
+            </article>
+
+            <article class="outcome__card">
+              <div class="outcome__icon">
+                <i class="fa-solid fa-arrow-trend-down"></i>
+              </div>
+
+              <p
+                class="outcome__number js-counter"
+                data-prefix="-"
+                data-target="12"
+                data-suffix="%"
+              >
+                0
+              </p>
+
+              <p class="outcome__text">Revenue gap identificato</p>
+            </article>
+
+            <article class="outcome__card">
+              <div class="outcome__icon">
+                <i class="fa-solid fa-trophy"></i>
+              </div>
+
+              <p
+                class="outcome__number js-counter"
+                data-prefix=""
+                data-target="1"
+                data-suffix="°"
+              >
+                0
+              </p>
+
+              <p class="outcome__text">Contest hospitality</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="cta-section" id="contacts__id">
+        <div class="cta">
+          <div class="cta__content">
+            <h2 class="cta__title">
+              Hai dati da trasformare in una dashboard decisionale?
+            </h2>
+
+            <p class="cta__text">
+              Realizzo dashboard Power BI e soluzioni di data storytelling
+              progettate per rendere KPI, trend e insight immediatamente
+              utilizzabili dal business.
+            </p>
+
+            <div class="cta__actions">
+              <div class="cta__button-wrapper">
+                <button
+                  type="button"
+                  class="button button--primary cta__button"
+                  id="openContactForm"
+                >
+                  <i class="fa-regular fa-calendar"></i>
+                  Prenota una consulenza gratuita
+                </button>
+
+                <a
+                  href="../landing-page/index.html#projects__id"
+                  class="button button--secondary cta__button"
+                >
+                  <i class="fa-solid fa-eye"></i>
+                  Guarda altri progetti
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div
+        class="form-modal"
+        id="contactFormModal"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="contactFormTitle"
+      >
+        <div class="form-modal__overlay" id="closeContactForm"></div>
+
+        <div class="form-modal__card">
+          <button
+            type="button"
+            class="form-modal__close"
+            id="closeContactFormButton"
+            aria-label="Chiudi il modulo di contatto"
+          >
+            ×
+          </button>
+
+          <p class="form-modal__eyebrow">Consulenza gratuita</p>
+
+          <h2 class="form-modal__title" id="contactFormTitle">
+            Raccontami il tuo progetto
+          </h2>
+
+          <p class="form-modal__text">
+            Compila il modulo e descrivi brevemente le tue esigenze. Ti
+            ricontatterò per capire come rendere più chiari KPI, report e
+            dashboard.
+          </p>
+
+          <form
+            id="contactForm"
+            action="https://formspree.io/f/xkoandwa"
+            method="POST"
+            class="contact-form"
+          >
+            <div class="form-grid">
+              <div class="form-group">
+                <label for="name">Nome e Cognome *</label>
+                <input
+                  id="name"
+                  type="text"
+                  name="name"
+                  placeholder="Mario Rossi"
+                  required
+                />
+              </div>
+
+              <div class="form-group">
+                <label for="email">Email *</label>
+                <input
+                  id="email"
+                  type="email"
+                  name="email"
+                  placeholder="nome@azienda.it"
+                  required
+                />
+              </div>
+
+              <div class="form-group">
+                <label for="phone">Telefono / WhatsApp</label>
+                <input
+                  id="phone"
+                  type="tel"
+                  name="phone"
+                  placeholder="+39 333 1234567"
+                />
+              </div>
+
+              <div class="form-group">
+                <label for="company">Azienda</label>
+                <input
+                  id="company"
+                  type="text"
+                  name="company"
+                  placeholder="Nome azienda"
+                />
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="goal">Obiettivo principale *</label>
+              <select id="goal" name="goal" required>
+                <option value="">Seleziona un obiettivo</option>
+                <option value="Dashboard Power BI">Dashboard Power BI</option>
+                <option value="Reporting automatico">
+                  Reporting automatico
+                </option>
+                <option value="KPI e monitoraggio">KPI e monitoraggio</option>
+                <option value="Analisi finanziaria">Analisi finanziaria</option>
+                <option value="Data modeling">Data modeling</option>
+                <option value="Altro">Altro</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="message">Messaggio *</label>
+              <textarea
+                id="message"
+                name="message"
+                rows="5"
+                placeholder="Descrivi brevemente la situazione attuale, le difficoltà che stai incontrando e cosa vorresti migliorare."
+                required
+              ></textarea>
+            </div>
+
+            <p class="form-privacy-note">
+              I dati inseriti saranno utilizzati esclusivamente per rispondere
+              alla tua richiesta di contatto e valutare una possibile
+              collaborazione.
+            </p>
+
+            <label class="privacy-check">
+              <input type="checkbox" name="privacy" required />
+              <span
+                >Ho letto e accetto la
+                <a
+                  href="../landing-page/privacy.html"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >Privacy Policy.
+                </a>
+              </span>
+            </label>
+
+            <button type="submit" class="contact-form__button">
+              Prenota una consulenza gratuita
+            </button>
+
+            <p id="formSuccessMessage" class="form-success-message">
+              Grazie! La richiesta è stata inviata correttamente. Ti
+              ricontatterò al più presto.
+            </p>
+          </form>
+        </div>
+      </div>
+    </main>
+
+    <!--INIZIO SEZIONE FOOTER-->
+    <footer class="footer">
+      <div class="footer__main">
+        <div class="footer__brand-block">
+          <a
+            href="./index.html"
+            class="footer__brand"
+            aria-label="Torna alla homepage"
+          >
+            <span class="footer__monogram" aria-hidden="true">DF</span>
+
+            <span class="footer__identity">
+              <span class="footer__name">Dina Fiorentino</span>
+              <span class="footer__role"
+                >Data Analyst &amp; Power BI Consultant</span
+              >
+            </span>
+          </a>
+          <p class="footer__description">
+            Dashboard, reporting e modelli dati progettati per trasformare
+            informazioni complesse in decisioni più chiare.
+          </p>
+
+          <div class="footer__socials" aria-label="Contatti professionali">
+            <a
+              href="https://www.linkedin.com/in/dina-fiorentino/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Profilo LinkedIn di Dina Fiorentino"
+            >
+              <i class="fa-brands fa-linkedin-in" aria-hidden="true"></i>
+              <span>LinkedIn</span>
+            </a>
+
+            <a
+              href="mailto:dinafiorentino.consulting@outlook.it"
+              aria-label="Invia una email a Dina Fiorentino"
+            >
+              <i class="fa-regular fa-envelope" aria-hidden="true"></i>
+              <span>Email</span>
+            </a>
+          </div>
+        </div>
+
+        <nav class="footer__column" aria-label="Navigazione footer">
+          <p class="footer__heading">Esplora</p>
+          <a href="../landing-page/index.html#services__id">Servizi</a>
+          <a href="../landing-page/index.html#projects__id">Progetti</a>
+          <a href="../landing-page/index.html#about__id">Chi sono</a>
+          <a href="../landing-page/index.html#contacts__id">Contatti</a>
+        </nav>
+
+        <div class="footer__column footer__column--services">
+          <p class="footer__heading">Servizi</p>
+          <a href="../services/dashboard-powerBI.html">Dashboard Power BI</a>
+          <a href="../services/reporting-automatizzato.html"
+            >Reporting automatizzato</a
+          >
+          <a href="../services/kpi-design-monitoraggio.html">KPI design</a>
+          <a href="../services/data-modeling-integrazione.html"
+            >Data modeling</a
+          >
+        </div>
+
+        <div class="footer__column footer__column--contact">
+          <p class="footer__heading">Collaboriamo</p>
+          <p>
+            Disponibile per progetti di analisi dati, dashboard e reporting
+            aziendale.
+          </p>
+
+          <button
+            type="button"
+            class="footer__contact-button js-open-contact-form"
+          >
+            Parliamo del tuo progetto
+            <span aria-hidden="true">→</span>
+          </button>
+        </div>
+      </div>
+
+      <div class="footer__bottom">
+        <p class="copyright__text">
+          © 2026 Dina Fiorentino. Tutti i diritti riservati.
+        </p>
+
+        <nav class="privacy__box" aria-label="Link legali e lingua">
+          <a
+            href="../landing-page/privacy.html?from=hotel-market"
+            class="privacy__text"
+          >
+            Privacy
+          </a>
+
+          <a
+            href="../landing-page/cookie.html?from=hotel-market"
+            class="cookie__text"
+          >
+            Cookie
+          </a>
+
+          <a href="./hotel-market-insights-en.html" class="footer__language">
+            English
+          </a>
+        </nav>
+      </div>
+    </footer>
+    <!--FINE SEZIONE FOOTER-->
+
+    <button
+      id="back__to-top"
+      class="back__to-top"
+      type="button"
+      aria-label="Torna all'inizio"
+    >
+      ↥
+    </button>
+
+    <script src="../assets/js/script.js"></script>
+  </body>
+</html>

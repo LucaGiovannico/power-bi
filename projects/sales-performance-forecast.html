@@ -1,0 +1,1069 @@
+<!DOCTYPE html>
+<html lang="it">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Sales Performance & Forecast Dashboard | Dina Fiorentino</title>
+
+    <link rel="stylesheet" href="../assets/css/projects.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Poppins:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="../Images/favicon/apple-touch-icon.png"
+    />
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="../Images/favicon/favicon-32x32.png"
+    />
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="../Images/favicon/favicon-16x16.png"
+    />
+
+    <link rel="manifest" href="../Images/favicon/site.webmanifest" />
+
+    <link rel="icon" href="../Images/favicon/favicon.ico" />
+  </head>
+
+  <body>
+    <header class="hero">
+      <div class="hero__content">
+        <div class="hero__navigation">
+          <a
+            href="../landing-page/index.html#projects__id"
+            class="hero__back-link"
+          >
+            ↤ Torna a i progetti
+          </a>
+
+          <div
+            class="language-selector hero__language-selector"
+            data-it="./sales-performance-forecast.html"
+            data-en="./sales-performance-forecast-en.html"
+          >
+            <button
+              type="button"
+              class="language-selector__button"
+              onclick="toggleLanguageMenu(event);"
+              aria-haspopup="true"
+              aria-expanded="false"
+              aria-controls="languageMenu"
+            >
+              🇮🇹
+              <span>IT</span>
+              <span class="language-selector__arrow">▾</span>
+            </button>
+
+            <div class="language-selector__menu" id="languageMenu">
+              <button type="button" onclick="setLanguage('it')">
+                🇮🇹 Italiano
+              </button>
+              <button type="button" onclick="setLanguage('en')">
+                🇬🇧 English
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <p class="hero__eyebrow">BUSINESS CASE STUDY</p>
+
+        <h1 class="hero__title">
+          Sales Performance &<br />
+          <span class="text-gradient">Forecast Dashboard</span>
+        </h1>
+
+        <p class="hero__subtitle">
+          Dashboard Power BI progettata per monitorare le performance
+          commerciali, confrontare risultati e target, analizzare il funnel di
+          vendita e supportare la previsione dei ricavi futuri.
+        </p>
+
+        <div class="hero__cards">
+          <div class="hero__card">
+            <span class="hero__card-label">Ambito</span>
+            <span class="hero__card-value">Sales Analytics</span>
+          </div>
+
+          <div class="hero__card">
+            <span class="hero__card-label">Tool</span>
+            <span class="hero__card-value">Power BI</span>
+          </div>
+
+          <div class="hero__card">
+            <span class="hero__card-label">Focus</span>
+            <span class="hero__card-value">Forecasting</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero__visual">
+        <img
+          class="hero__image"
+          src="../assets/images/sales-performance-forecast-dashboard-hero.PNG"
+          alt="Anteprima dashboard Power BI Sales Performance e Forecast"
+        />
+      </div>
+    </header>
+
+    <main>
+      <section class="snapshot-section" id="executive-snapshot">
+        <div class="snapshot">
+          <div class="section-header">
+            <p class="section-eyebrow">Executive Snapshot</p>
+
+            <h2 class="section-title">
+              I numeri chiave
+              <span class="text-gradient">dell’analisi.</span>
+            </h2>
+
+            <p class="section-subtitle">
+              Una sintesi delle principali evidenze emerse dalla dashboard:
+              crescita del fatturato, aumento del profitto, conversion rate
+              stabile e forecast positivo rispetto al target.
+            </p>
+          </div>
+
+          <div class="snapshot__grid">
+            <article class="snapshot__card">
+              <div class="snapshot__icon">
+                <i class="fa-solid fa-wallet"></i>
+              </div>
+
+              <div class="snapshot__content">
+                <p class="snapshot__label">Fatturato</p>
+                <h3 class="snapshot__value">51,88Mln</h3>
+                <p class="snapshot__trend snapshot__trend--positive">
+                  +52% YoY
+                </p>
+                <p class="snapshot__text">
+                  Il fatturato mostra una crescita significativa rispetto
+                  all’anno precedente, confermando un andamento commerciale
+                  positivo.
+                </p>
+              </div>
+            </article>
+
+            <article class="snapshot__card">
+              <div class="snapshot__icon">
+                <i class="fa-solid fa-coins"></i>
+              </div>
+
+              <div class="snapshot__content">
+                <p class="snapshot__label">Profit</p>
+                <h3 class="snapshot__value">5,81Mln</h3>
+                <p class="snapshot__trend snapshot__trend--positive">
+                  +57% YoY
+                </p>
+                <p class="snapshot__text">
+                  La redditività cresce più del fatturato, evidenziando un
+                  miglioramento della qualità economica delle vendite.
+                </p>
+              </div>
+            </article>
+
+            <article class="snapshot__card">
+              <div class="snapshot__icon">
+                <i class="fa-solid fa-percent"></i>
+              </div>
+
+              <div class="snapshot__content">
+                <p class="snapshot__label">Conversion Rate</p>
+                <h3 class="snapshot__value">9,09%</h3>
+                <p class="snapshot__trend snapshot__trend--neutral">
+                  +0,083% YoY
+                </p>
+                <p class="snapshot__text">
+                  Il tasso di conversione rimane quasi stabile, segnalando
+                  un’area da monitorare per migliorare l’efficienza commerciale.
+                </p>
+              </div>
+            </article>
+
+            <article class="snapshot__card">
+              <div class="snapshot__icon">
+                <i class="fa-solid fa-chart-line"></i>
+              </div>
+
+              <div class="snapshot__content">
+                <p class="snapshot__label">Forecast Revenue</p>
+                <h3 class="snapshot__value">58,10Mln</h3>
+                <p class="snapshot__trend snapshot__trend--positive">
+                  +19% vs Target
+                </p>
+                <p class="snapshot__text">
+                  La previsione dei ricavi supera il target, offrendo una base
+                  utile per valutare andamento futuro e priorità commerciali.
+                </p>
+              </div>
+            </article>
+
+            <article class="snapshot__card">
+              <div class="snapshot__icon">
+                <i class="fa-solid fa-location-dot"></i>
+              </div>
+
+              <div class="snapshot__content">
+                <p class="snapshot__label">Top Region</p>
+                <h3 class="snapshot__value">45%</h3>
+                <p class="snapshot__trend snapshot__trend--neutral">
+                  Southwest
+                </p>
+                <p class="snapshot__text">
+                  La distribuzione geografica evidenzia una regione dominante
+                  nel mix revenue e supporta decisioni di investimento mirate.
+                </p>
+              </div>
+            </article>
+
+            <article class="snapshot__card snapshot__card--award">
+              <div class="snapshot__icon">
+                <i class="fa-solid fa-filter-circle-dollar"></i>
+              </div>
+
+              <div class="snapshot__content">
+                <p class="snapshot__label">Pipeline</p>
+                <h3 class="snapshot__value">93K</h3>
+                <p class="snapshot__trend snapshot__trend--neutral">
+                  Lead stage
+                </p>
+                <p class="snapshot__text">
+                  Il funnel commerciale mostra i volumi nelle diverse fasi del
+                  processo di vendita, dalla lead generation alla chiusura.
+                </p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="dashboard-section" id="dashboard-preview">
+        <div class="dashboard">
+          <div class="section-header">
+            <p class="section-eyebrow">Dashboard Preview</p>
+
+            <h2 class="section-title">
+              Una vista completa delle
+              <span class="text-gradient">sales performance</span>
+            </h2>
+
+            <p class="section-subtitle">
+              La dashboard integra KPI commerciali, andamento revenue,
+              distribuzione geografica, forecast, performance vs target e
+              pipeline di vendita in un’unica vista decisionale.
+            </p>
+          </div>
+
+          <div class="dashboard__carousel">
+            <div class="carousel__viewport">
+              <div class="carousel__track">
+                <img
+                  class="dashboard__image"
+                  src="../assets/images/sales-performance-forecast-dashboard.png"
+                  data-full="../assets/images/sales-performance-forecast-dashboard.png"
+                  alt="Dashboard Power BI Sales Performance con fatturato, profitto, conversion rate, forecast, target e pipeline"
+                  tabindex="0"
+                />
+              </div>
+            </div>
+          </div>
+
+          <p class="dashboard__hint">
+            Clicca sulla dashboard per visualizzarla a schermo intero.
+          </p>
+        </div>
+      </section>
+
+      <div class="dashboard-lightbox" aria-hidden="true">
+        <button
+          class="dashboard-lightbox__close"
+          type="button"
+          aria-label="Chiudi anteprima dashboard"
+        >
+          &times;
+        </button>
+
+        <button
+          class="dashboard-lightbox__arrow dashboard-lightbox__arrow--left"
+          type="button"
+          aria-label="Dashboard precedente"
+        >
+          &#10094;
+        </button>
+
+        <div class="dashboard-lightbox__content">
+          <img class="dashboard-lightbox__image" src="" alt="" />
+        </div>
+
+        <button
+          class="dashboard-lightbox__arrow dashboard-lightbox__arrow--right"
+          type="button"
+          aria-label="Dashboard successiva"
+        >
+          &#10095;
+        </button>
+      </div>
+
+      <section class="context-section" id="project-context">
+        <div class="context">
+          <div class="section-header section-header--compact">
+            <p class="section-eyebrow">Il Contesto</p>
+
+            <h2 class="section-title">
+              Leggere le vendite in
+              <span class="text-gradient">modo integrato</span>
+            </h2>
+
+            <p class="section-subtitle">
+              Le performance commerciali non dipendono da un solo indicatore:
+              per interpretare correttamente l’andamento del business è
+              necessario collegare revenue, profitto, conversione, distribuzione
+              geografica, obiettivi e previsioni future in un’unica lettura
+              analitica.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="challenge-section" id="business-challenge">
+        <div class="challenge">
+          <div class="section-header">
+            <p class="section-eyebrow">Business Challenge</p>
+
+            <h2 class="section-title">
+              Le criticità
+              <span class="text-gradient">da risolvere</span>
+            </h2>
+
+            <p class="section-subtitle">
+              L’analisi commerciale richiedeva una lettura chiara dei risultati,
+              degli scostamenti rispetto ai target e delle opportunità di
+              miglioramento lungo il funnel di vendita.
+            </p>
+          </div>
+
+          <div class="challenge__cards">
+            <article class="challenge__card">
+              <div class="challenge__icon challenge__icon--negative">
+                <i class="fa-solid fa-bullseye"></i>
+              </div>
+
+              <h3 class="challenge__card-title">Target misalignment</h3>
+
+              <p class="challenge__card-text">
+                Necessità di confrontare i risultati effettivi con gli obiettivi
+                di fatturato per individuare scostamenti e aree di attenzione.
+              </p>
+            </article>
+
+            <article class="challenge__card">
+              <div class="challenge__icon challenge__icon--channel">
+                <i class="fa-solid fa-chart-line"></i>
+              </div>
+
+              <h3 class="challenge__card-title">Forecast uncertainty</h3>
+
+              <p class="challenge__card-text">
+                Mancanza di una vista immediata sulle previsioni di ricavo
+                future e sul loro allineamento con gli obiettivi di business.
+              </p>
+            </article>
+
+            <article class="challenge__card">
+              <div class="challenge__icon challenge__icon--margin">
+                <i class="fa-solid fa-filter-circle-dollar"></i>
+              </div>
+
+              <h3 class="challenge__card-title">Pipeline complexity</h3>
+
+              <p class="challenge__card-text">
+                Bisogno di monitorare le opportunità commerciali lungo il
+                processo di vendita per leggere conversione e dispersione tra le
+                fasi.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="approach-section" id="analytical-approach">
+        <div class="approach">
+          <div class="section-header">
+            <p class="section-eyebrow">Analytical Approach</p>
+
+            <h2 class="section-title">
+              Dal dato operativo
+              <span class="text-gradient">all’insight decisionale.</span>
+            </h2>
+
+            <p class="section-subtitle">
+              Il progetto è stato sviluppato seguendo un processo analitico
+              strutturato: dalla definizione dei KPI sales fino alla lettura
+              degli scostamenti, alla previsione dei risultati e alla
+              generazione di raccomandazioni operative.
+            </p>
+          </div>
+
+          <div class="approach__steps">
+            <article class="approach__step">
+              <div class="approach__header">
+                <div class="approach__icon approach__icon--kpi">
+                  <i class="fa-solid fa-bullseye"></i>
+                </div>
+
+                <h3 class="approach__step-title">KPI Definition</h3>
+              </div>
+
+              <p class="approach__step-text">
+                Identificazione delle metriche chiave per monitorare revenue,
+                profitto, conversione e performance commerciale.
+              </p>
+
+              <div class="approach__tags">
+                <span>Revenue</span>
+                <span>Profit</span>
+                <span>Conversion</span>
+              </div>
+            </article>
+
+            <article class="approach__step">
+              <div class="approach__header">
+                <div class="approach__icon approach__icon--trend">
+                  <i class="fa-solid fa-chart-line"></i>
+                </div>
+
+                <h3 class="approach__step-title">Trend Analysis</h3>
+              </div>
+
+              <p class="approach__step-text">
+                Confronto Year-over-Year e analisi mensile dei ricavi per
+                individuare pattern, picchi e cali di performance.
+              </p>
+
+              <div class="approach__tags">
+                <span>YoY</span>
+                <span>Trend</span>
+                <span>Seasonality</span>
+              </div>
+            </article>
+
+            <article class="approach__step">
+              <div class="approach__header">
+                <div class="approach__icon approach__icon--channel">
+                  <i class="fa-solid fa-code-compare"></i>
+                </div>
+
+                <h3 class="approach__step-title">Forecast & Target</h3>
+              </div>
+
+              <p class="approach__step-text">
+                Lettura integrata di risultati effettivi, target assegnati e
+                forecast per valutare la distanza dagli obiettivi.
+              </p>
+
+              <div class="approach__tags">
+                <span>Actual</span>
+                <span>Forecast</span>
+                <span>Target</span>
+              </div>
+            </article>
+
+            <article class="approach__step">
+              <div class="approach__header">
+                <div class="approach__icon approach__icon--insight">
+                  <i class="fa-solid fa-lightbulb"></i>
+                </div>
+
+                <h3 class="approach__step-title">Pipeline Insights</h3>
+              </div>
+
+              <p class="approach__step-text">
+                Analisi del funnel commerciale per comprendere i passaggi
+                critici e supportare decisioni su conversione e priorità sales.
+              </p>
+
+              <div class="approach__tags">
+                <span>Lead</span>
+                <span>Proposal</span>
+                <span>Closed Won</span>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="solution-section" id="solution-developed">
+        <div class="solution">
+          <div class="solution__content">
+            <p class="section-eyebrow">La Soluzione Sviluppata</p>
+
+            <h2 class="section-title solution__title">
+              Una dashboard progettata per trasformare dati in
+              <span class="text-gradient">azioni commerciali.</span>
+            </h2>
+
+            <p class="solution__text">
+              La dashboard è stata progettata per supportare il processo
+              decisionale commerciale attraverso un framework integrato di KPI,
+              analisi revenue, forecast e pipeline. L’obiettivo è offrire una
+              lettura chiara delle performance correnti e future, facilitando il
+              monitoraggio degli obiettivi e l’individuazione delle priorità di
+              business.
+            </p>
+
+            <div class="solution__lists">
+              <ul>
+                <li class="solution__list">
+                  Monitoraggio di Revenue, Profit e Conversion Rate
+                </li>
+                <li class="solution__list">
+                  Analisi Revenue vs Target e scostamenti mensili
+                </li>
+                <li class="solution__list">
+                  Forecast dei ricavi futuri con confronto su target
+                </li>
+                <li class="solution__list">
+                  Distribuzione geografica delle performance commerciali
+                </li>
+                <li class="solution__list">
+                  Analisi Average Order Value per regione
+                </li>
+                <li class="solution__list">
+                  Overview del sales pipeline e delle opportunità commerciali
+                </li>
+                <li class="solution__list">
+                  Executive summary con azioni prioritarie
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="solution__visual">
+            <div class="solution__card solution__card--main">
+              <span class="solution__tag">Performance</span>
+              <img
+                src="../assets/images/sales-revenue-ytd.png"
+                alt="Grafico Revenue Trend YTD della dashboard Sales Performance"
+              />
+            </div>
+
+            <div class="solution__cards-row">
+              <div class="solution__card">
+                <span class="solution__tag">Forecast</span>
+                <img
+                  src="../assets/images/monthly-reveniue-forecast.png"
+                  alt="Grafico Monthly Revenue Forecast della dashboard Sales Performance"
+                />
+              </div>
+
+              <div class="solution__card">
+                <span class="solution__tag">Pipeline</span>
+                <img
+                  src="../assets/images/sales-pipeline-forecast.png"
+                  alt="Grafico Sales Pipeline Overview della dashboard Sales Performance"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="kpi-section" id="kpi-framework">
+        <div class="kpi">
+          <div class="section-header">
+            <p class="section-eyebrow">KPI Framework</p>
+
+            <h2 class="section-title">
+              Ogni metrica chiave
+              <span class="text-gradient">nel giusto contesto.</span>
+            </h2>
+
+            <p class="section-subtitle">
+              Gli indicatori della dashboard sono stati organizzati in tre aree
+              di lettura per collegare performance economica, forecasting e
+              processo commerciale.
+            </p>
+          </div>
+
+          <div class="kpi__framework">
+            <article class="kpi__area">
+              <div class="kpi__area-top">
+                <div class="kpi__icon kpi__icon--performance">
+                  <i class="fa-solid fa-chart-line"></i>
+                </div>
+
+                <div>
+                  <p class="kpi__area-label">Area 01</p>
+                  <h3 class="kpi__area-title">Performance</h3>
+                </div>
+              </div>
+
+              <p class="kpi__area-text">
+                Misura l’andamento economico delle vendite e la capacità del
+                business di generare ricavi e profitto.
+              </p>
+
+              <p class="kpi__metrics">
+                Revenue <span>•</span> Profit <span>•</span> Conversion
+                <span>•</span> YoY
+              </p>
+            </article>
+
+            <article class="kpi__area">
+              <div class="kpi__area-top">
+                <div class="kpi__icon kpi__icon--booking">
+                  <i class="fa-solid fa-gauge-high"></i>
+                </div>
+
+                <div>
+                  <p class="kpi__area-label">Area 02</p>
+                  <h3 class="kpi__area-title">Forecast & Target</h3>
+                </div>
+              </div>
+
+              <p class="kpi__area-text">
+                Analizza la relazione tra risultati effettivi, obiettivi
+                assegnati e previsione dei ricavi futuri.
+              </p>
+
+              <p class="kpi__metrics">
+                Actual <span>•</span> Forecast <span>•</span> Target
+                <span>•</span> Variance
+              </p>
+            </article>
+
+            <article class="kpi__area">
+              <div class="kpi__area-top">
+                <div class="kpi__icon kpi__icon--distribution">
+                  <i class="fa-solid fa-diagram-project"></i>
+                </div>
+
+                <div>
+                  <p class="kpi__area-label">Area 03</p>
+                  <h3 class="kpi__area-title">Pipeline & Regions</h3>
+                </div>
+              </div>
+
+              <p class="kpi__area-text">
+                Evidenzia la distribuzione geografica dei ricavi e il
+                comportamento delle opportunità lungo il funnel di vendita.
+              </p>
+
+              <p class="kpi__metrics">
+                Region Mix <span>•</span> AOV <span>•</span> Pipeline
+                <span>•</span> Lead
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="outcome-section" id="project-outcome">
+        <div class="outcome">
+          <div class="section-header">
+            <p class="section-eyebrow">Risultati del Progetto</p>
+
+            <h2 class="section-title">
+              Trasformare i dati in
+              <span class="text-gradient">valore strategico</span>
+            </h2>
+
+            <p class="section-subtitle">
+              Il progetto ha tradotto i principali segnali di performance
+              commerciale in una vista decisionale chiara, utile per monitorare
+              crescita, target, forecast e opportunità di miglioramento.
+            </p>
+          </div>
+
+          <div class="outcome__cards">
+            <article class="outcome__card">
+              <div class="outcome__icon">
+                <i class="fa-solid fa-wallet"></i>
+              </div>
+
+              <p
+                class="outcome__number js-counter"
+                data-prefix="+"
+                data-target="52"
+                data-suffix="%"
+              >
+                0
+              </p>
+
+              <p class="outcome__text">Revenue YoY</p>
+            </article>
+
+            <article class="outcome__card">
+              <div class="outcome__icon">
+                <i class="fa-solid fa-coins"></i>
+              </div>
+
+              <p
+                class="outcome__number js-counter"
+                data-prefix="+"
+                data-target="57"
+                data-suffix="%"
+              >
+                0
+              </p>
+
+              <p class="outcome__text">Profit growth</p>
+            </article>
+
+            <article class="outcome__card">
+              <div class="outcome__icon">
+                <i class="fa-solid fa-chart-line"></i>
+              </div>
+
+              <p
+                class="outcome__number js-counter"
+                data-prefix="+"
+                data-target="19"
+                data-suffix="%"
+              >
+                0
+              </p>
+
+              <p class="outcome__text">Forecast vs Target</p>
+            </article>
+
+            <article class="outcome__card">
+              <div class="outcome__icon">
+                <i class="fa-solid fa-percent"></i>
+              </div>
+
+              <p
+                class="outcome__number js-counter"
+                data-prefix=""
+                data-target="9"
+                data-suffix="%"
+              >
+                0
+              </p>
+
+              <p class="outcome__text">Conversion Rate</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="cta-section" id="contacts__id">
+        <div class="cta">
+          <div class="cta__content">
+            <h2 class="cta__title">
+              Hai dati commerciali da trasformare in una dashboard decisionale?
+            </h2>
+
+            <p class="cta__text">
+              Realizzo dashboard Power BI e soluzioni di data storytelling per
+              rendere KPI, trend, forecast e insight immediatamente utilizzabili
+              dal business.
+            </p>
+
+            <div class="cta__actions">
+              <div class="cta__button-wrapper">
+                <button
+                  type="button"
+                  class="button button--primary cta__button"
+                  id="openContactForm"
+                >
+                  <i class="fa-regular fa-calendar"></i>
+                  Prenota una consulenza gratuita
+                </button>
+
+                <a
+                  href="../landing-page/index.html#projects__id"
+                  class="button button--secondary cta__button"
+                >
+                  <i class="fa-solid fa-eye"></i>
+                  Guarda altri progetti
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div
+        class="form-modal"
+        id="contactFormModal"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="contactFormTitle"
+      >
+        <div class="form-modal__overlay" id="closeContactForm"></div>
+
+        <div class="form-modal__card">
+          <button
+            type="button"
+            class="form-modal__close"
+            id="closeContactFormButton"
+            aria-label="Chiudi il modulo di contatto"
+          >
+            ×
+          </button>
+
+          <p class="form-modal__eyebrow">Consulenza Gratuita</p>
+
+          <h2 class="form-modal__title" id="contactFormTitle">
+            Raccontami il tuo progetto
+          </h2>
+
+          <p class="form-modal__text">
+            Compila il modulo e descrivi brevemente le tue esigenze. Ti
+            ricontatterò per capire come rendere più chiari KPI, report e
+            dashboard.
+          </p>
+
+          <form
+            id="contactForm"
+            action="https://formspree.io/f/xkoandwa"
+            method="POST"
+            class="contact-form"
+          >
+            <div class="form-grid">
+              <div class="form-group">
+                <label for="name">Nome e Cognome *</label>
+                <input
+                  id="name"
+                  type="text"
+                  name="name"
+                  placeholder="Mario Rossi"
+                  required
+                />
+              </div>
+
+              <div class="form-group">
+                <label for="email">Email *</label>
+                <input
+                  id="email"
+                  type="email"
+                  name="email"
+                  placeholder="nome@azienda.it"
+                  required
+                />
+              </div>
+
+              <div class="form-group">
+                <label for="phone">Telefono / WhatsApp</label>
+                <input
+                  id="phone"
+                  type="tel"
+                  name="phone"
+                  placeholder="+39 333 1234567"
+                />
+              </div>
+
+              <div class="form-group">
+                <label for="company">Azienda</label>
+                <input
+                  id="company"
+                  type="text"
+                  name="company"
+                  placeholder="Nome azienda"
+                />
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="goal">Obiettivo principale *</label>
+              <select id="goal" name="goal" required>
+                <option value="">Seleziona un obiettivo</option>
+                <option value="Dashboard Power BI">Dashboard Power BI</option>
+                <option value="Reporting automatico">
+                  Reporting automatico
+                </option>
+                <option value="KPI e monitoraggio">KPI e monitoraggio</option>
+                <option value="Analisi finanziaria">Analisi finanziaria</option>
+                <option value="Data modeling">Data modeling</option>
+                <option value="Altro">Altro</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="message">Messaggio *</label>
+              <textarea
+                id="message"
+                name="message"
+                rows="5"
+                placeholder="Descrivi brevemente la situazione attuale, le difficoltà che stai incontrando e cosa vorresti migliorare."
+                required
+              ></textarea>
+            </div>
+
+            <p class="form-privacy-note">
+              I dati inseriti saranno utilizzati esclusivamente per rispondere
+              alla tua richiesta di contatto e valutare una possibile
+              collaborazione.
+            </p>
+
+            <label class="privacy-check">
+              <input type="checkbox" name="privacy" required />
+              <span>
+                Ho letto e accetto la
+                <a
+                  href="../landing-page/privacy.html?from=sales-performance"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Privacy Policy </a
+                >.
+              </span>
+            </label>
+
+            <button type="submit" class="contact-form__button">
+              Prenota una consulenza gratuita
+            </button>
+
+            <p id="formSuccessMessage" class="form-success-message">
+              Grazie! La richiesta è stata inviata correttamente. Ti
+              ricontatterò al più presto.
+            </p>
+          </form>
+        </div>
+      </div>
+    </main>
+
+    <!--INIZIO SEZIONE FOOTER-->
+    <footer class="footer">
+      <div class="footer__main">
+        <div class="footer__brand-block">
+          <a
+            href="./index.html"
+            class="footer__brand"
+            aria-label="Torna alla homepage"
+          >
+            <span class="footer__monogram" aria-hidden="true">DF</span>
+
+            <span class="footer__identity">
+              <span class="footer__name">Dina Fiorentino</span>
+              <span class="footer__role"
+                >Data Analyst &amp; Power BI Consultant</span
+              >
+            </span>
+          </a>
+          <p class="footer__description">
+            Dashboard, reporting e modelli dati progettati per trasformare
+            informazioni complesse in decisioni più chiare.
+          </p>
+
+          <div class="footer__socials" aria-label="Contatti professionali">
+            <a
+              href="https://www.linkedin.com/in/dina-fiorentino/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Profilo LinkedIn di Dina Fiorentino"
+            >
+              <i class="fa-brands fa-linkedin-in" aria-hidden="true"></i>
+              <span>LinkedIn</span>
+            </a>
+
+            <a
+              href="mailto:dinafiorentino.consulting@outlook.it"
+              aria-label="Invia una email a Dina Fiorentino"
+            >
+              <i class="fa-regular fa-envelope" aria-hidden="true"></i>
+              <span>Email</span>
+            </a>
+          </div>
+        </div>
+
+        <nav class="footer__column" aria-label="Navigazione footer">
+          <p class="footer__heading">Esplora</p>
+          <a href="../landing-page/index.html#services__id">Servizi</a>
+          <a href="../landing-page/index.html#projects__id">Progetti</a>
+          <a href="../landing-page/index.html#about__id">Chi sono</a>
+          <a href="../landing-page/index.html#contacts__id">Contatti</a>
+        </nav>
+
+        <div class="footer__column footer__column--services">
+          <p class="footer__heading">Servizi</p>
+          <a href="../services/dashboard-powerBI.html">Dashboard Power BI</a>
+          <a href="../services/reporting-automatizzato.html"
+            >Reporting automatizzato</a
+          >
+          <a href="../services/kpi-design-monitoraggio.html">KPI design</a>
+          <a href="../services/data-modeling-integrazione.html"
+            >Data modeling</a
+          >
+        </div>
+
+        <div class="footer__column footer__column--contact">
+          <p class="footer__heading">Collaboriamo</p>
+          <p>
+            Disponibile per progetti di analisi dati, dashboard e reporting
+            aziendale.
+          </p>
+
+          <button
+            type="button"
+            class="footer__contact-button js-open-contact-form"
+          >
+            Parliamo del tuo progetto
+            <span aria-hidden="true">→</span>
+          </button>
+        </div>
+      </div>
+
+      <div class="footer__bottom">
+        <p class="copyright__text">
+          © 2026 Dina Fiorentino. Tutti i diritti riservati.
+        </p>
+
+        <nav class="privacy__box" aria-label="Link legali e lingua">
+          <a
+            href="../landing-page/privacy.html?from=sales-performance"
+            class="privacy__text"
+          >
+            Privacy
+          </a>
+
+          <a
+            href="../landing-page/cookie.html?from=sales-performance"
+            class="cookie__text"
+          >
+            Cookie
+          </a>
+
+          <a
+            href="./sales-performance-forecast-en.html"
+            class="footer__language"
+          >
+            English
+          </a>
+        </nav>
+      </div>
+    </footer>
+    <!--FINE SEZIONE FOOTER-->
+
+    <button
+      id="back__to-top"
+      class="back__to-top"
+      type="button"
+      aria-label="Torna all'inizio"
+    >
+      ↥
+    </button>
+
+    <script src="../assets/js/script.js"></script>
+  </body>
+</html>

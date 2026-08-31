@@ -1,0 +1,369 @@
+/* ============================= */
+/* COOKIE / PRIVACY LEGAL PAGES */
+/* ============================= */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+:root {
+  --color-primary: #5a52e0;
+  --color-primary-dark: #312a85;
+  --color-text: #15171f;
+  --color-muted: #6b6e84;
+  --color-surface: #fcfcfe;
+  --color-white: #ffffff;
+
+  --gradient-primary: linear-gradient(
+    135deg,
+    hsl(245 75% 60%),
+    hsl(265 80% 68%)
+  );
+  --gradient-soft: linear-gradient(135deg, hsl(245 80% 96%), hsl(280 75% 96%));
+  --gradient-hero: linear-gradient(
+    180deg,
+    hsl(245 60% 98%),
+    hsl(270 70% 97%),
+    hsl(330 80% 97%)
+  );
+
+  --border-soft: 1px solid rgba(90, 82, 224, 0.14);
+  --shadow-soft: 0 20px 60px rgba(155, 102, 224, 0.16);
+  --radius-md: 16px;
+  --radius-lg: 22px;
+  --radius-xl: 30px;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--color-surface);
+  color: var(--color-text);
+  font-family: "Plus Jakarta Sans", "Poppins", sans-serif;
+}
+
+a {
+  color: var(--color-primary);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--color-primary-dark);
+}
+
+.text-gradient {
+  background-image: var(--gradient-primary);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  display: inline-block;
+}
+
+/* ============================= */
+/* HERO */
+/* ============================= */
+
+.cookie-hero {
+  background: var(--gradient-hero);
+  padding: 95px 30px 105px;
+}
+
+.cookie-hero__inner {
+  max-width: 980px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.cookie-hero__back-link {
+  display: inline-flex;
+  align-items: center;
+  margin-bottom: 35px;
+  color: var(--color-text);
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 0.4px;
+  transition: transform 0.2s ease;
+}
+
+.cookie-hero__back-link:hover {
+  color: var(--color-primary);
+  transform: translateX(-4px);
+  text-decoration: none;
+}
+
+.cookie-hero__eyebrow {
+  margin: 0 0 18px;
+  color: var(--color-primary);
+  font-family: "Poppins", sans-serif;
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.cookie-hero__title {
+  max-width: 860px;
+  margin: 0 auto;
+  font-size: 48px;
+  line-height: 1.12;
+  letter-spacing: -1.4px;
+}
+
+.cookie-hero__subtitle {
+  max-width: 760px;
+  margin: 24px auto 0;
+  color: var(--color-muted);
+  font-size: 18px;
+  line-height: 1.65;
+}
+
+.cookie-hero__updated {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin: 32px auto 0;
+  padding: 10px 16px;
+  border: var(--border-soft);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.58);
+  color: var(--color-muted);
+  font-size: 14px;
+}
+
+/* ============================= */
+/* MAIN CONTENT */
+/* ============================= */
+
+.cookie-main {
+  padding: 95px 30px 120px;
+}
+
+.cookie-card {
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 54px;
+  border: var(--border-soft);
+  border-radius: var(--radius-xl);
+  background: rgba(255, 255, 255, 0.86);
+  box-shadow: var(--shadow-soft);
+}
+
+.cookie-section {
+  padding: 34px 0;
+  border-bottom: 1px solid rgba(21, 23, 31, 0.08);
+}
+
+.cookie-section:first-child {
+  padding-top: 0;
+}
+
+.cookie-section:last-child {
+  padding-bottom: 0;
+  border-bottom: none;
+}
+
+.cookie-section h2 {
+  margin: 0 0 18px;
+  font-size: 28px;
+  line-height: 1.25;
+  letter-spacing: -0.4px;
+}
+
+.cookie-section h3 {
+  margin: 28px 0 12px;
+  font-size: 20px;
+  line-height: 1.3;
+}
+
+.cookie-section p {
+  margin: 0 0 16px;
+  color: var(--color-muted);
+  font-size: 16px;
+  line-height: 1.75;
+}
+
+.cookie-section ul {
+  margin: 14px 0 0;
+  padding-left: 22px;
+  color: var(--color-muted);
+  line-height: 1.75;
+}
+
+.cookie-section li {
+  margin-bottom: 9px;
+}
+
+.cookie-section li::marker {
+  color: var(--color-primary);
+}
+
+.cookie-info-box {
+  margin: 22px 0;
+  padding: 22px;
+  border: var(--border-soft);
+  border-radius: var(--radius-md);
+  background: linear-gradient(135deg, hsl(245 80% 98%), hsl(280 70% 98%));
+}
+
+.cookie-info-box p {
+  margin-bottom: 8px;
+}
+
+.cookie-table {
+  width: 100%;
+  margin: 24px 0;
+  border-collapse: collapse;
+  overflow: hidden;
+  border: var(--border-soft);
+  border-radius: var(--radius-md);
+  font-size: 14px;
+}
+
+.cookie-table th,
+.cookie-table td {
+  padding: 14px 16px;
+  border-bottom: 1px solid rgba(21, 23, 31, 0.08);
+  text-align: left;
+  vertical-align: top;
+}
+
+.cookie-table th {
+  background: #f7f5ff;
+  color: var(--color-text);
+  font-weight: 800;
+}
+
+.cookie-table td {
+  color: var(--color-muted);
+}
+
+.cookie-table tr:last-child td {
+  border-bottom: none;
+}
+
+.cookie-note {
+  padding: 18px 20px;
+  border-left: 4px solid var(--color-primary);
+  border-radius: 0 var(--radius-md) var(--radius-md) 0;
+  background: rgba(90, 82, 224, 0.06);
+}
+
+/* ============================= */
+/* FOOTER */
+/* ============================= */
+
+.cookie-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 30px;
+  padding: 24px 80px;
+  border-top: 1px solid rgba(21, 23, 31, 0.08);
+  background: var(--color-white);
+}
+
+.cookie-footer__brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.cookie-footer__logo {
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: var(--gradient-primary);
+  color: var(--color-surface);
+  font-family: "Limelight", sans-serif;
+  font-size: 20px;
+}
+
+.cookie-footer__brand p {
+  margin: 0;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.7px;
+}
+
+.cookie-footer__links {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+}
+
+.cookie-footer__links a {
+  color: var(--color-muted);
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.cookie-footer__links a:hover {
+  color: var(--color-text);
+}
+
+/* ============================= */
+/* RESPONSIVE */
+/* ============================= */
+
+@media (max-width: 768px) {
+  .cookie-hero {
+    padding: 70px 22px 80px;
+  }
+
+  .cookie-hero__title {
+    font-size: 36px;
+  }
+
+  .cookie-hero__subtitle {
+    font-size: 16px;
+  }
+
+  .cookie-main {
+    padding: 60px 20px 80px;
+  }
+
+  .cookie-card {
+    padding: 34px 24px;
+    border-radius: var(--radius-lg);
+  }
+
+  .cookie-section h2 {
+    font-size: 24px;
+  }
+
+  .cookie-table {
+    display: block;
+    overflow-x: auto;
+  }
+
+  .cookie-footer {
+    flex-direction: column;
+    padding: 28px 24px;
+    text-align: center;
+  }
+
+  .cookie-footer__links {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .cookie-hero__title {
+    font-size: 31px;
+  }
+
+  .cookie-card {
+    padding: 28px 18px;
+  }
+}

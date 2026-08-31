@@ -1,0 +1,1279 @@
+<!DOCTYPE html>
+<html lang="it">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Dashboard Power BI su misura | Dina Fiorentino</title>
+    <meta
+      name="description"
+      content="Dashboard Power BI su misura per trasformare dati aziendali complessi in KPI chiari, analisi affidabili e strumenti decisionali costruiti intorno al tuo business."
+    />
+
+    <link rel="stylesheet" href="../assets/css/services.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Limelight&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Poppins:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="../Images/favicon/apple-touch-icon.png"
+    />
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="../Images/favicon/favicon-32x32.png"
+    />
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="../Images/favicon/favicon-16x16.png"
+    />
+
+    <link rel="manifest" href="../Images/favicon/site.webmanifest" />
+
+    <link rel="icon" href="../Images/favicon/favicon.ico" />
+  </head>
+
+  <body class="service-page">
+    <header class="service-hero" id="top">
+      <div class="service-hero__content">
+        <div class="service-hero__navigation">
+          <a
+            href="../landing-page/index.html#services__id"
+            class="service-hero__back-link"
+          >
+            ↤ Torna ai servizi
+          </a>
+
+          <div
+            class="language-selector service-hero__language-selector"
+            data-it="./dashboard-powerBI.html"
+            data-en="./dashboard-powerBI-en.html"
+          >
+            <button
+              type="button"
+              class="language-selector__button"
+              onclick="toggleLanguageMenu(event);"
+              aria-haspopup="true"
+              aria-expanded="false"
+              aria-controls="languageMenu"
+            >
+              🇮🇹 <span>IT</span>
+              <span class="language-selector__arrow">▾</span>
+            </button>
+
+            <div class="language-selector__menu" id="languageMenu">
+              <button type="button" onclick="setLanguage('it')">
+                🇮🇹 Italiano
+              </button>
+              <button type="button" onclick="setLanguage('en')">
+                🇬🇧 English
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <p class="service-hero__eyebrow">Dashboard Power BI su misura</p>
+
+        <h1 class="service-hero__title">
+          Prendi decisioni migliori con una dashboard costruita
+          <span class="text-gradient">intorno al tuo business.</span>
+        </h1>
+
+        <p class="service-hero__subtitle">
+          Una dashboard progettata sui tuoi obiettivi, sulle tue fonti dati e
+          sulle decisioni che devi prendere ogni giorno.
+        </p>
+
+        <div class="service-hero__actions">
+          <button
+            type="button"
+            class="button button--primary service-hero__button js-open-contact-form"
+          >
+            <i class="fa-regular fa-calendar"></i>
+            Prenota una consulenza gratuita
+          </button>
+
+          <a
+            href="../landing-page/index.html#projects__id"
+            class="button button--secondary service-hero__button"
+          >
+            Scopri i progetti
+            <i class="fa-solid fa-arrow-right"></i>
+          </a>
+        </div>
+
+        <ul class="service-hero__highlights" aria-label="Punti di forza">
+          <li class="service-hero__highlight">
+            <i class="fa-solid fa-circle-check"></i>
+            Progettata sui tuoi KPI
+          </li>
+          <li class="service-hero__highlight">
+            <i class="fa-solid fa-circle-check"></i>
+            Fonti dati integrate
+          </li>
+          <li class="service-hero__highlight">
+            <i class="fa-solid fa-circle-check"></i>
+            Formazione inclusa
+          </li>
+        </ul>
+      </div>
+
+      <div class="service-hero__visual">
+        <div class="service-hero__image-frame">
+          <img
+            class="service-hero__image"
+            src="../assets/images/sales-performance-forecast-dashboard-hero.PNG"
+            alt="Esempio di dashboard Power BI su misura con KPI, trend e analisi delle performance"
+          />
+        </div>
+        <p class="service-hero__visual-caption">
+          Esempio di dashboard direzionale Power BI
+        </p>
+      </div>
+    </header>
+
+    <main>
+      <section
+        class="service-problem-section"
+        id="service-problem"
+        aria-labelledby="service-problem-title"
+      >
+        <div class="service-problem">
+          <div class="section-header">
+            <p class="section-eyebrow">Il problema non sono i dati</p>
+            <h2 class="section-title" id="service-problem-title">
+              Hai già le informazioni.
+              <span class="text-gradient"
+                >Quello che manca è una visione chiara.</span
+              >
+            </h2>
+            <p class="section-subtitle">
+              File Excel, gestionali, CRM e strumenti diversi producono dati
+              ogni giorno. Il vero ostacolo è trasformarli in una lettura unica,
+              tempestiva e utile per decidere.
+            </p>
+          </div>
+
+          <div class="service-problem__grid">
+            <article class="service-problem__card">
+              <div class="service-problem__icon">
+                <i class="fa-solid fa-folder-tree"></i>
+              </div>
+              <h3 class="service-problem__title">Informazioni frammentate</h3>
+              <p class="service-problem__text">
+                I dati sono distribuiti tra file, software e report separati,
+                rendendo difficile avere una visione d’insieme affidabile.
+              </p>
+            </article>
+
+            <article class="service-problem__card">
+              <div class="service-problem__icon">
+                <i class="fa-solid fa-bullseye"></i>
+              </div>
+              <h3 class="service-problem__title">KPI poco chiari</h3>
+              <p class="service-problem__text">
+                Le metriche sono numerose, poco prioritarie o interpretate in
+                modo diverso dai vari reparti aziendali.
+              </p>
+            </article>
+
+            <article class="service-problem__card">
+              <div class="service-problem__icon">
+                <i class="fa-regular fa-clock"></i>
+              </div>
+              <h3 class="service-problem__title">Decisioni troppo lente</h3>
+              <p class="service-problem__text">
+                Le informazioni arrivano quando il problema è già evidente e lo
+                spazio per intervenire si è ridotto.
+              </p>
+            </article>
+
+            <article class="service-problem__card">
+              <div class="service-problem__icon">
+                <i class="fa-solid fa-magnifying-glass-chart"></i>
+              </div>
+              <h3 class="service-problem__title">Tempo perso nei report</h3>
+              <p class="service-problem__text">
+                Troppe ore vengono dedicate a cercare, confrontare e ricostruire
+                i numeri anziché comprenderli e utilizzarli.
+              </p>
+            </article>
+          </div>
+
+          <div class="service-problem__statement">
+            <span class="service-problem__statement-icon">
+              <i class="fa-solid fa-lightbulb"></i>
+            </span>
+            <p>
+              Una dashboard efficace non aggiunge altri dati:
+              <strong
+                >organizza quelli giusti nel modo più utile per
+                decidere.</strong
+              >
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section
+        class="service-value-section"
+        id="service-value"
+        aria-labelledby="service-value-title"
+      >
+        <div class="service-value">
+          <div class="section-header">
+            <p class="section-eyebrow">Uno strumento decisionale</p>
+            <h2 class="section-title" id="service-value-title">
+              Non un insieme di grafici.
+              <span class="text-gradient"
+                >Una dashboard che ti aiuta ad agire.</span
+              >
+            </h2>
+            <p class="section-subtitle">
+              Ogni schermata viene progettata per rispondere alle domande più
+              importanti del tuo business e rendere immediatamente visibili
+              segnali, scostamenti e priorità.
+            </p>
+          </div>
+
+          <div class="service-value__grid">
+            <article class="service-value__item">
+              <div class="service-value__icon">
+                <i class="fa-solid fa-crosshairs"></i>
+              </div>
+              <div class="service-value__content">
+                <h3 class="service-value__title">KPI legati agli obiettivi</h3>
+                <p class="service-value__text">
+                  Monitori solo le metriche che aiutano realmente a valutare
+                  performance, risultati e aree di intervento.
+                </p>
+              </div>
+            </article>
+
+            <article class="service-value__item">
+              <div class="service-value__icon">
+                <i class="fa-solid fa-eye"></i>
+              </div>
+              <div class="service-value__content">
+                <h3 class="service-value__title">Lettura immediata</h3>
+                <p class="service-value__text">
+                  Gerarchie, colori e visualizzazioni guidano l’attenzione verso
+                  ciò che richiede davvero una decisione.
+                </p>
+              </div>
+            </article>
+
+            <article class="service-value__item">
+              <div class="service-value__icon">
+                <i class="fa-solid fa-filter-circle-dollar"></i>
+              </div>
+              <div class="service-value__content">
+                <h3 class="service-value__title">Analisi interattiva</h3>
+                <p class="service-value__text">
+                  Filtri, drill-down e confronti permettono di approfondire
+                  dati, periodi, reparti e categorie senza creare nuovi report.
+                </p>
+              </div>
+            </article>
+
+            <article class="service-value__item">
+              <div class="service-value__icon">
+                <i class="fa-solid fa-gauge-high"></i>
+              </div>
+              <div class="service-value__content">
+                <h3 class="service-value__title">
+                  Performance tecniche ottimizzate
+                </h3>
+                <p class="service-value__text">
+                  Il modello viene ottimizzato per mantenere navigazione fluida,
+                  aggiornamenti efficienti e una lettura stabile nel tempo.
+                </p>
+              </div>
+            </article>
+
+            <article class="service-value__item">
+              <div class="service-value__icon">
+                <i class="fa-solid fa-wand-magic-sparkles"></i>
+              </div>
+              <div class="service-value__content">
+                <h3 class="service-value__title">Design funzionale</h3>
+                <p class="service-value__text">
+                  Ogni elemento visivo ha uno scopo preciso: facilitare la
+                  comprensione, non semplicemente riempire lo spazio.
+                </p>
+              </div>
+            </article>
+
+            <article class="service-value__item">
+              <div class="service-value__icon">
+                <i class="fa-solid fa-layer-group"></i>
+              </div>
+              <div class="service-value__content">
+                <h3 class="service-value__title">Soluzione scalabile</h3>
+                <p class="service-value__text">
+                  Nuove fonti, metriche, reparti e necessità possono essere
+                  integrate senza ricostruire tutto da zero.
+                </p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section
+        class="service-monitoring-section"
+        id="service-monitoring"
+        aria-labelledby="service-monitoring-title"
+      >
+        <div class="service-monitoring">
+          <div class="section-header">
+            <p class="section-eyebrow">Cosa puoi monitorare</p>
+            <h2 class="section-title" id="service-monitoring-title">
+              Ogni azienda ha KPI diversi.
+              <span class="text-gradient"
+                >La dashboard viene costruita sui tuoi.</span
+              >
+            </h2>
+            <p class="section-subtitle">
+              Non esiste una dashboard valida per tutti. La struttura viene
+              definita in base al settore, ai processi, alle responsabilità e
+              alle decisioni che devi prendere.
+            </p>
+          </div>
+
+          <div class="service-monitoring__grid">
+            <article class="service-monitoring__area">
+              <div class="service-monitoring__header">
+                <span class="service-monitoring__icon">
+                  <i class="fa-solid fa-chart-line"></i>
+                </span>
+                <div>
+                  <p class="service-monitoring__label">Area 01</p>
+                  <h3 class="service-monitoring__title">Commerciale</h3>
+                </div>
+              </div>
+              <p class="service-monitoring__text">
+                Controlla vendite, marginalità e andamento commerciale per
+                individuare opportunità, rischi e priorità.
+              </p>
+              <ul class="service-monitoring__metrics">
+                <li>Vendite</li>
+                <li>Margini</li>
+                <li>Pipeline</li>
+                <li>Forecast</li>
+                <li>Clienti</li>
+              </ul>
+            </article>
+
+            <article class="service-monitoring__area">
+              <div class="service-monitoring__header">
+                <span class="service-monitoring__icon">
+                  <i class="fa-solid fa-coins"></i>
+                </span>
+                <div>
+                  <p class="service-monitoring__label">Area 02</p>
+                  <h3 class="service-monitoring__title">Finance</h3>
+                </div>
+              </div>
+              <p class="service-monitoring__text">
+                Leggi l’equilibrio economico e finanziario collegando costi,
+                redditività, liquidità e risultati.
+              </p>
+              <ul class="service-monitoring__metrics">
+                <li>Cash flow</li>
+                <li>Costi</li>
+                <li>Budget</li>
+                <li>Marginalità</li>
+                <li>Redditività</li>
+              </ul>
+            </article>
+
+            <article class="service-monitoring__area">
+              <div class="service-monitoring__header">
+                <span class="service-monitoring__icon">
+                  <i class="fa-solid fa-gears"></i>
+                </span>
+                <div>
+                  <p class="service-monitoring__label">Area 03</p>
+                  <h3 class="service-monitoring__title">Operations</h3>
+                </div>
+              </div>
+              <p class="service-monitoring__text">
+                Monitora efficienza, capacità operativa e qualità dei processi
+                lungo le attività più importanti.
+              </p>
+              <ul class="service-monitoring__metrics">
+                <li>Produzione</li>
+                <li>Ordini</li>
+                <li>Magazzino</li>
+                <li>Consegne</li>
+                <li>Qualità</li>
+              </ul>
+            </article>
+
+            <article class="service-monitoring__area">
+              <div class="service-monitoring__header">
+                <span class="service-monitoring__icon">
+                  <i class="fa-solid fa-bullhorn"></i>
+                </span>
+                <div>
+                  <p class="service-monitoring__label">Area 04</p>
+                  <h3 class="service-monitoring__title">Marketing</h3>
+                </div>
+              </div>
+              <p class="service-monitoring__text">
+                Valuta l’efficacia delle attività di acquisizione e il
+                contributo reale delle campagne ai risultati aziendali.
+              </p>
+              <ul class="service-monitoring__metrics">
+                <li>Lead</li>
+                <li>Campagne</li>
+                <li>Conversioni</li>
+                <li>ROI</li>
+                <li>Traffico</li>
+              </ul>
+            </article>
+
+            <article class="service-monitoring__area">
+              <div class="service-monitoring__header">
+                <span class="service-monitoring__icon">
+                  <i class="fa-solid fa-building"></i>
+                </span>
+                <div>
+                  <p class="service-monitoring__label">Area 05</p>
+                  <h3 class="service-monitoring__title">Direzione</h3>
+                </div>
+              </div>
+              <p class="service-monitoring__text">
+                Riunisci gli indicatori più importanti in una vista executive
+                pensata per controllo, allineamento e decisioni rapide.
+              </p>
+              <ul class="service-monitoring__metrics">
+                <li>Executive KPI</li>
+                <li>Obiettivi</li>
+                <li>Trend</li>
+                <li>Performance</li>
+                <li>Scostamenti</li>
+              </ul>
+            </article>
+
+            <article
+              class="service-monitoring__area service-monitoring__area--custom"
+            >
+              <div class="service-monitoring__header">
+                <span class="service-monitoring__icon">
+                  <i class="fa-solid fa-sliders"></i>
+                </span>
+                <div>
+                  <p class="service-monitoring__label">Area 06</p>
+                  <h3 class="service-monitoring__title">
+                    Viste e analisi personalizzate
+                  </h3>
+                </div>
+              </div>
+              <p class="service-monitoring__text">
+                La dashboard può includere viste, confronti e livelli di
+                dettaglio costruiti sulle domande specifiche del tuo business
+              </p>
+              <ul class="service-monitoring__metrics">
+                <li>KPI specifici</li>
+                <li>Benchmark</li>
+                <li>Target</li>
+                <li>Alert</li>
+                <li>Scenari</li>
+              </ul>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section
+        class="service-inclusions-section"
+        id="service-inclusions"
+        aria-labelledby="service-inclusions-title"
+      >
+        <div class="service-inclusions">
+          <div class="service-inclusions__intro">
+            <p class="section-eyebrow">Cosa comprende il servizio</p>
+            <h2 class="section-title" id="service-inclusions-title">
+              Non ricevi soltanto una dashboard.
+              <span class="text-gradient"
+                >Ricevi uno strumento pronto da usare.</span
+              >
+            </h2>
+            <p class="service-inclusions__description">
+              Il progetto comprende gli elementi necessari per rendere la
+              soluzione comprensibile, affidabile e concretamente utilizzabile
+              nella quotidianità aziendale.
+            </p>
+          </div>
+
+          <div class="service-inclusions__grid">
+            <article class="service-inclusions__item">
+              <span class="service-inclusions__icon">
+                <i class="fa-solid fa-chart-pie"></i>
+              </span>
+              <div>
+                <h3 class="service-inclusions__title">
+                  Dashboard Power BI personalizzata
+                </h3>
+                <p class="service-inclusions__text">
+                  Struttura, pagine e visualizzazioni costruite sulle tue
+                  necessità informative.
+                </p>
+              </div>
+            </article>
+
+            <article class="service-inclusions__item">
+              <span class="service-inclusions__icon">
+                <i class="fa-solid fa-bullseye"></i>
+              </span>
+              <div>
+                <h3 class="service-inclusions__title">
+                  KPI definiti e organizzati
+                </h3>
+                <p class="service-inclusions__text">
+                  Indicatori selezionati, contestualizzati e collegati agli
+                  obiettivi da monitorare.
+                </p>
+              </div>
+            </article>
+
+            <article class="service-inclusions__item">
+              <span class="service-inclusions__icon">
+                <i class="fa-solid fa-plug-circle-bolt"></i>
+              </span>
+              <div>
+                <h3 class="service-inclusions__title">
+                  Collegamento alle fonti dati
+                </h3>
+                <p class="service-inclusions__text">
+                  Integrazione delle fonti compatibili necessarie alla
+                  costruzione e all’aggiornamento della dashboard.
+                </p>
+              </div>
+            </article>
+
+            <article class="service-inclusions__item">
+              <span class="service-inclusions__icon">
+                <i class="fa-solid fa-database"></i>
+              </span>
+              <div>
+                <h3 class="service-inclusions__title">
+                  Modello dati affidabile
+                </h3>
+                <p class="service-inclusions__text">
+                  Relazioni e logiche organizzate per garantire coerenza,
+                  precisione e prestazioni.
+                </p>
+              </div>
+            </article>
+
+            <article class="service-inclusions__item">
+              <span class="service-inclusions__icon">
+                <i class="fa-solid fa-filter"></i>
+              </span>
+              <div>
+                <h3 class="service-inclusions__title">
+                  Filtri e navigazione avanzata
+                </h3>
+                <p class="service-inclusions__text">
+                  Percorsi di analisi semplici per passare dalla visione
+                  generale al dettaglio.
+                </p>
+              </div>
+            </article>
+
+            <article class="service-inclusions__item">
+              <span class="service-inclusions__icon">
+                <i class="fa-solid fa-gauge"></i>
+              </span>
+              <div>
+                <h3 class="service-inclusions__title">
+                  Ottimizzazione delle performance
+                </h3>
+                <p class="service-inclusions__text">
+                  Struttura alleggerita e controllata per offrire un’esperienza
+                  fluida e stabile.
+                </p>
+              </div>
+            </article>
+
+            <article class="service-inclusions__item">
+              <span class="service-inclusions__icon">
+                <i class="fa-solid fa-person-chalkboard"></i>
+              </span>
+              <div>
+                <h3 class="service-inclusions__title">
+                  Formazione all’utilizzo
+                </h3>
+                <p class="service-inclusions__text">
+                  Una sessione dedicata per comprendere la dashboard e
+                  utilizzarla in autonomia.
+                </p>
+              </div>
+            </article>
+
+            <article class="service-inclusions__item">
+              <span class="service-inclusions__icon">
+                <i class="fa-solid fa-headset"></i>
+              </span>
+              <div>
+                <h3 class="service-inclusions__title">Supporto iniziale</h3>
+                <p class="service-inclusions__text">
+                  Assistenza dopo la consegna per chiarimenti, verifiche e prime
+                  esigenze operative.
+                </p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section
+        class="service-custom-section"
+        id="service-custom"
+        aria-labelledby="service-custom-title"
+      >
+        <div class="service-custom">
+          <div class="service-custom__content">
+            <p class="section-eyebrow">Perché su misura</p>
+            <h2
+              class="section-title service-custom__title"
+              id="service-custom-title"
+            >
+              Perché un template
+              <span class="text-gradient">non conosce il tuo business.</span>
+            </h2>
+            <p class="service-custom__text">
+              Due aziende possono raccogliere dati simili e avere necessità
+              decisionali completamente diverse. Per questo la dashboard viene
+              costruita intorno ai tuoi processi, alle tue responsabilità e al
+              modo in cui utilizzi le informazioni.
+            </p>
+            <p class="service-custom__closing">
+              Il risultato non è una dashboard semplicemente più bella:
+              <strong>è una dashboard più utile.</strong>
+            </p>
+          </div>
+
+          <div class="service-custom__principles">
+            <article class="service-custom__principle">
+              <span class="service-custom__number">01</span>
+              <div>
+                <h3 class="service-custom__principle-title">
+                  Progettata sui tuoi processi
+                </h3>
+                <p class="service-custom__principle-text">
+                  Non adatto il tuo business a un modello standard. Organizzo la
+                  soluzione intorno a ciò che devi controllare e migliorare.
+                </p>
+              </div>
+            </article>
+
+            <article class="service-custom__principle">
+              <span class="service-custom__number">02</span>
+              <div>
+                <h3 class="service-custom__principle-title">
+                  Pensata per chi decide
+                </h3>
+                <p class="service-custom__principle-text">
+                  Ogni vista risponde a una domanda precisa e rende visibili le
+                  informazioni necessarie per agire.
+                </p>
+              </div>
+            </article>
+
+            <article class="service-custom__principle">
+              <span class="service-custom__number">03</span>
+              <div>
+                <h3 class="service-custom__principle-title">
+                  Costruita per evolvere
+                </h3>
+                <p class="service-custom__principle-text">
+                  Nuove fonti, indicatori ed esigenze possono essere integrate
+                  nel tempo senza ripartire da zero.
+                </p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section
+        class="service-fit-section"
+        id="service-fit"
+        aria-labelledby="service-fit-title"
+      >
+        <div class="service-fit">
+          <div class="section-header">
+            <p class="section-eyebrow">La soluzione adatta</p>
+            <h2 class="section-title" id="service-fit-title">
+              È il servizio giusto
+              <span class="text-gradient">per la tua situazione?</span>
+            </h2>
+            <p class="section-subtitle">
+              Una dashboard su misura genera valore quando esiste un bisogno
+              reale di controllo, chiarezza e continuità decisionale.
+            </p>
+          </div>
+
+          <div class="service-fit__grid">
+            <article class="service-fit__column service-fit__column--positive">
+              <div class="service-fit__heading">
+                <span class="service-fit__heading-icon">
+                  <i class="fa-solid fa-circle-check"></i>
+                </span>
+                <h3 class="service-fit__title">È ideale se...</h3>
+              </div>
+
+              <ul class="service-fit__list">
+                <li>Vuoi una visione completa e condivisa del business.</li>
+                <li>
+                  Hai molti dati, ma poca chiarezza su cosa stia accadendo.
+                </li>
+                <li>Utilizzi ancora report Excel manuali e frammentati.</li>
+                <li>
+                  Hai bisogno di KPI affidabili e facilmente interpretabili.
+                </li>
+                <li>
+                  Vuoi individuare prima problemi, scostamenti e opportunità.
+                </li>
+                <li>
+                  Cerchi una soluzione progettata sulle tue esigenze reali.
+                </li>
+              </ul>
+            </article>
+
+            <article class="service-fit__column service-fit__column--negative">
+              <div class="service-fit__heading">
+                <span class="service-fit__heading-icon">
+                  <i class="fa-solid fa-circle-xmark"></i>
+                </span>
+                <h3 class="service-fit__title">
+                  Probabilmente non è ciò che cerchi se...
+                </h3>
+              </div>
+
+              <ul class="service-fit__list">
+                <li>
+                  Cerchi soltanto alcuni grafici da inserire in un report.
+                </li>
+                <li>
+                  Vuoi una dashboard standard identica per qualsiasi azienda.
+                </li>
+                <li>
+                  Hai bisogno di una soluzione improvvisata e pronta in
+                  giornata.
+                </li>
+                <li>
+                  Non vuoi definire obiettivi, priorità e metriche da
+                  monitorare.
+                </li>
+              </ul>
+            </article>
+          </div>
+
+          <div class="service-fit__note">
+            <i class="fa-solid fa-comments"></i>
+            <p>
+              Non sei sicuro che sia la soluzione adatta? Durante il primo
+              confronto valuteremo la situazione e capirai se una dashboard è
+              davvero lo strumento corretto per il tuo obiettivo.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section
+        class="service-faq-section"
+        id="service-faq"
+        aria-labelledby="service-faq-title"
+      >
+        <div class="service-faq">
+          <div class="section-header">
+            <p class="section-eyebrow">Domande frequenti</p>
+            <h2 class="section-title" id="service-faq-title">
+              Tutto ciò che vuoi sapere
+              <span class="text-gradient">prima di iniziare.</span>
+            </h2>
+            <p class="section-subtitle">
+              Le risposte ai dubbi più comuni sulla progettazione e
+              sull’utilizzo di una dashboard Power BI personalizzata.
+            </p>
+          </div>
+
+          <div class="service-faq__list">
+            <article class="service-faq__item">
+              <h3 class="service-faq__heading">
+                <button
+                  type="button"
+                  class="service-faq__question"
+                  aria-expanded="false"
+                  aria-controls="faq-answer-1"
+                >
+                  <span>Posso partire dai miei file Excel?</span>
+                  <i class="fa-solid fa-plus" aria-hidden="true"></i>
+                </button>
+              </h3>
+              <div class="service-faq__answer" id="faq-answer-1" hidden>
+                <p>
+                  Sì. I file Excel possono essere utilizzati come fonte di
+                  partenza, purché struttura, qualità e aggiornamento dei dati
+                  siano compatibili con il risultato richiesto. Durante la
+                  valutazione iniziale verificherò eventuali criticità.
+                </p>
+              </div>
+            </article>
+
+            <article class="service-faq__item">
+              <h3 class="service-faq__heading">
+                <button
+                  type="button"
+                  class="service-faq__question"
+                  aria-expanded="false"
+                  aria-controls="faq-answer-2"
+                >
+                  <span>È possibile collegare il gestionale aziendale?</span>
+                  <i class="fa-solid fa-plus" aria-hidden="true"></i>
+                </button>
+              </h3>
+              <div class="service-faq__answer" id="faq-answer-2" hidden>
+                <p>
+                  Dipende dal gestionale, dalle modalità di accesso disponibili
+                  e dal tipo di licenza utilizzato. Possono essere valutati
+                  collegamenti diretti, database, esportazioni strutturate o
+                  altre integrazioni compatibili.
+                </p>
+              </div>
+            </article>
+
+            <article class="service-faq__item">
+              <h3 class="service-faq__heading">
+                <button
+                  type="button"
+                  class="service-faq__question"
+                  aria-expanded="false"
+                  aria-controls="faq-answer-3"
+                >
+                  <span>Quanto tempo richiede lo sviluppo?</span>
+                  <i class="fa-solid fa-plus" aria-hidden="true"></i>
+                </button>
+              </h3>
+              <div class="service-faq__answer" id="faq-answer-3" hidden>
+                <p>
+                  La durata dipende dal numero di fonti, dalla qualità dei dati,
+                  dalla complessità dei KPI e dall’ampiezza della dashboard.
+                  Dopo una prima analisi riceverai una stima realistica del
+                  lavoro.
+                </p>
+              </div>
+            </article>
+
+            <article class="service-faq__item">
+              <h3 class="service-faq__heading">
+                <button
+                  type="button"
+                  class="service-faq__question"
+                  aria-expanded="false"
+                  aria-controls="faq-answer-4"
+                >
+                  <span>Posso aggiornare la dashboard in autonomia?</span>
+                  <i class="fa-solid fa-plus" aria-hidden="true"></i>
+                </button>
+              </h3>
+              <div class="service-faq__answer" id="faq-answer-4" hidden>
+                <p>
+                  L’obiettivo è rendere l’utilizzo il più autonomo possibile.
+                  Modalità e frequenza di aggiornamento dipendono dalle fonti
+                  dati e dall’architettura concordata per il progetto.
+                </p>
+              </div>
+            </article>
+
+            <article class="service-faq__item">
+              <h3 class="service-faq__heading">
+                <button
+                  type="button"
+                  class="service-faq__question"
+                  aria-expanded="false"
+                  aria-controls="faq-answer-5"
+                >
+                  <span>Serve già una licenza Power BI?</span>
+                  <i class="fa-solid fa-plus" aria-hidden="true"></i>
+                </button>
+              </h3>
+              <div class="service-faq__answer" id="faq-answer-5" hidden>
+                <p>
+                  Non necessariamente nella fase iniziale. Le licenze richieste
+                  dipendono da come la dashboard verrà pubblicata, condivisa e
+                  consultata. La configurazione più adatta verrà valutata in
+                  base al numero di utenti e alle modalità d’uso.
+                </p>
+              </div>
+            </article>
+
+            <article class="service-faq__item">
+              <h3 class="service-faq__heading">
+                <button
+                  type="button"
+                  class="service-faq__question"
+                  aria-expanded="false"
+                  aria-controls="faq-answer-6"
+                >
+                  <span>La dashboard può crescere nel tempo?</span>
+                  <i class="fa-solid fa-plus" aria-hidden="true"></i>
+                </button>
+              </h3>
+              <div class="service-faq__answer" id="faq-answer-6" hidden>
+                <p>
+                  Sì. La soluzione può essere progettata per integrare
+                  progressivamente nuove fonti, indicatori, pagine e utenti,
+                  mantenendo una struttura coerente e controllabile.
+                </p>
+              </div>
+            </article>
+          </div>
+
+          <p class="service-faq__portfolio-link">
+            Vuoi verificare il livello delle dashboard già realizzate?
+            <a href="../landing-page/index.html#projects__id">
+              Consulta i progetti selezionati →
+            </a>
+          </p>
+        </div>
+      </section>
+
+      <section class="cta-section service-cta-section" id="contacts__id">
+        <div class="cta service-cta">
+          <div class="cta__content">
+            <p class="service-cta__eyebrow">Partiamo dai tuoi dati</p>
+            <h2 class="cta__title">
+              Ogni decisione importante parte da informazioni chiare.
+            </h2>
+            <p class="cta__text">
+              Se oggi i tuoi dati sono distribuiti tra Excel, report e software
+              diversi, possiamo trasformarli in una dashboard costruita per
+              aiutarti a controllare il business e decidere con maggiore
+              sicurezza.
+            </p>
+
+            <div class="cta__actions">
+              <div class="cta__button-wrapper">
+                <button
+                  type="button"
+                  class="button button--primary cta__button"
+                  id="openContactForm"
+                >
+                  <i class="fa-regular fa-calendar"></i>
+                  Prenota una consulenza gratuita
+                </button>
+              </div>
+            </div>
+
+            <p class="service-cta__note">
+              Analizzeremo insieme la situazione, le fonti disponibili e gli
+              obiettivi da monitorare per capire quale soluzione sia più adatta.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <div
+        class="form-modal"
+        id="contactFormModal"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="contactFormTitle"
+        aria-hidden="true"
+      >
+        <div class="form-modal__overlay" id="closeContactForm"></div>
+
+        <div class="form-modal__card">
+          <button
+            type="button"
+            class="form-modal__close"
+            id="closeContactFormButton"
+            aria-label="Chiudi il modulo di contatto"
+          >
+            ×
+          </button>
+
+          <p class="form-modal__eyebrow">Consulenza gratuita</p>
+
+          <h2 class="form-modal__title" id="contactFormTitle">
+            Raccontami il tuo progetto
+          </h2>
+
+          <p class="form-modal__text">
+            Descrivimi brevemente la situazione attuale, i dati disponibili e
+            ciò che vorresti monitorare. Ti ricontatterò per valutare insieme la
+            soluzione più adatta.
+          </p>
+
+          <form
+            id="contactForm"
+            action="https://formspree.io/f/xkoandwa"
+            method="POST"
+            class="contact-form"
+          >
+            <input
+              type="hidden"
+              name="service"
+              value="Dashboard Power BI su misura"
+            />
+
+            <div class="form-grid">
+              <div class="form-group">
+                <label for="name">Nome e Cognome *</label>
+                <input
+                  id="name"
+                  type="text"
+                  name="name"
+                  autocomplete="name"
+                  placeholder="Mario Rossi"
+                  required
+                />
+              </div>
+
+              <div class="form-group">
+                <label for="email">Email *</label>
+                <input
+                  id="email"
+                  type="email"
+                  name="email"
+                  autocomplete="email"
+                  placeholder="nome@azienda.it"
+                  required
+                />
+              </div>
+
+              <div class="form-group">
+                <label for="phone">Telefono / WhatsApp</label>
+                <input
+                  id="phone"
+                  type="tel"
+                  name="phone"
+                  autocomplete="tel"
+                  placeholder="+39 333 1234567"
+                />
+              </div>
+
+              <div class="form-group">
+                <label for="company">Azienda</label>
+                <input
+                  id="company"
+                  type="text"
+                  name="company"
+                  autocomplete="organization"
+                  placeholder="Nome azienda"
+                />
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="goal">Obiettivo principale *</label>
+              <select id="goal" name="goal" required>
+                <option value="">Seleziona un obiettivo</option>
+                <option value="Dashboard direzionale">
+                  Dashboard direzionale
+                </option>
+                <option value="Monitoraggio vendite">
+                  Monitoraggio vendite
+                </option>
+                <option value="Controllo finanziario">
+                  Controllo finanziario
+                </option>
+                <option value="Monitoraggio operations">
+                  Monitoraggio operations
+                </option>
+                <option value="Sostituzione report Excel">
+                  Sostituzione report Excel
+                </option>
+                <option value="Altro">Altro</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="message">Messaggio *</label>
+              <textarea
+                id="message"
+                name="message"
+                rows="5"
+                placeholder="Descrivi i dati che utilizzi, le difficoltà attuali e cosa vorresti riuscire a monitorare."
+                required
+              ></textarea>
+            </div>
+
+            <p class="form-privacy-note">
+              I dati inseriti saranno utilizzati esclusivamente per rispondere
+              alla richiesta e valutare una possibile collaborazione.
+            </p>
+
+            <label class="privacy-check">
+              <input type="checkbox" name="privacy" required />
+              <span>
+                Ho letto e accetto la
+                <a
+                  href="../landing-page/privacy.html?from=dashboard-powerbi"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Privacy Policy </a
+                >.
+              </span>
+            </label>
+
+            <button type="submit" class="contact-form__button">
+              Prenota una consulenza gratuita
+            </button>
+
+            <p
+              id="formSuccessMessage"
+              class="form-success-message"
+              aria-live="polite"
+            >
+              Grazie! La richiesta è stata inviata correttamente. Ti
+              ricontatterò al più presto.
+            </p>
+          </form>
+        </div>
+      </div>
+    </main>
+
+    <!--INIZIO SEZIONE FOOTER-->
+    <footer class="footer">
+      <div class="footer__main">
+        <div class="footer__brand-block">
+          <a
+            href="./index.html"
+            class="footer__brand"
+            aria-label="Torna alla homepage"
+          >
+            <span class="footer__monogram" aria-hidden="true">DF</span>
+
+            <span class="footer__identity">
+              <span class="footer__name">Dina Fiorentino</span>
+              <span class="footer__role"
+                >Data Analyst &amp; Power BI Consultant</span
+              >
+            </span>
+          </a>
+          <p class="footer__description">
+            Dashboard, reporting e modelli dati progettati per trasformare
+            informazioni complesse in decisioni più chiare.
+          </p>
+
+          <div class="footer__socials" aria-label="Contatti professionali">
+            <a
+              href="https://www.linkedin.com/in/dina-fiorentino/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Profilo LinkedIn di Dina Fiorentino"
+            >
+              <i class="fa-brands fa-linkedin-in" aria-hidden="true"></i>
+              <span>LinkedIn</span>
+            </a>
+
+            <a
+              href="mailto:dinafiorentino.consulting@outlook.it"
+              aria-label="Invia una email a Dina Fiorentino"
+            >
+              <i class="fa-regular fa-envelope" aria-hidden="true"></i>
+              <span>Email</span>
+            </a>
+          </div>
+        </div>
+
+        <nav class="footer__column" aria-label="Navigazione footer">
+          <p class="footer__heading">Esplora</p>
+          <a href="../landing-page/index.html#services__id">Servizi</a>
+          <a href="../landing-page/index.html#projects__id">Progetti</a>
+          <a href="../landing-page/index.html#about__id">Chi sono</a>
+          <a href="../landing-page/index.html#contacts__id">Contatti</a>
+        </nav>
+
+        <div class="footer__column footer__column--services">
+          <p class="footer__heading">Servizi</p>
+          <a href="../services/dashboard-powerBI.html">Dashboard Power BI</a>
+          <a href="../services/reporting-automatizzato.html"
+            >Reporting automatizzato</a
+          >
+          <a href="../services/kpi-design-monitoraggio.html">KPI design</a>
+          <a href="../services/data-modeling-integrazione.html"
+            >Data modeling</a
+          >
+        </div>
+
+        <div class="footer__column footer__column--contact">
+          <p class="footer__heading">Collaboriamo</p>
+          <p>
+            Disponibile per progetti di analisi dati, dashboard e reporting
+            aziendale.
+          </p>
+
+          <button
+            type="button"
+            class="footer__contact-button js-open-contact-form"
+          >
+            Parliamo del tuo progetto
+            <span aria-hidden="true">→</span>
+          </button>
+        </div>
+      </div>
+
+      <div class="footer__bottom">
+        <p class="copyright__text">
+          © 2026 Dina Fiorentino. Tutti i diritti riservati.
+        </p>
+
+        <nav class="privacy__box" aria-label="Link legali e lingua">
+          <a
+            href="../landing-page/privacy.html?from=dashboard-powerbi"
+            class="privacy__text"
+          >
+            Privacy
+          </a>
+
+          <a
+            href="../landing-page/cookie.html?from=dashboard-powerbi"
+            class="cookie__text"
+          >
+            Cookie
+          </a>
+
+          <a href="./dashboard-powerBI-en.html" class="footer__language">
+            English
+          </a>
+        </nav>
+      </div>
+    </footer>
+    <!--FINE SEZIONE FOOTER-->
+
+    <button
+      id="back__to-top"
+      class="back__to-top"
+      type="button"
+      aria-label="Torna all’inizio"
+    >
+      <i class="fa-solid fa-arrow-up" aria-hidden="true"></i>
+    </button>
+
+    <script src="../assets/js/script.js"></script>
+  </body>
+</html>

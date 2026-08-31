@@ -1,0 +1,998 @@
+<!DOCTYPE html>
+<html lang="it">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Business Plan & Financial Analysis | Dina Fiorentino</title>
+    <meta
+      name="description"
+      content="Power BI Business Plan & Financial Analysis case study: dashboard for financial analysis, revenue, profitability, net financial position, liquidity, and economic sustainability."
+    />
+    <link rel="stylesheet" href="../assets/css/projects.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Limelight&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Poppins:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="../Images/favicon/apple-touch-icon.png"
+    />
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="../Images/favicon/favicon-32x32.png"
+    />
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="../Images/favicon/favicon-16x16.png"
+    />
+
+    <link rel="manifest" href="../Images/favicon/site.webmanifest" />
+
+    <link rel="icon" href="../Images/favicon/favicon.ico" />
+  </head>
+
+  <body>
+    <header class="hero">
+      <div class="hero__content">
+        <div class="hero__navigation">
+          <a
+            href="../landing-page/index-en.html#projects__id"
+            class="hero__back-link"
+          >
+            ↤ Back to projects
+          </a>
+
+          <div
+            class="language-selector hero__language-selector"
+            data-it="./business-plan.html"
+            data-en="./business-plan-en.html"
+          >
+            <button
+              type="button"
+              class="language-selector__button"
+              onclick="toggleLanguageMenu(event);"
+              aria-haspopup="true"
+              aria-expanded="false"
+              aria-controls="languageMenu"
+            >
+              🇬🇧 <span>EN</span><span class="language-selector__arrow">▾</span>
+            </button>
+
+            <div class="language-selector__menu" id="languageMenu">
+              <button type="button" onclick="setLanguage('it')">
+                🇮🇹 Italian
+              </button>
+              <button type="button" onclick="setLanguage('en')">
+                🇬🇧 English
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <p class="hero__eyebrow">REAL PROJECT</p>
+
+        <h1 class="hero__title">
+          Business Plan &<br />
+          <span class="text-gradient">Financial Analysis</span>
+        </h1>
+
+        <p class="hero__subtitle">
+          Power BI dashboard developed to support the analysis of a corporate
+          business plan, monitor revenue, profitability, net financial position
+          and liquidity, and transform complex financial data into clear
+          management-level insights.
+        </p>
+
+        <div class="hero__cards">
+          <div class="hero__card">
+            <span class="hero__card-label">Industry</span>
+            <span class="hero__card-value">Finance</span>
+          </div>
+          <div class="hero__card">
+            <span class="hero__card-label">Tool</span>
+            <span class="hero__card-value">Power BI</span>
+          </div>
+          <div class="hero__card">
+            <span class="hero__card-label">Focus</span>
+            <span class="hero__card-value">Business Planning</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero__visual">
+        <img
+          class="hero__image"
+          src="../assets/images/business-plan-dashboard-hero.png"
+          alt="Preview of the Power BI Business Plan and Financial Analysis dashboard"
+        />
+      </div>
+    </header>
+
+    <main>
+      <section class="snapshot-section" id="executive-snapshot">
+        <div class="snapshot">
+          <div class="section-header">
+            <p class="section-eyebrow">Executive Snapshot</p>
+            <h2 class="section-title">
+              The key figures
+              <span class="text-gradient">of the business plan.</span>
+            </h2>
+            <p class="section-subtitle">
+              A summary of the main financial findings: revenue growth,
+              improving profitability, net financial position under control,
+              investment coverage, and a return to positive liquidity.
+            </p>
+          </div>
+
+          <div class="snapshot__grid">
+            <article class="snapshot__card">
+              <div class="snapshot__icon">
+                <i class="fa-solid fa-wallet"></i>
+              </div>
+              <div class="snapshot__content">
+                <p class="snapshot__label">2026 Revenue</p>
+                <h3 class="snapshot__value">61,92Mln</h3>
+                <p class="snapshot__trend snapshot__trend--positive">+9,17%</p>
+                <p class="snapshot__text">
+                  Revenue remains above break-even and shows a steady growth
+                  trajectory over the period analysed.
+                </p>
+              </div>
+            </article>
+
+            <article class="snapshot__card">
+              <div class="snapshot__icon">
+                <i class="fa-solid fa-chart-line"></i>
+              </div>
+              <div class="snapshot__content">
+                <p class="snapshot__label">EBITDA</p>
+                <h3 class="snapshot__value">8,38Mln</h3>
+                <p class="snapshot__trend snapshot__trend--positive">+31,25%</p>
+                <p class="snapshot__text">
+                  Operating profitability is increasing, confirming an
+                  improvement in the economic sustainability of the plan.
+                </p>
+              </div>
+            </article>
+
+            <article class="snapshot__card">
+              <div class="snapshot__icon">
+                <i class="fa-solid fa-scale-balanced"></i>
+              </div>
+              <div class="snapshot__content">
+                <p class="snapshot__label">NFP/EBITDA</p>
+                <h3 class="snapshot__value">1,6x</h3>
+                <p class="snapshot__trend snapshot__trend--positive">
+                  decreasing leverage
+                </p>
+                <p class="snapshot__text">
+                  The NFP/EBITDA ratio falls below risk thresholds, improving
+                  the assessment of financial strength.
+                </p>
+              </div>
+            </article>
+
+            <article class="snapshot__card">
+              <div class="snapshot__icon">
+                <i class="fa-solid fa-droplet"></i>
+              </div>
+              <div class="snapshot__content">
+                <p class="snapshot__label">Liquidity</p>
+                <h3 class="snapshot__value">10Mln</h3>
+                <p class="snapshot__trend snapshot__trend--positive">
+                  positive from 2028
+                </p>
+                <p class="snapshot__text">
+                  Liquidity turns positive again in the forecast plan,
+                  indicating a more balanced cash flow position.
+                </p>
+              </div>
+            </article>
+
+            <article class="snapshot__card">
+              <div class="snapshot__icon">
+                <i class="fa-solid fa-percent"></i>
+              </div>
+              <div class="snapshot__content">
+                <p class="snapshot__label">ROE</p>
+                <h3 class="snapshot__value">26,11%</h3>
+                <p class="snapshot__trend snapshot__trend--positive">+6,13%</p>
+                <p class="snapshot__text">
+                  Return on equity improves, strengthening the economic
+                  sustainability of the plan.
+                </p>
+              </div>
+            </article>
+
+            <article class="snapshot__card snapshot__card--award">
+              <div class="snapshot__icon">
+                <i class="fa-solid fa-calendar-check"></i>
+              </div>
+              <div class="snapshot__content">
+                <p class="snapshot__label">CCC</p>
+                <h3 class="snapshot__value">66 days</h3>
+                <p class="snapshot__trend snapshot__trend--neutral">
+                  cash cycle
+                </p>
+                <p class="snapshot__text">
+                  The cash conversion cycle is monitored to assess financial
+                  timing and operating funding needs.
+                </p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="dashboard-section" id="dashboard-preview">
+        <div class="dashboard">
+          <div class="section-header">
+            <p class="section-eyebrow">Dashboard Preview</p>
+            <h2 class="section-title">
+              A complete view of the
+              <span class="text-gradient">financial business plan</span>
+            </h2>
+            <p class="section-subtitle">
+              The dashboard integrates revenue, break-even, profitability, net
+              financial position, investment coverage, liquidity, and financial
+              ratios into two management views designed to support analysis and
+              decision-making.
+            </p>
+          </div>
+
+          <div class="dashboard__carousel">
+            <button
+              class="carousel__arrow carousel__arrow--left"
+              type="button"
+              aria-label="Previous image"
+            >
+              &#10094;
+            </button>
+            <div class="carousel__viewport">
+              <div class="carousel__track">
+                <img
+                  class="dashboard__image"
+                  src="../assets/images/MATTAVELLI FOTO 1.PNG"
+                  data-full="../assets/images/MATTAVELLI FOTO 1.PNG"
+                  alt="Power BI dashboard with revenue, profitability, break-even, EBITDA, and net income"
+                  tabindex="0"
+                />
+                <img
+                  class="dashboard__image"
+                  src="../assets/images/MATTAVELLI FOTO 2.PNG"
+                  data-full="../assets/images/MATTAVELLI FOTO 2.PNG"
+                  alt="Power BI dashboard with net financial position, liquidity, Capex coverage, ROE, and cash cycle"
+                  tabindex="0"
+                />
+              </div>
+            </div>
+            <button
+              class="carousel__arrow carousel__arrow--right"
+              type="button"
+              aria-label="Next image"
+            >
+              &#10095;
+            </button>
+          </div>
+
+          <p class="dashboard__hint">
+            Scroll to change view. Click the dashboard to display it in full
+            screen.
+          </p>
+        </div>
+      </section>
+
+      <div class="dashboard-lightbox" aria-hidden="true">
+        <button
+          class="dashboard-lightbox__close"
+          type="button"
+          aria-label="Close dashboard preview"
+        >
+          &times;
+        </button>
+        <button
+          class="dashboard-lightbox__arrow dashboard-lightbox__arrow--left"
+          type="button"
+          aria-label="Previous dashboard"
+        >
+          &#10094;
+        </button>
+        <div class="dashboard-lightbox__content">
+          <img class="dashboard-lightbox__image" src="" alt="" />
+        </div>
+        <button
+          class="dashboard-lightbox__arrow dashboard-lightbox__arrow--right"
+          type="button"
+          aria-label="Next dashboard"
+        >
+          &#10095;
+        </button>
+      </div>
+
+      <section class="context-section" id="project-context">
+        <div class="context">
+          <div class="section-header section-header--compact">
+            <p class="section-eyebrow">The Context</p>
+            <h2 class="section-title">
+              Reading a business plan with
+              <span class="text-gradient">financial clarity</span>
+            </h2>
+            <p class="section-subtitle">
+              A business plan cannot be assessed solely through its final
+              revenue figure. Understanding its sustainability requires
+              connecting profitability, financial expenses, investments, net
+              financial position, liquidity, ratios, and cash flows in an
+              integrated analysis.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="challenge-section" id="business-challenge">
+        <div class="challenge">
+          <div class="section-header">
+            <p class="section-eyebrow">Business Challenge</p>
+            <h2 class="section-title">
+              The challenges <span class="text-gradient">to address</span>
+            </h2>
+            <p class="section-subtitle">
+              The business plan analysis required a view capable of making
+              economic balance, financial sustainability, and investment
+              coverage capacity immediately clear.
+            </p>
+          </div>
+
+          <div class="challenge__cards">
+            <article class="challenge__card">
+              <div class="challenge__icon challenge__icon--negative">
+                <i class="fa-solid fa-file-circle-exclamation"></i>
+              </div>
+              <h3 class="challenge__card-title">
+                Complex business plan to interpret
+              </h3>
+              <p class="challenge__card-text">
+                Revenue, costs, margins, and net income were spread across
+                complex schedules, slowing down the interpretation of key
+                signals.
+              </p>
+            </article>
+
+            <article class="challenge__card">
+              <div class="challenge__icon challenge__icon--channel">
+                <i class="fa-solid fa-scale-balanced"></i>
+              </div>
+              <h3 class="challenge__card-title">
+                Financial sustainability to assess
+              </h3>
+              <p class="challenge__card-text">
+                It was necessary to monitor net financial position, leverage,
+                Capex coverage, and ratios to determine whether the plan was
+                sustainable over the medium term.
+              </p>
+            </article>
+
+            <article class="challenge__card">
+              <div class="challenge__icon challenge__icon--margin">
+                <i class="fa-solid fa-eye"></i>
+              </div>
+              <h3 class="challenge__card-title">
+                Management KPIs lacked clarity
+              </h3>
+              <p class="challenge__card-text">
+                The indicators had to be transformed into a clear, navigable
+                view suitable for review, control, and decision-making.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="approach-section" id="analytical-approach">
+        <div class="approach">
+          <div class="section-header">
+            <p class="section-eyebrow">Analytical Approach</p>
+            <h2 class="section-title">
+              From financial statements
+              <span class="text-gradient">to management insight.</span>
+            </h2>
+            <p class="section-subtitle">
+              The project was developed through a structured analytical process:
+              from reviewing economic and financial data to defining KPIs and
+              building a dashboard focused on evaluating the plan.
+            </p>
+          </div>
+
+          <div class="approach__steps">
+            <article class="approach__step">
+              <div class="approach__header">
+                <div class="approach__icon approach__icon--kpi">
+                  <i class="fa-solid fa-bullseye"></i>
+                </div>
+                <h3 class="approach__step-title">KPI Definition</h3>
+              </div>
+              <p class="approach__step-text">
+                Definition of the key metrics needed to assess revenue, EBITDA,
+                net income, net financial position, ratios, and cash flows.
+              </p>
+              <div class="approach__tags">
+                <span>Revenue</span><span>EBITDA</span><span>NFP</span>
+              </div>
+            </article>
+
+            <article class="approach__step">
+              <div class="approach__header">
+                <div class="approach__icon approach__icon--trend">
+                  <i class="fa-solid fa-chart-line"></i>
+                </div>
+                <h3 class="approach__step-title">Scenario Analysis</h3>
+              </div>
+              <p class="approach__step-text">
+                Forward-looking analysis for 2024–2029 to assess growth,
+                profitability, break-even, and plan sustainability.
+              </p>
+              <div class="approach__tags">
+                <span>2024–2029</span><span>Break-even</span
+                ><span>Forecast</span>
+              </div>
+            </article>
+
+            <article class="approach__step">
+              <div class="approach__header">
+                <div class="approach__icon approach__icon--channel">
+                  <i class="fa-solid fa-code-compare"></i>
+                </div>
+                <h3 class="approach__step-title">Financial Structure</h3>
+              </div>
+              <p class="approach__step-text">
+                Integrated analysis of leverage, investment coverage, ratios,
+                and liquidity to assess financial risk.
+              </p>
+              <div class="approach__tags">
+                <span>NFP/EBITDA</span><span>Capex</span><span>Liquidity</span>
+              </div>
+            </article>
+
+            <article class="approach__step">
+              <div class="approach__header">
+                <div class="approach__icon approach__icon--insight">
+                  <i class="fa-solid fa-lightbulb"></i>
+                </div>
+                <h3 class="approach__step-title">Executive Insight</h3>
+              </div>
+              <p class="approach__step-text">
+                Translation of the main financial signals into calls to action
+                and concise recommendations for the decision-making process.
+              </p>
+              <div class="approach__tags">
+                <span>Insight</span><span>Action</span><span>Decision</span>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="solution-section" id="solution-developed">
+        <div class="solution">
+          <div class="solution__content">
+            <p class="section-eyebrow">The Solution Developed</p>
+            <h2 class="section-title solution__title">
+              A dashboard designed to transform the business plan into
+              <span class="text-gradient">financial decisions.</span>
+            </h2>
+            <p class="solution__text">
+              The dashboard was designed to provide a management-level view of
+              the business plan by linking revenue growth, profitability, net
+              income, net financial position, liquidity, and investment
+              coverage. The goal is to make the plan easier to read, compare,
+              and use in support of assessments and decisions.
+            </p>
+
+            <div class="solution__lists">
+              <ul>
+                <li class="solution__list">
+                  Revenue analysis and comparison with break-even
+                </li>
+                <li class="solution__list">
+                  Monitoring of EBITDA, net income, and percentage margins
+                </li>
+                <li class="solution__list">
+                  Analysis of net financial position and the NFP/EBITDA ratio
+                </li>
+                <li class="solution__list">
+                  Analysis of cash flows and forecast liquidity
+                </li>
+                <li class="solution__list">
+                  Assessment of Capex coverage and investment sustainability
+                </li>
+                <li class="solution__list">
+                  Executive calls to action to guide decision-making priorities
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="solution__visual">
+            <div class="solution__card solution__card--main">
+              <span class="solution__tag">Growth</span>
+              <img
+                src="../assets/images/ricavi-break-even.png"
+                alt="Business plan revenue and break-even chart"
+              />
+            </div>
+
+            <div class="solution__cards-row">
+              <div class="solution__card">
+                <span class="solution__tag">Profitability</span>
+                <img
+                  src="../assets/images/driver-utile-netto.png"
+                  alt="Net income drivers chart"
+                />
+              </div>
+
+              <div class="solution__card">
+                <span class="solution__tag">Liquidity</span>
+                <img
+                  src="../assets/images/quick-current-ratio.png"
+                  alt="Business plan liquidity ratios chart"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="kpi-section" id="kpi-framework">
+        <div class="kpi">
+          <div class="section-header">
+            <p class="section-eyebrow">KPI Framework</p>
+            <h2 class="section-title">
+              Every financial indicator
+              <span class="text-gradient">in the right context.</span>
+            </h2>
+            <p class="section-subtitle">
+              The dashboard indicators were organised into three analysis areas
+              to connect economic performance, financial structure, and plan
+              sustainability.
+            </p>
+          </div>
+
+          <div class="kpi__framework">
+            <article class="kpi__area">
+              <div class="kpi__area-top">
+                <div class="kpi__icon kpi__icon--performance">
+                  <i class="fa-solid fa-chart-line"></i>
+                </div>
+                <div>
+                  <p class="kpi__area-label">Area 01</p>
+                  <h3 class="kpi__area-title">Economic Performance</h3>
+                </div>
+              </div>
+              <p class="kpi__area-text">
+                Measures the plan’s ability to generate revenue, profitability,
+                and net income over the period analysed.
+              </p>
+              <p class="kpi__metrics">
+                Revenue <span>•</span> EBITDA <span>•</span> Net Income
+                <span>•</span> Margins
+              </p>
+            </article>
+
+            <article class="kpi__area">
+              <div class="kpi__area-top">
+                <div class="kpi__icon kpi__icon--booking">
+                  <i class="fa-solid fa-scale-balanced"></i>
+                </div>
+                <div>
+                  <p class="kpi__area-label">Area 02</p>
+                  <h3 class="kpi__area-title">Financial Structure</h3>
+                </div>
+              </div>
+              <p class="kpi__area-text">
+                Analyses debt, net financial position, leverage, and the plan’s
+                ability to support financial expenses and investments.
+              </p>
+              <p class="kpi__metrics">
+                NFP <span>•</span> NFP/EBITDA <span>•</span> Capex
+                <span>•</span> Coverage
+              </p>
+            </article>
+
+            <article class="kpi__area">
+              <div class="kpi__area-top">
+                <div class="kpi__icon kpi__icon--distribution">
+                  <i class="fa-solid fa-droplet"></i>
+                </div>
+                <div>
+                  <p class="kpi__area-label">Area 03</p>
+                  <h3 class="kpi__area-title">Liquidity & Ratios</h3>
+                </div>
+              </div>
+              <p class="kpi__area-text">
+                Highlights cash balance, forecast liquidity, and financial
+                ratios used to assess the plan’s resilience.
+              </p>
+              <p class="kpi__metrics">
+                Quick Ratio <span>•</span> Current Ratio <span>•</span> ROE
+                <span>•</span> CCC
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="outcome-section" id="project-outcome">
+        <div class="outcome">
+          <div class="section-header">
+            <p class="section-eyebrow">Project Outcomes</p>
+            <h2 class="section-title">
+              Transforming the plan into
+              <span class="text-gradient">decision-making value</span>
+            </h2>
+            <p class="section-subtitle">
+              The project made the business plan easier to read, measure, and
+              compare, providing a single view for analysing growth,
+              profitability, leverage, liquidity, and investment coverage.
+            </p>
+          </div>
+
+          <div class="outcome__cards">
+            <article class="outcome__card">
+              <div class="outcome__icon">
+                <i class="fa-solid fa-wallet"></i>
+              </div>
+              <p
+                class="outcome__number js-counter"
+                data-prefix="+"
+                data-target="9"
+                data-suffix="%"
+              >
+                0
+              </p>
+              <p class="outcome__text">2026 revenue growth</p>
+            </article>
+
+            <article class="outcome__card">
+              <div class="outcome__icon">
+                <i class="fa-solid fa-chart-line"></i>
+              </div>
+              <p
+                class="outcome__number js-counter"
+                data-prefix="+"
+                data-target="31"
+                data-suffix="%"
+              >
+                0
+              </p>
+              <p class="outcome__text">EBITDA growth</p>
+            </article>
+
+            <article class="outcome__card">
+              <div class="outcome__icon">
+                <i class="fa-solid fa-scale-balanced"></i>
+              </div>
+              <p
+                class="outcome__number js-counter"
+                data-prefix=""
+                data-target="6"
+                data-suffix="x"
+              >
+                0
+              </p>
+              <p class="outcome__text">average Capex coverage</p>
+            </article>
+
+            <article class="outcome__card">
+              <div class="outcome__icon">
+                <i class="fa-solid fa-droplet"></i>
+              </div>
+              <p
+                class="outcome__number js-counter"
+                data-prefix=""
+                data-target="10"
+                data-suffix="Mln"
+              >
+                0
+              </p>
+              <p class="outcome__text">positive liquidity in 2029</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="cta-section" id="contacts__id">
+        <div class="cta">
+          <div class="cta__content">
+            <h2 class="cta__title">
+              Would you like to turn your financial data into a clear dashboard?
+            </h2>
+            <p class="cta__text">
+              I create Power BI dashboards to analyse business plans, financial
+              KPIs, profitability, and economic sustainability in a simple,
+              visual, and decision-oriented way.
+            </p>
+
+            <div class="cta__actions">
+              <div class="cta__button-wrapper">
+                <button
+                  type="button"
+                  class="button button--primary cta__button"
+                  id="openContactForm"
+                >
+                  <i class="fa-regular fa-calendar"></i>
+                  Book a free consultation
+                </button>
+
+                <a
+                  href="../landing-page/index.html#projects__id"
+                  class="button button--secondary cta__button"
+                >
+                  <i class="fa-solid fa-eye"></i>
+                  View other projects
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div
+        class="form-modal"
+        id="contactFormModal"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="contactFormTitle"
+      >
+        <div class="form-modal__overlay" id="closeContactForm"></div>
+
+        <div class="form-modal__card">
+          <button
+            type="button"
+            class="form-modal__close"
+            id="closeContactFormButton"
+            aria-label="Close the contact form"
+          >
+            ×
+          </button>
+          <p class="form-modal__eyebrow">Free Consultation</p>
+          <h2 class="form-modal__title" id="contactFormTitle">
+            Tell me about your project
+          </h2>
+          <p class="form-modal__text">
+            Complete the form and briefly describe your needs. I will contact
+            you to understand how to make your KPIs, reports, and dashboards
+            clearer.
+          </p>
+
+          <form
+            id="contactForm"
+            action="https://formspree.io/f/xkoandwa"
+            method="POST"
+            class="contact-form"
+          >
+            <div class="form-grid">
+              <div class="form-group">
+                <label for="name">Full Name *</label>
+                <input
+                  id="name"
+                  type="text"
+                  name="name"
+                  placeholder="John Smith"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <label for="email">Email *</label>
+                <input
+                  id="email"
+                  type="email"
+                  name="email"
+                  placeholder="name@company.com"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <label for="phone">Phone / WhatsApp</label>
+                <input
+                  id="phone"
+                  type="tel"
+                  name="phone"
+                  placeholder="+39 333 1234567"
+                />
+              </div>
+              <div class="form-group">
+                <label for="company">Company</label>
+                <input
+                  id="company"
+                  type="text"
+                  name="company"
+                  placeholder="Company name"
+                />
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="goal">Main objective *</label>
+              <select id="goal" name="goal" required>
+                <option value="">Select an objective</option>
+                <option value="Dashboard Power BI">Dashboard Power BI</option>
+                <option value="Reporting automatico">
+                  Automated reporting
+                </option>
+                <option value="KPI e monitoraggio">KPI and monitoring</option>
+                <option value="Analisi finanziaria">Financial analysis</option>
+                <option value="Data modeling">Data modeling</option>
+                <option value="Altro">Other</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="message">Message *</label>
+              <textarea
+                id="message"
+                name="message"
+                rows="5"
+                placeholder="Briefly describe your current situation, the challenges you are facing, and what you would like to improve."
+                required
+              ></textarea>
+            </div>
+
+            <p class="form-privacy-note">
+              The information provided will be used exclusively to respond to
+              your contact request and assess a potential collaboration.
+            </p>
+
+            <label class="privacy-check">
+              <input type="checkbox" name="privacy" required />
+              <span>
+                I have read and accept the
+                <a
+                  href="../landing-page/privacy.html?from=business-plan"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >Privacy Policy</a
+                >.
+              </span>
+            </label>
+
+            <button type="submit" class="contact-form__button">
+              Book a free consultation
+            </button>
+            <p id="formSuccessMessage" class="form-success-message">
+              Thank you! Your request has been submitted successfully. I will
+              contact you as soon as possible.
+            </p>
+          </form>
+        </div>
+      </div>
+    </main>
+
+    <!--START FOOTER SECTION-->
+    <footer class="footer">
+      <div class="footer__main">
+        <div class="footer__brand-block">
+          <a
+            href="./index.html"
+            class="footer__brand"
+            aria-label="Torna alla homepage"
+          >
+            <span class="footer__monogram" aria-hidden="true">DF</span>
+
+            <span class="footer__identity">
+              <span class="footer__name">Dina Fiorentino</span>
+              <span class="footer__role"
+                >Data Analyst &amp; Power BI Consultant</span
+              >
+            </span>
+          </a>
+
+          <p class="footer__description">
+            Dashboards, reporting, and data models designed to transform complex
+            information into clearer decisions.
+          </p>
+
+          <div class="footer__socials" aria-label="Contatti professionali">
+            <a
+              href="https://www.linkedin.com/in/dina-fiorentino/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Profilo LinkedIn di Dina Fiorentino"
+            >
+              <i class="fa-brands fa-linkedin-in" aria-hidden="true"></i>
+              <span>LinkedIn</span>
+            </a>
+
+            <a
+              href="mailto:dinafiorentino.consulting@outlook.it"
+              aria-label="Invia una email a Dina Fiorentino"
+            >
+              <i class="fa-regular fa-envelope" aria-hidden="true"></i>
+              <span>Email</span>
+            </a>
+          </div>
+        </div>
+
+        <nav class="footer__column" aria-label="Navigazione footer">
+          <p class="footer__heading">EXPLORE</p>
+          <a href="../landing-page/index-en.html#services__id">Services</a>
+          <a href="../landing-page/index-en.html#projects__id">Projects</a>
+          <a href="../landing-page/index-en.html#about__id">About Me</a>
+          <a href="../landing-page/index-en.html#contacts__id">Contacts</a>
+        </nav>
+
+        <div class="footer__column footer__column--services">
+          <p class="footer__heading">Services</p>
+          <a href="../services/dashboard-powerBI-en.html">Dashboard Power BI</a>
+          <a href="../services/reporting-automatizzato-en.html"
+            >Automated reporting</a
+          >
+          <a href="../services/kpi-design-monitoraggio-en.html">KPI design</a>
+          <a href="../services/data-modeling-integrazione-en.html"
+            >Data modeling</a
+          >
+        </div>
+
+        <div class="footer__column footer__column--contact">
+          <p class="footer__heading">Let's collaborate.</p>
+          <p>
+            Available for data analysis, dashboard, and corporate reporting
+            projects.
+          </p>
+
+          <button
+            type="button"
+            class="footer__contact-button js-open-contact-form"
+          >
+            Let's talk about your project.
+            <span aria-hidden="true">→</span>
+          </button>
+        </div>
+      </div>
+
+      <div class="footer__bottom">
+        <p class="copyright__text">
+          © 2026 Dina Fiorentino. All rights reserved.
+        </p>
+
+        <nav class="privacy__box" aria-label="Link legali e lingua">
+          <a
+            href="../landing-page/privacy-en.html?from=business-plan-en"
+            class="privacy__text"
+          >
+            Privacy
+          </a>
+          <a
+            href="../landing-page/cookie-en.html?from=business-plan-en"
+            class="cookie__text"
+          >
+            Cookie
+          </a>
+          <a href="./business-plan.html" class="footer__language">Italian</a>
+        </nav>
+      </div>
+    </footer>
+    <!--END FOOTER SECTION-->
+
+    <button
+      id="back__to-top"
+      class="back__to-top"
+      type="button"
+      aria-label="Back to top"
+    >
+      ↥
+    </button>
+    <script src="../assets/js/script.js"></script>
+  </body>
+</html>

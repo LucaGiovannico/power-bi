@@ -1,0 +1,1076 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Hotel Market Analysis & Revenue Insights | Dina Fiorentino</title>
+
+    <link rel="stylesheet" href="../assets/css/projects.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Poppins:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="../Images/favicon/apple-touch-icon.png"
+    />
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="../Images/favicon/favicon-32x32.png"
+    />
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="../Images/favicon/favicon-16x16.png"
+    />
+
+    <link rel="manifest" href="../Images/favicon/site.webmanifest" />
+
+    <link rel="icon" href="../Images/favicon/favicon.ico" />
+  </head>
+
+  <body>
+    <header class="hero">
+      <div class="hero__content">
+        <div class="hero__navigation">
+          <a
+            href="../landing-page/index-en.html#projects__id"
+            class="hero__back-link"
+          >
+            ↤ Back to projects
+          </a>
+
+          <div
+            class="language-selector hero__language-selector"
+            data-it="./hotel-market-insights.html"
+            data-en="./hotel-market-insights-en.html"
+          >
+            <button
+              type="button"
+              class="language-selector__button"
+              onclick="toggleLanguageMenu(event);"
+              aria-haspopup="true"
+              aria-expanded="false"
+              aria-controls="languageMenu"
+            >
+              🇬🇧
+              <span>EN</span>
+              <span class="language-selector__arrow">▾</span>
+            </button>
+
+            <div class="language-selector__menu" id="languageMenu">
+              <button type="button" onclick="setLanguage('it')">
+                🇮🇹 Italiano
+              </button>
+              <button type="button" onclick="setLanguage('en')">
+                🇬🇧 English
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <p class="hero__eyebrow">🥇 Winning Project</p>
+
+        <h1 class="hero__title">
+          Hotel Market Analysis<br />
+          <span class="text-gradient">& Revenue Insights</span>
+        </h1>
+
+        <p class="hero__subtitle">
+          Award-winning Power BI dashboard designed to analyze hotel
+          performance, identify revenue decline, measure OTA dependency, and
+          uncover improvement opportunities across occupancy, ADR and RevPAR.
+        </p>
+
+        <div class="hero__cards">
+          <div class="hero__card">
+            <span class="hero__card-label">Industry</span>
+            <span class="hero__card-value">Hospitality</span>
+          </div>
+
+          <div class="hero__card">
+            <span class="hero__card-label">Tool</span>
+            <span class="hero__card-value">Power BI</span>
+          </div>
+
+          <div class="hero__card">
+            <span class="hero__card-label">Result</span>
+            <span class="hero__card-value">1st Place</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero__visual">
+        <img
+          class="hero__image"
+          src="../assets/images/Screenshot 2026-06-21 alle 17.48.40.png"
+          alt="Hotel Market Analysis and Revenue Insights Power BI dashboard preview"
+        />
+      </div>
+    </header>
+    <main>
+      <section class="snapshot-section" id="executive-snapshot">
+        <div class="snapshot">
+          <div class="section-header">
+            <p class="section-eyebrow">Executive Snapshot</p>
+
+            <h2 class="section-title">
+              The key numbers
+              <span class="text-gradient">behind the analysis.</span>
+            </h2>
+
+            <p class="section-subtitle">
+              A concise overview of the main findings from the 2023–2024
+              comparison: revenue decline, lower occupancy, OTA dependency and
+              reduced profitability per available room.
+            </p>
+          </div>
+
+          <div class="snapshot__grid">
+            <article class="snapshot__card">
+              <div class="snapshot__icon">
+                <i class="fa-solid fa-wallet"></i>
+              </div>
+
+              <div class="snapshot__content">
+                <p class="snapshot__label">Revenue 2024</p>
+                <h3 class="snapshot__value">€4.03M</h3>
+                <p class="snapshot__trend snapshot__trend--negative">
+                  -12% YoY
+                </p>
+                <p class="snapshot__text">
+                  Revenue contracted compared to 2023, requiring a deeper
+                  analysis of the drivers behind the decline.
+                </p>
+              </div>
+            </article>
+
+            <article class="snapshot__card">
+              <div class="snapshot__icon">
+                <i class="fa-solid fa-bed"></i>
+              </div>
+
+              <div class="snapshot__content">
+                <p class="snapshot__label">Occupancy Rate</p>
+                <h3 class="snapshot__value">78%</h3>
+                <p class="snapshot__trend snapshot__trend--negative">
+                  -11% YoY
+                </p>
+                <p class="snapshot__text">
+                  Occupancy decreased, with the strongest deterioration
+                  occurring in the final part of the year.
+                </p>
+              </div>
+            </article>
+
+            <article class="snapshot__card">
+              <div class="snapshot__icon">
+                <i class="fa-solid fa-earth-europe"></i>
+              </div>
+
+              <div class="snapshot__content">
+                <p class="snapshot__label">OTA Share</p>
+                <h3 class="snapshot__value">45%</h3>
+                <p class="snapshot__trend snapshot__trend--neutral">
+                  Main channel
+                </p>
+                <p class="snapshot__text">
+                  OTA channels dominate the booking mix, highlighting a strong
+                  dependency on intermediated distribution channels.
+                </p>
+              </div>
+            </article>
+
+            <article class="snapshot__card">
+              <div class="snapshot__icon">
+                <i class="fa-solid fa-chart-column"></i>
+              </div>
+
+              <div class="snapshot__content">
+                <p class="snapshot__label">RevPAR 2024</p>
+                <h3 class="snapshot__value">€408</h3>
+                <p class="snapshot__trend snapshot__trend--negative">
+                  -13% YoY
+                </p>
+                <p class="snapshot__text">
+                  Revenue per available room decreased, making profitability
+                  monitoring a key revenue management priority.
+                </p>
+              </div>
+            </article>
+
+            <article class="snapshot__card">
+              <div class="snapshot__icon">
+                <i class="fa-solid fa-clock"></i>
+              </div>
+
+              <div class="snapshot__content">
+                <p class="snapshot__label">Lead Time Avg</p>
+                <h3 class="snapshot__value">45 days</h3>
+                <p class="snapshot__trend snapshot__trend--neutral">
+                  Booking behavior
+                </p>
+                <p class="snapshot__text">
+                  Lead time analysis helped interpret demand patterns and the
+                  impact of last-minute bookings.
+                </p>
+              </div>
+            </article>
+
+            <article class="snapshot__card snapshot__card--award">
+              <div class="snapshot__icon">
+                <i class="fa-solid fa-trophy"></i>
+              </div>
+
+              <div class="snapshot__content">
+                <p class="snapshot__label">Contest Result</p>
+                <h3 class="snapshot__value">1st place</h3>
+                <p class="snapshot__trend snapshot__trend--positive">
+                  Winning project
+                </p>
+                <p class="snapshot__text">
+                  The dashboard was awarded for data storytelling, KPI clarity
+                  and decision-support effectiveness.
+                </p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="dashboard-section" id="dashboard-preview">
+        <div class="dashboard">
+          <div class="section-header">
+            <p class="section-eyebrow">Dashboard Preview</p>
+
+            <h2 class="section-title">
+              A complete view of
+              <span class="text-gradient">hotel performance</span>
+            </h2>
+
+            <p class="section-subtitle">
+              The dashboard combines revenue analysis, occupancy trends, booking
+              channels and profitability metrics into one decision-oriented
+              view.
+            </p>
+          </div>
+
+          <div class="dashboard__carousel">
+            <button
+              class="carousel__arrow carousel__arrow--left"
+              type="button"
+              aria-label="Previous image"
+            >
+              &#10094;
+            </button>
+
+            <div class="carousel__viewport">
+              <div class="carousel__track">
+                <img
+                  class="dashboard__image"
+                  src="../assets/images/FOTO CONTEST 2.PNG"
+                  data-full="../assets/images/FOTO CONTEST 2.PNG"
+                  alt="Power BI dashboard 2024 with revenue, occupancy, OTA share, RevPAR and operational recommendations"
+                  tabindex="0"
+                />
+
+                <img
+                  class="dashboard__image"
+                  src="../assets/images/FOTO CONTEST 2023.PNG"
+                  data-full="../assets/images/FOTO CONTEST 2023.PNG"
+                  alt="Power BI dashboard 2023 with revenue, occupancy, booking channels and profitability comparison"
+                  tabindex="0"
+                />
+              </div>
+            </div>
+
+            <button
+              class="carousel__arrow carousel__arrow--right"
+              type="button"
+              aria-label="Next image"
+            >
+              &#10095;
+            </button>
+          </div>
+
+          <p class="dashboard__hint">
+            Click the dashboard to view it in full screen.
+          </p>
+        </div>
+      </section>
+
+      <div class="dashboard-lightbox" aria-hidden="true">
+        <button
+          class="dashboard-lightbox__close"
+          type="button"
+          aria-label="Close dashboard preview"
+        >
+          &times;
+        </button>
+
+        <button
+          class="dashboard-lightbox__arrow dashboard-lightbox__arrow--left"
+          type="button"
+          aria-label="Previous dashboard"
+        >
+          &#10094;
+        </button>
+
+        <div class="dashboard-lightbox__content">
+          <img class="dashboard-lightbox__image" src="" alt="" />
+        </div>
+
+        <button
+          class="dashboard-lightbox__arrow dashboard-lightbox__arrow--right"
+          type="button"
+          aria-label="Next dashboard"
+        >
+          &#10095;
+        </button>
+      </div>
+
+      <section class="context-section" id="project-context">
+        <div class="context">
+          <div class="section-header section-header--compact">
+            <p class="section-eyebrow">Context</p>
+
+            <h2 class="section-title">
+              Understanding a market in
+              <span class="text-gradient">constant evolution</span>
+            </h2>
+
+            <p class="section-subtitle">
+              Hospitality is shaped by seasonality, dynamic pricing and
+              increasingly fragmented booking channels. To properly evaluate
+              hotel performance, looking at revenue alone is not enough:
+              occupancy, ADR, RevPAR, lead time and channel distribution must be
+              connected into a single analytical view.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="challenge-section" id="business-challenge">
+        <div class="challenge">
+          <div class="section-header">
+            <p class="section-eyebrow">Business Challenge</p>
+
+            <h2 class="section-title">
+              The critical issues
+              <span class="text-gradient">to solve</span>
+            </h2>
+
+            <p class="section-subtitle">
+              The 2024 analysis highlights three critical areas: declining
+              revenue, dependency on intermediated channels and pressure on
+              profitability.
+            </p>
+          </div>
+
+          <div class="challenge__cards">
+            <article class="challenge__card">
+              <div class="challenge__icon challenge__icon--negative">
+                <i class="fa-solid fa-arrow-trend-down"></i>
+              </div>
+
+              <h3 class="challenge__card-title">Revenue Decline</h3>
+
+              <p class="challenge__card-text">
+                Year-over-year revenue decline required a clear understanding of
+                the root causes behind the contraction.
+              </p>
+            </article>
+
+            <article class="challenge__card">
+              <div class="challenge__icon challenge__icon--channel">
+                <i class="fa-solid fa-earth-europe"></i>
+              </div>
+
+              <h3 class="challenge__card-title">OTA Dependency</h3>
+
+              <p class="challenge__card-text">
+                The strong weight of intermediated channels may affect margins
+                and reduce commercial control.
+              </p>
+            </article>
+
+            <article class="challenge__card">
+              <div class="challenge__icon challenge__icon--margin">
+                <i class="fa-solid fa-percent"></i>
+              </div>
+
+              <h3 class="challenge__card-title">Margin Reduction</h3>
+
+              <p class="challenge__card-text">
+                RevPAR decline required integrated monitoring of ADR, occupancy
+                and profitability dynamics.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="approach-section" id="analytical-approach">
+        <div class="approach">
+          <div class="section-header">
+            <p class="section-eyebrow">Analytical Approach</p>
+
+            <h2 class="section-title">
+              From raw data
+              <span class="text-gradient">to decision-ready insight.</span>
+            </h2>
+
+            <p class="section-subtitle">
+              The project was developed through a structured analytical process:
+              from defining hospitality KPIs to reading performance gaps and
+              generating operational recommendations.
+            </p>
+          </div>
+
+          <div class="approach__steps">
+            <article class="approach__step">
+              <div class="approach__header">
+                <div class="approach__icon approach__icon--kpi">
+                  <i class="fa-solid fa-bullseye"></i>
+                </div>
+
+                <h3 class="approach__step-title">KPI Definition</h3>
+              </div>
+
+              <p class="approach__step-text">
+                Selection of core metrics to measure performance, profitability
+                and demand behavior.
+              </p>
+
+              <div class="approach__tags">
+                <span>Revenue</span>
+                <span>ADR</span>
+                <span>RevPAR</span>
+              </div>
+            </article>
+
+            <article class="approach__step">
+              <div class="approach__header">
+                <div class="approach__icon approach__icon--trend">
+                  <i class="fa-solid fa-chart-line"></i>
+                </div>
+
+                <h3 class="approach__step-title">YoY Analysis</h3>
+              </div>
+
+              <p class="approach__step-text">
+                Comparison between 2023 and 2024 to identify trends, gaps and
+                critical performance signals.
+              </p>
+
+              <div class="approach__tags">
+                <span>Revenue gap</span>
+                <span>Occupancy</span>
+                <span>RevPAR</span>
+              </div>
+            </article>
+
+            <article class="approach__step">
+              <div class="approach__header">
+                <div class="approach__icon approach__icon--channel">
+                  <i class="fa-solid fa-diagram-project"></i>
+                </div>
+
+                <h3 class="approach__step-title">Channel Analysis</h3>
+              </div>
+
+              <p class="approach__step-text">
+                Analysis of the booking mix to evaluate the weight of
+                intermediated channels and the contribution of direct channels.
+              </p>
+
+              <div class="approach__tags">
+                <span>OTA</span>
+                <span>Website</span>
+                <span>CRO</span>
+              </div>
+            </article>
+
+            <article class="approach__step">
+              <div class="approach__header">
+                <div class="approach__icon approach__icon--insight">
+                  <i class="fa-solid fa-lightbulb"></i>
+                </div>
+
+                <h3 class="approach__step-title">Insight Generation</h3>
+              </div>
+
+              <p class="approach__step-text">
+                Translation of the analysis into actionable insights for
+                pricing, distribution and revenue management decisions.
+              </p>
+
+              <div class="approach__tags">
+                <span>Pricing</span>
+                <span>Distribution</span>
+                <span>Actions</span>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="solution-section" id="solution-developed">
+        <div class="solution">
+          <div class="solution__content">
+            <p class="section-eyebrow">Solution Developed</p>
+
+            <h2 class="section-title solution__title">
+              A dashboard designed to turn data into
+              <span class="text-gradient">decisions.</span>
+            </h2>
+
+            <p class="solution__text">
+              The dashboard was developed to support decision-making in the
+              hospitality sector by combining performance indicators, booking
+              channel analysis and demand dynamics into one strategic view.
+            </p>
+
+            <div class="solution__lists">
+              <ul>
+                <li class="solution__list">
+                  Revenue, ADR, RevPAR and Occupancy monitoring
+                </li>
+                <li class="solution__list">
+                  Booking channel performance analysis
+                </li>
+                <li class="solution__list">
+                  Booking window and lead time analysis
+                </li>
+                <li class="solution__list">
+                  Year-over-year comparisons and seasonal trends
+                </li>
+                <li class="solution__list">
+                  Identification of risks and growth opportunities
+                </li>
+                <li class="solution__list">
+                  Strategic insights and data-driven recommendations
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="solution__visual">
+            <div class="solution__card solution__card--main">
+              <span class="solution__tag">Performance</span>
+              <img
+                src="../assets/images/Total-revenue.png"
+                alt="Total Revenue chart from the hotel dashboard"
+              />
+            </div>
+
+            <div class="solution__cards-row">
+              <div class="solution__card">
+                <span class="solution__tag">Channels</span>
+                <img
+                  src="../assets/images/OTA.png"
+                  alt="OTA channel analysis chart from the hotel dashboard"
+                />
+              </div>
+
+              <div class="solution__card">
+                <span class="solution__tag">Profitability</span>
+                <img
+                  src="../assets/images/RevPAR.png"
+                  alt="RevPAR chart from the hotel dashboard"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="kpi-section" id="kpi-framework">
+        <div class="kpi">
+          <div class="section-header">
+            <p class="section-eyebrow">KPI Framework</p>
+
+            <h2 class="section-title">
+              Every critical metric
+              <span class="text-gradient">in the right context.</span>
+            </h2>
+
+            <p class="section-subtitle">
+              Dashboard indicators were organized into three analytical areas:
+              economic performance, booking behavior and channel distribution.
+            </p>
+          </div>
+
+          <div class="kpi__framework">
+            <article class="kpi__area">
+              <div class="kpi__area-top">
+                <div class="kpi__icon kpi__icon--performance">
+                  <i class="fa-solid fa-chart-line"></i>
+                </div>
+
+                <div>
+                  <p class="kpi__area-label">Area 01</p>
+                  <h3 class="kpi__area-title">Performance</h3>
+                </div>
+              </div>
+
+              <p class="kpi__area-text">
+                Measures the hotel’s economic performance and its ability to
+                generate revenue against available occupancy.
+              </p>
+
+              <p class="kpi__metrics">
+                Revenue <span>•</span> Occupancy <span>•</span> ADR
+                <span>•</span> RevPAR
+              </p>
+            </article>
+
+            <article class="kpi__area">
+              <div class="kpi__area-top">
+                <div class="kpi__icon kpi__icon--booking">
+                  <i class="fa-solid fa-calendar-check"></i>
+                </div>
+
+                <div>
+                  <p class="kpi__area-label">Area 02</p>
+                  <h3 class="kpi__area-title">Booking Behavior</h3>
+                </div>
+              </div>
+
+              <p class="kpi__area-text">
+                Analyzes demand behavior, booking lead time and the mix of room
+                categories sold.
+              </p>
+
+              <p class="kpi__metrics">
+                Lead Time <span>•</span> Booking Window <span>•</span> Room Mix
+                <span>•</span> Demand
+              </p>
+            </article>
+
+            <article class="kpi__area">
+              <div class="kpi__area-top">
+                <div class="kpi__icon kpi__icon--distribution">
+                  <i class="fa-solid fa-diagram-project"></i>
+                </div>
+
+                <div>
+                  <p class="kpi__area-label">Area 03</p>
+                  <h3 class="kpi__area-title">Distribution</h3>
+                </div>
+              </div>
+
+              <p class="kpi__area-text">
+                Highlights the weight of booking channels in the revenue mix and
+                helps evaluate OTA dependency, direct performance and commercial
+                control.
+              </p>
+
+              <p class="kpi__metrics">
+                Channel Mix <span>•</span> OTA <span>•</span> Website
+                <span>•</span> CRO
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="outcome-section" id="project-outcome">
+        <div class="outcome">
+          <div class="section-header">
+            <p class="section-eyebrow">Project Results</p>
+
+            <h2 class="section-title">
+              Turning data into
+              <span class="text-gradient">strategic value</span>
+            </h2>
+
+            <p class="section-subtitle">
+              The project translated key performance signals into a clear
+              decision-support view, awarded for data storytelling, KPI
+              structure and executive-level analytical value.
+            </p>
+          </div>
+
+          <div class="outcome__cards">
+            <article class="outcome__card">
+              <div class="outcome__icon">
+                <i class="fa-solid fa-earth-europe"></i>
+              </div>
+
+              <p
+                class="outcome__number js-counter"
+                data-prefix=""
+                data-target="45"
+                data-suffix="%"
+              >
+                0
+              </p>
+
+              <p class="outcome__text">OTA share analyzed</p>
+            </article>
+
+            <article class="outcome__card">
+              <div class="outcome__icon">
+                <i class="fa-solid fa-layer-group"></i>
+              </div>
+
+              <p
+                class="outcome__number js-counter"
+                data-prefix="+"
+                data-target="8"
+                data-suffix=""
+              >
+                0
+              </p>
+
+              <p class="outcome__text">KPIs integrated</p>
+            </article>
+
+            <article class="outcome__card">
+              <div class="outcome__icon">
+                <i class="fa-solid fa-arrow-trend-down"></i>
+              </div>
+
+              <p
+                class="outcome__number js-counter"
+                data-prefix="-"
+                data-target="12"
+                data-suffix="%"
+              >
+                0
+              </p>
+
+              <p class="outcome__text">Revenue gap identified</p>
+            </article>
+
+            <article class="outcome__card">
+              <div class="outcome__icon">
+                <i class="fa-solid fa-trophy"></i>
+              </div>
+
+              <p
+                class="outcome__number js-counter"
+                data-prefix=""
+                data-target="1"
+                data-suffix="st"
+              >
+                0
+              </p>
+
+              <p class="outcome__text">Hospitality contest</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="cta-section" id="contacts__id">
+        <div class="cta">
+          <div class="cta__content">
+            <h2 class="cta__title">
+              Do you have data to turn into a decision-ready dashboard?
+            </h2>
+
+            <p class="cta__text">
+              I design Power BI dashboards and data storytelling solutions that
+              make KPIs, trends and insights immediately usable for business
+              decisions.
+            </p>
+
+            <div class="cta__actions">
+              <div class="cta__button-wrapper">
+                <button
+                  type="button"
+                  class="button button--primary cta__button"
+                  id="openContactForm"
+                >
+                  <i class="fa-regular fa-calendar"></i>
+                  Book a free consultation
+                </button>
+
+                <a
+                  href="../landing-page/index-en.html#projects__id"
+                  class="button button--secondary cta__button"
+                >
+                  <i class="fa-solid fa-eye"></i>
+                  View more projects
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div
+        class="form-modal"
+        id="contactFormModal"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="contactFormTitle"
+      >
+        <div class="form-modal__overlay" id="closeContactForm"></div>
+
+        <div class="form-modal__card">
+          <button
+            type="button"
+            class="form-modal__close"
+            id="closeContactFormButton"
+            aria-label="Close contact form"
+          >
+            ×
+          </button>
+
+          <p class="form-modal__eyebrow">Free Consultation</p>
+
+          <h2 class="form-modal__title" id="contactFormTitle">
+            Tell me about your project
+          </h2>
+
+          <p class="form-modal__text">
+            Fill in the form and briefly describe your needs. I will get back to
+            you to understand how to make your KPIs, reports and dashboards
+            clearer.
+          </p>
+
+          <form
+            id="contactForm"
+            action="https://formspree.io/f/xkoandwa"
+            method="POST"
+            class="contact-form"
+          >
+            <div class="form-grid">
+              <div class="form-group">
+                <label for="name">Full Name *</label>
+                <input
+                  id="name"
+                  type="text"
+                  name="name"
+                  placeholder="John Smith"
+                  required
+                />
+              </div>
+
+              <div class="form-group">
+                <label for="email">Email *</label>
+                <input
+                  id="email"
+                  type="email"
+                  name="email"
+                  placeholder="name@company.com"
+                  required
+                />
+              </div>
+
+              <div class="form-group">
+                <label for="phone">Phone / WhatsApp</label>
+                <input
+                  id="phone"
+                  type="tel"
+                  name="phone"
+                  placeholder="+39 333 1234567"
+                />
+              </div>
+
+              <div class="form-group">
+                <label for="company">Company</label>
+                <input
+                  id="company"
+                  type="text"
+                  name="company"
+                  placeholder="Company name"
+                />
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="goal">Main Goal *</label>
+              <select id="goal" name="goal" required>
+                <option value="">Select a goal</option>
+                <option value="Power BI Dashboard">Power BI Dashboard</option>
+                <option value="Automated Reporting">Automated Reporting</option>
+                <option value="KPI Monitoring">KPI Monitoring</option>
+                <option value="Financial Analysis">Financial Analysis</option>
+                <option value="Data Modeling">Data Modeling</option>
+                <option value="Other">Other</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="message">Message *</label>
+              <textarea
+                id="message"
+                name="message"
+                rows="5"
+                placeholder="Briefly describe your current situation, the challenges you are facing and what you would like to improve."
+                required
+              ></textarea>
+            </div>
+
+            <p class="form-privacy-note">
+              The data entered will be used exclusively to respond to your
+              contact request and evaluate a possible collaboration.
+            </p>
+
+            <label class="privacy-check">
+              <input type="checkbox" name="privacy" required />
+              <span>
+                I have read and accept the
+                <a
+                  href="../landing-page/privacy-en.html"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Privacy Policy </a
+                >.
+              </span>
+            </label>
+
+            <button type="submit" class="contact-form__button">
+              Book a free consultation
+            </button>
+
+            <p id="formSuccessMessage" class="form-success-message">
+              Thank you! Your request has been submitted successfully. I will
+              get back to you as soon as possible.
+            </p>
+          </form>
+        </div>
+      </div>
+    </main>
+
+    <!--START FOOTER SECTION-->
+    <footer class="footer">
+      <div class="footer__main">
+        <div class="footer__brand-block">
+          <a
+            href="./index.html"
+            class="footer__brand"
+            aria-label="Torna alla homepage"
+          >
+            <span class="footer__monogram" aria-hidden="true">DF</span>
+
+            <span class="footer__identity">
+              <span class="footer__name">Dina Fiorentino</span>
+              <span class="footer__role"
+                >Data Analyst &amp; Power BI Consultant</span
+              >
+            </span>
+          </a>
+
+          <p class="footer__description">
+            Dashboards, reporting, and data models designed to transform complex
+            information into clearer decisions.
+          </p>
+
+          <div class="footer__socials" aria-label="Contatti professionali">
+            <a
+              href="https://www.linkedin.com/in/dina-fiorentino/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Profilo LinkedIn di Dina Fiorentino"
+            >
+              <i class="fa-brands fa-linkedin-in" aria-hidden="true"></i>
+              <span>LinkedIn</span>
+            </a>
+
+            <a
+              href="mailto:dinafiorentino.consulting@outlook.it"
+              aria-label="Invia una email a Dina Fiorentino"
+            >
+              <i class="fa-regular fa-envelope" aria-hidden="true"></i>
+              <span>Email</span>
+            </a>
+          </div>
+        </div>
+
+        <nav class="footer__column" aria-label="Navigazione footer">
+          <p class="footer__heading">EXPLORE</p>
+          <a href="../landing-page/index-en.html#services__id">Services</a>
+          <a href="../landing-page/index-en.html#projects__id">Projects</a>
+          <a href="../landing-page/index-en.html#about__id">About Me</a>
+          <a href="../landing-page/index-en.html#contacts__id">Contacts</a>
+        </nav>
+
+        <div class="footer__column footer__column--services">
+          <p class="footer__heading">Services</p>
+          <a href="../services/dashboard-powerBI-en.html">Dashboard Power BI</a>
+          <a href="../services/reporting-automatizzato-en.html"
+            >Automated reporting</a
+          >
+          <a href="../services/kpi-design-monitoraggio-en.html">KPI design</a>
+          <a href="../services/data-modeling-integrazione-en.html"
+            >Data modeling</a
+          >
+        </div>
+
+        <div class="footer__column footer__column--contact">
+          <p class="footer__heading">Let's collaborate.</p>
+          <p>
+            Available for data analysis, dashboard, and corporate reporting
+            projects.
+          </p>
+
+          <button
+            type="button"
+            class="footer__contact-button js-open-contact-form"
+          >
+            Let's talk about your project.
+            <span aria-hidden="true">→</span>
+          </button>
+        </div>
+      </div>
+
+      <div class="footer__bottom">
+        <p class="copyright__text">
+          © 2026 Dina Fiorentino. All rights reserved.
+        </p>
+
+        <nav class="privacy__box" aria-label="Link legali e lingua">
+          <a
+            href="../landing-page/privacy-en.html?from=hotel-market-en"
+            class="privacy__text"
+          >
+            Privacy
+          </a>
+          <a
+            href="../landing-page/cookie-en.html?from=hotel-market-en"
+            class="cookie__text"
+          >
+            Cookie
+          </a>
+          <a href="./hotel-market-insights.html" class="footer__language"
+            >Italian</a
+          >
+        </nav>
+      </div>
+    </footer>
+    <!--END FOOTER SECTION-->
+
+    <button
+      id="back__to-top"
+      class="back__to-top"
+      type="button"
+      aria-label="Back to top"
+    >
+      ↥
+    </button>
+
+    <script src="../assets/js/script.js"></script>
+  </body>
+</html>

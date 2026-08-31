@@ -1,0 +1,1204 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Data Modeling &amp; Integration | Dina Fiorentino</title>
+    <meta
+      content="Data modeling and integration services to organize, standardize, and connect different sources within a reliable, consistent, and scalable data structure."
+      name="description"
+    />
+    <link href="../assets/css/services.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Limelight&amp;family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&amp;family=Poppins:ital,wght@0,100..900;1,100..900&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="../Images/favicon/apple-touch-icon.png"
+    />
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="../Images/favicon/favicon-32x32.png"
+    />
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="../Images/favicon/favicon-16x16.png"
+    />
+
+    <link rel="manifest" href="../Images/favicon/site.webmanifest" />
+
+    <link rel="icon" href="../Images/favicon/favicon.ico" />
+  </head>
+  <body class="service-page">
+    <header class="service-hero" id="top">
+      <div class="service-hero__content">
+        <div class="service-hero__navigation">
+          <a
+            class="service-hero__back-link"
+            href="../landing-page/index-en.html#services__id"
+          >
+            ↤ Back to services
+          </a>
+          <div
+            class="language-selector service-hero__language-selector"
+            data-en="./data-modeling-integrazione-en.html"
+            data-it="./data-modeling-integrazione.html"
+          >
+            <button
+              aria-controls="languageMenu"
+              aria-expanded="false"
+              aria-haspopup="true"
+              class="language-selector__button"
+              onclick="toggleLanguageMenu(event);"
+              type="button"
+            >
+              🇬🇧 <span>EN</span>
+              <span class="language-selector__arrow">▾</span>
+            </button>
+            <div class="language-selector__menu" id="languageMenu">
+              <button onclick="setLanguage('it')" type="button">
+                🇮🇹 Italian
+              </button>
+              <button onclick="setLanguage('en')" type="button">
+                🇬🇧 English
+              </button>
+            </div>
+          </div>
+        </div>
+        <p class="service-hero__eyebrow">Data Modeling &amp; Integration</p>
+        <h1 class="service-hero__title">
+          Reliable data requires
+          <span class="text-gradient">a reliable structure.</span>
+        </h1>
+        <p class="service-hero__subtitle">
+          I organize, standardize, and connect data from different sources to
+          create a consistent, controllable foundation ready to support reports,
+          KPIs, and analysis over time.
+        </p>
+        <div class="service-hero__actions">
+          <button
+            class="button button--primary service-hero__button js-open-contact-form"
+            type="button"
+          >
+            <i class="fa-regular fa-calendar"></i>
+            Book a free consultation
+          </button>
+          <a
+            class="button button--secondary service-hero__button"
+            href="../landing-page/index.html#projects__id"
+          >
+            Explore the projects
+            <i class="fa-solid fa-arrow-right"></i>
+          </a>
+        </div>
+        <ul aria-label="Key strengths" class="service-hero__highlights">
+          <li class="service-hero__highlight">
+            <i class="fa-solid fa-circle-check"></i>
+            Integrated sources
+          </li>
+          <li class="service-hero__highlight">
+            <i class="fa-solid fa-circle-check"></i>
+            Consistent data
+          </li>
+          <li class="service-hero__highlight">
+            <i class="fa-solid fa-circle-check"></i>
+            Centralized transformations
+          </li>
+        </ul>
+      </div>
+      <div class="service-hero__visual">
+        <div class="service-hero__image-frame">
+          <img
+            alt="Example of an integrated data model with connected sources, relationships, and transformation rules"
+            class="service-hero__image"
+            src="../assets/images/business-plan-dashboard-hero.png"
+          />
+        </div>
+        <p class="service-hero__visual-caption">
+          Example of an integrated data model
+        </p>
+      </div>
+    </header>
+    <main>
+      <section
+        aria-labelledby="service-problem-title"
+        class="service-problem-section"
+        id="service-problem"
+      >
+        <div class="service-problem">
+          <div class="section-header">
+            <p class="section-eyebrow">The problem starts upstream</p>
+            <h2 class="section-title" id="service-problem-title">
+              When data sources do not speak the same language,
+              <span class="text-gradient"
+                >even the numbers stop being reliable.</span
+              >
+            </h2>
+            <p class="section-subtitle">
+              Excel files, business management systems, CRMs, and databases
+              often use different formats, codes, and rules. Without a shared
+              structure, the same data can produce inconsistent results that are
+              difficult to verify and complex to maintain over time.
+            </p>
+          </div>
+          <div class="service-problem__grid">
+            <article class="service-problem__card">
+              <div class="service-problem__icon">
+                <i class="fa-solid fa-folder-tree"></i>
+              </div>
+              <h3 class="service-problem__title">
+                Misaligned formats and codes
+              </h3>
+              <p class="service-problem__text">
+                The same customer, product, or department may be identified
+                using different codes and formats, making comparisons,
+                aggregations, and connections between sources more complex.
+              </p>
+            </article>
+            <article class="service-problem__card">
+              <div class="service-problem__icon">
+                <i class="fa-solid fa-bullseye"></i>
+              </div>
+              <h3 class="service-problem__title">
+                Duplicates and missing values
+              </h3>
+              <p class="service-problem__text">
+                Duplicate records, incomplete fields, and invalid values
+                compromise analysis quality and require continuous manual
+                checks.
+              </p>
+            </article>
+            <article class="service-problem__card">
+              <div class="service-problem__icon">
+                <i class="fa-regular fa-clock"></i>
+              </div>
+              <h3 class="service-problem__title">
+                Fragile relationships between entities
+              </h3>
+              <p class="service-problem__text">
+                Non-unique keys and fragile connections can produce duplicates,
+                missing rows, and inconsistent results.
+              </p>
+            </article>
+            <article class="service-problem__card">
+              <div class="service-problem__icon">
+                <i class="fa-solid fa-magnifying-glass-chart"></i>
+              </div>
+              <h3 class="service-problem__title">
+                Different rules across reports
+              </h3>
+              <p class="service-problem__text">
+                When each report applies its own transformations and
+                classifications, the same data can produce different results
+                that are difficult to reconcile.
+              </p>
+            </article>
+          </div>
+          <div class="service-problem__statement">
+            <span class="service-problem__statement-icon">
+              <i class="fa-solid fa-lightbulb"></i>
+            </span>
+            <p>
+              The quality of the analysis
+              <strong
+                >depends on the quality of the structure supporting it.</strong
+              >
+            </p>
+          </div>
+        </div>
+      </section>
+      <section
+        aria-labelledby="service-value-title"
+        class="service-value-section"
+        id="service-value"
+      >
+        <div class="service-value">
+          <div class="section-header">
+            <p class="section-eyebrow">A reliable foundation</p>
+            <h2 class="section-title" id="service-value-title">
+              A well-designed data model makes every analysis
+              <span class="text-gradient"
+                >simpler, more consistent, and easier to control.</span
+              >
+            </h2>
+            <p class="section-subtitle">
+              The model is designed to make relationships, rules, and
+              transformations explicit, so every analysis uses a shared,
+              verifiable foundation that is easier to maintain.
+            </p>
+          </div>
+          <div class="service-value__grid">
+            <article class="service-value__item">
+              <div class="service-value__icon">
+                <i class="fa-solid fa-crosshairs"></i>
+              </div>
+              <div class="service-value__content">
+                <h3 class="service-value__title">Consistent relationships</h3>
+                <p class="service-value__text">
+                  Tables, keys, and cardinalities are defined to connect
+                  entities correctly and avoid duplicates or ambiguous results.
+                </p>
+              </div>
+            </article>
+            <article class="service-value__item">
+              <div class="service-value__icon">
+                <i class="fa-solid fa-eye"></i>
+              </div>
+              <div class="service-value__content">
+                <h3 class="service-value__title">Consistent definitions</h3>
+                <p class="service-value__text">
+                  Formats, codes, and classifications are standardized so that
+                  data from different systems carries the same meaning.
+                </p>
+              </div>
+            </article>
+            <article class="service-value__item">
+              <div class="service-value__icon">
+                <i class="fa-solid fa-filter-circle-dollar"></i>
+              </div>
+              <div class="service-value__content">
+                <h3 class="service-value__title">
+                  Centralized transformations
+                </h3>
+                <p class="service-value__text">
+                  Data cleaning, mapping, and calculation logic are centralized
+                  in traceable steps, avoiding duplicated and inconsistent
+                  transformations across individual reports.
+                </p>
+              </div>
+            </article>
+            <article class="service-value__item">
+              <div class="service-value__icon">
+                <i class="fa-solid fa-gauge-high"></i>
+              </div>
+              <div class="service-value__content">
+                <h3 class="service-value__title">Quality controls</h3>
+                <p class="service-value__text">
+                  Validation rules and consistency checks help detect anomalies,
+                  duplicates, and missing values before they reach the analysis
+                  stage.
+                </p>
+              </div>
+            </article>
+            <article class="service-value__item">
+              <div class="service-value__icon">
+                <i class="fa-solid fa-wand-magic-sparkles"></i>
+              </div>
+              <div class="service-value__content">
+                <h3 class="service-value__title">Better performance</h3>
+                <p class="service-value__text">
+                  A streamlined structure with optimized relationships and
+                  transformations reduces complexity and improves refresh and
+                  query times.
+                </p>
+              </div>
+            </article>
+            <article class="service-value__item">
+              <div class="service-value__icon">
+                <i class="fa-solid fa-layer-group"></i>
+              </div>
+              <div class="service-value__content">
+                <h3 class="service-value__title">Scalable structure</h3>
+                <p class="service-value__text">
+                  New sources, tables, attributes, and information requirements
+                  can be integrated without rebuilding everything from scratch.
+                </p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+      <section
+        aria-labelledby="service-monitoring-title"
+        class="service-monitoring-section"
+        id="service-monitoring"
+      >
+        <div class="service-monitoring">
+          <div class="section-header">
+            <p class="section-eyebrow">What we can integrate</p>
+            <h2 class="section-title" id="service-monitoring-title">
+              Different sources can become
+              <span class="text-gradient">a single information system.</span>
+            </h2>
+            <p class="section-subtitle">
+              Files, business systems, databases, and cloud services are
+              connected within a consistent, reliable structure ready for
+              analysis.
+            </p>
+          </div>
+          <div class="service-monitoring__grid">
+            <article class="service-monitoring__area">
+              <div class="service-monitoring__header">
+                <span class="service-monitoring__icon">
+                  <i class="fa-solid fa-chart-line"></i>
+                </span>
+                <div>
+                  <p class="service-monitoring__label">Area 01</p>
+                  <h3 class="service-monitoring__title">Excel and CSV files</h3>
+                </div>
+              </div>
+              <p class="service-monitoring__text">
+                Operational files, price lists, and CSV archives can be
+                imported, standardized, and consolidated, reducing manual
+                copying and misaligned versions.
+              </p>
+              <ul class="service-monitoring__metrics">
+                <li>Price lists</li>
+                <li>Operational files</li>
+                <li>Exports</li>
+                <li>Historical archives</li>
+                <li>Master data</li>
+              </ul>
+            </article>
+            <article class="service-monitoring__area">
+              <div class="service-monitoring__header">
+                <span class="service-monitoring__icon">
+                  <i class="fa-solid fa-coins"></i>
+                </span>
+                <div>
+                  <p class="service-monitoring__label">Area 02</p>
+                  <h3 class="service-monitoring__title">
+                    Business management systems and ERPs
+                  </h3>
+                </div>
+              </div>
+              <p class="service-monitoring__text">
+                Master data, orders, items, and transactions can be extracted
+                through available databases, connectors, or structured exports.
+              </p>
+              <ul class="service-monitoring__metrics">
+                <li>Orders</li>
+                <li>Customers</li>
+                <li>Suppliers</li>
+                <li>Items</li>
+                <li>Transactions</li>
+              </ul>
+            </article>
+            <article class="service-monitoring__area">
+              <div class="service-monitoring__header">
+                <span class="service-monitoring__icon">
+                  <i class="fa-solid fa-gears"></i>
+                </span>
+                <div>
+                  <p class="service-monitoring__label">Area 03</p>
+                  <h3 class="service-monitoring__title">CRM</h3>
+                </div>
+              </div>
+              <p class="service-monitoring__text">
+                Leads, opportunities, activities, and commercial records can be
+                integrated while keeping identifiers, statuses, and
+                relationships consistent.
+              </p>
+              <ul class="service-monitoring__metrics">
+                <li>Lead</li>
+                <li>Opportunities</li>
+                <li>Activities</li>
+                <li>Account</li>
+                <li>Contacts</li>
+              </ul>
+            </article>
+            <article class="service-monitoring__area">
+              <div class="service-monitoring__header">
+                <span class="service-monitoring__icon">
+                  <i class="fa-solid fa-bullhorn"></i>
+                </span>
+                <div>
+                  <p class="service-monitoring__label">Area 04</p>
+                  <h3 class="service-monitoring__title">Database</h3>
+                </div>
+              </div>
+              <p class="service-monitoring__text">
+                Tables and views from relational databases can be connected and
+                modeled to support reliable, refreshable analysis.
+              </p>
+              <ul class="service-monitoring__metrics">
+                <li>SQL Server</li>
+                <li>MySQL</li>
+                <li>PostgreSQL</li>
+                <li>Tables</li>
+                <li>Views</li>
+              </ul>
+            </article>
+            <article class="service-monitoring__area">
+              <div class="service-monitoring__header">
+                <span class="service-monitoring__icon">
+                  <i class="fa-solid fa-building"></i>
+                </span>
+                <div>
+                  <p class="service-monitoring__label">Area 05</p>
+                  <h3 class="service-monitoring__title">Cloud platforms</h3>
+                </div>
+              </div>
+              <p class="service-monitoring__text">
+                Files and data hosted on cloud platforms can be integrated using
+                methods compatible with access permissions, connectors, and
+                refresh frequencies.
+              </p>
+              <ul class="service-monitoring__metrics">
+                <li>SharePoint</li>
+                <li>OneDrive</li>
+                <li>Google Sheets</li>
+                <li>Connectors</li>
+                <li>Cloud storage</li>
+              </ul>
+            </article>
+            <article
+              class="service-monitoring__area service-monitoring__area--custom"
+            >
+              <div class="service-monitoring__header">
+                <span class="service-monitoring__icon">
+                  <i class="fa-solid fa-sliders"></i>
+                </span>
+                <div>
+                  <p class="service-monitoring__label">Area 06</p>
+                  <h3 class="service-monitoring__title">Custom integrations</h3>
+                </div>
+              </div>
+              <p class="service-monitoring__text">
+                APIs, proprietary exports, and specific formats can be assessed
+                and mapped when technically compatible access methods are
+                available.
+              </p>
+              <ul class="service-monitoring__metrics">
+                <li>API</li>
+                <li>Exports</li>
+                <li>Custom formats</li>
+                <li>Validations</li>
+                <li>Mapping</li>
+              </ul>
+            </article>
+          </div>
+        </div>
+      </section>
+      <section
+        aria-labelledby="service-inclusions-title"
+        class="service-inclusions-section"
+        id="service-inclusions"
+      >
+        <div class="service-inclusions">
+          <div class="service-inclusions__intro">
+            <p class="section-eyebrow">What the service includes</p>
+            <h2 class="section-title" id="service-inclusions-title">
+              You receive more than connected data.
+              <span class="text-gradient"
+                >You receive a foundation designed for reliability.</span
+              >
+            </h2>
+            <p class="service-inclusions__description">
+              The project includes the activities required to connect sources,
+              make rules explicit, and build a data structure that is
+              understandable, verifiable, and easy to evolve.
+            </p>
+          </div>
+          <div class="service-inclusions__grid">
+            <article class="service-inclusions__item">
+              <span class="service-inclusions__icon">
+                <i class="fa-solid fa-chart-pie"></i>
+              </span>
+              <div>
+                <h3 class="service-inclusions__title">Source analysis</h3>
+                <p class="service-inclusions__text">
+                  Assessment of the structure, availability, quality, and
+                  refresh frequency of the sources involved.
+                </p>
+              </div>
+            </article>
+            <article class="service-inclusions__item">
+              <span class="service-inclusions__icon">
+                <i class="fa-solid fa-bullseye"></i>
+              </span>
+              <div>
+                <h3 class="service-inclusions__title">Field mapping</h3>
+                <p class="service-inclusions__text">
+                  Alignment of names, codes, keys, and meanings across
+                  equivalent fields from different systems.
+                </p>
+              </div>
+            </article>
+            <article class="service-inclusions__item">
+              <span class="service-inclusions__icon">
+                <i class="fa-solid fa-plug-circle-bolt"></i>
+              </span>
+              <div>
+                <h3 class="service-inclusions__title">
+                  Format standardization
+                </h3>
+                <p class="service-inclusions__text">
+                  Standardization of dates, numbers, text, categories, and
+                  conventions to make data comparable and reusable.
+                </p>
+              </div>
+            </article>
+            <article class="service-inclusions__item">
+              <span class="service-inclusions__icon">
+                <i class="fa-solid fa-database"></i>
+              </span>
+              <div>
+                <h3 class="service-inclusions__title">
+                  Cleaning and deduplication
+                </h3>
+                <p class="service-inclusions__text">
+                  Removal or controlled management of duplicate records, missing
+                  values, and anomalies that compromise analysis reliability.
+                </p>
+              </div>
+            </article>
+            <article class="service-inclusions__item">
+              <span class="service-inclusions__icon">
+                <i class="fa-solid fa-filter"></i>
+              </span>
+              <div>
+                <h3 class="service-inclusions__title">
+                  Relationship definition
+                </h3>
+                <p class="service-inclusions__text">
+                  Definition of keys, cardinalities, and connections between
+                  entities to accurately represent the business process.
+                </p>
+              </div>
+            </article>
+            <article class="service-inclusions__item">
+              <span class="service-inclusions__icon">
+                <i class="fa-solid fa-gauge"></i>
+              </span>
+              <div>
+                <h3 class="service-inclusions__title">Data model design</h3>
+                <p class="service-inclusions__text">
+                  Design of tables, relationships, hierarchies, and calculation
+                  logic within a consistent, efficient, and scalable structure.
+                </p>
+              </div>
+            </article>
+            <article class="service-inclusions__item">
+              <span class="service-inclusions__icon">
+                <i class="fa-solid fa-person-chalkboard"></i>
+              </span>
+              <div>
+                <h3 class="service-inclusions__title">Validation rules</h3>
+                <p class="service-inclusions__text">
+                  Implementation of completeness, uniqueness, consistency, and
+                  validity checks to make potential anomalies easier to
+                  identify.
+                </p>
+              </div>
+            </article>
+            <article class="service-inclusions__item">
+              <span class="service-inclusions__icon">
+                <i class="fa-solid fa-headset"></i>
+              </span>
+              <div>
+                <h3 class="service-inclusions__title">
+                  Data dictionary and support
+                </h3>
+                <p class="service-inclusions__text">
+                  Documentation of key fields, relationships, and rules, with
+                  initial support for managing and evolving the solution.
+                </p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+      <section
+        aria-labelledby="service-custom-title"
+        class="service-custom-section"
+        id="service-custom"
+      >
+        <div class="service-custom">
+          <div class="service-custom__content">
+            <p class="section-eyebrow">Why a tailored approach</p>
+            <h2
+              class="section-title service-custom__title"
+              id="service-custom-title"
+            >
+              Every company organizes data, codes, and processes
+              <span class="text-gradient">differently.</span>
+            </h2>
+            <p class="service-custom__text">
+              Two companies may use the same tools while organizing master data,
+              codes, and processes in completely different ways. That is why the
+              model is built around the actual data structure and the rules
+              governing how data must be connected and interpreted.
+            </p>
+            <p class="service-custom__closing">
+              The result is not simply having more connected data:
+              <strong
+                >it is having a structure that makes it usable and
+                verifiable.</strong
+              >
+            </p>
+          </div>
+          <div class="service-custom__principles">
+            <article class="service-custom__principle">
+              <span class="service-custom__number">01</span>
+              <div>
+                <h3 class="service-custom__principle-title">
+                  Reflects the actual process
+                </h3>
+                <p class="service-custom__principle-text">
+                  The model represents the entities, steps, and relationships
+                  actually used by the company, without forcing the data into a
+                  generic framework.
+                </p>
+              </div>
+            </article>
+            <article class="service-custom__principle">
+              <span class="service-custom__number">02</span>
+              <div>
+                <h3 class="service-custom__principle-title">
+                  Makes rules verifiable
+                </h3>
+                <p class="service-custom__principle-text">
+                  Fields, transformations, and controls are documented to make
+                  data origins understandable and every applied rule verifiable.
+                </p>
+              </div>
+            </article>
+            <article class="service-custom__principle">
+              <span class="service-custom__number">03</span>
+              <div>
+                <h3 class="service-custom__principle-title">
+                  Supports future growth
+                </h3>
+                <p class="service-custom__principle-text">
+                  New sources and information requirements can be integrated
+                  over time without compromising the existing structure.
+                </p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+      <section
+        aria-labelledby="service-fit-title"
+        class="service-fit-section"
+        id="service-fit"
+      >
+        <div class="service-fit">
+          <div class="section-header">
+            <p class="section-eyebrow">The right solution</p>
+            <h2 class="section-title" id="service-fit-title">
+              Is this the right service
+              <span class="text-gradient">for your situation?</span>
+            </h2>
+            <p class="section-subtitle">
+              The service delivers value when data from different sources must
+              be connected, standardized, and made reliable before feeding
+              reports, KPIs, or Business Intelligence tools.
+            </p>
+          </div>
+          <div class="service-fit__grid">
+            <article class="service-fit__column service-fit__column--positive">
+              <div class="service-fit__heading">
+                <span class="service-fit__heading-icon">
+                  <i class="fa-solid fa-circle-check"></i>
+                </span>
+                <h3 class="service-fit__title">It is ideal if...</h3>
+              </div>
+              <ul class="service-fit__list">
+                <li>Your data comes from multiple systems or files.</li>
+                <li>You get different figures from similar reports.</li>
+                <li>The same concepts have different names or codes.</li>
+                <li>You rely on manual connections and transformations.</li>
+                <li>
+                  You want to create a stable foundation for reports and
+                  Business Intelligence tools.
+                </li>
+                <li>You expect to add new sources over time.</li>
+              </ul>
+            </article>
+            <article class="service-fit__column service-fit__column--negative">
+              <div class="service-fit__heading">
+                <span class="service-fit__heading-icon">
+                  <i class="fa-solid fa-circle-xmark"></i>
+                </span>
+                <h3 class="service-fit__title">
+                  It is probably not what you need if...
+                </h3>
+              </div>
+              <ul class="service-fit__list">
+                <li>You only need a visualization.</li>
+                <li>
+                  You have a single, simple source that is already properly
+                  structured.
+                </li>
+                <li>There is no authorized access to the sources.</li>
+                <li>
+                  You are looking for a temporary fix without addressing the
+                  root causes.
+                </li>
+              </ul>
+            </article>
+          </div>
+          <div class="service-fit__note">
+            <i class="fa-solid fa-comments"></i>
+            <p>
+              Not sure whether this is the right solution? During our initial
+              consultation, we will assess your sources, data quality, and
+              existing connections to determine whether the data model,
+              integration layer, or another stage of the information process
+              needs attention.
+            </p>
+          </div>
+        </div>
+      </section>
+      <section
+        aria-labelledby="service-faq-title"
+        class="service-faq-section"
+        id="service-faq"
+      >
+        <div class="service-faq">
+          <div class="section-header">
+            <p class="section-eyebrow">Frequently asked questions</p>
+            <h2 class="section-title" id="service-faq-title">
+              Everything you need to know
+              <span class="text-gradient">before getting started.</span>
+            </h2>
+            <p class="section-subtitle">
+              Answers to the most common questions about source integration,
+              data quality, and the design of a reliable model.
+            </p>
+          </div>
+          <div class="service-faq__list">
+            <article class="service-faq__item">
+              <h3 class="service-faq__heading">
+                <button
+                  aria-controls="faq-answer-1"
+                  aria-expanded="false"
+                  class="service-faq__question"
+                  type="button"
+                >
+                  <span>Which data sources can be connected?</span>
+                  <i aria-hidden="true" class="fa-solid fa-plus"></i>
+                </button>
+              </h3>
+              <div class="service-faq__answer" hidden="" id="faq-answer-1">
+                <p>
+                  Excel and CSV files, business management systems, CRMs,
+                  databases, cloud platforms, APIs, and structured exports can
+                  be integrated. Feasibility depends on access methods,
+                  available formats, and the technical constraints of each
+                  source.
+                </p>
+              </div>
+            </article>
+            <article class="service-faq__item">
+              <h3 class="service-faq__heading">
+                <button
+                  aria-controls="faq-answer-2"
+                  aria-expanded="false"
+                  class="service-faq__question"
+                  type="button"
+                >
+                  <span
+                    >Does the business management system need to be
+                    modified?</span
+                  >
+                  <i aria-hidden="true" class="fa-solid fa-plus"></i>
+                </button>
+              </h3>
+              <div class="service-faq__answer" hidden="" id="faq-answer-2">
+                <p>
+                  Not necessarily. When the system provides databases, APIs,
+                  connectors, or structured exports, integration can be
+                  implemented without modifying the software. Any changes are
+                  considered only when essential.
+                </p>
+              </div>
+            </article>
+            <article class="service-faq__item">
+              <h3 class="service-faq__heading">
+                <button
+                  aria-controls="faq-answer-3"
+                  aria-expanded="false"
+                  class="service-faq__question"
+                  type="button"
+                >
+                  <span>Can we start with Excel files?</span>
+                  <i aria-hidden="true" class="fa-solid fa-plus"></i>
+                </button>
+              </h3>
+              <div class="service-faq__answer" hidden="" id="faq-answer-3">
+                <p>
+                  Yes. Excel files can be used as data sources, provided their
+                  structure is sufficiently stable and controllable. When
+                  necessary, they are reorganized, standardized, and validated
+                  before integration.
+                </p>
+              </div>
+            </article>
+            <article class="service-faq__item">
+              <h3 class="service-faq__heading">
+                <button
+                  aria-controls="faq-answer-4"
+                  aria-expanded="false"
+                  class="service-faq__question"
+                  type="button"
+                >
+                  <span>How are duplicates and missing data handled?</span>
+                  <i aria-hidden="true" class="fa-solid fa-plus"></i>
+                </button>
+              </h3>
+              <div class="service-faq__answer" hidden="" id="faq-answer-4">
+                <p>
+                  Duplicates and missing values are analyzed to determine their
+                  origin, impact, and handling rules. Depending on the case,
+                  they may be removed, consolidated, flagged, or retained
+                  according to documented criteria.
+                </p>
+              </div>
+            </article>
+            <article class="service-faq__item">
+              <h3 class="service-faq__heading">
+                <button
+                  aria-controls="faq-answer-5"
+                  aria-expanded="false"
+                  class="service-faq__question"
+                  type="button"
+                >
+                  <span>Can the model be expanded?</span>
+                  <i aria-hidden="true" class="fa-solid fa-plus"></i>
+                </button>
+              </h3>
+              <div class="service-faq__answer" hidden="" id="faq-answer-5">
+                <p>
+                  Yes. The model can be designed to accommodate new sources,
+                  tables, attributes, and rules without compromising
+                  consistency. Expansion is managed while keeping connections,
+                  dependencies, and performance under control.
+                </p>
+              </div>
+            </article>
+            <article class="service-faq__item">
+              <h3 class="service-faq__heading">
+                <button
+                  aria-controls="faq-answer-6"
+                  aria-expanded="false"
+                  class="service-faq__question"
+                  type="button"
+                >
+                  <span>Is Power BI required?</span>
+                  <i aria-hidden="true" class="fa-solid fa-plus"></i>
+                </button>
+              </h3>
+              <div class="service-faq__answer" hidden="" id="faq-answer-6">
+                <p>
+                  No. The service focuses on data structure and integration and
+                  can support Power BI, other Business Intelligence tools, or
+                  specific reporting processes. The technology is selected
+                  according to the environment and project objectives.
+                </p>
+              </div>
+            </article>
+          </div>
+          <p class="service-faq__portfolio-link">
+            Would you like to see some completed projects?
+            <a href="../landing-page/index.html#projects__id">
+              View selected projects →
+            </a>
+          </p>
+        </div>
+      </section>
+      <section class="cta-section service-cta-section" id="contacts__id">
+        <div class="cta service-cta">
+          <div class="cta__content">
+            <p class="service-cta__eyebrow">Start with the foundations</p>
+            <h2 class="cta__title">
+              Every reliable analysis starts with properly organized data.
+            </h2>
+            <p class="cta__text">
+              If your data is currently spread across Excel files, business
+              systems, databases, and different platforms, we can organize it
+              into a consistent, verifiable structure ready to support reports,
+              KPIs, and analysis with greater reliability.
+            </p>
+            <div class="cta__actions">
+              <div class="cta__button-wrapper">
+                <button
+                  class="button button--primary cta__button"
+                  id="openContactForm"
+                  type="button"
+                >
+                  <i class="fa-regular fa-calendar"></i>
+                  Book a free consultation
+                </button>
+              </div>
+            </div>
+            <p class="service-cta__note">
+              Together, we will assess your current sources, formats, data
+              quality, and connections to identify the data structure best
+              suited to your context.
+            </p>
+          </div>
+        </div>
+      </section>
+      <div
+        aria-hidden="true"
+        aria-labelledby="contactFormTitle"
+        aria-modal="true"
+        class="form-modal"
+        id="contactFormModal"
+        role="dialog"
+      >
+        <div class="form-modal__overlay" id="closeContactForm"></div>
+        <div class="form-modal__card">
+          <button
+            aria-label="Close the contact form"
+            class="form-modal__close"
+            id="closeContactFormButton"
+            type="button"
+          >
+            ×
+          </button>
+          <p class="form-modal__eyebrow">Free consultation</p>
+          <h2 class="form-modal__title" id="contactFormTitle">
+            Tell me how your data is organized
+          </h2>
+          <p class="form-modal__text">
+            Briefly describe the available sources, how they are currently
+            connected, and any quality, consistency, or integration issues you
+            are experiencing. I will contact you to assess the most suitable
+            solution.
+          </p>
+          <form
+            action="https://formspree.io/f/xkoandwa"
+            class="contact-form"
+            id="contactForm"
+            method="POST"
+          >
+            <input
+              name="service"
+              type="hidden"
+              value="Data Modeling &amp; Integration"
+            />
+            <div class="form-grid">
+              <div class="form-group">
+                <label for="name">Full name *</label>
+                <input
+                  autocomplete="name"
+                  id="name"
+                  name="name"
+                  placeholder="John Smith"
+                  required=""
+                  type="text"
+                />
+              </div>
+              <div class="form-group">
+                <label for="email">Email *</label>
+                <input
+                  autocomplete="email"
+                  id="email"
+                  name="email"
+                  placeholder="name@company.com"
+                  required=""
+                  type="email"
+                />
+              </div>
+              <div class="form-group">
+                <label for="phone">Phone / WhatsApp</label>
+                <input
+                  autocomplete="tel"
+                  id="phone"
+                  name="phone"
+                  placeholder="+39 333 1234567"
+                  type="tel"
+                />
+              </div>
+              <div class="form-group">
+                <label for="company">Company</label>
+                <input
+                  autocomplete="organization"
+                  id="company"
+                  name="company"
+                  placeholder="Company name"
+                  type="text"
+                />
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="goal">Primary requirement *</label>
+              <select id="goal" name="goal" required="">
+                <option value="">Select a requirement</option>
+                <option value="Integrate multiple data sources">
+                  Integrate multiple data sources
+                </option>
+                <option value="Reorganize files and databases">
+                  Reorganize files and databases
+                </option>
+                <option value="Reduce duplicates and inconsistencies">
+                  Reduce duplicates and inconsistencies
+                </option>
+                <option value="Create a model for Power BI">
+                  Create a model for Power BI
+                </option>
+                <option value="Improve an existing data model">
+                  Improve an existing data model
+                </option>
+                <option value="Other">Other</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="message">Message *</label>
+              <textarea
+                id="message"
+                name="message"
+                placeholder="Describe your sources, formats, current connections, and the main data quality or integration challenges."
+                required=""
+                rows="5"
+              ></textarea>
+            </div>
+            <p class="form-privacy-note">
+              The information provided will be used exclusively to respond to
+              your request and assess a potential collaboration.
+            </p>
+            <label class="privacy-check">
+              <input name="privacy" required="" type="checkbox" />
+              <span>
+                I have read and accept the
+                <a
+                  href="../landing-page/privacy.html?from=data-modeling-integrazione"
+                  rel="noopener noreferrer"
+                  target="_blank"
+                >
+                  Privacy Policy </a
+                >.
+              </span>
+            </label>
+            <button class="contact-form__button" type="submit">
+              Book a free consultation
+            </button>
+            <p
+              aria-live="polite"
+              class="form-success-message"
+              id="formSuccessMessage"
+            >
+              Thank you! Your request has been submitted successfully. I will
+              contact you as soon as possible.
+            </p>
+          </form>
+        </div>
+      </div>
+    </main>
+    <!--START FOOTER SECTION-->
+    <footer class="footer">
+      <div class="footer__main">
+        <div class="footer__brand-block">
+          <a
+            aria-label="Back to the homepage"
+            class="footer__brand"
+            href="./index.html"
+          >
+            <span aria-hidden="true" class="footer__monogram">DF</span>
+            <span class="footer__identity">
+              <span class="footer__name">Dina Fiorentino</span>
+              <span class="footer__role"
+                >Data Analyst &amp; Power BI Consultant</span
+              >
+            </span>
+          </a>
+          <p class="footer__description">
+            Dashboards, reporting, and data models designed to turn complex
+            information into clearer decisions.
+          </p>
+          <div aria-label="Professional contacts" class="footer__socials">
+            <a
+              aria-label="Dina Fiorentino’s LinkedIn profile"
+              href="https://www.linkedin.com/in/dina-fiorentino/"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              <i aria-hidden="true" class="fa-brands fa-linkedin-in"></i>
+              <span>LinkedIn</span>
+            </a>
+            <a
+              aria-label="Send an email to Dina Fiorentino"
+              href="mailto:dinafiorentino.consulting@outlook.it"
+            >
+              <i aria-hidden="true" class="fa-regular fa-envelope"></i>
+              <span>Email</span>
+            </a>
+          </div>
+        </div>
+        <nav aria-label="Footer navigation" class="footer__column">
+          <p class="footer__heading">Explore</p>
+          <a href="../landing-page/index-en.html#services__id">Services</a>
+          <a href="../landing-page/index-en.html#projects__id">Projects</a>
+          <a href="../landing-page/index-en.html#about__id">About me</a>
+          <a href="../landing-page/index-en.html#contacts__id">Contacts</a>
+        </nav>
+        <div class="footer__column footer__column--services">
+          <p class="footer__heading">Services</p>
+          <a href="../services/dashboard-powerBI-en.html">Dashboard Power BI</a>
+          <a href="../services/reporting-automatizzato-en.html"
+            >Automated reporting</a
+          >
+          <a href="../services/kpi-design-monitoraggio-en.html">KPI design</a>
+          <a href="../services/data-modeling-integrazione-en.html"
+            >Data modeling</a
+          >
+        </div>
+        <div class="footer__column footer__column--contact">
+          <p class="footer__heading">Let’s work together</p>
+          <p>
+            Available for data analysis, dashboard, and business reporting
+            projects.
+          </p>
+          <button
+            class="footer__contact-button js-open-contact-form"
+            type="button"
+          >
+            Let’s discuss your project
+            <span aria-hidden="true">→</span>
+          </button>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p class="copyright__text">
+          © 2026 Dina Fiorentino. All rights reserved.
+        </p>
+        <nav aria-label="Legal and language links" class="privacy__box">
+          <a
+            class="privacy__text"
+            href="../landing-page/privacy-en.html?from=data-modeling-integrazione-en"
+          >
+            Privacy
+          </a>
+          <a
+            class="cookie__text"
+            href="../landing-page/cookie-en.html?from=data-modeling-integrazione-en"
+          >
+            Cookie
+          </a>
+          <a class="footer__language" href="./data-modeling-integrazione.html">
+            Italian
+          </a>
+        </nav>
+      </div>
+    </footer>
+    <!--END FOOTER SECTION-->
+    <button
+      aria-label="Back to top"
+      class="back__to-top"
+      id="back__to-top"
+      type="button"
+    >
+      <i aria-hidden="true" class="fa-solid fa-arrow-up"></i>
+    </button>
+    <script src="../assets/js/script.js"></script>
+  </body>
+</html>
