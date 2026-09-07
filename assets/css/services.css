@@ -1721,6 +1721,18 @@ footer {
   font-size: 12px;
 }
 
+.form-error-message {
+  display: none;
+  margin: 0;
+  padding: 12px 14px;
+  border-radius: 12px;
+  background: #fff1f2;
+  border: 1px solid #fecdd3;
+  color: #9f1239;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
 .form-success-message.show {
   display: block;
 }

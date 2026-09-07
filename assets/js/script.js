@@ -1,9 +1,3 @@
-/* =========================================================
-   SHARED PROJECT PAGES SCRIPT
-   Unifica le funzionalità dei tre file JS originali.
-   Le singole sezioni si attivano solo se gli elementi
-   corrispondenti sono presenti nella pagina.
-   ========================================================= */
 
 (() => {
   "use strict";
@@ -527,79 +521,112 @@
     /* CONTACT FORM SUBMISSION */
     /* ============================= */
 
-    const contactForm = document.getElementById("contactForm");
-    const formSuccessMessage = document.getElementById("formSuccessMessage");
+const contactForm = document.getElementById("contactForm");
+const formSuccessMessage = document.getElementById("formSuccessMessage");
 
-    if (contactForm) {
-      contactForm.addEventListener("submit", async (event) => {
-        event.preventDefault();
+const pageLanguage = document.documentElement.lang
+  .toLowerCase()
+  .startsWith("en")
+  ? "en"
+  : "it";
 
-        const formData = new FormData(contactForm);
-        const submitButton = contactForm.querySelector("button[type='submit']");
-        const originalButtonText = submitButton ? submitButton.textContent : "";
+const formText = {
+  it: {
+    loading: "Invio in corso...",
+    success: "Richiesta inviata",
+    retry: "Riprova",
+    error:
+      "Non è stato possibile inviare la richiesta. Riprova tra poco oppure contattami via email.",
+  },
+  en: {
+    loading: "Sending...",
+    success: "Request sent",
+    retry: "Try again",
+    error:
+      "Your request could not be sent. Please try again shortly or contact me by email.",
+  },
+};
 
-        if (submitButton) {
-          submitButton.disabled = true;
-          submitButton.textContent = "Invio in corso...";
-        }
+const currentFormText = formText[pageLanguage];
 
-        try {
-          const response = await fetch(contactForm.action, {
-            /*
-              Il primo JS forzava POST; gli altri usavano il metodo
-              dichiarato nel form. La presenza del messaggio di successo
-              distingue i due comportamenti originali.
-            */
-            method: formSuccessMessage ? contactForm.method || "POST" : "POST",
-            body: formData,
-            headers: {
-              Accept: "application/json",
-            },
-          });
+let formErrorMessage = document.getElementById("formErrorMessage");
 
-          if (!response.ok) {
-            throw new Error("Form submission failed");
-          }
+if (contactForm && !formErrorMessage) {
+  formErrorMessage = document.createElement("p");
+  formErrorMessage.id = "formErrorMessage";
+  formErrorMessage.className = "form-error-message";
+  formErrorMessage.setAttribute("role", "alert");
+  formErrorMessage.setAttribute("aria-live", "assertive");
+  formErrorMessage.textContent = currentFormText.error;
 
-          /*
-            Nei JS 2 e 3 la pagina mostra #formSuccessMessage.
-            Nel JS 1, dove quel messaggio non è previsto, il successo
-            porta invece a ./thank-you.html.
-          */
-          if (formSuccessMessage) {
-            contactForm.reset();
-            formSuccessMessage.style.display = "block";
+  if (formSuccessMessage) {
+    formSuccessMessage.insertAdjacentElement("afterend", formErrorMessage);
+  } else {
+    contactForm.appendChild(formErrorMessage);
+  }
+}
 
-            if (submitButton) {
-              submitButton.textContent = "Richiesta inviata";
-            }
-          } else {
-            window.location.href = "./thank-you.html";
-          }
-        } catch (error) {
-          console.error(error);
+if (contactForm) {
+  contactForm.addEventListener("submit", async (event) => {
+    event.preventDefault();
 
-          if (submitButton) {
-            submitButton.disabled = false;
-            submitButton.textContent = originalButtonText || "Riprova";
-          }
+    const formData = new FormData(contactForm);
+    const submitButton = contactForm.querySelector("button[type='submit']");
+    const originalButtonText = submitButton
+      ? submitButton.textContent.trim()
+      : "";
 
-          /* Mantiene il feedback esplicito usato nel primo JS */
-          if (!formSuccessMessage) {
-            const isHttpError =
-              error instanceof Error &&
-              error.message === "Form submission failed";
-
-            alert(
-              isHttpError
-                ? "Errore nell'invio. Riprova tra poco."
-                : "Errore di connessione. Riprova tra poco."
-            );
-          }
-        }
-      });
+    if (formSuccessMessage) {
+      formSuccessMessage.style.display = "none";
     }
 
+    if (formErrorMessage) {
+      formErrorMessage.style.display = "none";
+    }
+
+    if (submitButton) {
+      submitButton.disabled = true;
+      submitButton.textContent = currentFormText.loading;
+    }
+
+    try {
+      const response = await fetch(contactForm.action, {
+        method: contactForm.method || "POST",
+        body: formData,
+        headers: {
+          Accept: "application/json",
+        },
+      });
+
+      if (!response.ok) {
+        throw new Error("Form submission failed");
+      }
+
+      contactForm.reset();
+
+      if (formSuccessMessage) {
+        formSuccessMessage.style.display = "block";
+      }
+
+      if (submitButton) {
+        submitButton.disabled = false;
+        submitButton.textContent = originalButtonText;
+      }
+    } catch (error) {
+      console.error("Contact form submission error:", error);
+
+      if (formErrorMessage) {
+        formErrorMessage.style.display = "block";
+      }
+
+      if (submitButton) {
+        submitButton.disabled = false;
+        submitButton.textContent =
+          originalButtonText || currentFormText.retry;
+      }
+    }
+  });
+}
     /* ============================== */
     /* SCROLL BUTTON: DOWN / UP */
     /* ============================== */
