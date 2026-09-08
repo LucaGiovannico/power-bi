@@ -466,6 +466,44 @@
 
     let lastFocusedElementBeforeModal = null;
 
+    let contactModalInertElements = [];
+
+function setContactModalBackgroundInert(isOpen) {
+  if (!contactFormModal) return;
+
+  if (isOpen) {
+    contactModalInertElements = [];
+
+    let currentElement = contactFormModal;
+
+    while (
+      currentElement.parentElement &&
+      currentElement.parentElement !== document.documentElement
+    ) {
+      const parent = currentElement.parentElement;
+
+      Array.from(parent.children).forEach((sibling) => {
+        if (sibling !== currentElement && !sibling.inert) {
+          sibling.inert = true;
+          contactModalInertElements.push(sibling);
+        }
+      });
+
+      if (parent === document.body) break;
+
+      currentElement = parent;
+    }
+
+    return;
+  }
+
+  contactModalInertElements.forEach((element) => {
+    element.inert = false;
+  });
+
+  contactModalInertElements = [];
+}
+
     function openContactForm() {
       if (!contactFormModal) return;
 
@@ -473,6 +511,7 @@
 
       contactFormModal.classList.add("show");
       contactFormModal.setAttribute("aria-hidden", "false");
+      setContactModalBackgroundInert(true);
       document.body.classList.add("lightbox-open");
 
       window.requestAnimationFrame(() => {
@@ -491,6 +530,7 @@
 
       contactFormModal.classList.remove("show");
       contactFormModal.setAttribute("aria-hidden", "true");
+      setContactModalBackgroundInert(false);
       document.body.classList.remove("lightbox-open");
 
       if (
@@ -758,7 +798,52 @@ if (contactForm) {
     /* ============================= */
 
     document.addEventListener("keydown", (event) => {
-      if (event.key === "Escape") {
+if (
+  event.key === "Tab" &&
+  contactFormModal &&
+  contactFormModal.classList.contains("show")
+) {
+  const focusableElements = Array.from(
+    contactFormModal.querySelectorAll(
+      'a[href], button:not([disabled]), input:not([disabled]):not([type="hidden"]), select:not([disabled]), textarea:not([disabled]), [tabindex]:not([tabindex="-1"])'
+    )
+  ).filter((element) => {
+    const style = window.getComputedStyle(element);
+
+    return (
+      !element.hasAttribute("hidden") &&
+      element.getAttribute("aria-hidden") !== "true" &&
+      element.tabIndex >= 0 &&
+      style.display !== "none" &&
+      style.visibility !== "hidden" &&
+      element.getClientRects().length > 0
+    );
+  });
+
+  if (focusableElements.length > 0) {
+    event.preventDefault();
+
+    const currentIndex = focusableElements.indexOf(document.activeElement);
+
+    let nextIndex;
+
+    if (currentIndex === -1) {
+      nextIndex = event.shiftKey
+        ? focusableElements.length - 1
+        : 0;
+    } else if (event.shiftKey) {
+      nextIndex =
+        (currentIndex - 1 + focusableElements.length) %
+        focusableElements.length;
+    } else {
+      nextIndex =
+        (currentIndex + 1) %
+        focusableElements.length;
+    }
+
+    focusableElements[nextIndex].focus();
+  }
+}      if (event.key === "Escape") {
         closeLanguageMenus();
 
         if (lightbox && lightbox.classList.contains("is-open")) {
