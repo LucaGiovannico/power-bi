@@ -265,6 +265,8 @@
     );
 
     let currentDashboardIndex = 0;
+    let dashboardScrollY = 0;
+    let lastFocusedDashboardTrigger = null;
 
     function setLightboxImage(index) {
       if (!lightboxImage || dashboardImages.length === 0) return;
@@ -282,10 +284,21 @@
     function openDashboardLightbox(index) {
       if (!lightbox || !lightboxImage || dashboardImages.length === 0) return;
 
+      lastFocusedDashboardTrigger = dashboardImages[index] || document.activeElement;
+
       setLightboxImage(index);
+
+      dashboardScrollY = window.scrollY;
+
+      document.body.style.position = "fixed";
+      document.body.style.top = `-${dashboardScrollY}px`;
+      document.body.style.left = "0";
+      document.body.style.right = "0";
+      document.body.style.width = "100%";
 
       lightbox.classList.add("is-open");
       lightbox.setAttribute("aria-hidden", "false");
+      document.documentElement.classList.add("lightbox-open");
       document.body.classList.add("lightbox-open");
 
       if (lightboxCloseButton) {
@@ -298,10 +311,28 @@
 
       lightbox.classList.remove("is-open");
       lightbox.setAttribute("aria-hidden", "true");
+      document.documentElement.classList.remove("lightbox-open");
       document.body.classList.remove("lightbox-open");
+
+      document.body.style.position = "";
+      document.body.style.top = "";
+      document.body.style.left = "";
+      document.body.style.right = "";
+      document.body.style.width = "";
+
+      window.scrollTo(0, dashboardScrollY);
 
       lightboxImage.src = "";
       lightboxImage.alt = "";
+
+      if (
+  lastFocusedDashboardTrigger &&
+  typeof lastFocusedDashboardTrigger.focus === "function"
+) {
+  lastFocusedDashboardTrigger.focus();
+}
+
+lastFocusedDashboardTrigger = null;
     }
 
     function showPreviousDashboard() {

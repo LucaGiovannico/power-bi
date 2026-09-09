@@ -662,6 +662,7 @@ body {
   right: 28px;
 }
 
+html.lightbox-open,
 body.lightbox-open {
   overflow: hidden;
 }
