@@ -844,6 +844,13 @@ if (
     focusableElements[nextIndex].focus();
   }
 }      if (event.key === "Escape") {
+  if (
+  (contactFormModal && contactFormModal.classList.contains("show")) ||
+  (lightbox && lightbox.classList.contains("is-open"))
+) {
+  event.preventDefault();
+  event.stopPropagation();
+}
         closeLanguageMenus();
 
         if (lightbox && lightbox.classList.contains("is-open")) {
