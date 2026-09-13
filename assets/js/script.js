@@ -535,6 +535,80 @@ function setContactModalBackgroundInert(isOpen) {
   contactModalInertElements = [];
 }
 
+/* ======================================== */
+/* CONTACT FORM VALIDATION MESSAGES */
+/* ======================================== */
+
+document.addEventListener(
+  "invalid",
+  (event) => {
+    const field = event.target;
+
+    if (
+      !(field instanceof HTMLInputElement) &&
+      !(field instanceof HTMLSelectElement) &&
+      !(field instanceof HTMLTextAreaElement)
+    ) {
+      return;
+    }
+
+    if (!field.closest("#contactFormModal")) return;
+
+    // Rimuove un eventuale messaggio personalizzato precedente
+    field.setCustomValidity("");
+
+    const isEnglish =
+      document.documentElement.lang.toLowerCase().startsWith("en");
+
+    if (!isEnglish) return;
+
+    if (field.validity.valueMissing) {
+      if (field.type === "checkbox") {
+        field.setCustomValidity("Please select this option.");
+      } else if (field instanceof HTMLSelectElement) {
+        field.setCustomValidity("Please select an option from the list.");
+      } else {
+        field.setCustomValidity("Please complete this field.");
+      }
+
+      return;
+    }
+
+    if (field.type === "email" && field.validity.typeMismatch) {
+      field.setCustomValidity("Please enter a valid email address.");
+    }
+  },
+  true
+);
+
+document.addEventListener("input", (event) => {
+  const field = event.target;
+
+  if (
+    field instanceof HTMLInputElement ||
+    field instanceof HTMLSelectElement ||
+    field instanceof HTMLTextAreaElement
+  ) {
+    if (field.closest("#contactFormModal")) {
+      field.setCustomValidity("");
+    }
+  }
+});
+
+document.addEventListener("change", (event) => {
+  const field = event.target;
+
+  if (
+    field instanceof HTMLInputElement ||
+    field instanceof HTMLSelectElement ||
+    field instanceof HTMLTextAreaElement
+  ) {
+    if (field.closest("#contactFormModal")) {
+      field.setCustomValidity("");
+    }
+  }
+});
+
     function openContactForm() {
       if (!contactFormModal) return;
 
