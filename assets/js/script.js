@@ -875,6 +875,19 @@ if (
     focusableElements[nextIndex].focus();
   }
 }      if (event.key === "Escape") {
+  const openLanguageButton = document.querySelector(
+  '.language-selector__button[aria-expanded="true"]'
+);
+
+if (openLanguageButton) {
+  event.preventDefault();
+  event.stopPropagation();
+
+  closeLanguageMenus();
+  openLanguageButton.focus();
+
+  return;
+}
   if (
   (contactFormModal && contactFormModal.classList.contains("show")) ||
   (lightbox && lightbox.classList.contains("is-open"))
