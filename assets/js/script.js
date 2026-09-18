@@ -87,11 +87,108 @@
   window.toggleLanguageMenu = toggleLanguageMenu;
   window.setLanguage = setLanguage;
 
-  /* ============================= */
   /* INITIALIZATION */
   /* ============================= */
 
+  function setupMobileNavigation() {
+  const toggle = document.querySelector(".navbar__toggle");
+  const menu = document.getElementById("mainNavMenu");
+
+  if (!toggle || !menu) return;
+
+  const languageSelector = document.querySelector(".language-selector");
+const languagePlaceholder = document.createComment(
+  "language-selector-placeholder"
+);
+
+if (languageSelector) {
+  languageSelector.parentNode.insertBefore(
+    languagePlaceholder,
+    languageSelector
+  );
+}
+
+function syncLanguageSelector() {
+  if (!languageSelector) return;
+
+  if (window.innerWidth <= 768) {
+    menu.appendChild(languageSelector);
+    languageSelector.classList.add("language-selector--mobile");
+  } else {
+    languagePlaceholder.parentNode?.insertBefore(
+      languageSelector,
+      languagePlaceholder.nextSibling
+    );
+
+    languageSelector.classList.remove("language-selector--mobile");
+  }
+}
+
+syncLanguageSelector();
+
+  const isEnglish = document.documentElement.lang
+    .toLowerCase()
+    .startsWith("en");
+
+  function closeMenu() {
+    menu.classList.remove("is-open");
+    toggle.setAttribute("aria-expanded", "false");
+    toggle.setAttribute(
+      "aria-label",
+      isEnglish
+        ? "Open navigation menu"
+        : "Apri il menu di navigazione"
+    );
+  }
+
+  function openMenu() {
+    menu.classList.add("is-open");
+    toggle.setAttribute("aria-expanded", "true");
+    toggle.setAttribute(
+      "aria-label",
+      isEnglish
+        ? "Close navigation menu"
+        : "Chiudi il menu di navigazione"
+    );
+  }
+
+  toggle.addEventListener("click", () => {
+    const isOpen =
+      toggle.getAttribute("aria-expanded") === "true";
+
+    if (isOpen) {
+      closeMenu();
+    } else {
+      openMenu();
+    }
+  });
+
+  menu.querySelectorAll("a").forEach((link) => {
+    link.addEventListener("click", closeMenu);
+  });
+
+  document.addEventListener("keydown", (event) => {
+    if (
+      event.key === "Escape" &&
+      toggle.getAttribute("aria-expanded") === "true"
+    ) {
+      closeMenu();
+      toggle.focus();
+    }
+  });
+
+  window.addEventListener("resize", () => {
+    syncLanguageSelector();
+    
+    if (window.innerWidth > 768) {
+      closeMenu();
+    }
+  });
+}
+
   function init() {
+    setupMobileNavigation();
+
     /* ============================= */
     /* HASH SCROLL RESTORATION */
     /* ============================= */
