@@ -5620,3 +5620,45 @@ html {
   }
 
 }
+
+@media (max-width: 768px) {
+
+  /* HAMBURGER → DATA CHART */
+
+  .navbar__toggle[aria-expanded="true"] {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: flex-end !important;
+    justify-content: center !important;
+    gap: 4px !important;
+  }
+
+  .navbar__toggle[aria-expanded="true"] span {
+    position: static !important;
+    display: block !important;
+
+    width: 4px !important;
+    margin: 0 !important;
+    flex: 0 0 4px !important;
+
+    border-radius: 3px !important;
+    transform: none !important;
+    opacity: 1 !important;
+
+    transition:
+      height 0.22s ease,
+      transform 0.22s ease !important;
+  }
+
+  .navbar__toggle[aria-expanded="true"] span:nth-child(1) {
+    height: 10px !important;
+  }
+
+  .navbar__toggle[aria-expanded="true"] span:nth-child(2) {
+    height: 20px !important;
+  }
+
+  .navbar__toggle[aria-expanded="true"] span:nth-child(3) {
+    height: 15px !important;
+  }
+}
