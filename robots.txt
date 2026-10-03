@@ -1,2 +1,4 @@
 User-agent: *
 Allow: /
+
+Sitemap: https://lucagiovannico.github.io/power-bi/sitemap.xml
