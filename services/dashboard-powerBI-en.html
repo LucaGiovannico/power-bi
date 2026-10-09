@@ -13,6 +13,7 @@
       name="description"
     />
     <link href="../assets/css/services.css" rel="stylesheet" />
+    <link href="../assets/css/navigation.css" rel="stylesheet" />
     <link href="https://fonts.googleapis.com" rel="preconnect" />
     <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
     <link
@@ -48,6 +49,78 @@
     <link rel="icon" href="../assets/images/favicon/favicon.ico" />
   </head>
   <body class="service-page">
+    <!-- START GLOBAL NAVBAR -->
+<header class="site-header">
+  <nav class="navbar" aria-label="Main navigation">
+    <a
+      href="../index-en.html"
+      class="navbar__brand"
+      aria-label="Back to homepage"
+    >
+      <span class="navbar__monogram" aria-hidden="true">DF</span>
+
+      <span class="navbar__identity">
+        <span class="navbar__name">Dina Fiorentino</span>
+        <span class="navbar__role">
+          Data Analyst &amp; Power BI Consultant
+        </span>
+      </span>
+    </a>
+
+    <button
+      type="button"
+      class="navbar__toggle"
+      aria-expanded="false"
+      aria-controls="mainNavMenu"
+      aria-label="Open navigation menu"
+    >
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </button>
+
+    <div class="navbar__menu" id="mainNavMenu">
+      <ul class="navbar__list">
+        <li><a href="../index-en.html#services__id">Services</a></li>
+        <li><a href="../index-en.html#projects__id">Projects</a></li>
+        <li><a href="../index-en.html#about__id">About Me</a></li>
+        <li><a href="../index-en.html#contacts__id">Contacts</a></li>
+      </ul>
+    </div>
+
+    <div class="navbar__actions">
+      <div
+        class="language-selector"
+        data-en="./dashboard-powerBI-en.html"
+        data-it="./dashboard-powerBI.html"
+      >
+        <button
+          type="button"
+          class="language-selector__button"
+          onclick="toggleLanguageMenu(event);"
+          aria-haspopup="true"
+          aria-expanded="false"
+          aria-controls="languageMenu"
+        >
+          🇬🇧
+          <span>EN</span>
+          <span class="language-selector__arrow">▾</span>
+        </button>
+
+        <div class="language-selector__menu" id="languageMenu">
+          <button type="button" onclick="setLanguage('it')">
+            🇮🇹 Italian
+          </button>
+
+          <button type="button" onclick="setLanguage('en')">
+            🇬🇧 English
+          </button>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+<!-- END GLOBAL NAVBAR -->
     <header class="service-hero" id="top">
       <div class="service-hero__content">
         <div class="service-hero__navigation">
@@ -57,31 +130,6 @@
           >
             ↤ Back to services
           </a>
-          <div
-            class="language-selector service-hero__language-selector"
-            data-en="./dashboard-powerBI-en.html"
-            data-it="./dashboard-powerBI.html"
-          >
-            <button
-              aria-controls="languageMenu"
-              aria-expanded="false"
-              aria-haspopup="true"
-              class="language-selector__button"
-              onclick="toggleLanguageMenu(event);"
-              type="button"
-            >
-              🇬🇧 <span>EN</span>
-              <span class="language-selector__arrow">▾</span>
-            </button>
-            <div class="language-selector__menu" id="languageMenu">
-              <button onclick="setLanguage('it')" type="button">
-                🇮🇹 Italian
-              </button>
-              <button onclick="setLanguage('en')" type="button">
-                🇬🇧 English
-              </button>
-            </div>
-          </div>
         </div>
         <p class="service-hero__eyebrow">Custom Power BI Dashboards</p>
         <h1 class="service-hero__title">

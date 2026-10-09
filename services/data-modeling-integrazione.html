@@ -13,6 +13,7 @@
       name="description"
     />
     <link href="../assets/css/services.css" rel="stylesheet" />
+    <link href="../assets/css/navigation.css" rel="stylesheet" />
     <link href="https://fonts.googleapis.com" rel="preconnect" />
     <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
     <link
@@ -48,6 +49,78 @@
     <link rel="icon" href="../assets/images/favicon/favicon.ico" />
   </head>
   <body class="service-page">
+    <!-- INIZIO NAVBAR GLOBALE -->
+<header class="site-header">
+  <nav class="navbar" aria-label="Navigazione principale">
+    <a
+      href="../index.html"
+      class="navbar__brand"
+      aria-label="Torna alla homepage"
+    >
+      <span class="navbar__monogram" aria-hidden="true">DF</span>
+
+      <span class="navbar__identity">
+        <span class="navbar__name">Dina Fiorentino</span>
+        <span class="navbar__role">
+          Data Analyst &amp; Power BI Consultant
+        </span>
+      </span>
+    </a>
+
+    <button
+      type="button"
+      class="navbar__toggle"
+      aria-expanded="false"
+      aria-controls="mainNavMenu"
+      aria-label="Apri il menu di navigazione"
+    >
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </button>
+
+    <div class="navbar__menu" id="mainNavMenu">
+      <ul class="navbar__list">
+        <li><a href="../index.html#services__id">Servizi</a></li>
+        <li><a href="../index.html#projects__id">Progetti</a></li>
+        <li><a href="../index.html#about__id">Chi sono</a></li>
+        <li><a href="../index.html#contacts__id">Contatti</a></li>
+      </ul>
+    </div>
+
+    <div class="navbar__actions">
+      <div
+        class="language-selector"
+        data-it="./data-modeling-integrazione.html"
+        data-en="./data-modeling-integrazione-en.html"
+      >
+        <button
+          type="button"
+          class="language-selector__button"
+          onclick="toggleLanguageMenu(event);"
+          aria-haspopup="true"
+          aria-expanded="false"
+          aria-controls="languageMenu"
+        >
+          🇮🇹
+          <span>IT</span>
+          <span class="language-selector__arrow">▾</span>
+        </button>
+
+        <div class="language-selector__menu" id="languageMenu">
+          <button type="button" onclick="setLanguage('it')">
+            🇮🇹 Italiano
+          </button>
+
+          <button type="button" onclick="setLanguage('en')">
+            🇬🇧 English
+          </button>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+<!-- FINE NAVBAR GLOBALE -->
     <header class="service-hero" id="top">
       <div class="service-hero__content">
         <div class="service-hero__navigation">
@@ -57,31 +130,6 @@
           >
             ↤ Torna ai servizi
           </a>
-          <div
-            class="language-selector service-hero__language-selector"
-            data-en="./data-modeling-integrazione-en.html"
-            data-it="./data-modeling-integrazione.html"
-          >
-            <button
-              aria-controls="languageMenu"
-              aria-expanded="false"
-              aria-haspopup="true"
-              class="language-selector__button"
-              onclick="toggleLanguageMenu(event);"
-              type="button"
-            >
-              🇮🇹 <span>IT</span>
-              <span class="language-selector__arrow">▾</span>
-            </button>
-            <div class="language-selector__menu" id="languageMenu">
-              <button onclick="setLanguage('it')" type="button">
-                🇮🇹 Italiano
-              </button>
-              <button onclick="setLanguage('en')" type="button">
-                🇬🇧 English
-              </button>
-            </div>
-          </div>
         </div>
         <p class="service-hero__eyebrow">Data Modeling &amp; Integrazione</p>
         <h1 class="service-hero__title">

@@ -12,6 +12,7 @@
     <meta name="description" content="Hotel market analysis with Power BI: occupancy, ADR, RevPAR and revenue insights presented in clear dashboards for faster commercial decisions.">
 
     <link rel="stylesheet" href="../assets/css/projects.css" />
+    <link rel="stylesheet" href="../assets/css/navigation.css" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -51,6 +52,78 @@
   </head>
 
   <body>
+    <!-- START GLOBAL NAVBAR -->
+<header class="site-header">
+  <nav class="navbar" aria-label="Main navigation">
+    <a
+      href="../index-en.html"
+      class="navbar__brand"
+      aria-label="Back to homepage"
+    >
+      <span class="navbar__monogram" aria-hidden="true">DF</span>
+
+      <span class="navbar__identity">
+        <span class="navbar__name">Dina Fiorentino</span>
+        <span class="navbar__role">
+          Data Analyst &amp; Power BI Consultant
+        </span>
+      </span>
+    </a>
+
+    <button
+      type="button"
+      class="navbar__toggle"
+      aria-expanded="false"
+      aria-controls="mainNavMenu"
+      aria-label="Open navigation menu"
+    >
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </button>
+
+    <div class="navbar__menu" id="mainNavMenu">
+      <ul class="navbar__list">
+        <li><a href="../index-en.html#services__id">Services</a></li>
+        <li><a href="../index-en.html#projects__id">Projects</a></li>
+        <li><a href="../index-en.html#about__id">About Me</a></li>
+        <li><a href="../index-en.html#contacts__id">Contacts</a></li>
+      </ul>
+    </div>
+
+    <div class="navbar__actions">
+      <div
+        class="language-selector"
+        data-it="./hotel-market-insights.html"
+        data-en="./hotel-market-insights-en.html"
+      >
+        <button
+          type="button"
+          class="language-selector__button"
+          onclick="toggleLanguageMenu(event);"
+          aria-haspopup="true"
+          aria-expanded="false"
+          aria-controls="languageMenu"
+        >
+          🇬🇧
+          <span>EN</span>
+          <span class="language-selector__arrow">▾</span>
+        </button>
+
+        <div class="language-selector__menu" id="languageMenu">
+          <button type="button" onclick="setLanguage('it')">
+            🇮🇹 Italian
+          </button>
+
+          <button type="button" onclick="setLanguage('en')">
+            🇬🇧 English
+          </button>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+<!-- END GLOBAL NAVBAR -->
     <header class="hero">
       <div class="hero__content">
         <div class="hero__navigation">
@@ -61,33 +134,6 @@
             ↤ Back to projects
           </a>
 
-          <div
-            class="language-selector hero__language-selector"
-            data-it="./hotel-market-insights.html"
-            data-en="./hotel-market-insights-en.html"
-          >
-            <button
-              type="button"
-              class="language-selector__button"
-              onclick="toggleLanguageMenu(event);"
-              aria-haspopup="true"
-              aria-expanded="false"
-              aria-controls="languageMenu"
-            >
-              🇬🇧
-              <span>EN</span>
-              <span class="language-selector__arrow">▾</span>
-            </button>
-
-            <div class="language-selector__menu" id="languageMenu">
-              <button type="button" onclick="setLanguage('it')">
-                🇮🇹 Italiano
-              </button>
-              <button type="button" onclick="setLanguage('en')">
-                🇬🇧 English
-              </button>
-            </div>
-          </div>
         </div>
 
         <p class="hero__eyebrow">🥇 Winning Project</p>

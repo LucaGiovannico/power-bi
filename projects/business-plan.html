@@ -12,6 +12,7 @@
       content="Case study Power BI Business Plan & Financial Analysis: dashboard per analisi finanziaria, ricavi, marginalità, PFN, liquidità e sostenibilità economica."
     />
     <link rel="stylesheet" href="../assets/css/projects.css" />
+    <link rel="stylesheet" href="../assets/css/navigation.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -48,7 +49,79 @@
   </head>
 
   <body>
-    <header class="hero">
+<!-- INIZIO NAVBAR GLOBALE -->
+<header class="site-header">
+  <nav class="navbar" aria-label="Navigazione principale">
+    <a
+      href="../index.html"
+      class="navbar__brand"
+      aria-label="Torna alla homepage"
+    >
+      <span class="navbar__monogram" aria-hidden="true">DF</span>
+
+      <span class="navbar__identity">
+        <span class="navbar__name">Dina Fiorentino</span>
+        <span class="navbar__role">
+          Data Analyst &amp; Power BI Consultant
+        </span>
+      </span>
+    </a>
+
+    <button
+      type="button"
+      class="navbar__toggle"
+      aria-expanded="false"
+      aria-controls="mainNavMenu"
+      aria-label="Apri il menu di navigazione"
+    >
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </button>
+
+    <div class="navbar__menu" id="mainNavMenu">
+      <ul class="navbar__list">
+        <li><a href="../index.html#services__id">Servizi</a></li>
+        <li><a href="../index.html#projects__id">Progetti</a></li>
+        <li><a href="../index.html#about__id">Chi sono</a></li>
+        <li><a href="../index.html#contacts__id">Contatti</a></li>
+      </ul>
+    </div>
+
+    <div class="navbar__actions">
+      <div
+        class="language-selector"
+        data-it="./business-plan.html"
+        data-en="./business-plan-en.html"
+      >
+        <button
+          type="button"
+          class="language-selector__button"
+          onclick="toggleLanguageMenu(event);"
+          aria-haspopup="true"
+          aria-expanded="false"
+          aria-controls="languageMenu"
+        >
+          🇮🇹
+          <span>IT</span>
+          <span class="language-selector__arrow">▾</span>
+        </button>
+
+        <div class="language-selector__menu" id="languageMenu">
+          <button type="button" onclick="setLanguage('it')">
+            🇮🇹 Italiano
+          </button>
+
+          <button type="button" onclick="setLanguage('en')">
+            🇬🇧 English
+          </button>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+<!-- FINE NAVBAR GLOBALE -->
+     <header class="hero">
       <div class="hero__content">
         <div class="hero__navigation">
           <a
@@ -58,31 +131,6 @@
             ↤ Torna ai progetti
           </a>
 
-          <div
-            class="language-selector hero__language-selector"
-            data-it="./business-plan.html"
-            data-en="./business-plan-en.html"
-          >
-            <button
-              type="button"
-              class="language-selector__button"
-              onclick="toggleLanguageMenu(event);"
-              aria-haspopup="true"
-              aria-expanded="false"
-              aria-controls="languageMenu"
-            >
-              🇮🇹 <span>IT</span><span class="language-selector__arrow">▾</span>
-            </button>
-
-            <div class="language-selector__menu" id="languageMenu">
-              <button type="button" onclick="setLanguage('it')">
-                🇮🇹 Italiano
-              </button>
-              <button type="button" onclick="setLanguage('en')">
-                🇬🇧 English
-              </button>
-            </div>
-          </div>
         </div>
 
         <p class="hero__eyebrow">REAL PROJECT</p>
