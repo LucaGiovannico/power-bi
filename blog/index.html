@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="it">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Blog Power BI, KPI e Data Analytics | Dina Fiorentino</title>
+
+    <meta
+      name="description"
+      content="Articoli e approfondimenti su Power BI, KPI, reporting, data modeling e business analytics per trasformare i dati in decisioni più chiare."
+    />
+
+    <link
+      rel="canonical"
+      href="https://www.dinafiorentino.com/blog/"
+    />
+
+    <link
+      rel="alternate"
+      hreflang="it"
+      href="https://www.dinafiorentino.com/blog/"
+    />
+
+    <link
+      rel="alternate"
+      hreflang="en"
+      href="https://www.dinafiorentino.com/blog/index-en.html"
+    />
+
+    <link
+      rel="stylesheet"
+      href="../assets/css/navigation.css"
+    />
+
+    <link
+      rel="stylesheet"
+      href="../assets/css/blog.css"
+    />
+
+    <link
+      rel="preconnect"
+      href="https://fonts.googleapis.com"
+    />
+
+    <link
+      rel="preconnect"
+      href="https://fonts.gstatic.com"
+      crossorigin
+    />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Limelight&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Poppins:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
+
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="../assets/images/favicon/apple-touch-icon.png"
+    />
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="../assets/images/favicon/favicon-32x32.png"
+    />
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="../assets/images/favicon/favicon-16x16.png"
+    />
+
+    <link
+      rel="manifest"
+      href="../assets/images/favicon/site.webmanifest"
+    />
+
+    <link
+      rel="icon"
+      href="../assets/images/favicon/favicon.ico"
+    />
+  </head>
+
+  <body class="blog-page">
+
+    <!-- INIZIO NAVBAR GLOBALE -->
+    <header class="site-header">
+      <nav class="navbar" aria-label="Navigazione principale">
+        <a
+          href="../index.html"
+          class="navbar__brand"
+          aria-label="Torna alla homepage"
+        >
+          <span class="navbar__monogram" aria-hidden="true">DF</span>
+
+          <span class="navbar__identity">
+            <span class="navbar__name">Dina Fiorentino</span>
+            <span class="navbar__role">
+              Data Analyst &amp; Power BI Consultant
+            </span>
+          </span>
+        </a>
+
+        <button
+          type="button"
+          class="navbar__toggle"
+          aria-expanded="false"
+          aria-controls="mainNavMenu"
+          aria-label="Apri il menu di navigazione"
+        >
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </button>
+
+        <div class="navbar__menu" id="mainNavMenu">
+          <ul class="navbar__list">
+            <li>
+              <a href="../index.html#services__id">Servizi</a>
+            </li>
+
+            <li>
+              <a href="../index.html#projects__id">Progetti</a>
+            </li>
+
+            <li>
+              <a href="./index.html" aria-current="page">Blog</a>
+            </li>
+
+            <li>
+              <a href="../index.html#about__id">Chi sono</a>
+            </li>
+
+            <li>
+              <a href="../index.html#contacts__id">Contatti</a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="navbar__actions">
+          <div
+            class="language-selector"
+            data-it="./index.html"
+            data-en="./index-en.html"
+          >
+            <button
+              type="button"
+              class="language-selector__button"
+              onclick="toggleLanguageMenu(event);"
+              aria-haspopup="true"
+              aria-expanded="false"
+              aria-controls="languageMenu"
+            >
+              🇮🇹
+              <span>IT</span>
+              <span class="language-selector__arrow">▾</span>
+            </button>
+
+            <div
+              class="language-selector__menu"
+              id="languageMenu"
+            >
+              <button
+                type="button"
+                onclick="setLanguage('it')"
+              >
+                🇮🇹 Italiano
+              </button>
+
+              <button
+                type="button"
+                onclick="setLanguage('en')"
+              >
+                🇬🇧 English
+              </button>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <!-- FINE NAVBAR GLOBALE -->
+
+    <main>
+
+      <!-- HERO BLOG -->
+      <section
+        class="blog-hero"
+        aria-labelledby="blog-title"
+      >
+        <div class="blog-hero__inner">
+
+          <p class="blog-hero__eyebrow">
+            INSIGHTS &amp; DATA STRATEGY
+          </p>
+
+          <h1
+            class="blog-hero__title"
+            id="blog-title"
+          >
+            Dati, Power BI e business:
+            <span class="text-gradient">
+              idee per decidere meglio.
+            </span>
+          </h1>
+
+          <p class="blog-hero__text">
+            Approfondimenti pratici su dashboard Power BI,
+            KPI, reporting, data modeling e business analytics.
+            Contenuti pensati per trasformare dati complessi
+            in informazioni più chiare e utilizzabili.
+          </p>
+
+          <div
+            class="blog-categories"
+            aria-label="Categorie del blog"
+          >
+            <span>Power BI</span>
+            <span>KPI &amp; Performance</span>
+            <span>Reporting</span>
+            <span>Data Modeling</span>
+            <span>Business Analytics</span>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ARTICOLI -->
+      <section
+        class="blog-articles"
+        aria-labelledby="articles-title"
+      >
+        <div class="blog-articles__inner">
+
+          <div class="blog-section-heading">
+            <div>
+              <p class="blog-section-heading__eyebrow">
+                ULTIMI ARTICOLI
+              </p>
+
+              <h2
+                class="blog-section-heading__title"
+                id="articles-title"
+              >
+                Approfondimenti per rendere
+                <span class="text-gradient">
+                  i dati più utili.
+                </span>
+              </h2>
+            </div>
+          </div>
+
+          <div class="blog-grid">
+
+            <article class="blog-card blog-card--featured">
+              <div class="blog-card__visual">
+                <div class="blog-card__visual-content">
+                  <span class="blog-card__visual-label">
+                    POWER BI
+                  </span>
+
+                  <span class="blog-card__visual-icon">
+                    <i class="fa-solid fa-chart-column"></i>
+                  </span>
+                </div>
+              </div>
+
+              <div class="blog-card__content">
+
+                <div class="blog-card__meta">
+                  <span>Power BI</span>
+                  <span>8 min di lettura</span>
+                </div>
+
+                <h3 class="blog-card__title">
+                  Dashboard Power BI su misura:
+                  cosa sono e quando servono davvero
+                </h3>
+
+                <p class="blog-card__excerpt">
+                  Quando una dashboard standard non basta più,
+                  una soluzione costruita sui KPI e sui processi
+                  aziendali può rendere analisi e decisioni
+                  molto più efficaci.
+                </p>
+
+                <span class="blog-card__coming-soon">
+                  Primo articolo in preparazione
+                </span>
+
+              </div>
+            </article>
+
+            <article class="blog-card">
+              <div class="blog-card__content">
+
+                <div class="blog-card__meta">
+                  <span>KPI &amp; Performance</span>
+                </div>
+
+                <h3 class="blog-card__title">
+                  Come scegliere KPI davvero utili
+                  per il business
+                </h3>
+
+                <p class="blog-card__excerpt">
+                  Non tutti gli indicatori aiutano a decidere.
+                  Vedremo come distinguere metriche descrittive
+                  da KPI realmente collegati agli obiettivi.
+                </p>
+
+                <span class="blog-card__coming-soon">
+                  Prossimamente
+                </span>
+
+              </div>
+            </article>
+
+            <article class="blog-card">
+              <div class="blog-card__content">
+
+                <div class="blog-card__meta">
+                  <span>Reporting</span>
+                </div>
+
+                <h3 class="blog-card__title">
+                  Reporting automatico:
+                  quando Excel non basta più
+                </h3>
+
+                <p class="blog-card__excerpt">
+                  Segnali, vantaggi e criteri per capire quando
+                  conviene passare da processi manuali a un
+                  sistema di reporting strutturato.
+                </p>
+
+                <span class="blog-card__coming-soon">
+                  Prossimamente
+                </span>
+
+              </div>
+            </article>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- CTA -->
+      <section class="blog-cta">
+        <div class="blog-cta__inner">
+
+          <p class="blog-cta__eyebrow">
+            HAI UN PROGETTO?
+          </p>
+
+          <h2 class="blog-cta__title">
+            Vuoi trasformare i tuoi dati
+            in uno strumento
+            <span class="text-gradient">
+              utile per decidere?
+            </span>
+          </h2>
+
+          <p class="blog-cta__text">
+            Scopri i servizi di consulenza Power BI,
+            reporting e data analysis oppure raccontami
+            direttamente il tuo progetto.
+          </p>
+
+          <div class="blog-cta__actions">
+
+            <a
+              href="../index.html#services__id"
+              class="blog-button blog-button--primary"
+            >
+              Scopri i servizi
+              <i class="fa-solid fa-arrow-right"></i>
+            </a>
+
+            <a
+              href="../index.html#contacts__id"
+              class="blog-button blog-button--secondary"
+            >
+              Contattami
+            </a>
+
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <footer class="blog-footer">
+      <div class="blog-footer__inner">
+
+        <a
+          href="../index.html"
+          class="blog-footer__brand"
+        >
+          Dina Fiorentino
+        </a>
+
+        <p>
+          Data Analyst &amp; Power BI Consultant
+        </p>
+
+        <p class="blog-footer__copyright">
+          © 2026 Dina Fiorentino
+        </p>
+
+      </div>
+    </footer>
+
+    <script src="../assets/js/script.js"></script>
+  </body>
+</html>
