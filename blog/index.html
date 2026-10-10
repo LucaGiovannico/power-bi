@@ -4,11 +4,11 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title>Blog Power BI, KPI e Data Analytics | Dina Fiorentino</title>
+    <title>Blog Power BI, Excel, DAX e Data Analytics | Dina Fiorentino</title>
 
     <meta
       name="description"
-      content="Articoli e approfondimenti su Power BI, KPI, reporting, data modeling e business analytics per trasformare i dati in decisioni più chiare."
+      content="Novità, pillole e approfondimenti su Power BI, Excel, DAX, data visualization, data storytelling e analytics."
     />
 
     <link
@@ -38,16 +38,8 @@
       href="../assets/css/blog.css"
     />
 
-    <link
-      rel="preconnect"
-      href="https://fonts.googleapis.com"
-    />
-
-    <link
-      rel="preconnect"
-      href="https://fonts.gstatic.com"
-      crossorigin
-    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 
     <link
       href="https://fonts.googleapis.com/css2?family=Limelight&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Poppins:ital,wght@0,100..900;1,100..900&display=swap"
@@ -92,9 +84,13 @@
 
   <body class="blog-page">
 
-    <!-- INIZIO NAVBAR GLOBALE -->
+    <!-- ======================================================
+         NAVBAR
+         ====================================================== -->
+
     <header class="site-header">
       <nav class="navbar" aria-label="Navigazione principale">
+
         <a
           href="../index.html"
           class="navbar__brand"
@@ -104,6 +100,7 @@
 
           <span class="navbar__identity">
             <span class="navbar__name">Dina Fiorentino</span>
+
             <span class="navbar__role">
               Data Analyst &amp; Power BI Consultant
             </span>
@@ -122,36 +119,57 @@
           <span aria-hidden="true"></span>
         </button>
 
-        <div class="navbar__menu" id="mainNavMenu">
+        <div
+          class="navbar__menu"
+          id="mainNavMenu"
+        >
           <ul class="navbar__list">
+
             <li>
-              <a href="../index.html#services__id">Servizi</a>
+              <a href="../index.html#services__id">
+                Servizi
+              </a>
             </li>
 
             <li>
-              <a href="../index.html#projects__id">Progetti</a>
+              <a href="../index.html#projects__id">
+                Progetti
+              </a>
             </li>
 
             <li>
-              <a href="./index.html" aria-current="page">Blog</a>
+              <a
+                href="./index.html"
+                aria-current="page"
+                class="navbar__active"
+              >
+                Blog
+              </a>
             </li>
 
             <li>
-              <a href="../index.html#about__id">Chi sono</a>
+              <a href="../index.html#about__id">
+                Chi sono
+              </a>
             </li>
 
             <li>
-              <a href="../index.html#contacts__id">Contatti</a>
+              <a href="../index.html#contacts__id">
+                Contatti
+              </a>
             </li>
+
           </ul>
         </div>
 
         <div class="navbar__actions">
+
           <div
             class="language-selector"
             data-it="./index.html"
             data-en="./index-en.html"
           >
+
             <button
               type="button"
               class="language-selector__button"
@@ -169,6 +187,7 @@
               class="language-selector__menu"
               id="languageMenu"
             >
+
               <button
                 type="button"
                 onclick="setLanguage('it')"
@@ -182,243 +201,629 @@
               >
                 🇬🇧 English
               </button>
+
             </div>
           </div>
         </div>
+
       </nav>
     </header>
-    <!-- FINE NAVBAR GLOBALE -->
+
 
     <main>
 
-      <!-- HERO BLOG -->
+      <!-- ======================================================
+           HERO
+           ====================================================== -->
+
       <section
         class="blog-hero"
         aria-labelledby="blog-title"
       >
+
         <div class="blog-hero__inner">
 
-          <p class="blog-hero__eyebrow">
-            INSIGHTS &amp; DATA STRATEGY
-          </p>
+          <!-- TESTO -->
 
-          <h1
-            class="blog-hero__title"
-            id="blog-title"
-          >
-            Dati, Power BI e business:
-            <span class="text-gradient">
-              idee per decidere meglio.
-            </span>
-          </h1>
+          <div class="blog-hero__content">
 
-          <p class="blog-hero__text">
-            Approfondimenti pratici su dashboard Power BI,
-            KPI, reporting, data modeling e business analytics.
-            Contenuti pensati per trasformare dati complessi
-            in informazioni più chiare e utilizzabili.
-          </p>
+            <p class="blog-hero__eyebrow">
+              BLOG · DATA &amp; ANALYTICS
+            </p>
 
-          <div
-            class="blog-categories"
-            aria-label="Categorie del blog"
-          >
-            <span>Power BI</span>
-            <span>KPI &amp; Performance</span>
-            <span>Reporting</span>
-            <span>Data Modeling</span>
-            <span>Business Analytics</span>
+            <h1
+              class="blog-hero__title"
+              id="blog-title"
+            >
+              Novità, pillole e
+              approfondimenti
+              <span class="text-gradient">
+                dal mondo dei dati.
+              </span>
+            </h1>
+
+            <p class="blog-hero__text">
+              Uno spazio dedicato a Power BI, Excel, DAX,
+              data visualization e data storytelling, con
+              aggiornamenti, spunti pratici e contenuti utili
+              per chi lavora ogni giorno con i dati.
+            </p>
+
+            <div
+              class="blog-topics"
+              aria-label="Argomenti del blog"
+            >
+              <span>Power BI</span>
+              <span>DAX</span>
+              <span>Excel</span>
+              <span>Data Visualization</span>
+              <span>Data Storytelling</span>
+              <span>Analytics</span>
+            </div>
+
           </div>
 
+
+          <!-- VISUAL EDITORIALE -->
+
+          <div
+            class="blog-hero__visual"
+            aria-hidden="true"
+          >
+
+            <div class="hero-orbit hero-orbit--one"></div>
+            <div class="hero-orbit hero-orbit--two"></div>
+
+
+            <!-- CARD SINISTRE -->
+
+            <div class="hero-topic-card hero-topic-card--powerbi">
+
+              <div class="hero-topic-card__icon hero-topic-card__icon--powerbi">
+                <i class="fa-solid fa-chart-column"></i>
+              </div>
+
+              <div>
+                <strong>Power BI</strong>
+                <span>Novità e aggiornamenti</span>
+              </div>
+
+              <span class="hero-topic-card__arrow">
+                →
+              </span>
+
+            </div>
+
+
+            <div class="hero-topic-card hero-topic-card--excel">
+
+              <div class="hero-topic-card__icon hero-topic-card__icon--excel">
+                <i class="fa-solid fa-table"></i>
+              </div>
+
+              <div>
+                <strong>Excel</strong>
+                <span>Tips e tutorial</span>
+              </div>
+
+              <span class="hero-topic-card__arrow">
+                →
+              </span>
+
+            </div>
+
+
+            <div class="hero-topic-card hero-topic-card--dax">
+
+              <div class="hero-topic-card__icon hero-topic-card__icon--dax">
+                &lt;/&gt;
+              </div>
+
+              <div>
+                <strong>DAX</strong>
+                <span>Guide pratiche</span>
+              </div>
+
+              <span class="hero-topic-card__arrow">
+                →
+              </span>
+
+            </div>
+
+
+            <!-- LAPTOP -->
+
+            <div class="hero-laptop">
+
+              <div class="hero-laptop__screen">
+
+                <div class="magazine-window">
+
+                  <div class="magazine-window__top">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+
+                    <small>BLOG</small>
+                  </div>
+
+                  <div class="magazine-window__content">
+
+                    <div class="magazine-window__copy">
+
+                      <span class="magazine-window__badge">
+                        BLOG
+                      </span>
+
+                      <strong>
+                        Power BI<br />
+                        New Features
+                      </strong>
+
+                      <div class="magazine-lines">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                      </div>
+
+                      <span class="magazine-button">
+                        Leggi l'articolo →
+                      </span>
+
+                    </div>
+
+                    <div class="magazine-chart">
+
+                      <div class="magazine-chart__bars">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                      </div>
+
+                    </div>
+
+                  </div>
+
+                  <div class="magazine-window__bottom">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                  </div>
+
+                </div>
+
+              </div>
+
+              <div class="hero-laptop__base"></div>
+
+            </div>
+
+
+            <!-- CARD DESTRE -->
+
+            <div class="hero-topic-card hero-topic-card--visualization">
+
+              <div class="hero-topic-card__icon">
+                <i class="fa-solid fa-chart-simple"></i>
+              </div>
+
+              <div>
+                <strong>Data Visualization</strong>
+                <span>Idee e best practice</span>
+              </div>
+
+            </div>
+
+
+            <div class="hero-topic-card hero-topic-card--storytelling">
+
+              <div class="hero-topic-card__icon hero-topic-card__icon--pie">
+                <i class="fa-solid fa-chart-pie"></i>
+              </div>
+
+              <div>
+                <strong>Data Storytelling</strong>
+                <span>Dai dati alle storie</span>
+              </div>
+
+            </div>
+
+
+            <div class="hero-performance-card">
+
+              <div class="hero-performance-card__chart">
+                <svg
+                  viewBox="0 0 180 80"
+                  role="presentation"
+                >
+                  <polyline
+                    points="0,62 25,46 48,57 72,32 98,42 124,18 150,25 180,11"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="3"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+
+                  <circle cx="25" cy="46" r="4"></circle>
+                  <circle cx="72" cy="32" r="4"></circle>
+                  <circle cx="124" cy="18" r="4"></circle>
+                  <circle cx="180" cy="11" r="4"></circle>
+                </svg>
+              </div>
+
+              <strong>+12%</strong>
+
+            </div>
+
+          </div>
         </div>
       </section>
 
-      <!-- ARTICOLI -->
+
+      <!-- ======================================================
+           ARTICLES
+           ====================================================== -->
+
       <section
         class="blog-articles"
+        id="articles"
         aria-labelledby="articles-title"
       >
-        <div class="blog-articles__inner">
 
-          <div class="blog-section-heading">
+        <div class="blog-shell">
+
+          <header class="articles-heading">
+
             <div>
-              <p class="blog-section-heading__eyebrow">
-                ULTIMI ARTICOLI
+              <p class="section-eyebrow">
+                IN EVIDENZA
               </p>
 
-              <h2
-                class="blog-section-heading__title"
-                id="articles-title"
-              >
-                Approfondimenti per rendere
+              <h2 id="articles-title">
+                Ultimi articoli e
                 <span class="text-gradient">
-                  i dati più utili.
+                  approfondimenti.
                 </span>
               </h2>
             </div>
-          </div>
 
-          <div class="blog-grid">
+            <div class="articles-heading__aside">
 
-            <article class="blog-card blog-card--featured">
-              <div class="blog-card__visual">
-                <div class="blog-card__visual-content">
-                  <span class="blog-card__visual-label">
-                    POWER BI
-                  </span>
+              <p>
+                Aggiornamenti, guide pratiche e spunti di riflessione
+                per approfondire il mondo dei dati.
+              </p>
 
-                  <span class="blog-card__visual-icon">
-                    <i class="fa-solid fa-chart-column"></i>
-                  </span>
+              <span class="articles-heading__link">
+                Tutti gli articoli
+                <span aria-hidden="true">→</span>
+              </span>
+
+            </div>
+
+          </header>
+
+
+          <div class="article-grid">
+
+            <!-- FEATURED -->
+
+            <article class="article-card article-card--featured">
+
+              <div class="featured-visual">
+
+                <span class="featured-visual__tag">
+                  Power BI
+                </span>
+
+                <div class="featured-visual__bars">
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  <span></span>
                 </div>
+
+                <div class="featured-update">
+
+                  <p>October Update</p>
+
+                  <div>
+                    <span>
+                      <i class="fa-solid fa-sparkles"></i>
+                    </span>
+                    New visuals
+                  </div>
+
+                  <div>
+                    <span>
+                      <i class="fa-solid fa-gauge-high"></i>
+                    </span>
+                    Performance
+                  </div>
+
+                  <div>
+                    <span>
+                      <i class="fa-solid fa-wand-magic-sparkles"></i>
+                    </span>
+                    Copilot improvements
+                  </div>
+
+                </div>
+
               </div>
 
-              <div class="blog-card__content">
 
-                <div class="blog-card__meta">
-                  <span>Power BI</span>
-                  <span>8 min di lettura</span>
+              <div class="article-card__body">
+
+                <div class="article-meta">
+                  <span>POWER BI</span>
+                  <span>8 MIN DI LETTURA</span>
                 </div>
 
-                <h3 class="blog-card__title">
-                  Dashboard Power BI su misura:
-                  cosa sono e quando servono davvero
+                <h3>
+                  Power BI: cosa cambia con
+                  l'ultimo aggiornamento
                 </h3>
 
-                <p class="blog-card__excerpt">
-                  Quando una dashboard standard non basta più,
-                  una soluzione costruita sui KPI e sui processi
-                  aziendali può rendere analisi e decisioni
-                  molto più efficaci.
+                <p>
+                  Panoramica delle novità più interessanti
+                  dell'ultimo aggiornamento di Power BI e di
+                  come possono semplificare il lavoro quotidiano.
                 </p>
 
-                <span class="blog-card__coming-soon">
+                <span class="article-status">
                   Primo articolo in preparazione
                 </span>
 
               </div>
+
             </article>
 
-            <article class="blog-card">
-              <div class="blog-card__content">
 
-                <div class="blog-card__meta">
-                  <span>KPI &amp; Performance</span>
+            <!-- DAX -->
+
+            <article class="article-card">
+
+              <div class="article-card__visual article-card__visual--dax">
+
+                <span class="dax-badge">
+                  DAX
+                </span>
+
+                <div class="dax-code">
+                  <span>CALCULATE(</span>
+                  <span>&nbsp;&nbsp;[Sales],</span>
+                  <span>&nbsp;&nbsp;'Product'[Category] = "A"</span>
+                  <span>)</span>
                 </div>
 
-                <h3 class="blog-card__title">
-                  Come scegliere KPI davvero utili
-                  per il business
+              </div>
+
+              <div class="article-card__body">
+
+                <div class="article-meta">
+                  <span>DAX</span>
+                  <span>7 MIN DI LETTURA</span>
+                </div>
+
+                <h3>
+                  5 formule DAX da conoscere davvero
                 </h3>
 
-                <p class="blog-card__excerpt">
-                  Non tutti gli indicatori aiutano a decidere.
-                  Vedremo come distinguere metriche descrittive
-                  da KPI realmente collegati agli obiettivi.
+                <p>
+                  Una raccolta pratica di funzioni e pattern
+                  utili che ricorrono spesso nei modelli Power BI.
                 </p>
 
-                <span class="blog-card__coming-soon">
+                <span class="article-status">
                   Prossimamente
                 </span>
 
               </div>
+
             </article>
 
-            <article class="blog-card">
-              <div class="blog-card__content">
 
-                <div class="blog-card__meta">
-                  <span>Reporting</span>
+            <!-- STORYTELLING -->
+
+            <article class="article-card">
+
+              <div class="article-card__visual article-card__visual--story">
+
+                <div class="story-chart">
+
+                  <div class="story-bars">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                  </div>
+
+                  <svg
+                    viewBox="0 0 200 90"
+                    aria-hidden="true"
+                  >
+                    <polyline
+                      points="8,72 42,58 71,63 105,34 139,42 180,14"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="3"
+                    />
+                  </svg>
+
                 </div>
 
-                <h3 class="blog-card__title">
-                  Reporting automatico:
-                  quando Excel non basta più
+              </div>
+
+              <div class="article-card__body">
+
+                <div class="article-meta">
+                  <span>DATA STORYTELLING</span>
+                  <span>6 MIN DI LETTURA</span>
+                </div>
+
+                <h3>
+                  Data storytelling:
+                  un buon grafico non basta
                 </h3>
 
-                <p class="blog-card__excerpt">
-                  Segnali, vantaggi e criteri per capire quando
-                  conviene passare da processi manuali a un
-                  sistema di reporting strutturato.
+                <p>
+                  Come costruire una narrazione visiva efficace
+                  per aiutare chi guarda a capire cosa sta
+                  succedendo e perché.
                 </p>
 
-                <span class="blog-card__coming-soon">
+                <span class="article-status">
                   Prossimamente
                 </span>
 
               </div>
+
             </article>
 
           </div>
+
         </div>
       </section>
 
-      <!-- CTA -->
-      <section class="blog-cta">
-        <div class="blog-cta__inner">
 
-          <p class="blog-cta__eyebrow">
-            HAI UN PROGETTO?
-          </p>
+      <!-- ======================================================
+           CTA
+           ====================================================== -->
 
-          <h2 class="blog-cta__title">
-            Vuoi trasformare i tuoi dati
-            in uno strumento
-            <span class="text-gradient">
-              utile per decidere?
-            </span>
-          </h2>
+      <section
+        class="blog-cta"
+        aria-labelledby="blog-cta-title"
+      >
 
-          <p class="blog-cta__text">
-            Scopri i servizi di consulenza Power BI,
-            reporting e data analysis oppure raccontami
-            direttamente il tuo progetto.
-          </p>
+        <div class="blog-shell">
 
-          <div class="blog-cta__actions">
+          <div class="blog-cta__inner">
 
-            <a
-              href="../index.html#services__id"
-              class="blog-button blog-button--primary"
-            >
-              Scopri i servizi
-              <i class="fa-solid fa-arrow-right"></i>
-            </a>
+            <div class="blog-cta__copy">
 
-            <a
-              href="../index.html#contacts__id"
-              class="blog-button blog-button--secondary"
-            >
-              Contattami
-            </a>
+              <p class="section-eyebrow">
+                HAI UN PROGETTO?
+              </p>
+
+              <h2 id="blog-cta-title">
+                Parliamo di come i dati possono
+                supportare i tuoi obiettivi.
+              </h2>
+
+            </div>
+
+            <div class="blog-cta__actions">
+
+              <a
+                href="../index.html#services__id"
+                class="blog-button blog-button--primary"
+              >
+                Scopri i servizi
+                <span aria-hidden="true">→</span>
+              </a>
+
+              <a
+                href="../index.html#contacts__id"
+                class="blog-button blog-button--secondary"
+              >
+                Contattami
+              </a>
+
+            </div>
 
           </div>
+
         </div>
       </section>
 
     </main>
 
-    <footer class="blog-footer">
-      <div class="blog-footer__inner">
+
+    <!-- ======================================================
+         FOOTER
+         ====================================================== -->
+
+    <footer class="blog-global-footer">
+
+      <div class="blog-global-footer__inner">
 
         <a
           href="../index.html"
-          class="blog-footer__brand"
+          class="blog-global-footer__brand"
+          aria-label="Torna alla homepage"
         >
-          Dina Fiorentino
+
+          <span
+            class="blog-global-footer__monogram"
+            aria-hidden="true"
+          >
+            DF
+          </span>
+
+          <span>
+            <strong>Dina Fiorentino</strong>
+            <small>
+              Data Analyst &amp; Power BI Consultant
+            </small>
+          </span>
+
         </a>
 
-        <p>
-          Data Analyst &amp; Power BI Consultant
-        </p>
 
-        <p class="blog-footer__copyright">
-          © 2026 Dina Fiorentino
+        <nav
+          class="blog-global-footer__links"
+          aria-label="Link footer"
+        >
+
+          <a href="../privacy.html?from=blog">
+            Privacy Policy
+          </a>
+
+          <a href="../cookie.html?from=blog">
+            Cookie Policy
+          </a>
+
+          <a
+            href="https://www.linkedin.com/in/dina-fiorentino/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            LinkedIn
+          </a>
+
+          <a
+            href="https://www.linkedin.com/in/dina-fiorentino/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="blog-global-footer__linkedin"
+            aria-label="Profilo LinkedIn"
+          >
+            <i
+              class="fa-brands fa-linkedin-in"
+              aria-hidden="true"
+            ></i>
+          </a>
+
+        </nav>
+
+
+        <p class="blog-global-footer__copyright">
+          © 2026 Dina Fiorentino. Tutti i diritti riservati.
         </p>
 
       </div>
+
     </footer>
 
-    <script src="../assets/js/script.js"></script>
+
+    <script
+      src="../assets/js/script.js"
+      defer
+    ></script>
+
   </body>
 </html>
