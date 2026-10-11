@@ -104,32 +104,32 @@ body.blog-page a {
 
   overflow: hidden;
 
-  background:
-    radial-gradient(
-      circle at 78% 10%,
-      rgba(108, 82, 235, 0.12),
-      transparent 32%
-    ),
-    radial-gradient(
-      circle at 98% 85%,
-      rgba(142, 115, 243, 0.15),
-      transparent 25%
-    ),
-    linear-gradient(
-      115deg,
-      #ffffff 0%,
-      #f8f7ff 55%,
-      #f0eeff 100%
-    );
+background:
+  radial-gradient(
+    circle at 78% 22%,
+    rgba(111, 86, 238, 0.13),
+    transparent 34%
+  ),
+  radial-gradient(
+    circle at 100% 72%,
+    rgba(142, 115, 243, 0.11),
+    transparent 30%
+  ),
+  linear-gradient(
+    115deg,
+    #ffffff 0%,
+    #f9f8ff 42%,
+    #f4f2ff 100%
+  );
 
   border-bottom:
     1px solid rgba(85, 71, 231, 0.06);
 }
 
 .blog-hero__inner {
-  width: min(
-    calc(100% - 64px),
-    var(--blog-width)
+width: min(
+  calc(100% - 80px),
+  1480px
   );
 
   min-height: 400px;
@@ -2238,5 +2238,264 @@ body.blog-page a {
   .blog-button {
     width:
       100%;
+  }
+}
+
+/* ==========================================================
+   HERO BACKGROUND VISUAL
+   ========================================================== */
+
+.blog-hero {
+  position: relative;
+  overflow: hidden;
+
+  padding: 0;
+
+  min-height: 470px;
+
+  background:
+    linear-gradient(
+      90deg,
+      #ffffff 0%,
+      #ffffff 35%,
+      #f8f7ff 52%,
+      #f3f1ff 100%
+    );
+}
+
+/* immagine integrata nella hero */
+.blog-hero::before {
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+  right: 0;
+  bottom: 0;
+
+  width: 55%;
+
+  background-image:
+    url("../images/blog/blog-hero-data-magazine.webp");
+
+  background-repeat: no-repeat;
+
+  background-position:
+    58% center;
+
+  background-size:
+    cover;
+
+  z-index: 0;
+}
+
+/* dissolve il bordo sinistro dell'immagine */
+.blog-hero::after {
+  display: none;
+}
+
+.blog-hero__inner {
+  position: relative;
+  z-index: 2;
+
+  width: calc(100% - 64px);
+  max-width: 1480px;
+
+  min-height: 470px;
+
+  margin: 0 auto;
+
+  display: flex;
+  align-items: center;
+}
+
+.blog-hero__content {
+  width: 42%;
+  max-width: 570px;
+  padding: 52px 0;
+}
+
+@media (max-width: 900px) {
+  .blog-hero {
+    min-height: auto;
+  }
+
+  .blog-hero::before {
+    position: relative;
+
+    display: block;
+
+    width: 100%;
+    height: 430px;
+
+    background-size: cover;
+    background-position: center;
+  }
+
+  .blog-hero::after {
+    display: none;
+  }
+
+  .blog-hero__inner {
+    min-height: auto;
+
+    display: block;
+
+    padding-top: 50px;
+  }
+
+  .blog-hero__content {
+    width: 100%;
+    max-width: 680px;
+
+    padding: 0 0 40px;
+  }
+}
+
+@media (max-width: 768px) {
+  .blog-hero::before {
+    height: 320px;
+
+    background-size: cover;
+    background-position: center;
+  }
+}
+
+/* ==========================================================
+   FEATURED POWER BI — FINAL IMAGE
+   ========================================================== */
+
+.featured-visual--image {
+  position: relative;
+
+  min-height: 0;
+  padding: 0;
+
+  overflow: hidden;
+
+  background: #171064;
+}
+
+.featured-visual--image::before,
+.featured-visual--image::after {
+  display: none;
+}
+
+.featured-visual--image picture {
+  display: block;
+
+  width: 100%;
+  height: 100%;
+}
+
+.featured-visual__image {
+  display: block;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  object-position: center;
+
+  border: 0;
+}
+
+@media (min-width: 769px) {
+  .article-card--featured {
+    grid-template-columns:
+      minmax(0, 1.16fr)
+      minmax(0, 0.84fr);
+
+    align-items: stretch;
+  }
+
+  .featured-visual--image {
+    width: 100%;
+    height: 100%;
+    min-height: 100%;
+
+    aspect-ratio: auto;
+  }
+
+  .featured-visual--image picture {
+    display: block;
+
+    width: 100%;
+    height: 100%;
+  }
+
+  .featured-visual__image {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+    object-position: center;
+  }
+
+  .article-card--featured .article-card__body {
+    height: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .featured-visual--image {
+    width: 100%;
+    aspect-ratio: 3 / 2;
+  }
+
+  .featured-visual__image {
+    object-fit: cover;
+  }
+}
+
+/* ==========================================================
+   DATA STORYTELLING — FINAL IMAGE
+   ========================================================== */
+
+.article-card__visual--story-image {
+  position: relative;
+
+  height: 150px;
+
+  margin: 8px;
+
+  padding: 0;
+
+  overflow: hidden;
+
+  border-radius: 9px;
+
+  background: #f7f6ff;
+}
+
+.article-card__visual--story-image picture {
+  display: block;
+
+  width: 100%;
+  height: 100%;
+}
+
+.article-card__story-image {
+  display: block;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+  object-position: center;
+
+  border: 0;
+}
+
+@media (max-width: 768px) {
+  .article-card__visual--story-image {
+    height: auto;
+
+    aspect-ratio: 16 / 10;
+  }
+
+  .article-card__story-image {
+    object-fit: cover;
   }
 }
