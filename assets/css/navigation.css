@@ -460,3 +460,98 @@
     height: 15px;
   }
 }
+
+/* ==========================================================
+   GLOBAL NAVBAR — DESKTOP RIGHT ALIGNMENT
+   Brand left | Links + language right
+   ========================================================== */
+
+@media (min-width: 769px) {
+  .navbar {
+    display: flex;
+    align-items: center;
+
+    width: 100%;
+  }
+
+  .navbar__brand {
+    flex: 0 0 auto;
+    margin-right: 0;
+
+    justify-self: auto;
+  }
+
+  .navbar__menu {
+    flex: 0 0 auto;
+
+    margin-left: auto;
+
+    justify-self: auto;
+  }
+
+  .navbar__menu .navbar__list {
+    display: flex;
+    align-items: center;
+
+    gap: 28px;
+
+    margin: 0;
+    padding: 0;
+  }
+
+  .navbar__actions {
+    flex: 0 0 auto;
+
+    margin-left: 24px;
+
+    justify-self: auto;
+  }
+}
+
+/* ==========================================================
+   GLOBAL NAVBAR — TYPOGRAPHY & COLORS
+   ========================================================== */
+
+.navbar__name {
+  color: #15171f;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: 0.01em;
+}
+
+.navbar__role {
+  color: #6b6e84;
+  font-size: 9.5px;
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: 0.055em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.navbar__list a {
+  color: #5f5b6f;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.2;
+  text-decoration: none;
+}
+
+.navbar__list a:hover,
+.navbar__list a:focus-visible {
+  color: #5a52e0;
+}
+
+.language-selector__button {
+  color: #15171f;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 1;
+}
+
+.language-selector__menu button {
+  color: #15171f;
+  font-size: 12px;
+  font-weight: 500;
+}

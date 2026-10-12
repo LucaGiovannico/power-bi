@@ -5662,3 +5662,49 @@ html {
     height: 15px !important;
   }
 }
+
+/* ==========================================================
+   HOMEPAGE NAVBAR — DESKTOP RIGHT ALIGNMENT
+   ========================================================== */
+
+@media (min-width: 769px) {
+  .navbar {
+    display: flex;
+    align-items: center;
+
+    width: 100%;
+  }
+
+  .navbar__brand {
+    flex: 0 0 auto;
+    margin-right: 0;
+
+    justify-self: auto;
+  }
+
+  .navbar__menu {
+    flex: 0 0 auto;
+
+    margin-left: auto;
+
+    justify-self: auto;
+  }
+
+  .navbar__menu .navbar__list {
+    display: flex;
+    align-items: center;
+
+    gap: 28px;
+
+    margin: 0;
+    padding: 0;
+  }
+
+  .navbar__actions {
+    flex: 0 0 auto;
+
+    margin-left: 24px;
+
+    justify-self: auto;
+  }
+}

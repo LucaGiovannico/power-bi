@@ -30,12 +30,11 @@
 
     <link
       rel="stylesheet"
-      href="../assets/css/navigation.css"
+      href="../assets/css/blog.css"
     />
-
     <link
       rel="stylesheet"
-      href="../assets/css/blog.css"
+      href="../assets/css/navigation.css"
     />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -371,9 +370,13 @@
                 </span>
 
                 <div class="dax-code">
+                  <span>Sales Category A =</span>
                   <span>CALCULATE(</span>
                   <span>&nbsp;&nbsp;[Sales],</span>
-                  <span>&nbsp;&nbsp;'Product'[Category] = "A"</span>
+                  <span>&nbsp;&nbsp;FILTER(</span>
+                  <span>&nbsp;&nbsp;&nbsp;&nbsp;ALL('Product'),</span>
+                  <span>&nbsp;&nbsp;&nbsp;&nbsp;'Product'[Category] = "A"</span>
+                  <span>&nbsp;&nbsp;)</span>
                   <span>)</span>
                 </div>
 
