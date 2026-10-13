@@ -99,14 +99,144 @@
   <span aria-hidden="true"></span>
 </button>
 
-        <div class="navbar__menu" id="mainNavMenu">
-          <ul class="navbar__list">
-            <li><a href="#services__id">Servizi</a></li>
-            <li><a href="#projects__id">Progetti</a></li>
-            <li><a href="#about__id">Chi sono</a></li>
-            <li><a href="#contacts__id">Contatti</a></li>
-          </ul>
-        </div>
+<div class="navbar__menu" id="mainNavMenu">
+  <ul class="navbar__list">
+    <!-- SERVIZI -->
+    <li class="navbar__item navbar__item--has-submenu">
+      <div class="navbar__item-control">
+        <a class="navbar__link" href="#services__id">Servizi</a>
+
+        <button
+          type="button"
+          class="navbar__submenu-toggle"
+          aria-expanded="false"
+          aria-controls="servicesSubmenu"
+          aria-label="Apri il menu Servizi"
+        >
+          <span aria-hidden="true">▾</span>
+        </button>
+      </div>
+
+      <ul
+        class="navbar__submenu navbar__submenu--services"
+        id="servicesSubmenu"
+        aria-label="Pagine servizi"
+      >
+        <li>
+          <a href="./services/dashboard-powerBI.html">
+            <span class="navbar__submenu-title">
+              Dashboard Power BI su misura
+            </span>
+            <span class="navbar__submenu-description">
+              Dashboard interattive progettate sui tuoi KPI.
+            </span>
+          </a>
+        </li>
+
+        <li>
+          <a href="./services/kpi-design-monitoraggio.html">
+            <span class="navbar__submenu-title">
+              KPI Design &amp; Monitoraggio
+            </span>
+            <span class="navbar__submenu-description">
+              Metriche chiare per monitorare ciò che conta.
+            </span>
+          </a>
+        </li>
+
+        <li>
+          <a href="./services/data-modeling-integrazione.html">
+            <span class="navbar__submenu-title">
+              Data Modeling &amp; Integrazione
+            </span>
+            <span class="navbar__submenu-description">
+              Fonti diverse organizzate in un modello affidabile.
+            </span>
+          </a>
+        </li>
+
+        <li>
+          <a href="./services/reporting-automatizzato.html">
+            <span class="navbar__submenu-title">
+              Reporting automatizzato
+            </span>
+            <span class="navbar__submenu-description">
+              Processi di reporting più rapidi e ripetibili.
+            </span>
+          </a>
+        </li>
+      </ul>
+    </li>
+
+    <!-- PROGETTI -->
+    <li class="navbar__item navbar__item--has-submenu">
+      <div class="navbar__item-control">
+        <a class="navbar__link" href="#projects__id">Progetti</a>
+
+        <button
+          type="button"
+          class="navbar__submenu-toggle"
+          aria-expanded="false"
+          aria-controls="projectsSubmenu"
+          aria-label="Apri il menu Progetti"
+        >
+          <span aria-hidden="true">▾</span>
+        </button>
+      </div>
+
+      <ul
+        class="navbar__submenu navbar__submenu--projects"
+        id="projectsSubmenu"
+        aria-label="Pagine progetti"
+      >
+        <li>
+          <a href="./projects/business-plan.html">
+            <span class="navbar__submenu-title">
+              Business Plan &amp; Financial Analysis
+            </span>
+            <span class="navbar__submenu-description">
+              Pianificazione finanziaria, scenari e sostenibilità economica.
+            </span>
+          </a>
+        </li>
+
+        <li>
+          <a href="./projects/hotel-market-insights.html">
+            <span class="navbar__submenu-title">
+              Hotel Market Analysis &amp; Revenue Insights
+            </span>
+            <span class="navbar__submenu-description">
+              Performance alberghiera, booking e distribuzione.
+            </span>
+          </a>
+        </li>
+
+        <li>
+          <a href="./projects/sales-performance-forecast.html">
+            <span class="navbar__submenu-title">
+              Sales Performance &amp; Forecast
+            </span>
+            <span class="navbar__submenu-description">
+              Vendite, obiettivi, pipeline e previsioni.
+            </span>
+          </a>
+        </li>
+      </ul>
+    </li>
+
+    <li class="navbar__item">
+      <a class="navbar__link" href="./blog/index.html">Blog</a>
+    </li>
+
+    <li class="navbar__item">
+      <a class="navbar__link" href="#about__id">Chi sono</a>
+    </li>
+
+    <li class="navbar__item">
+      <a class="navbar__link" href="#contacts__id">Contatti</a>
+    </li>
+  </ul>
+</div>
 
         <div class="navbar__actions">
           <div class="navbar-right">
