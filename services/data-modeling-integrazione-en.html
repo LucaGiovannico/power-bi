@@ -49,7 +49,8 @@
     <link rel="icon" href="../assets/images/favicon/favicon.ico" />
   </head>
   <body class="service-page">
-    <!-- START GLOBAL NAVBAR -->
+
+<!-- START GLOBAL NAVBAR -->
 <header class="site-header">
   <nav class="navbar" aria-label="Main navigation">
     <a
@@ -81,18 +82,167 @@
 
     <div class="navbar__menu" id="mainNavMenu">
       <ul class="navbar__list">
-        <li><a href="../index-en.html#services__id">Services</a></li>
-        <li><a href="../index-en.html#projects__id">Projects</a></li>
-        <li><a href="../index-en.html#about__id">About Me</a></li>
-        <li><a href="../index-en.html#contacts__id">Contacts</a></li>
+        <!-- SERVICES -->
+        <li class="navbar__item navbar__item--has-submenu">
+          <div class="navbar__item-control">
+            <a
+              class="navbar__link"
+              href="../index-en.html#services__id"
+            >
+              Services
+            </a>
+
+            <button
+              type="button"
+              class="navbar__submenu-toggle"
+              aria-expanded="false"
+              aria-controls="servicesSubmenu"
+              aria-label="Open Services menu"
+            >
+              <span aria-hidden="true">▾</span>
+            </button>
+          </div>
+
+          <ul
+            class="navbar__submenu navbar__submenu--services"
+            id="servicesSubmenu"
+            aria-label="Service pages"
+          >
+<li>
+  <a href="./dashboard-powerBI-en.html">
+    <span class="navbar__submenu-title">
+      Custom Power BI Dashboards
+    </span>
+    <span class="navbar__submenu-description">
+      Interactive dashboards designed around your KPIs.
+    </span>
+  </a>
+</li>
+
+<li>
+  <a href="./kpi-design-monitoraggio-en.html">
+    <span class="navbar__submenu-title">
+      KPI Design &amp; Monitoring
+    </span>
+    <span class="navbar__submenu-description">
+      Clear metrics to monitor what matters.
+    </span>
+  </a>
+</li>
+
+<li class="navbar__submenu-item--current">
+  <span
+    class="navbar__submenu-current"
+    aria-current="page"
+  >
+    <span class="navbar__submenu-title">
+      Data Modeling &amp; Integration
+    </span>
+    <span class="navbar__submenu-description">
+      Different sources organized into a reliable model.
+    </span>
+  </span>
+</li>
+
+            <li>
+              <a href="./reporting-automatizzato-en.html">
+                <span class="navbar__submenu-title">
+                  Automated Reporting
+                </span>
+                <span class="navbar__submenu-description">
+                  Faster and repeatable reporting processes.
+                </span>
+              </a>
+            </li>
+          </ul>
+        </li>
+
+        <!-- PROJECTS -->
+        <li class="navbar__item navbar__item--has-submenu">
+          <div class="navbar__item-control">
+            <a
+              class="navbar__link"
+              href="../index-en.html#projects__id"
+            >
+              Projects
+            </a>
+
+            <button
+              type="button"
+              class="navbar__submenu-toggle"
+              aria-expanded="false"
+              aria-controls="projectsSubmenu"
+              aria-label="Open Projects menu"
+            >
+              <span aria-hidden="true">▾</span>
+            </button>
+          </div>
+
+          <ul
+            class="navbar__submenu navbar__submenu--projects"
+            id="projectsSubmenu"
+            aria-label="Project pages"
+          >
+            <li>
+              <a href="../projects/business-plan-en.html">
+                <span class="navbar__submenu-title">
+                  Business Plan &amp; Financial Analysis
+                </span>
+                <span class="navbar__submenu-description">
+                  Financial planning, scenarios and business sustainability.
+                </span>
+              </a>
+            </li>
+
+            <li>
+              <a href="../projects/hotel-market-insights-en.html">
+                <span class="navbar__submenu-title">
+                  Hotel Market Analysis &amp; Revenue Insights
+                </span>
+                <span class="navbar__submenu-description">
+                  Hotel performance, bookings and distribution.
+                </span>
+              </a>
+            </li>
+
+            <li>
+              <a href="../projects/sales-performance-forecast-en.html">
+                <span class="navbar__submenu-title">
+                  Sales Performance &amp; Forecast
+                </span>
+                <span class="navbar__submenu-description">
+                  Sales, targets, pipeline and forecasts.
+                </span>
+              </a>
+            </li>
+          </ul>
+        </li>
+
+        <li class="navbar__item">
+          <a
+            class="navbar__link"
+            href="../index-en.html#about__id"
+          >
+            About Me
+          </a>
+        </li>
+
+        <li class="navbar__item">
+          <a
+            class="navbar__link"
+            href="../index-en.html#contacts__id"
+          >
+            Contacts
+          </a>
+        </li>
       </ul>
     </div>
 
     <div class="navbar__actions">
       <div
         class="language-selector"
-        data-en="./data-modeling-integrazione-en.html"
         data-it="./data-modeling-integrazione.html"
+        data-en="./data-modeling-integrazione-en.html"
       >
         <button
           type="button"
@@ -107,12 +257,21 @@
           <span class="language-selector__arrow">▾</span>
         </button>
 
-        <div class="language-selector__menu" id="languageMenu">
-          <button type="button" onclick="setLanguage('it')">
-            🇮🇹 Italian
+        <div
+          class="language-selector__menu"
+          id="languageMenu"
+        >
+          <button
+            type="button"
+            onclick="setLanguage('it')"
+          >
+            🇮🇹 Italiano
           </button>
 
-          <button type="button" onclick="setLanguage('en')">
+          <button
+            type="button"
+            onclick="setLanguage('en')"
+          >
             🇬🇧 English
           </button>
         </div>
@@ -121,6 +280,7 @@
   </nav>
 </header>
 <!-- END GLOBAL NAVBAR -->
+
     <header class="service-hero" id="top">
       <div class="service-hero__content">
         <div class="service-hero__navigation">
