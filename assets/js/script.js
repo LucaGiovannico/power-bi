@@ -128,7 +128,7 @@ if (languageSelector) {
 function syncLanguageSelector() {
   if (!languageSelector) return;
 
-  if (window.innerWidth <= 768) {
+  if (window.innerWidth <= 880) {
     menu.appendChild(languageSelector);
     languageSelector.classList.add("language-selector--mobile");
   } else {
@@ -183,7 +183,7 @@ syncLanguageSelector();
   });
 
   document.addEventListener("click", (event) => {
-  if (window.innerWidth > 768) return;
+  if (window.innerWidth > 880) return;
 
   if (toggle.getAttribute("aria-expanded") !== "true") {
     return;
@@ -215,7 +215,7 @@ syncLanguageSelector();
   window.addEventListener("resize", () => {
     syncLanguageSelector();
     
-    if (window.innerWidth > 768) {
+    if (window.innerWidth > 880) {
       closeMenu();
     }
   });
@@ -229,7 +229,7 @@ function setupGlobalSubmenus() {
   if (submenuItems.length === 0) return;
 
   const desktopPointer = window.matchMedia(
-    "(min-width: 769px) and (hover: hover) and (pointer: fine)"
+    "(min-width: 881px) and (hover: hover) and (pointer: fine)"
   );
 
   function setSubmenuState(item, isOpen) {
@@ -349,7 +349,7 @@ function setupGlobalSubmenus() {
 
   /* Evita stati aperti residui entrando nel layout mobile */
   window.addEventListener("resize", () => {
-    if (window.innerWidth <= 768) {
+    if (window.innerWidth <= 880) {
       closeNavigationSubmenus();
     }
   });

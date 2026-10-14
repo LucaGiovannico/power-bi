@@ -5451,7 +5451,7 @@ html {
    HOMEPAGE NAVBAR — DESKTOP RIGHT ALIGNMENT
    ========================================================== */
 
-@media (min-width: 769px) {
+@media (min-width: 881px) {
   .navbar {
     display: flex;
     align-items: center;
