@@ -315,7 +315,7 @@
 
 /* OPEN SUBMENU STATE */
 
-@media (min-width: 769px) {
+@media (min-width: 881px) {
   .navbar__item--has-submenu.is-open > .navbar__submenu {
     opacity: 1;
     visibility: visible;
@@ -584,53 +584,62 @@
 
   /* SERVICES / PROJECTS CONTROL ROW */
 
-  .navbar__item-control {
-    width: 100%;
-
-    display: grid;
-    grid-template-columns: 44px minmax(0, 1fr) 44px;
-    align-items: center;
-
-    gap: 0;
-  }
-
-  .navbar__item-control::before {
-    content: "";
-    grid-column: 1;
-  }
-
-  .navbar__item-control > .navbar__link {
-    grid-column: 2;
-    justify-self: center;
-
-    min-height: 44px;
-
+  .navbar__menu .navbar__item--has-submenu {
     display: flex;
+    flex-direction: column;
     align-items: center;
 
-    padding: 8px 6px;
-
-    font-size: 14px;
+    width: 100%;
   }
 
-  .navbar__submenu-toggle {
-    grid-column: 3;
+.navbar__item-control {
+  width: max-content;
 
-    width: 44px;
-    height: 44px;
+  display: grid;
+  grid-template-columns: 30px max-content 30px;
+  align-items: center;
 
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
+  gap: 0;
 
-    justify-self: end;
+  margin: 0 auto;
+}
 
-    padding: 0;
+.navbar__item-control::before {
+  content: "";
+  grid-column: 1;
+}
 
-    color: #777386;
+.navbar__item-control > .navbar__link {
+  grid-column: 2;
 
-    font-size: 11px;
-  }
+  min-height: 44px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 8px 4px;
+
+  font-size: 14px;
+}
+
+.navbar__submenu-toggle {
+  grid-column: 3;
+
+  width: 30px;
+  height: 44px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 0;
+  margin: 0;
+
+  color: #777386;
+
+  font-size: 11px;
+}
 
   .navbar__item--has-submenu.is-open
     > .navbar__item-control
@@ -646,19 +655,30 @@
 
   /* MOBILE ACCORDION */
 
-  .navbar__submenu {
+  .navbar__menu .navbar__submenu,
+  .navbar__menu .navbar__submenu--services,
+  .navbar__menu .navbar__submenu--projects {
     position: static;
 
-    left: auto;
-    right: auto;
+    inset: auto;
     top: auto;
+    right: auto;
+    bottom: auto;
+    left: auto;
 
-    width: 100%;
+    width: min(100%, 340px);
+    max-width: 340px;
 
     display: none;
 
-    margin: 0 0 6px;
+    box-sizing: border-box;
+
+    margin: 2px auto 10px;
     padding: 6px;
+
+    align-self: center;
+
+    list-style: none;
 
     background: rgba(90, 82, 224, 0.035);
     border: 1px solid rgba(90, 82, 224, 0.08);
@@ -678,34 +698,35 @@
     transition: none;
   }
 
-  .navbar__submenu::before {
+  .navbar__menu .navbar__submenu::before {
     display: none;
     content: none;
   }
 
-  .navbar__item--has-submenu.is-open > .navbar__submenu {
+  .navbar__menu
+    .navbar__item--has-submenu.is-open
+    > .navbar__submenu {
     display: flex;
     flex-direction: column;
+
     gap: 2px;
   }
 
-  .navbar__submenu li {
+  .navbar__menu .navbar__submenu li {
     width: 100%;
   }
 
-  .navbar__submenu a {
+  .navbar__menu .navbar__submenu a {
     width: 100%;
     min-height: 40px;
 
     display: flex;
-    flex-direction: row;
     align-items: center;
     justify-content: center;
 
-    gap: 0;
-
     box-sizing: border-box;
-    padding: 8px 10px;
+
+    padding: 9px 12px;
 
     border-radius: 9px;
 
@@ -715,13 +736,13 @@
     text-align: center;
   }
 
-  .navbar__submenu a::after {
+  .navbar__menu .navbar__submenu a::after {
     display: none;
     content: none;
   }
 
-  .navbar__submenu a:hover,
-  .navbar__submenu a:focus-visible {
+  .navbar__menu .navbar__submenu a:hover,
+  .navbar__menu .navbar__submenu a:focus-visible {
     color: #5a52e0;
     background: rgba(90, 82, 224, 0.06);
 
@@ -734,10 +755,6 @@
     line-height: 1.35;
   }
 
-  /*
-    Su mobile eliminiamo le descrizioni:
-    evitano un menu eccessivamente lungo.
-  */
   .navbar__submenu-description {
     display: none;
   }
@@ -825,7 +842,7 @@
    Brand left | Links + language right
    ========================================================== */
 
-@media (min-width: 769px) {
+@media (min-width: 881px) {
   .navbar {
     display: flex;
     align-items: center;
