@@ -1,0 +1,797 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Power BI, Excel, DAX & Data Analytics Blog | Dina Fiorentino</title>
+
+    <meta
+      name="description"
+      content="News, tips and in-depth articles on Power BI, Excel, DAX, data visualization, data storytelling and analytics."
+    />
+
+    <link
+      rel="canonical"
+      href="https://www.dinafiorentino.com/blog/index-en.html"
+    />
+
+    <link
+      rel="alternate"
+      hreflang="it"
+      href="https://www.dinafiorentino.com/blog/"
+    />
+
+    <link
+      rel="alternate"
+      hreflang="en"
+      href="https://www.dinafiorentino.com/blog/index-en.html"
+    />
+
+    <link
+      rel="stylesheet"
+      href="../assets/css/blog.css"
+    />
+    <link
+      rel="stylesheet"
+      href="../assets/css/navigation.css"
+    />
+
+    <link
+      rel="stylesheet"
+      href="../assets/css/footer.css"
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Limelight&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Poppins:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
+
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="../assets/images/favicon/apple-touch-icon.png"
+    />
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="../assets/images/favicon/favicon-32x32.png"
+    />
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="../assets/images/favicon/favicon-16x16.png"
+    />
+
+    <link
+      rel="manifest"
+      href="../assets/images/favicon/site.webmanifest"
+    />
+
+    <link
+      rel="icon"
+      href="../assets/images/favicon/favicon.ico"
+    />
+  </head>
+
+  <body class="blog-page">
+
+    <!-- ======================================================
+         NAVBAR
+         ====================================================== -->
+
+<header class="site-header">
+  <nav class="navbar" aria-label="Main navigation">
+    <a
+      href="../index-en.html"
+      class="navbar__brand"
+      aria-label="Back to homepage"
+    >
+      <span class="navbar__monogram" aria-hidden="true">DF</span>
+
+      <span class="navbar__identity">
+        <span class="navbar__name">Dina Fiorentino</span>
+        <span class="navbar__role">
+          Data Analyst &amp; Power BI Consultant
+        </span>
+      </span>
+    </a>
+
+    <button
+      type="button"
+      class="navbar__toggle"
+      aria-expanded="false"
+      aria-controls="mainNavMenu"
+      aria-label="Open navigation menu"
+    >
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </button>
+
+    <div class="navbar__menu" id="mainNavMenu">
+      <ul class="navbar__list">
+        <!-- SERVICES -->
+        <li class="navbar__item navbar__item--has-submenu">
+          <div class="navbar__item-control">
+            <a
+              class="navbar__link"
+              href="../index-en.html#services__id"
+            >
+              Services
+            </a>
+
+            <button
+              type="button"
+              class="navbar__submenu-toggle"
+              aria-expanded="false"
+              aria-controls="servicesSubmenu"
+              aria-label="Open Services menu"
+            >
+              <span aria-hidden="true">▾</span>
+            </button>
+          </div>
+
+          <ul
+            class="navbar__submenu navbar__submenu--services"
+            id="servicesSubmenu"
+            aria-label="Service pages"
+          >
+            <li>
+              <a href="../services/dashboard-powerBI-en.html">
+                <span class="navbar__submenu-title">
+                  Custom Power BI Dashboards
+                </span>
+                <span class="navbar__submenu-description">
+                  Interactive dashboards designed around your KPIs.
+                </span>
+              </a>
+            </li>
+
+            <li>
+              <a href="../services/kpi-design-monitoraggio-en.html">
+                <span class="navbar__submenu-title">
+                  KPI Design &amp; Monitoring
+                </span>
+                <span class="navbar__submenu-description">
+                  Clear metrics to monitor what matters.
+                </span>
+              </a>
+            </li>
+
+            <li>
+              <a href="../services/data-modeling-integrazione-en.html">
+                <span class="navbar__submenu-title">
+                  Data Modeling &amp; Integration
+                </span>
+                <span class="navbar__submenu-description">
+                  Different sources organized into a reliable model.
+                </span>
+              </a>
+            </li>
+
+            <li>
+              <a href="../services/reporting-automatizzato-en.html">
+                <span class="navbar__submenu-title">
+                  Automated Reporting
+                </span>
+                <span class="navbar__submenu-description">
+                  Faster and repeatable reporting processes.
+                </span>
+              </a>
+            </li>
+          </ul>
+        </li>
+
+        <!-- PROJECTS -->
+        <li class="navbar__item navbar__item--has-submenu">
+          <div class="navbar__item-control">
+            <a
+              class="navbar__link"
+              href="../index-en.html#projects__id"
+            >
+              Projects
+            </a>
+
+            <button
+              type="button"
+              class="navbar__submenu-toggle"
+              aria-expanded="false"
+              aria-controls="projectsSubmenu"
+              aria-label="Open Projects menu"
+            >
+              <span aria-hidden="true">▾</span>
+            </button>
+          </div>
+
+          <ul
+            class="navbar__submenu navbar__submenu--projects"
+            id="projectsSubmenu"
+            aria-label="Project pages"
+          >
+            <li>
+              <a href="../projects/business-plan-en.html">
+                <span class="navbar__submenu-title">
+                  Business Plan &amp; Financial Analysis
+                </span>
+                <span class="navbar__submenu-description">
+                  Financial planning, scenarios and business sustainability.
+                </span>
+              </a>
+            </li>
+
+            <li>
+              <a href="../projects/hotel-market-insights-en.html">
+                <span class="navbar__submenu-title">
+                  Hotel Market Analysis &amp; Revenue Insights
+                </span>
+                <span class="navbar__submenu-description">
+                  Hotel performance, bookings and distribution.
+                </span>
+              </a>
+            </li>
+
+            <li>
+              <a href="../projects/sales-performance-forecast-en.html">
+                <span class="navbar__submenu-title">
+                  Sales Performance &amp; Forecast
+                </span>
+                <span class="navbar__submenu-description">
+                  Sales, targets, pipeline and forecasts.
+                </span>
+              </a>
+            </li>
+          </ul>
+        </li>
+
+        <li class="navbar__item">
+          <a
+            class="navbar__link"
+            href="./index-en.html"
+            aria-current="page"
+          >
+            Blog
+          </a>
+        </li>
+
+        <li class="navbar__item">
+          <a
+            class="navbar__link"
+            href="../index-en.html#about__id"
+          >
+            About Me
+          </a>
+        </li>
+
+        <li class="navbar__item">
+          <a
+            class="navbar__link"
+            href="../index-en.html#contacts__id"
+          >
+            Contacts
+          </a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="navbar__actions">
+      <div
+        class="language-selector"
+        data-it="./index.html"
+        data-en="./index-en.html"
+      >
+        <button
+          type="button"
+          class="language-selector__button"
+          onclick="toggleLanguageMenu(event);"
+          aria-haspopup="true"
+          aria-expanded="false"
+          aria-controls="languageMenu"
+        >
+          🇬🇧
+          <span>EN</span>
+          <span class="language-selector__arrow">▾</span>
+        </button>
+
+        <div
+          class="language-selector__menu"
+          id="languageMenu"
+        >
+          <button
+            type="button"
+            onclick="setLanguage('it')"
+          >
+            🇮🇹 Italiano
+          </button>
+
+          <button
+            type="button"
+            onclick="setLanguage('en')"
+          >
+            🇬🇧 English
+          </button>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+
+    <main>
+
+<!-- ======================================================
+     HERO
+     ====================================================== -->
+
+<section
+  class="blog-hero"
+  aria-labelledby="blog-title"
+>
+  <div class="blog-hero__inner">
+
+    <!-- TEXT -->
+    <div class="blog-hero__content">
+
+      <p class="blog-hero__eyebrow">
+        BLOG · DATA &amp; ANALYTICS
+      </p>
+
+      <h1
+        class="blog-hero__title"
+        id="blog-title"
+      >
+        News, insights and
+        practical ideas
+        <span class="text-gradient">
+          from the world of data.
+        </span>
+      </h1>
+
+      <p class="blog-hero__text">
+        A space dedicated to Power BI, Excel, DAX,
+        data visualization and data storytelling, with
+        updates, practical insights and useful content
+        for people who work with data every day.
+      </p>
+
+      <div
+        class="blog-topics"
+        aria-label="Blog topics"
+      >
+        <span>Power BI</span>
+        <span>DAX</span>
+        <span>Excel</span>
+        <span>Data Visualization</span>
+        <span>Data Storytelling</span>
+        <span>Analytics</span>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+      <!-- ======================================================
+           ARTICLES
+           ====================================================== -->
+
+<section
+  class="blog-articles"
+  id="articles"
+  aria-labelledby="articles-title"
+>
+  <div class="blog-shell">
+
+    <header class="articles-heading">
+
+      <div>
+        <p class="section-eyebrow">
+          FEATURED
+        </p>
+
+        <h2 id="articles-title">
+          Latest articles and
+          <span class="text-gradient">
+            insights.
+          </span>
+        </h2>
+      </div>
+
+      <div class="articles-heading__aside">
+
+        <p>
+          Updates, practical guides and ideas
+          to explore the world of data in greater depth.
+        </p>
+
+        <span class="articles-heading__link">
+          All articles
+          <span aria-hidden="true">→</span>
+        </span>
+
+      </div>
+
+    </header>
+
+
+    <div class="article-grid">
+
+      <!-- FEATURED -->
+
+      <article class="article-card article-card--featured">
+
+        <div class="featured-visual featured-visual--image">
+          <picture>
+            <source
+              srcset="../assets/images/blog/blog-power-bi-update.webp"
+              type="image/webp"
+            />
+
+            <img
+              class="featured-visual__image"
+              src="../assets/images/blog/blog-power-bi-update.png"
+              alt="Editorial visual about a Power BI update featuring new visuals, performance improvements and Copilot"
+              width="1536"
+              height="1024"
+              loading="lazy"
+              decoding="async"
+            />
+          </picture>
+        </div>
+
+        <div class="article-card__body">
+
+          <div class="article-meta">
+            <span>POWER BI</span>
+            <span>8 MIN READ</span>
+          </div>
+
+          <h3>
+            Power BI: what’s new in
+            the latest update
+          </h3>
+
+          <p>
+            An overview of the most interesting changes
+            in the latest Power BI update and how they
+            can simplify everyday work.
+          </p>
+
+          <span class="article-status">
+            First article in progress
+          </span>
+
+        </div>
+
+      </article>
+
+
+      <!-- DAX -->
+
+      <article class="article-card">
+
+        <div class="article-card__visual article-card__visual--dax">
+
+          <span class="dax-badge">
+            DAX
+          </span>
+
+          <div class="dax-code">
+            <span>Sales Category A =</span>
+            <span>CALCULATE(</span>
+            <span>&nbsp;&nbsp;[Sales],</span>
+            <span>&nbsp;&nbsp;FILTER(</span>
+            <span>&nbsp;&nbsp;&nbsp;&nbsp;ALL('Product'),</span>
+            <span>&nbsp;&nbsp;&nbsp;&nbsp;'Product'[Category] = "A"</span>
+            <span>&nbsp;&nbsp;)</span>
+            <span>)</span>
+          </div>
+
+        </div>
+
+        <div class="article-card__body">
+
+          <div class="article-meta">
+            <span>DAX</span>
+            <span>7 MIN READ</span>
+          </div>
+
+          <h3>
+            5 DAX formulas worth knowing
+          </h3>
+
+          <p>
+            A practical collection of useful functions
+            and patterns that frequently appear in
+            Power BI models.
+          </p>
+
+          <span class="article-status">
+            Coming soon
+          </span>
+
+        </div>
+
+      </article>
+
+
+      <!-- STORYTELLING -->
+
+      <article class="article-card">
+
+        <div class="article-card__visual article-card__visual--story-image">
+          <picture>
+            <source
+              srcset="../assets/images/blog/blog-data-storytelling.webp"
+              type="image/webp"
+            />
+
+            <img
+              class="article-card__story-image"
+              src="../assets/images/blog/blog-data-storytelling.png"
+              alt="Data storytelling visual with a bar chart, trend and highlighted insight"
+              loading="lazy"
+              decoding="async"
+            />
+          </picture>
+        </div>
+
+        <div class="article-card__body">
+
+          <div class="article-meta">
+            <span>DATA STORYTELLING</span>
+            <span>6 MIN READ</span>
+          </div>
+
+          <h3>
+            Data storytelling:
+            a good chart is not enough
+          </h3>
+
+          <p>
+            How to build an effective visual narrative
+            that helps viewers understand what is
+            happening and why.
+          </p>
+
+          <span class="article-status">
+            Coming soon
+          </span>
+
+        </div>
+
+      </article>
+
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ======================================================
+     CTA
+     ====================================================== -->
+
+<section
+  class="blog-cta"
+  aria-labelledby="blog-cta-title"
+>
+  <div class="blog-shell">
+
+    <div class="blog-cta__inner">
+
+      <div class="blog-cta__copy">
+
+        <p class="section-eyebrow">
+          HAVE A PROJECT?
+        </p>
+
+        <h2 id="blog-cta-title">
+          Let’s talk about how data can
+          support your goals.
+        </h2>
+
+      </div>
+
+      <div class="blog-cta__actions">
+
+        <a
+          href="../index-en.html#services__id"
+          class="blog-button blog-button--primary"
+        >
+          Explore services
+          <span aria-hidden="true">→</span>
+        </a>
+
+        <a
+          href="../index-en.html#contacts__id"
+          class="blog-button blog-button--secondary"
+        >
+          Contact me
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+    <!-- ======================================================
+         FOOTER
+         ====================================================== -->
+
+<!-- START FOOTER -->
+<footer class="footer">
+  <div class="footer__main">
+
+    <div class="footer__brand-block">
+      <a
+        href="../index-en.html"
+        class="footer__brand"
+        aria-label="Back to homepage"
+      >
+        <span class="footer__monogram" aria-hidden="true">DF</span>
+
+        <span class="footer__identity">
+          <span class="footer__name">Dina Fiorentino</span>
+          <span class="footer__role">
+            Data Analyst &amp; Power BI Consultant
+          </span>
+        </span>
+      </a>
+
+      <p class="footer__description">
+        Dashboards, reporting, and data models designed to transform complex
+        information into clearer decisions.
+      </p>
+
+      <div
+        class="footer__socials"
+        aria-label="Professional contacts"
+      >
+        <a
+          href="https://www.linkedin.com/in/dina-fiorentino/"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Dina Fiorentino's LinkedIn profile"
+        >
+          <i
+            class="fa-brands fa-linkedin-in"
+            aria-hidden="true"
+          ></i>
+          <span>LinkedIn</span>
+        </a>
+
+        <a
+          href="mailto:dinafiorentino.consulting@outlook.it"
+          aria-label="Send an email to Dina Fiorentino"
+        >
+          <i
+            class="fa-regular fa-envelope"
+            aria-hidden="true"
+          ></i>
+          <span>Email</span>
+        </a>
+      </div>
+    </div>
+
+
+    <nav
+      class="footer__column"
+      aria-label="Footer navigation"
+    >
+      <p class="footer__heading">Explore</p>
+
+      <a href="../index-en.html#services__id">
+        Services
+      </a>
+
+      <a href="../index-en.html#projects__id">
+        Projects
+      </a>
+
+      <a href="../index-en.html#about__id">
+        About Me
+      </a>
+
+      <a href="../index-en.html#contacts__id">
+        Contacts
+      </a>
+    </nav>
+
+
+    <div class="footer__column footer__column--services">
+      <p class="footer__heading">Services</p>
+
+      <a href="../services/dashboard-powerBI-en.html">
+        Dashboard Power BI
+      </a>
+
+      <a href="../services/reporting-automatizzato-en.html">
+        Automated reporting
+      </a>
+
+      <a href="../services/kpi-design-monitoraggio-en.html">
+        KPI design
+      </a>
+
+      <a href="../services/data-modeling-integrazione-en.html">
+        Data modeling
+      </a>
+    </div>
+
+
+    <div class="footer__column footer__column--contact">
+      <p class="footer__heading">
+        Let's collaborate.
+      </p>
+
+      <p>
+        Available for data analysis, dashboard, and corporate reporting
+        projects.
+      </p>
+
+      <a
+        href="../index-en.html#contacts__id"
+        class="footer__contact-button"
+      >
+        Let's talk about your project.
+        <span aria-hidden="true">→</span>
+      </a>
+    </div>
+
+  </div>
+
+
+  <div class="footer__bottom">
+
+    <p class="copyright__text">
+      © 2026 Dina Fiorentino. All rights reserved.
+    </p>
+
+    <nav
+      class="privacy__box"
+      aria-label="Legal links and language"
+    >
+      <a
+        href="../privacy-en.html?from=blog-en"
+        class="privacy__text"
+      >
+        Privacy
+      </a>
+
+      <a
+        href="../cookie-en.html?from=blog-en"
+        class="cookie__text"
+      >
+        Cookie
+      </a>
+
+      <a
+        href="./index.html"
+        class="footer__language"
+      >
+        Italian
+      </a>
+    </nav>
+
+  </div>
+</footer>
+<!-- END FOOTER -->
+
+    <script
+      src="../assets/js/script.js"
+      defer
+    ></script>
+
+  </body>
+</html>
