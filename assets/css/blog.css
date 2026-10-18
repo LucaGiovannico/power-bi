@@ -943,10 +943,10 @@ width: min(
 }
 
 /* ==========================================================
-   <= 1150
+   SMALL DESKTOP / 1025px - 1200px
    ========================================================== */
 
-@media (max-width: 1150px) {
+@media (min-width: 1025px) and (max-width: 1200px) {
 
   .article-grid {
     grid-template-columns:
@@ -964,36 +964,18 @@ width: min(
    TABLET
    ========================================================== */
 
-@media (max-width: 900px) {
+/* ==========================================================
+   TABLET LANDSCAPE / 769px - 1024px
+   ========================================================== */
 
-  .blog-shell,
-  .blog-hero__inner {
+@media (min-width: 769px) and (max-width: 1024px) {
+
+  .blog-shell {
     width:
       min(
         calc(100% - 40px),
         var(--blog-width)
       );
-  }
-
-  .blog-hero__inner {
-    display:
-      block;
-
-    padding-top:
-      55px;
-  }
-
-  .blog-hero__content {
-    max-width:
-      680px;
-
-    padding:
-      0;
-  }
-
-  .blog-hero__title {
-    max-width:
-      650px;
   }
 
   .articles-heading {
@@ -1015,27 +997,16 @@ width: min(
   }
 
   .article-card--featured {
-    grid-template-columns:
-      1fr 1fr;
-  }
-
-  .blog-cta__inner {
-    padding:
-      22px 26px;
+    grid-column:
+      1 / -1;
   }
 }
-
 
 /* ==========================================================
    MOBILE
    ========================================================== */
 
 @media (max-width: 768px) {
-
-  .blog-hero__inner {
-    padding-top:
-      42px;
-  }
 
   .blog-hero__title {
     font-size:
@@ -1110,49 +1081,53 @@ width: min(
       25px;
   }
 
-  .blog-cta {
-    padding-top:
-      12px;
+    /* HERO */
+  .blog-hero {
+    min-height: auto;
   }
 
-  .blog-cta__inner {
-    grid-template-columns:
-      1fr;
+  .blog-hero::before {
+    position: relative;
+    display: block;
 
-    gap:
-      18px;
+    width: 100%;
+    height: 320px;
 
-    padding:
-      24px;
+    background-size: cover;
+    background-position: center;
   }
 
-  .blog-cta h2 {
-    font-size:
-      22px;
+  .blog-hero::after {
+    display: none;
   }
 
-  .blog-cta__actions {
-    width:
-      100%;
+  .blog-hero__inner {
+    min-height: auto;
+
+    display: block;
+
+    padding-top: 50px;
   }
 
-  .blog-button {
-    flex:
-      1;
+  .blog-hero__content {
+    width: 100%;
+    max-width: 680px;
+
+    padding: 0 0 40px;
   }
+
 }
 
-
 /* ==========================================================
-   SMALL MOBILE
+   LARGE SMARTPHONE / 431px - 567px
    ========================================================== */
 
-@media (max-width: 480px) {
+@media (min-width: 431px) and (max-width: 567px) {
 
-.blog-shell,
-.blog-hero__inner {
-  width:
-  calc(100% - 32px);
+  .blog-shell,
+  .blog-hero__inner {
+    width:
+      calc(100% - 32px);
   }
 
   .blog-hero__title {
@@ -1175,18 +1150,42 @@ width: min(
     gap:
       10px;
   }
-
-  .blog-cta__actions {
-    flex-direction:
-      column;
-  }
-
-  .blog-button {
-    width:
-      100%;
-  }
 }
 
+
+/* ==========================================================
+   SMALL SMARTPHONE / <= 430px
+   ========================================================== */
+
+@media (max-width: 430px) {
+
+  .blog-shell,
+  .blog-hero__inner {
+    width:
+      calc(100% - 32px);
+  }
+
+  .blog-hero__title {
+    font-size:
+      36px;
+  }
+
+  .articles-heading h2 {
+    font-size:
+      32px;
+  }
+
+  .articles-heading__aside {
+    align-items:
+      flex-start;
+
+    flex-direction:
+      column;
+
+    gap:
+      10px;
+  }
+}
 /* ==========================================================
    HERO BACKGROUND VISUAL
    ========================================================== */
@@ -1261,14 +1260,19 @@ width: min(
   padding: 52px 0;
 }
 
-@media (max-width: 900px) {
+/* ==========================================================
+   TABLET LANDSCAPE / 769px - 1024px
+   HERO
+   ========================================================== */
+
+@media (min-width: 769px) and (max-width: 1024px) {
+
   .blog-hero {
     min-height: auto;
   }
 
   .blog-hero::before {
     position: relative;
-
     display: block;
 
     width: 100%;
@@ -1298,15 +1302,48 @@ width: min(
   }
 }
 
+/* ==========================================================
+   TABLET PORTRAIT + MOBILE / <= 768px
+   HERO
+   ========================================================== */
+
 @media (max-width: 768px) {
+
+  .blog-hero {
+    min-height: auto;
+  }
+
   .blog-hero::before {
+    position: relative;
+
+    display: block;
+
+    width: 100%;
     height: 320px;
 
     background-size: cover;
     background-position: center;
   }
-}
 
+  .blog-hero::after {
+    display: none;
+  }
+
+  .blog-hero__inner {
+    min-height: auto;
+
+    display: block;
+
+    padding-top: 50px;
+  }
+
+  .blog-hero__content {
+    width: 100%;
+    max-width: 680px;
+
+    padding: 0 0 40px;
+  }
+}
 /* ==========================================================
    FEATURED POWER BI — FINAL IMAGE
    ========================================================== */
@@ -1389,6 +1426,11 @@ width: min(
   }
 }
 
+/* ==========================================================
+   TABLET PORTRAIT + MOBILE / <= 768px
+   FEATURED POWER BI
+   ========================================================== */
+
 @media (max-width: 768px) {
   .featured-visual--image {
     width: 100%;
@@ -1439,10 +1481,14 @@ width: min(
   border: 0;
 }
 
+/* ==========================================================
+   TABLET PORTRAIT + MOBILE / <= 768px
+   DATA STORYTELLING
+   ========================================================== */
+
 @media (max-width: 768px) {
   .article-card__visual--story-image {
     height: auto;
-
     aspect-ratio: 16 / 10;
   }
 
@@ -1450,7 +1496,6 @@ width: min(
     object-fit: cover;
   }
 }
-
 /* ==========================================================
    BLOG CTA — FINAL
    ========================================================== */
@@ -1589,28 +1634,11 @@ body.blog-page .blog-button--secondary {
     color: #5146e5;
   }
 }
+/* ==========================================================
+   SMARTPHONE / <= 567px
+   ========================================================== */
 
-@media (max-width: 768px) {
-  .blog-cta {
-    padding: 18px 0 16px;
-  }
-
-  .blog-cta__inner {
-    min-height: 0;
-
-    grid-template-columns: 1fr;
-    gap: 20px;
-
-    padding: 24px 22px;
-  }
-
-  .blog-cta__actions {
-    justify-content: flex-start;
-    flex-wrap: wrap;
-  }
-}
-
-@media (max-width: 520px) {
+@media (max-width: 567px) {
   .blog-cta__actions {
     display: grid;
     grid-template-columns: 1fr;
@@ -1622,7 +1650,6 @@ body.blog-page .blog-button--secondary {
     width: 100%;
   }
 }
-
 /* ==========================================================
    BLOG ARTICLES — SPACING REFINEMENT
    ========================================================== */
@@ -1648,72 +1675,29 @@ body.blog-page .blog-button--secondary {
   padding-bottom: 28px;
 }
 
-
 /* ==========================================================
-   ARTICLE CARDS — STATUS BADGES ALIGNMENT
+   TABLET PORTRAIT + MOBILE / <= 768px
+   CTA
    ========================================================== */
 
-@media (min-width: 769px) {
-
-  /* Le due card secondarie occupano tutta l'altezza disponibile */
-  .article-card:not(.article-card--featured) {
-    display: flex;
-    flex-direction: column;
+@media (max-width: 768px) {
+  .blog-cta {
+    padding-top: 18px;
+    padding-bottom: 16px;
   }
 
-  /* Il corpo utilizza tutto lo spazio rimasto sotto la visual */
-  .article-card:not(.article-card--featured) .article-card__body {
-    display: flex;
-    flex-direction: column;
-    flex: 1;
-    height: auto;
+  .blog-cta__inner {
+    min-height: 0;
+
+    grid-template-columns: 1fr;
+    gap: 20px;
+
+    padding: 24px 22px;
   }
 
-  /* L'ultimo elemento del body è il badge "Prossimamente" */
-  .article-card:not(.article-card--featured)
-    .article-card__body > :last-child {
-    margin-top: auto;
-    align-self: flex-start;
-  }
-}
-
-/* ==========================================================
-   ARTICLE CARDS — STATUS BADGES ALIGNMENT
-   ========================================================== */
-
-@media (min-width: 769px) {
-
-  .article-card:not(.article-card--featured) {
-    display: flex;
-    flex-direction: column;
-  }
-
-  .article-card__body {
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-  }
-
-  .article-card:not(.article-card--featured) .article-card__body {
-    flex: 1;
-    height: auto;
-  }
-
-  .article-card__body > :last-child {
-    margin-top: auto;
-    align-self: flex-start;
-  }
-}
-
-@media (min-width: 769px) {
-  .article-card:not(.article-card--featured) .article-card__body {
-    gap: 12px;
-  }
-
-  .article-card:not(.article-card--featured)
-    .article-card__body > :last-child {
-    margin-top: auto;
-    align-self: flex-start;
+  .blog-cta__actions {
+    justify-content: flex-start;
+    flex-wrap: wrap;
   }
 }
 
