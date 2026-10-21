@@ -2119,3 +2119,35 @@ body.blog-page .blog-button--secondary {
   background: #171064;
 }
 }
+
+.article-title-link {
+  color: inherit;
+  text-decoration: none;
+}
+
+.article-title-link:hover,
+.article-title-link:focus-visible {
+  color: #5a52e0;
+}
+
+.article-status--link {
+  text-decoration: none;
+}
+
+.article-card__visual--image {
+  overflow: hidden;
+}
+
+.article-card__image {
+  display: block;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+  object-position: center;
+}
+
+.article-card__image--contain {
+  object-fit: contain;
+}
