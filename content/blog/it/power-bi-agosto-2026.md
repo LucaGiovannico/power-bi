@@ -14,6 +14,4 @@ featured: true
 published: true
 ---
 
-# Power BI agosto 2026: le novità che vale la pena conoscere
-
 Contenuto articolo in preparazione.

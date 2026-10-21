@@ -2,8 +2,15 @@ from pathlib import Path
 
 from html import escape
 
+import re
+
 ROOT = Path(__file__).resolve().parents[1]
 CONTENT_DIR = ROOT / "content" / "blog"
+
+BLOG_DIR = ROOT / "blog"
+TEMPLATE_IT = ROOT / "templates" / "blog-article-it.html"
+
+SITE_URL = "https://www.dinafiorentino.com"
 
 REQUIRED_FIELDS = {
     "slug",
@@ -264,6 +271,260 @@ def select_home_articles(articles, lang, limit=3):
 
     return selected[:limit]
 
+def render_inline_markdown(text):
+    text = escape(text)
+
+    text = re.sub(
+        r"\*\*(.+?)\*\*",
+        r"<strong>\1</strong>",
+        text,
+    )
+
+    text = re.sub(
+        r"\*(.+?)\*",
+        r"<em>\1</em>",
+        text,
+    )
+
+    text = re.sub(
+        r"\[([^\]]+)\]\(([^)]+)\)",
+        r'<a href="\2">\1</a>',
+        text,
+    )
+
+    return text
+
+
+def render_markdown(body):
+    lines = body.splitlines()
+
+    html_parts = []
+    paragraph = []
+    list_items = []
+
+    def flush_paragraph():
+        nonlocal paragraph
+
+        if paragraph:
+            text = " ".join(
+                line.strip()
+                for line in paragraph
+            )
+
+            html_parts.append(
+                f"<p>{render_inline_markdown(text)}</p>"
+            )
+
+            paragraph = []
+
+    def flush_list():
+        nonlocal list_items
+
+        if list_items:
+            items = "\n".join(
+                f"  <li>{render_inline_markdown(item)}</li>"
+                for item in list_items
+            )
+
+            html_parts.append(
+                "<ul>\n"
+                f"{items}\n"
+                "</ul>"
+            )
+
+            list_items = []
+
+    for raw_line in lines:
+        line = raw_line.strip()
+
+        if not line:
+            flush_paragraph()
+            flush_list()
+            continue
+
+        if line.startswith("### "):
+            flush_paragraph()
+            flush_list()
+
+            html_parts.append(
+                f"<h3>{render_inline_markdown(line[4:])}</h3>"
+            )
+
+            continue
+
+        if line.startswith("## "):
+            flush_paragraph()
+            flush_list()
+
+            html_parts.append(
+                f"<h2>{render_inline_markdown(line[3:])}</h2>"
+            )
+
+            continue
+
+        if line.startswith("# "):
+            raise ValueError(
+                "Il corpo dell'articolo non deve contenere "
+                "un H1: il titolo viene generato dal template."
+            )
+
+        if line.startswith("- "):
+            flush_paragraph()
+
+            list_items.append(
+                line[2:].strip()
+            )
+
+            continue
+
+        flush_list()
+        paragraph.append(line)
+
+    flush_paragraph()
+    flush_list()
+
+    return "\n\n".join(html_parts)
+
+
+def format_date_it(date_value):
+    months = {
+        1: "gennaio",
+        2: "febbraio",
+        3: "marzo",
+        4: "aprile",
+        5: "maggio",
+        6: "giugno",
+        7: "luglio",
+        8: "agosto",
+        9: "settembre",
+        10: "ottobre",
+        11: "novembre",
+        12: "dicembre",
+    }
+
+    year, month, day = map(
+        int,
+        str(date_value).split("-"),
+    )
+
+    return (
+        f"{day} {months[month]} {year}"
+    )
+
+
+def render_article_page(article):
+    meta = article["metadata"]
+
+    if meta["lang"] != "it":
+        raise ValueError(
+            f"{article['path']}: template italiano "
+            "usato con articolo non italiano"
+        )
+
+    template = TEMPLATE_IT.read_text(
+        encoding="utf-8"
+    )
+
+    slug = str(meta["slug"])
+    title = str(meta["title"])
+
+    canonical_url = (
+        f"{SITE_URL}/blog/{slug}.html"
+    )
+
+    seo_title = (
+        f"{title} | Dina Fiorentino"
+    )
+
+    hreflang_alternates = f"""\
+<link
+  rel="alternate"
+  hreflang="it"
+  href="{canonical_url}"
+/>"""
+
+    replacements = {
+        "{{SEO_TITLE}}": escape(
+            seo_title
+        ),
+        "{{DESCRIPTION}}": escape(
+            str(meta["description"]),
+            quote=True,
+        ),
+        "{{CANONICAL_URL}}": escape(
+            canonical_url,
+            quote=True,
+        ),
+        "{{HREFLANG_ALTERNATES}}":
+            hreflang_alternates,
+        "{{CATEGORY}}": escape(
+            str(meta["category"])
+        ),
+        "{{DATE}}": escape(
+            format_date_it(meta["date"])
+        ),
+        "{{READING_TIME}}": escape(
+            str(meta["reading_time"])
+        ),
+        "{{TITLE}}": escape(
+            title
+        ),
+        "{{IMAGE}}": escape(
+            str(meta["image"]),
+            quote=True,
+        ),
+        "{{IMAGE_ALT}}": escape(
+            str(meta["image_alt"]),
+            quote=True,
+        ),
+        "{{ARTICLE_BODY}}":
+            render_markdown(
+                article["body"]
+            ),
+    }
+
+    page = template
+
+    for placeholder, value in replacements.items():
+        page = page.replace(
+            placeholder,
+            value,
+        )
+
+    remaining = re.findall(
+        r"\{\{[A-Z_]+\}\}",
+        page,
+    )
+
+    if remaining:
+        raise ValueError(
+            "Placeholder non sostituiti: "
+            + ", ".join(
+                sorted(set(remaining))
+            )
+        )
+
+    return page
+
+def write_article_page(article):
+    meta = article["metadata"]
+
+    output_path = (
+        BLOG_DIR
+        / f"{meta['slug']}.html"
+    )
+
+    page = render_article_page(
+        article
+    )
+
+    output_path.write_text(
+        page,
+        encoding="utf-8",
+    )
+
+    return output_path
+
 def main():
     article_paths = sorted(
         CONTENT_DIR.glob("*/*.md")
@@ -339,6 +600,26 @@ def main():
 
             print()
 
+    print()
+    print("=" * 60)
+    print("PAGINE ARTICOLO GENERATE")
+    print("=" * 60)
+    print()
+
+    for article in articles:
+        meta = article["metadata"]
+
+        if (
+            meta["published"]
+            and meta["lang"] == "it"
+        ):
+            output_path = write_article_page(
+                article
+            )
+
+            print(
+                f"✓ {output_path.relative_to(ROOT)}"
+            )
 
 if __name__ == "__main__":
     main()
