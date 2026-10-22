@@ -332,9 +332,13 @@
 
   <article class="blog-article">
 
-    <header class="blog-article__header">
+<header class="blog-article__header">
 
-      <div class="blog-shell">
+  <div class="blog-shell">
+
+    <div class="blog-article__hero-grid">
+
+      <div class="blog-article__hero-copy">
 
         <a
           class="blog-article__back"
@@ -359,11 +363,6 @@
 
       </div>
 
-    </header>
-
-
-    <div class="blog-shell">
-
       <figure class="blog-article__hero">
 
         <img
@@ -375,12 +374,146 @@
 
       </figure>
 
+    </div>
+
+  </div>
+
+</header>
+
+    <div class="blog-shell">
 
       <div class="blog-article__layout">
 
         <div class="blog-article__content">
 
-          <p>Contenuto articolo in preparazione.</p>
+          <section class="blog-article__lead">
+  <span class="blog-article__lead-label">Il contesto</span>
+<p>Power BI continua a evolversi rapidamente, ma non tutte le novità hanno lo stesso impatto nel lavoro quotidiano.</p>
+
+<p>L&#x27;aggiornamento di agosto 2026 introduce diversi miglioramenti interessanti per chi crea report, gestisce modelli semantici o lavora su progetti Power BI più strutturati.</p>
+
+<p>In questo articolo vediamo sei novità che meritano particolare attenzione e, soprattutto, cosa possono cambiare concretamente nel lavoro di ogni giorno.</p>
+</section>
+
+<div class="blog-article__sections-grid">
+<section class="blog-article__section-card">
+<h2>1. Modern Visual Defaults e nuovo Theme pane</h2>
+
+<p>Una delle novità più visibili riguarda la gestione dello stile dei report.</p>
+
+<p>I Modern Visual Defaults e il nuovo Theme pane sono ora generalmente disponibili. I nuovi report utilizzano il tema base Fluent 2 e dal pannello dei temi è possibile intervenire in modo centralizzato su palette colori, tipografia, proprietà dei visual, impostazioni delle pagine e aspetto del pannello filtri.</p>
+
+<p>Questo significa meno modifiche ripetitive e maggiore coerenza grafica, soprattutto nei report aziendali con molte pagine e numerose visualizzazioni.</p>
+
+<p>Il vantaggio non è quindi soltanto estetico: una gestione più centralizzata dello stile rende anche più semplice mantenere un&#x27;identità visiva coerente nel tempo.</p>
+</section>
+
+<section class="blog-article__section-card">
+<h2>2. Date Picker per gli slicer</h2>
+
+<p>Il Date Picker per gli slicer è ora generalmente disponibile.</p>
+
+<p>Permette di combinare selezioni temporali relative con calendario e slider, consentendo sia la selezione di intervalli sia quella di una singola data.</p>
+
+<p>Con l&#x27;opzione Single date è possibile limitare lo slicer a un solo giorno alla volta, mentre le selezioni possono essere cancellate direttamente dall&#x27;header.</p>
+
+<p>È un miglioramento apparentemente semplice, ma molto utile nelle dashboard operative dove il filtro temporale è una delle interazioni più frequenti dell&#x27;utente.</p>
+
+<p>Una selezione delle date più chiara significa meno ambiguità e un&#x27;esperienza di navigazione più immediata.</p>
+</section>
+
+<section class="blog-article__section-card">
+<h2>3. Più controllo sul refresh dei semantic model</h2>
+
+<p>Una delle novità più interessanti riguarda il refresh dei modelli semantici nel Power BI Service.</p>
+
+<p>In precedenza il comando Refresh eseguiva normalmente sia la sincronizzazione dello schema sia l&#x27;aggiornamento dei dati. Adesso sono disponibili tre operazioni distinte:</p>
+
+<ul>
+  <li>Refresh schema and data</li>
+  <li>Sync schema only</li>
+  <li>Refresh data only</li>
+</ul>
+
+<p>Inoltre, il refresh può essere eseguito anche a livello di singola tabella.</p>
+
+<p>Questo offre un controllo molto più preciso sui modelli complessi. Se, ad esempio, una sorgente ha modificato il proprio schema ma si vuole aggiornare soltanto il contenuto dei dati, non è più necessario eseguire automaticamente entrambe le operazioni.</p>
+
+<p>Per chi gestisce semantic model articolati, la possibilità di intervenire solo su ciò che serve può ridurre operazioni inutili e rendere la manutenzione più controllabile.</p>
+</section>
+
+<section class="blog-article__section-card">
+<h2>4. Immagini e file OneLake direttamente nei report</h2>
+
+<p>Power BI può ora utilizzare URL di file OneLake come sorgente per diversi elementi del report.</p>
+
+<p>Le immagini archiviate in OneLake possono essere utilizzate nei visual immagine, nelle celle di tabelle e matrici, nelle card, negli slicer e nelle icone personalizzate.</p>
+
+<p>Anche alcuni file utilizzati nelle mappe possono essere collegati direttamente tramite OneLake.</p>
+
+<p>È un miglioramento interessante soprattutto in ambienti Microsoft Fabric, perché permette di mantenere asset e file all&#x27;interno di un&#x27;infrastruttura più governata invece di dipendere necessariamente da risorse pubbliche esterne.</p>
+
+<p>Per le organizzazioni che stanno centralizzando dati e contenuti in OneLake, anche questo piccolo dettaglio contribuisce a rendere l&#x27;ecosistema più integrato.</p>
+</section>
+
+<section class="blog-article__section-card">
+<h2>5. Copilot comprende anche visual nascosti dai bookmark</h2>
+
+<p>Copilot Summary e Copilot Narrative possono ora prendere in considerazione anche visual che inizialmente sono nascosti e vengono mostrati attraverso bookmark di visualizzazione.</p>
+
+<p>Questo è particolarmente utile nei report che utilizzano bookmark per realizzare tab, viste alternative o interfacce dinamiche.</p>
+
+<p>In precedenza un visual nascosto nello stato iniziale poteva non essere considerato nella sintesi. Ora Copilot può includerlo nella propria analisi senza modificare lo stato del bookmark visualizzato dall&#x27;utente.</p>
+
+<p>Le regole di sicurezza come RLS e OLS continuano comunque a essere rispettate.</p>
+
+<p>Per chi costruisce report più interattivi, significa permettere a Copilot di avere una visione più completa dei contenuti realmente presenti nella pagina.</p>
+</section>
+
+<section class="blog-article__section-card">
+<h2>6. Workflow PBIP più veloce con Visual Studio Code</h2>
+
+<p>Microsoft continua a rendere i Power BI Projects più vicini ai normali workflow di sviluppo software.</p>
+
+<p>Con i progetti PBIP è ora possibile modificare i file esternamente a Power BI Desktop e applicare rapidamente le modifiche rilevate senza dover riavviare l&#x27;applicazione.</p>
+
+<p>Power BI Desktop include inoltre un accesso diretto per aprire il progetto in Visual Studio Code.</p>
+
+<p>Per progetti strutturati questo rende più naturale lavorare con editor esterni, versionamento e strumenti di sviluppo.</p>
+
+<p>È un passaggio importante perché conferma una direzione ormai chiara: Power BI non è più soltanto uno strumento per costruire visualizzazioni, ma sta diventando sempre più adatto anche a processi di sviluppo collaborativi e controllati.</p>
+</section>
+</div>
+
+<section class="blog-article__impact">
+  <div class="blog-article__impact-heading">
+    <span class="blog-article__impact-label">Nella pratica</span>
+    <h2>Cosa cambia davvero nel lavoro quotidiano</h2>
+  </div>
+  <div class="blog-article__impact-body">
+<p>Non tutte le funzionalità di un aggiornamento mensile cambiano immediatamente il modo di lavorare.</p>
+
+<p>In questo caso, però, emergono alcuni segnali interessanti.</p>
+
+<p>Da una parte Microsoft sta migliorando l&#x27;esperienza di chi costruisce report, con temi più coerenti, slicer più evoluti e nuovi controlli di formattazione.</p>
+
+<p>Dall&#x27;altra continua a investire nella gestione dei semantic model, nell&#x27;integrazione con Fabric e nei workflow per sviluppatori.</p>
+
+<p>Per chi lavora professionalmente con Power BI significa che le competenze richieste stanno andando sempre più oltre la semplice costruzione di grafici.</p>
+
+<p>Modellazione, progettazione dell&#x27;esperienza utente, governance, organizzazione del progetto e capacità di gestire workflow più strutturati stanno diventando sempre più importanti.</p>
+  </div>
+</section>
+
+<section class="blog-article__summary">
+  <span class="blog-article__summary-label">In sintesi</span>
+  <h2>In sintesi</h2>
+<p>Tra le novità di agosto 2026, alcune possono avere un impatto immediato: il nuovo Theme pane aiuta a mantenere coerenza visiva, il Date Picker migliora l&#x27;interazione con i dati temporali e i nuovi controlli di refresh permettono una gestione più precisa dei modelli semantici.</p>
+
+<p>OneLake, Copilot e l&#x27;evoluzione dei progetti PBIP mostrano invece una tendenza più ampia: Power BI sta diventando sempre più integrato nell&#x27;ecosistema Microsoft Fabric e sempre più adatto a progetti strutturati, collaborativi e governati.</p>
+
+<p>Il punto non è utilizzare ogni nuova funzionalità appena viene pubblicata, ma capire quali aggiornamenti possono realmente migliorare il modo in cui un report viene progettato, mantenuto e utilizzato.</p>
+</section>
 
         </div>
 

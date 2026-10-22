@@ -385,6 +385,100 @@ def render_markdown(body):
 
     return "\n\n".join(html_parts)
 
+def enhance_article_layout(html):
+    """
+    Migliora automaticamente il layout dell'articolo:
+    - introduzione iniziale -> box "Il contesto"
+    - sezioni numerate 1-6 -> griglia/card
+    - sezione "In sintesi" -> box evidenziato
+    """
+
+    numbered_pattern = re.compile(
+        r"(<h2>([1-6])\.\s.*?</h2>.*?)(?=<h2>|$)",
+        re.DOTALL,
+    )
+
+    matches = list(
+        numbered_pattern.finditer(html)
+    )
+
+    if len(matches) == 6:
+        intro_html = html[:matches[0].start()].strip()
+        after = html[matches[-1].end():].strip()
+
+        if intro_html:
+            before = (
+                '<section class="blog-article__lead">\n'
+                '  <span class="blog-article__lead-label">'
+                'Il contesto'
+                '</span>\n'
+                f'{intro_html}\n'
+                '</section>\n\n'
+            )
+        else:
+            before = ""
+
+        cards = []
+
+        for match in matches:
+            section_html = match.group(1).strip()
+
+            cards.append(
+                '<section class="blog-article__section-card">\n'
+                f'{section_html}\n'
+                '</section>'
+            )
+
+        html = (
+            before
+            + '<div class="blog-article__sections-grid">\n'
+            + '\n\n'.join(cards)
+            + '\n</div>\n\n'
+            + after
+        )
+
+    impact_pattern = re.compile(
+        r"<h2>Cosa cambia davvero nel lavoro quotidiano</h2>"
+        r"(.*?)(?=<h2>In sintesi</h2>|$)",
+        re.DOTALL,
+    )
+
+    html = impact_pattern.sub(
+        lambda match: (
+            '<section class="blog-article__impact">\n'
+            '  <div class="blog-article__impact-heading">\n'
+            '    <span class="blog-article__impact-label">'
+            'Nella pratica'
+            '</span>\n'
+            '    <h2>Cosa cambia davvero nel lavoro quotidiano</h2>\n'
+            '  </div>\n'
+            '  <div class="blog-article__impact-body">\n'
+            f'{match.group(1).strip()}\n'
+            '  </div>\n'
+            '</section>\n\n'
+        ),
+        html,
+    )
+
+    summary_pattern = re.compile(
+        r"<h2>In sintesi</h2>(.*)$",
+        re.DOTALL,
+    )
+
+    html = summary_pattern.sub(
+        lambda match: (
+            '<section class="blog-article__summary">\n'
+            '  <span class="blog-article__summary-label">'
+            'In sintesi'
+            '</span>\n'
+            '  <h2>In sintesi</h2>\n'
+            f'{match.group(1).strip()}\n'
+            '</section>'
+        ),
+        html,
+    )
+
+    return html
 
 def format_date_it(date_value):
     months = {
@@ -478,10 +572,11 @@ def render_article_page(article):
             quote=True,
         ),
         "{{ARTICLE_BODY}}":
+            enhance_article_layout(
             render_markdown(
-                article["body"]
-            ),
-    }
+                article["body"])
+        ),
+        }
 
     page = template
 
