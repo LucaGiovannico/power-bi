@@ -318,8 +318,16 @@ width: min(
 
   white-space:
     nowrap;
+
+  text-decoration:
+    none;
 }
 
+.articles-heading__link:hover,
+.articles-heading__link:focus-visible {
+  text-decoration:
+    none;
+}
 
 /* ==========================================================
    ARTICLE GRID
@@ -2150,4 +2158,67 @@ body.blog-page .blog-button--secondary {
 
 .article-card__image--contain {
   object-fit: contain;
+}
+
+/* ==========================================================
+   BLOG ARTICLE CARD — FULL CLICK TARGET
+   ========================================================== */
+
+.article-card--clickable {
+  position: relative;
+
+  cursor: pointer;
+}
+
+.article-card--clickable .article-title-link::after {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  z-index: 2;
+
+  border-radius: inherit;
+}
+
+
+/* Feedback visivo desktop */
+@media (hover: hover) and (pointer: fine) {
+
+  .article-card--clickable {
+    transition:
+      transform 180ms ease,
+      box-shadow 180ms ease,
+      border-color 180ms ease;
+  }
+
+  .article-card--clickable:hover {
+    transform: translateY(-3px);
+
+    border-color: rgba(90, 82, 224, 0.22);
+
+    box-shadow:
+      0 18px 42px rgba(33, 31, 45, 0.10);
+  }
+
+}
+
+
+/* Tastiera */
+.article-card--clickable:focus-within {
+  outline: 2px solid #5a52e0;
+  outline-offset: 3px;
+}
+
+
+.articles-heading__link,
+.articles-heading__link:visited {
+  color: var(--blog-purple);
+  text-decoration: none;
+}
+
+.articles-heading__link:hover,
+.articles-heading__link:focus-visible {
+  color: var(--blog-purple);
+  text-decoration: none;
 }

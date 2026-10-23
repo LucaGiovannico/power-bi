@@ -10,6 +10,23 @@ CONTENT_DIR = ROOT / "content" / "blog"
 BLOG_DIR = ROOT / "blog"
 TEMPLATE_IT = ROOT / "templates" / "blog-article-it.html"
 
+TEMPLATE_ARCHIVE_IT = (
+    ROOT
+    / "templates"
+    / "blog-archive-it.html"
+)
+
+ARCHIVE_OUTPUT_IT = (
+    ROOT
+    / "blog"
+    / "articoli.html"
+)
+
+BLOG_INDEX_IT = ROOT / "blog" / "index.html"
+
+BLOG_ARTICLES_START = "<!-- BLOG_ARTICLES_START -->"
+BLOG_ARTICLES_END = "<!-- BLOG_ARTICLES_END -->"
+
 SITE_URL = "https://www.dinafiorentino.com"
 
 REQUIRED_FIELDS = {
@@ -127,7 +144,8 @@ def render_card(article, featured_layout=False):
 
     if featured_layout:
         return f"""\
-<article class="article-card article-card--featured">
+
+  <article class="article-card article-card--featured article-card--clickable">
 
   <div class="featured-visual featured-visual--image">
 
@@ -161,12 +179,9 @@ def render_card(article, featured_layout=False):
       {description}
     </p>
 
-    <a
-      class="article-status article-status--link"
-      href="{article_url}"
-    >
-      Leggi l'articolo
-    </a>
+<span class="article-status">
+  Leggi l'articolo
+</span>
 
   </div>
 
@@ -178,7 +193,7 @@ def render_card(article, featured_layout=False):
         image_class += " article-card__image--contain"
 
     return f"""\
-<article class="article-card">
+<article class="article-card article-card--clickable">
 
   <div class="article-card__visual article-card__visual--image">
 
@@ -212,12 +227,9 @@ def render_card(article, featured_layout=False):
       {description}
     </p>
 
-    <a
-      class="article-status article-status--link"
-      href="{article_url}"
-    >
-      Leggi l'articolo
-    </a>
+  <span class="article-status">
+    Leggi l'articolo
+  </span>
 
   </div>
 
@@ -620,6 +632,222 @@ def write_article_page(article):
 
     return output_path
 
+def update_blog_index_it(articles):
+    home_articles = select_home_articles(
+        articles,
+        "it",
+        limit=3,
+    )
+
+    if not home_articles:
+        print("Nessun articolo IT pubblicato: Home Blog non aggiornata.")
+        return
+
+    cards = []
+
+    for position, article in enumerate(
+        home_articles,
+        start=1,
+    ):
+        cards.append(
+            render_card(
+                article,
+                featured_layout=(position == 1),
+            )
+        )
+
+    # Finché non abbiamo 3 articoli reali,
+    # manteniamo i placeholder esistenti.
+    if len(cards) < 2:
+        cards.append("""\
+<article class="article-card">
+
+  <div class="article-card__visual article-card__visual--dax">
+
+    <span class="dax-badge">
+      DAX
+    </span>
+
+    <div class="dax-code">
+      <span>Sales Category A =</span>
+      <span>CALCULATE(</span>
+      <span>&nbsp;&nbsp;[Sales],</span>
+      <span>&nbsp;&nbsp;FILTER(</span>
+      <span>&nbsp;&nbsp;&nbsp;&nbsp;ALL('Product'),</span>
+      <span>&nbsp;&nbsp;&nbsp;&nbsp;'Product'[Category] = "A"</span>
+      <span>&nbsp;&nbsp;)</span>
+      <span>)</span>
+    </div>
+
+  </div>
+
+  <div class="article-card__body">
+
+    <div class="article-meta">
+      <span>DAX</span>
+      <span>7 MIN DI LETTURA</span>
+    </div>
+
+    <h3>
+      5 formule DAX da conoscere davvero
+    </h3>
+
+    <p>
+      Una raccolta pratica di funzioni e pattern
+      utili che ricorrono spesso nei modelli Power BI.
+    </p>
+
+    <span class="article-status">
+      Prossimamente
+    </span>
+
+  </div>
+
+</article>""")
+
+    if len(cards) < 3:
+        cards.append("""\
+<article class="article-card">
+
+  <div class="article-card__visual article-card__visual--story-image">
+
+    <picture>
+      <img
+        class="article-card__story-image"
+        src="../assets/images/blog/hero-data-storytelling.png"
+        alt="Visual di data storytelling"
+        loading="lazy"
+        decoding="async"
+      />
+    </picture>
+
+  </div>
+
+  <div class="article-card__body">
+
+    <div class="article-meta">
+      <span>DATA STORYTELLING</span>
+      <span>6 MIN DI LETTURA</span>
+    </div>
+
+    <h3>
+      Data storytelling:
+      un buon grafico non basta
+    </h3>
+
+    <p>
+      Come costruire una narrazione visiva efficace
+      per aiutare chi guarda a capire cosa sta
+      succedendo e perché.
+    </p>
+
+    <span class="article-status">
+      Prossimamente
+    </span>
+
+  </div>
+
+</article>""")
+
+    html = BLOG_INDEX_IT.read_text(
+        encoding="utf-8"
+    )
+
+    if BLOG_ARTICLES_START not in html:
+        raise ValueError(
+            "Marker BLOG_ARTICLES_START non trovato in blog/index.html"
+        )
+
+    if BLOG_ARTICLES_END not in html:
+        raise ValueError(
+            "Marker BLOG_ARTICLES_END non trovato in blog/index.html"
+        )
+
+    start_index = (
+        html.index(BLOG_ARTICLES_START)
+        + len(BLOG_ARTICLES_START)
+    )
+
+    end_index = html.index(
+        BLOG_ARTICLES_END,
+        start_index,
+    )
+
+    generated_cards = (
+        "\n\n"
+        + "\n\n".join(cards)
+        + "\n\n            "
+    )
+
+    updated_html = (
+        html[:start_index]
+        + generated_cards
+        + html[end_index:]
+    )
+
+    BLOG_INDEX_IT.write_text(
+        updated_html,
+        encoding="utf-8",
+    )
+
+    print("✓ blog/index.html aggiornato automaticamente")
+
+def generate_archive_it(articles):
+    published = get_published_articles(
+        articles,
+        "it",
+    )
+
+    template = TEMPLATE_ARCHIVE_IT.read_text(
+        encoding="utf-8"
+    )
+
+    if published:
+        cards = [
+            render_card(
+                article,
+                featured_layout=False,
+            )
+            for article in published
+        ]
+
+        archive_html = (
+            "\n\n".join(cards)
+        )
+
+    else:
+        archive_html = """\
+<p class="blog-archive__empty">
+  Nessun articolo pubblicato al momento.
+</p>"""
+
+    page = template.replace(
+        "{{ARCHIVE_ARTICLES}}",
+        archive_html,
+    )
+
+    remaining = re.findall(
+        r"\{\{[A-Z_]+\}\}",
+        page,
+    )
+
+    if remaining:
+        raise ValueError(
+            "Placeholder archivio non sostituiti: "
+            + ", ".join(
+                sorted(set(remaining))
+            )
+        )
+
+    ARCHIVE_OUTPUT_IT.write_text(
+        page,
+        encoding="utf-8",
+    )
+
+    print(
+        "✓ blog/articoli.html generato automaticamente"
+    )
+
 def main():
     article_paths = sorted(
         CONTENT_DIR.glob("*/*.md")
@@ -676,25 +904,6 @@ def main():
                 f"— featured={meta['featured']}"
             )
 
-        print()
-        print("=" * 60)
-        print("ANTEPRIMA DELLE 3 CARD")
-        print("=" * 60)
-        print()
-
-        for position, article in enumerate(
-            home_articles,
-            start=1,
-        ):
-            print(
-                render_card(
-                    article,
-                    featured_layout=(position == 1),
-                )
-            )
-
-            print()
-
     print()
     print("=" * 60)
     print("PAGINE ARTICOLO GENERATE")
@@ -715,6 +924,22 @@ def main():
             print(
                 f"✓ {output_path.relative_to(ROOT)}"
             )
+
+    print()
+    print("=" * 60)
+    print("HOME BLOG")
+    print("=" * 60)
+    print()
+
+    update_blog_index_it(articles)
+
+    print()
+    print("=" * 60)
+    print("ARCHIVIO BLOG")
+    print("=" * 60)
+    print()
+
+    generate_archive_it(articles)
 
 if __name__ == "__main__":
     main()
