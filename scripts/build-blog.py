@@ -9,11 +9,18 @@ CONTENT_DIR = ROOT / "content" / "blog"
 
 BLOG_DIR = ROOT / "blog"
 TEMPLATE_IT = ROOT / "templates" / "blog-article-it.html"
+TEMPLATE_EN = ROOT / "templates" / "blog-article-en.html"
 
 TEMPLATE_ARCHIVE_IT = (
     ROOT
     / "templates"
     / "blog-archive-it.html"
+)
+
+TEMPLATE_ARCHIVE_EN = (
+    ROOT
+    / "templates"
+    / "blog-archive-en.html"
 )
 
 ARCHIVE_OUTPUT_IT = (
@@ -22,7 +29,14 @@ ARCHIVE_OUTPUT_IT = (
     / "articoli.html"
 )
 
+ARCHIVE_OUTPUT_EN = (
+    ROOT
+    / "blog"
+    / "articles.html"
+)
+
 BLOG_INDEX_IT = ROOT / "blog" / "index.html"
+BLOG_INDEX_EN = ROOT / "blog" / "index-en.html"
 
 BLOG_ARTICLES_START = "<!-- BLOG_ARTICLES_START -->"
 BLOG_ARTICLES_END = "<!-- BLOG_ARTICLES_END -->"
@@ -122,15 +136,35 @@ def parse_article(path):
 def render_card(article, featured_layout=False):
     meta = article["metadata"]
 
+    lang = str(meta["lang"])
+
+    labels = {
+        "it": {
+            "reading": "MIN DI LETTURA",
+            "read_article": "Leggi l'articolo",
+        },
+        "en": {
+            "reading": "MIN READ",
+            "read_article": "Read the article",
+        },
+    }
+
+    if lang not in labels:
+        raise ValueError(
+            f"{article['path']}: lingua card non supportata: {lang}"
+        )
+
+    current = labels[lang]
+
     title = escape(str(meta["card_title"]))
     description = escape(str(meta["card_description"]))
     category = escape(str(meta["category"]))
     image = escape(str(meta["image"]), quote=True)
     image_alt = escape(str(meta["image_alt"]), quote=True)
-    slug = escape(str(meta["slug"]), quote=True)
     reading_time = meta["reading_time"]
 
-    article_url = f"./{slug}.html"
+    filename = article_filename(meta)
+    article_url = f"./{filename}"
 
     image_fit = str(
         meta.get("image_fit", "cover")
@@ -144,7 +178,6 @@ def render_card(article, featured_layout=False):
 
     if featured_layout:
         return f"""\
-
   <article class="article-card article-card--featured article-card--clickable">
 
   <div class="featured-visual featured-visual--image">
@@ -163,7 +196,7 @@ def render_card(article, featured_layout=False):
 
     <div class="article-meta">
       <span>{category}</span>
-      <span>{reading_time} MIN DI LETTURA</span>
+      <span>{reading_time} {current["reading"]}</span>
     </div>
 
     <h3>
@@ -179,9 +212,9 @@ def render_card(article, featured_layout=False):
       {description}
     </p>
 
-<span class="article-status">
-  Leggi l'articolo
-</span>
+    <span class="article-status">
+      {current["read_article"]}
+    </span>
 
   </div>
 
@@ -211,7 +244,7 @@ def render_card(article, featured_layout=False):
 
     <div class="article-meta">
       <span>{category}</span>
-      <span>{reading_time} MIN DI LETTURA</span>
+      <span>{reading_time} {current["reading"]}</span>
     </div>
 
     <h3>
@@ -227,9 +260,9 @@ def render_card(article, featured_layout=False):
       {description}
     </p>
 
-  <span class="article-status">
-    Leggi l'articolo
-  </span>
+    <span class="article-status">
+      {current["read_article"]}
+    </span>
 
   </div>
 
@@ -397,13 +430,35 @@ def render_markdown(body):
 
     return "\n\n".join(html_parts)
 
-def enhance_article_layout(html):
+def enhance_article_layout(html, lang):
     """
-    Migliora automaticamente il layout dell'articolo:
-    - introduzione iniziale -> box "Il contesto"
-    - sezioni numerate 1-6 -> griglia/card
-    - sezione "In sintesi" -> box evidenziato
+    Migliora automaticamente il layout dell'articolo
+    in base alla lingua.
     """
+
+    labels = {
+        "it": {
+            "context": "Il contesto",
+            "impact_label": "Nella pratica",
+            "impact_title":
+                "Cosa cambia davvero nel lavoro quotidiano",
+            "summary": "In sintesi",
+        },
+        "en": {
+            "context": "Context",
+            "impact_label": "In practice",
+            "impact_title":
+                "What actually changes in everyday work",
+            "summary": "In summary",
+        },
+    }
+
+    if lang not in labels:
+        raise ValueError(
+            f"Lingua articolo non supportata: {lang}"
+        )
+
+    current = labels[lang]
 
     numbered_pattern = re.compile(
         r"(<h2>([1-6])\.\s.*?</h2>.*?)(?=<h2>|$)",
@@ -415,14 +470,19 @@ def enhance_article_layout(html):
     )
 
     if len(matches) == 6:
-        intro_html = html[:matches[0].start()].strip()
-        after = html[matches[-1].end():].strip()
+        intro_html = html[
+            :matches[0].start()
+        ].strip()
+
+        after = html[
+            matches[-1].end():
+        ].strip()
 
         if intro_html:
             before = (
                 '<section class="blog-article__lead">\n'
                 '  <span class="blog-article__lead-label">'
-                'Il contesto'
+                f'{current["context"]}'
                 '</span>\n'
                 f'{intro_html}\n'
                 '</section>\n\n'
@@ -433,7 +493,9 @@ def enhance_article_layout(html):
         cards = []
 
         for match in matches:
-            section_html = match.group(1).strip()
+            section_html = (
+                match.group(1).strip()
+            )
 
             cards.append(
                 '<section class="blog-article__section-card">\n'
@@ -449,9 +511,17 @@ def enhance_article_layout(html):
             + after
         )
 
+    impact_title = re.escape(
+        current["impact_title"]
+    )
+
+    summary_title = re.escape(
+        current["summary"]
+    )
+
     impact_pattern = re.compile(
-        r"<h2>Cosa cambia davvero nel lavoro quotidiano</h2>"
-        r"(.*?)(?=<h2>In sintesi</h2>|$)",
+        rf"<h2>{impact_title}</h2>"
+        rf"(.*?)(?=<h2>{summary_title}</h2>|$)",
         re.DOTALL,
     )
 
@@ -460,9 +530,9 @@ def enhance_article_layout(html):
             '<section class="blog-article__impact">\n'
             '  <div class="blog-article__impact-heading">\n'
             '    <span class="blog-article__impact-label">'
-            'Nella pratica'
+            f'{current["impact_label"]}'
             '</span>\n'
-            '    <h2>Cosa cambia davvero nel lavoro quotidiano</h2>\n'
+            f'    <h2>{current["impact_title"]}</h2>\n'
             '  </div>\n'
             '  <div class="blog-article__impact-body">\n'
             f'{match.group(1).strip()}\n'
@@ -473,7 +543,7 @@ def enhance_article_layout(html):
     )
 
     summary_pattern = re.compile(
-        r"<h2>In sintesi</h2>(.*)$",
+        rf"<h2>{summary_title}</h2>(.*)$",
         re.DOTALL,
     )
 
@@ -481,9 +551,9 @@ def enhance_article_layout(html):
         lambda match: (
             '<section class="blog-article__summary">\n'
             '  <span class="blog-article__summary-label">'
-            'In sintesi'
+            f'{current["summary"]}'
             '</span>\n'
-            '  <h2>In sintesi</h2>\n'
+            f'  <h2>{current["summary"]}</h2>\n'
             f'{match.group(1).strip()}\n'
             '</section>'
         ),
@@ -518,36 +588,111 @@ def format_date_it(date_value):
     )
 
 
+def format_date_en(date_value):
+    months = {
+        1: "January",
+        2: "February",
+        3: "March",
+        4: "April",
+        5: "May",
+        6: "June",
+        7: "July",
+        8: "August",
+        9: "September",
+        10: "October",
+        11: "November",
+        12: "December",
+    }
+
+    year, month, day = map(
+        int,
+        str(date_value).split("-"),
+    )
+
+    return (
+        f"{months[month]} {day}, {year}"
+    )
+
+
+def article_filename(meta):
+    lang = str(meta["lang"])
+    slug = str(meta["slug"])
+
+    if lang == "it":
+        return f"{slug}.html"
+
+    if lang == "en":
+        return f"{slug}-en.html"
+
+    raise ValueError(
+        f"Lingua articolo non supportata: {lang}"
+    )
+
+
 def render_article_page(article):
     meta = article["metadata"]
+    lang = str(meta["lang"])
 
-    if meta["lang"] != "it":
+    templates = {
+        "it": TEMPLATE_IT,
+        "en": TEMPLATE_EN,
+    }
+
+    if lang not in templates:
         raise ValueError(
-            f"{article['path']}: template italiano "
-            "usato con articolo non italiano"
+            f"{article['path']}: "
+            f"lingua non supportata: {lang}"
         )
 
-    template = TEMPLATE_IT.read_text(
+    template = templates[lang].read_text(
         encoding="utf-8"
     )
 
-    slug = str(meta["slug"])
     title = str(meta["title"])
 
+    filename = article_filename(meta)
+
     canonical_url = (
-        f"{SITE_URL}/blog/{slug}.html"
+        f"{SITE_URL}/blog/{filename}"
     )
 
     seo_title = (
         f"{title} | Dina Fiorentino"
     )
 
+    it_url = (
+    f"{SITE_URL}/blog/{meta['slug']}.html"
+)
+
+    en_url = (
+        f"{SITE_URL}/blog/{meta['slug']}-en.html"
+    )
+
     hreflang_alternates = f"""\
-<link
-  rel="alternate"
-  hreflang="it"
-  href="{canonical_url}"
-/>"""
+    <link
+      rel="alternate"
+      hreflang="it"
+      href="{it_url}"
+    />
+    <link
+      rel="alternate"
+      hreflang="en"
+      href="{en_url}"
+    />
+    <link
+      rel="alternate"
+      hreflang="x-default"
+      href="{it_url}"
+    />"""
+
+    if lang == "it":
+        formatted_date = format_date_it(
+            meta["date"]
+        )
+    else:
+        formatted_date = format_date_en(
+            meta["date"]
+        )
 
     replacements = {
         "{{SEO_TITLE}}": escape(
@@ -567,7 +712,7 @@ def render_article_page(article):
             str(meta["category"])
         ),
         "{{DATE}}": escape(
-            format_date_it(meta["date"])
+            formatted_date
         ),
         "{{READING_TIME}}": escape(
             str(meta["reading_time"])
@@ -585,10 +730,12 @@ def render_article_page(article):
         ),
         "{{ARTICLE_BODY}}":
             enhance_article_layout(
-            render_markdown(
-                article["body"])
-        ),
-        }
+                render_markdown(
+                    article["body"]
+                ),
+                lang,
+            ),
+    }
 
     page = template
 
@@ -618,7 +765,7 @@ def write_article_page(article):
 
     output_path = (
         BLOG_DIR
-        / f"{meta['slug']}.html"
+        / article_filename(meta)
     )
 
     page = render_article_page(
@@ -792,6 +939,174 @@ def update_blog_index_it(articles):
 
     print("✓ blog/index.html aggiornato automaticamente")
 
+def update_blog_index_en(articles):
+    home_articles = select_home_articles(
+        articles,
+        "en",
+        limit=3,
+    )
+
+    if not home_articles:
+        print(
+            "No published EN articles: "
+            "English Blog Home not updated."
+        )
+        return
+
+    cards = []
+
+    for position, article in enumerate(
+        home_articles,
+        start=1,
+    ):
+        cards.append(
+            render_card(
+                article,
+                featured_layout=(position == 1),
+            )
+        )
+
+    # Keep the two existing editorial placeholders
+    # until real EN articles are available.
+    if len(cards) < 2:
+        cards.append("""\
+<article class="article-card">
+
+  <div class="article-card__visual article-card__visual--dax">
+
+    <span class="dax-badge">
+      DAX
+    </span>
+
+    <div class="dax-code">
+      <span>Sales Category A =</span>
+      <span>CALCULATE(</span>
+      <span>&nbsp;&nbsp;[Sales],</span>
+      <span>&nbsp;&nbsp;FILTER(</span>
+      <span>&nbsp;&nbsp;&nbsp;&nbsp;ALL('Product'),</span>
+      <span>&nbsp;&nbsp;&nbsp;&nbsp;'Product'[Category] = "A"</span>
+      <span>&nbsp;&nbsp;)</span>
+      <span>)</span>
+    </div>
+
+  </div>
+
+  <div class="article-card__body">
+
+    <div class="article-meta">
+      <span>DAX</span>
+      <span>7 MIN READ</span>
+    </div>
+
+    <h3>
+      5 DAX formulas worth knowing
+    </h3>
+
+    <p>
+      A practical collection of useful functions and patterns
+      that frequently appear in Power BI models.
+    </p>
+
+    <span class="article-status">
+      Coming soon
+    </span>
+
+  </div>
+
+</article>""")
+
+    if len(cards) < 3:
+        cards.append("""\
+<article class="article-card">
+
+  <div class="article-card__visual article-card__visual--story-image">
+
+    <picture>
+      <img
+        class="article-card__story-image"
+        src="../assets/images/blog/hero-data-storytelling.png"
+        alt="Data storytelling editorial visual"
+        loading="lazy"
+        decoding="async"
+      />
+    </picture>
+
+  </div>
+
+  <div class="article-card__body">
+
+    <div class="article-meta">
+      <span>DATA STORYTELLING</span>
+      <span>6 MIN READ</span>
+    </div>
+
+    <h3>
+      Data storytelling:
+      a good chart is not enough
+    </h3>
+
+    <p>
+      How to build an effective visual narrative
+      that helps people understand what is happening
+      and why.
+    </p>
+
+    <span class="article-status">
+      Coming soon
+    </span>
+
+  </div>
+
+</article>""")
+
+    html = BLOG_INDEX_EN.read_text(
+        encoding="utf-8"
+    )
+
+    if BLOG_ARTICLES_START not in html:
+        raise ValueError(
+            "BLOG_ARTICLES_START marker not found "
+            "in blog/index-en.html"
+        )
+
+    if BLOG_ARTICLES_END not in html:
+        raise ValueError(
+            "BLOG_ARTICLES_END marker not found "
+            "in blog/index-en.html"
+        )
+
+    start_index = (
+        html.index(BLOG_ARTICLES_START)
+        + len(BLOG_ARTICLES_START)
+    )
+
+    end_index = html.index(
+        BLOG_ARTICLES_END,
+        start_index,
+    )
+
+    generated_cards = (
+        "\n\n"
+        + "\n\n".join(cards)
+        + "\n\n            "
+    )
+
+    updated_html = (
+        html[:start_index]
+        + generated_cards
+        + html[end_index:]
+    )
+
+    BLOG_INDEX_EN.write_text(
+        updated_html,
+        encoding="utf-8",
+    )
+
+    print(
+        "✓ blog/index-en.html updated automatically"
+    )
+
+
 def generate_archive_it(articles):
     published = get_published_articles(
         articles,
@@ -847,6 +1162,63 @@ def generate_archive_it(articles):
     print(
         "✓ blog/articoli.html generato automaticamente"
     )
+
+def generate_archive_en(articles):
+    published = get_published_articles(
+        articles,
+        "en",
+    )
+
+    template = TEMPLATE_ARCHIVE_EN.read_text(
+        encoding="utf-8"
+    )
+
+    if published:
+        cards = [
+            render_card(
+                article,
+                featured_layout=False,
+            )
+            for article in published
+        ]
+
+        archive_html = (
+            "\n\n".join(cards)
+        )
+
+    else:
+        archive_html = """\
+<p class="blog-archive__empty">
+  No articles published yet.
+</p>"""
+
+    page = template.replace(
+        "{{ARCHIVE_ARTICLES}}",
+        archive_html,
+    )
+
+    remaining = re.findall(
+        r"\{\{[A-Z_]+\}\}",
+        page,
+    )
+
+    if remaining:
+        raise ValueError(
+            "Unreplaced archive placeholders: "
+            + ", ".join(
+                sorted(set(remaining))
+            )
+        )
+
+    ARCHIVE_OUTPUT_EN.write_text(
+        page,
+        encoding="utf-8",
+    )
+
+    print(
+        "✓ blog/articles.html generated automatically"
+    )
+
 
 def main():
     article_paths = sorted(
@@ -915,7 +1287,7 @@ def main():
 
         if (
             meta["published"]
-            and meta["lang"] == "it"
+            and meta["lang"] in {"it", "en"}
         ):
             output_path = write_article_page(
                 article
@@ -932,6 +1304,7 @@ def main():
     print()
 
     update_blog_index_it(articles)
+    update_blog_index_en(articles)
 
     print()
     print("=" * 60)
@@ -940,6 +1313,7 @@ def main():
     print()
 
     generate_archive_it(articles)
+    generate_archive_en(articles)
 
 if __name__ == "__main__":
     main()

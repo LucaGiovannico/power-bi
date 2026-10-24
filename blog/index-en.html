@@ -415,11 +415,13 @@
           to explore the world of data in greater depth.
         </p>
 
-        <span class="articles-heading__link">
-          All articles
-          <span aria-hidden="true">→</span>
-        </span>
-
+<a
+  class="articles-heading__link"
+  href="./articles.html"
+>
+  All articles
+  <span aria-hidden="true">→</span>
+</a>
       </div>
 
     </header>
@@ -429,153 +431,136 @@
 
       <!-- BLOG_ARTICLES_START -->
 
-      <!-- FEATURED -->
+  <article class="article-card article-card--featured article-card--clickable">
 
-      <article class="article-card article-card--featured">
+  <div class="featured-visual featured-visual--image">
 
-        <div class="featured-visual featured-visual--image">
-          <picture>
-            <source
-              srcset="../assets/images/blog/blog-power-bi-update.webp"
-              type="image/webp"
-            />
+    <img
+      class="featured-visual__image"
+      src="../assets/images/blog/power-bi-agosto-2026.png"
+      alt="Editorial visual for Power BI August 2026 featuring six key updates"
+      loading="lazy"
+      decoding="async"
+    />
 
-            <img
-              class="featured-visual__image"
-              src="../assets/images/blog/blog-power-bi-update.png"
-              alt="Editorial visual about a Power BI update featuring new visuals, performance improvements and Copilot"
-              width="1536"
-              height="1024"
-              loading="lazy"
-              decoding="async"
-            />
-          </picture>
-        </div>
+  </div>
 
-        <div class="article-card__body">
+  <div class="article-card__body">
 
-          <div class="article-meta">
-            <span>POWER BI</span>
-            <span>8 MIN READ</span>
-          </div>
+    <div class="article-meta">
+      <span>POWER BI</span>
+      <span>6 MIN READ</span>
+    </div>
 
-          <h3>
-            Power BI: what’s new in
-            the latest update
-          </h3>
+    <h3>
+      <a
+        class="article-title-link"
+        href="./power-bi-agosto-2026-en.html"
+      >
+        Power BI August 2026: 6 updates you should know
+      </a>
+    </h3>
 
-          <p>
-            An overview of the most interesting changes
-            in the latest Power BI update and how they
-            can simplify everyday work.
-          </p>
+    <p>
+      The most relevant Power BI updates and how they can affect everyday work.
+    </p>
 
-          <span class="article-status">
-            First article in progress
-          </span>
+    <span class="article-status">
+      Read the article
+    </span>
 
-        </div>
+  </div>
 
-      </article>
+</article>
 
+<article class="article-card">
 
-      <!-- DAX -->
+  <div class="article-card__visual article-card__visual--dax">
 
-      <article class="article-card">
+    <span class="dax-badge">
+      DAX
+    </span>
 
-        <div class="article-card__visual article-card__visual--dax">
+    <div class="dax-code">
+      <span>Sales Category A =</span>
+      <span>CALCULATE(</span>
+      <span>&nbsp;&nbsp;[Sales],</span>
+      <span>&nbsp;&nbsp;FILTER(</span>
+      <span>&nbsp;&nbsp;&nbsp;&nbsp;ALL('Product'),</span>
+      <span>&nbsp;&nbsp;&nbsp;&nbsp;'Product'[Category] = "A"</span>
+      <span>&nbsp;&nbsp;)</span>
+      <span>)</span>
+    </div>
 
-          <span class="dax-badge">
-            DAX
-          </span>
+  </div>
 
-          <div class="dax-code">
-            <span>Sales Category A =</span>
-            <span>CALCULATE(</span>
-            <span>&nbsp;&nbsp;[Sales],</span>
-            <span>&nbsp;&nbsp;FILTER(</span>
-            <span>&nbsp;&nbsp;&nbsp;&nbsp;ALL('Product'),</span>
-            <span>&nbsp;&nbsp;&nbsp;&nbsp;'Product'[Category] = "A"</span>
-            <span>&nbsp;&nbsp;)</span>
-            <span>)</span>
-          </div>
+  <div class="article-card__body">
 
-        </div>
+    <div class="article-meta">
+      <span>DAX</span>
+      <span>7 MIN READ</span>
+    </div>
 
-        <div class="article-card__body">
+    <h3>
+      5 DAX formulas worth knowing
+    </h3>
 
-          <div class="article-meta">
-            <span>DAX</span>
-            <span>7 MIN READ</span>
-          </div>
+    <p>
+      A practical collection of useful functions and patterns
+      that frequently appear in Power BI models.
+    </p>
 
-          <h3>
-            5 DAX formulas worth knowing
-          </h3>
+    <span class="article-status">
+      Coming soon
+    </span>
 
-          <p>
-            A practical collection of useful functions
-            and patterns that frequently appear in
-            Power BI models.
-          </p>
+  </div>
 
-          <span class="article-status">
-            Coming soon
-          </span>
+</article>
 
-        </div>
+<article class="article-card">
 
-      </article>
+  <div class="article-card__visual article-card__visual--story-image">
 
+    <picture>
+      <img
+        class="article-card__story-image"
+        src="../assets/images/blog/hero-data-storytelling.png"
+        alt="Data storytelling editorial visual"
+        loading="lazy"
+        decoding="async"
+      />
+    </picture>
 
-      <!-- STORYTELLING -->
+  </div>
 
-      <article class="article-card">
+  <div class="article-card__body">
 
-        <div class="article-card__visual article-card__visual--story-image">
-          <picture>
-            <source
-              srcset="../assets/images/blog/hero-data-storytelling.png"
-              type="image/webp"
-            />
+    <div class="article-meta">
+      <span>DATA STORYTELLING</span>
+      <span>6 MIN READ</span>
+    </div>
 
-            <img
-              class="article-card__story-image"
-              src="../assets/images/blog/hero-data-storytelling.png"
-              alt="Data storytelling visual with a bar chart, trend and highlighted insight"
-              loading="lazy"
-              decoding="async"
-            />
-          </picture>
-        </div>
+    <h3>
+      Data storytelling:
+      a good chart is not enough
+    </h3>
 
-        <div class="article-card__body">
+    <p>
+      How to build an effective visual narrative
+      that helps people understand what is happening
+      and why.
+    </p>
 
-          <div class="article-meta">
-            <span>DATA STORYTELLING</span>
-            <span>6 MIN READ</span>
-          </div>
+    <span class="article-status">
+      Coming soon
+    </span>
 
-          <h3>
-            Data storytelling:
-            a good chart is not enough
-          </h3>
+  </div>
 
-          <p>
-            How to build an effective visual narrative
-            that helps viewers understand what is
-            happening and why.
-          </p>
+</article>
 
-          <span class="article-status">
-            Coming soon
-          </span>
-
-        </div>
-
-      </article>
-
-      <!-- BLOG_ARTICLES_END -->
+            <!-- BLOG_ARTICLES_END -->
 
     </div>
 

@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+<title>{{SEO_TITLE}}</title>
+
+<meta
+  name="description"
+  content="{{DESCRIPTION}}"
+/>
+
+<link
+  rel="canonical"
+  href="{{CANONICAL_URL}}"
+/>
+
+{{HREFLANG_ALTERNATES}}
+
+    <link
+      rel="stylesheet"
+      href="../assets/css/blog.css"
+    />
+
+    <link
+      rel="stylesheet"
+      href="../assets/css/blog-article.css"
+    />
+
+    <link
+      rel="stylesheet"
+      href="../assets/css/navigation.css"
+    />
+
+    <link
+      rel="stylesheet"
+      href="../assets/css/footer.css"
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Limelight&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Poppins:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
+
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="../assets/images/favicon/apple-touch-icon.png"
+    />
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="../assets/images/favicon/favicon-32x32.png"
+    />
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="../assets/images/favicon/favicon-16x16.png"
+    />
+
+    <link
+      rel="manifest"
+      href="../assets/images/favicon/site.webmanifest"
+    />
+
+    <link
+      rel="icon"
+      href="../assets/images/favicon/favicon.ico"
+    />
+  </head>
+
+  <body class="blog-page">
+
+    <!-- ======================================================
+         NAVBAR
+         ====================================================== -->
+
+<header class="site-header">
+  <nav class="navbar" aria-label="Navigazione principale">
+    <a
+      href="../index-en.html"
+      class="navbar__brand"
+      aria-label="Torna alla homepage"
+    >
+      <span class="navbar__monogram" aria-hidden="true">DF</span>
+
+      <span class="navbar__identity">
+        <span class="navbar__name">Dina Fiorentino</span>
+        <span class="navbar__role">
+          Data Analyst &amp; Power BI Consultant
+        </span>
+      </span>
+    </a>
+
+    <button
+      type="button"
+      class="navbar__toggle"
+      aria-expanded="false"
+      aria-controls="mainNavMenu"
+      aria-label="Apri il menu di navigazione"
+    >
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </button>
+
+    <div class="navbar__menu" id="mainNavMenu">
+      <ul class="navbar__list">
+        <!-- SERVIZI -->
+        <li class="navbar__item navbar__item--has-submenu">
+          <div class="navbar__item-control">
+            <a
+              class="navbar__link"
+              href="../index-en.html#services__id"
+            >
+              Services
+            </a>
+
+            <button
+              type="button"
+              class="navbar__submenu-toggle"
+              aria-expanded="false"
+              aria-controls="servicesSubmenu"
+              aria-label="Open Services menu"
+            >
+              <span aria-hidden="true">▾</span>
+            </button>
+          </div>
+
+          <ul
+            class="navbar__submenu navbar__submenu--services"
+            id="servicesSubmenu"
+            aria-label="Pagine servizi"
+          >
+            <li>
+              <a href="../services/dashboard-powerBI.html">
+                <span class="navbar__submenu-title">
+                  Dashboard Power BI su misura
+                </span>
+                <span class="navbar__submenu-description">
+                  Dashboard interattive progettate sui tuoi KPI.
+                </span>
+              </a>
+            </li>
+
+            <li>
+              <a href="../services/kpi-design-monitoraggio.html">
+                <span class="navbar__submenu-title">
+                  KPI Design &amp; Monitoraggio
+                </span>
+                <span class="navbar__submenu-description">
+                  Metriche chiare per monitorare ciò che conta.
+                </span>
+              </a>
+            </li>
+
+            <li>
+              <a href="../services/data-modeling-integrazione.html">
+                <span class="navbar__submenu-title">
+                  Data Modeling &amp; Integrazione
+                </span>
+                <span class="navbar__submenu-description">
+                  Fonti diverse organizzate in un modello affidabile.
+                </span>
+              </a>
+            </li>
+
+            <li>
+              <a href="../services/reporting-automatizzato.html">
+                <span class="navbar__submenu-title">
+                  Reporting automatizzato
+                </span>
+                <span class="navbar__submenu-description">
+                  Processi di reporting più rapidi e ripetibili.
+                </span>
+              </a>
+            </li>
+          </ul>
+        </li>
+
+        <!-- PROGETTI -->
+        <li class="navbar__item navbar__item--has-submenu">
+          <div class="navbar__item-control">
+            <a
+              class="navbar__link"
+              href="../index-en.html#projects__id"
+            >
+              Projects
+            </a>
+
+            <button
+              type="button"
+              class="navbar__submenu-toggle"
+              aria-expanded="false"
+              aria-controls="projectsSubmenu"
+              aria-label="Open Projects menu"
+            >
+              <span aria-hidden="true">▾</span>
+            </button>
+          </div>
+
+          <ul
+            class="navbar__submenu navbar__submenu--projects"
+            id="projectsSubmenu"
+            aria-label="Pagine progetti"
+          >
+            <li>
+              <a href="../projects/business-plan.html">
+                <span class="navbar__submenu-title">
+                  Business Plan &amp; Financial Analysis
+                </span>
+                <span class="navbar__submenu-description">
+                  Pianificazione finanziaria, scenari e sostenibilità economica.
+                </span>
+              </a>
+            </li>
+
+            <li>
+              <a href="../projects/hotel-market-insights.html">
+                <span class="navbar__submenu-title">
+                  Hotel Market Analysis &amp; Revenue Insights
+                </span>
+                <span class="navbar__submenu-description">
+                  Performance alberghiera, booking e distribuzione.
+                </span>
+              </a>
+            </li>
+
+            <li>
+              <a href="../projects/sales-performance-forecast.html">
+                <span class="navbar__submenu-title">
+                  Sales Performance &amp; Forecast
+                </span>
+                <span class="navbar__submenu-description">
+                  Vendite, obiettivi, pipeline e previsioni.
+                </span>
+              </a>
+            </li>
+          </ul>
+        </li>
+
+        <li class="navbar__item">
+          <a
+            class="navbar__link"
+            href="./index-en.html"
+            aria-current="page"
+          >
+            Blog
+          </a>
+        </li>
+
+        <li class="navbar__item">
+          <a
+            class="navbar__link"
+            href="../index-en.html#about__id"
+          >
+            About Me
+          </a>
+        </li>
+
+        <li class="navbar__item">
+          <a
+            class="navbar__link"
+            href="../index-en.html#contacts__id"
+          >
+            Contacts
+          </a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="navbar__actions">
+      <div
+        class="language-selector"
+        data-it="./index.html"
+        data-en="./index-en.html"
+      >
+        <button
+          type="button"
+          class="language-selector__button"
+          onclick="toggleLanguageMenu(event);"
+          aria-haspopup="true"
+          aria-expanded="false"
+          aria-controls="languageMenu"
+        >
+          🇮🇹
+          <span>EN</span>
+          <span class="language-selector__arrow">▾</span>
+        </button>
+
+        <div
+          class="language-selector__menu"
+          id="languageMenu"
+        >
+          <button
+            type="button"
+            onclick="setLanguage('it')"
+          >
+            🇮🇹 Italiano
+          </button>
+
+          <button
+            type="button"
+            onclick="setLanguage('en')"
+          >
+            🇬🇧 English
+          </button>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+
+<main>
+
+  <article class="blog-article">
+
+<header class="blog-article__header">
+
+  <div class="blog-shell">
+
+    <div class="blog-article__hero-grid">
+
+      <div class="blog-article__hero-copy">
+
+        <a
+          class="blog-article__back"
+          href="./index-en.html"
+        >
+          ← Back to Blog
+        </a>
+
+        <div class="blog-article__meta">
+          <span>{{CATEGORY}}</span>
+          <span>{{DATE}}</span>
+          <span>{{READING_TIME}} MIN READ</span>
+        </div>
+
+        <h1 class="blog-article__title">
+          {{TITLE}}
+        </h1>
+
+        <p class="blog-article__intro">
+          {{DESCRIPTION}}
+        </p>
+
+      </div>
+
+      <figure class="blog-article__hero">
+
+        <img
+          src="{{IMAGE}}"
+          alt="{{IMAGE_ALT}}"
+          loading="eager"
+          decoding="async"
+        />
+
+      </figure>
+
+    </div>
+
+  </div>
+
+</header>
+
+    <div class="blog-shell">
+
+      <div class="blog-article__layout">
+
+        <div class="blog-article__content">
+
+          {{ARTICLE_BODY}}
+
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <section
+      class="blog-article__cta"
+      aria-labelledby="article-cta-title"
+    >
+
+      <div class="blog-shell">
+
+        <div class="blog-article__cta-inner">
+
+          <div>
+
+            <p class="blog-article__cta-kicker">
+              Have a Power BI project?
+            </p>
+
+            <h2 id="article-cta-title">
+              Turn your data into a practical tool for better decisions.
+            </h2>
+
+          </div>
+
+          <a
+            class="blog-button"
+            href="../index-en.html#contacts__id"
+          >
+            Let's talk
+          </a>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </article>
+
+</main>
+
+    <!-- ======================================================
+         FOOTER
+         ====================================================== -->
+
+<!-- INIZIO SEZIONE FOOTER -->
+<footer class="footer">
+
+  <div class="footer__main">
+
+    <div class="footer__brand-block">
+
+      <a
+        href="../index-en.html"
+        class="footer__brand"
+        aria-label="Torna alla homepage"
+      >
+        <span
+          class="footer__monogram"
+          aria-hidden="true"
+        >
+          DF
+        </span>
+
+        <span class="footer__identity">
+          <span class="footer__name">
+            Dina Fiorentino
+          </span>
+
+          <span class="footer__role">
+            Data Analyst &amp; Power BI Consultant
+          </span>
+        </span>
+      </a>
+
+      <p class="footer__description">
+        Dashboard, reporting e modelli dati progettati per trasformare
+        informazioni complesse in decisioni più chiare.
+      </p>
+
+      <div
+        class="footer__socials"
+        aria-label="Professional contacts"
+      >
+        <a
+          href="https://www.linkedin.com/in/dina-fiorentino/"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Profilo LinkedIn di Dina Fiorentino"
+        >
+          <i
+            class="fa-brands fa-linkedin-in"
+            aria-hidden="true"
+          ></i>
+          <span>LinkedIn</span>
+        </a>
+
+        <a
+          href="mailto:dinafiorentino.consulting@outlook.it"
+          aria-label="Invia una email a Dina Fiorentino"
+        >
+          <i
+            class="fa-regular fa-envelope"
+            aria-hidden="true"
+          ></i>
+          <span>Email</span>
+        </a>
+      </div>
+
+    </div>
+
+
+    <nav
+      class="footer__column"
+      aria-label="Navigazione footer"
+    >
+      <p class="footer__heading">
+        Esplora
+      </p>
+
+      <a href="../index-en.html#services__id">
+        Services
+      </a>
+
+      <a href="../index-en.html#projects__id">
+        Projects
+      </a>
+
+      <a href="../index-en.html#about__id">
+        About Me
+      </a>
+
+      <a href="../index-en.html#contacts__id">
+        Contacts
+      </a>
+    </nav>
+
+
+    <div class="footer__column footer__column--services">
+
+      <p class="footer__heading">
+        Services
+      </p>
+
+      <a href="../services/dashboard-powerBI.html">
+        Dashboard Power BI
+      </a>
+
+      <a href="../services/reporting-automatizzato.html">
+        Reporting automatizzato
+      </a>
+
+      <a href="../services/kpi-design-monitoraggio.html">
+        KPI design
+      </a>
+
+      <a href="../services/data-modeling-integrazione.html">
+        Data modeling
+      </a>
+
+    </div>
+
+
+    <div class="footer__column footer__column--contact">
+
+      <p class="footer__heading">
+        Collaboriamo
+      </p>
+
+      <p>
+        Disponibile per progetti di analisi dati, dashboard e reporting
+        aziendale.
+      </p>
+
+      <a
+        href="../index-en.html#contacts__id"
+        class="footer__contact-button"
+      >
+        Parliamo del tuo progetto
+        <span aria-hidden="true">→</span>
+      </a>
+
+    </div>
+
+  </div>
+
+
+  <div class="footer__bottom">
+
+    <p class="copyright__text">
+      © 2026 Dina Fiorentino. Tutti i diritti riservati.
+    </p>
+
+    <nav
+      class="privacy__box"
+      aria-label="Link legali e lingua"
+    >
+      <a
+        href="../privacy-en.html?from=blog-en"
+        class="privacy__text"
+      >
+        Privacy
+      </a>
+
+      <a
+        href="../cookie-en.html?from=blog-en"
+        class="cookie__text"
+      >
+        Cookie
+      </a>
+
+      <a
+        href="./index.html"
+        class="footer__language"
+      >
+        Italiano
+      </a>
+    </nav>
+
+  </div>
+
+</footer>
+<!-- FINE SEZIONE FOOTER -->
+
+    <script
+      src="../assets/js/script.js"
+      defer
+    ></script>
+
+  </body>
+</html>
