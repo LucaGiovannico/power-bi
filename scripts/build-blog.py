@@ -1,3 +1,5 @@
+import json
+from xml.etree import ElementTree as ET
 from pathlib import Path
 
 from html import escape
@@ -764,6 +766,137 @@ def render_article_page(article):
             meta["date"]
         )
 
+    description = str(meta["description"])
+    published_date = str(meta["date"])
+    category = str(meta["category"])
+
+    image_path = str(
+        meta["image"]
+    ).replace("\\", "/")
+
+    while image_path.startswith("../"):
+        image_path = image_path[3:]
+
+    image_url = (
+        f"{SITE_URL}/"
+        f"{image_path.lstrip('/')}"
+    )
+
+    if lang == "it":
+        og_locale = "it_IT"
+        og_locale_alternate = "en_US"
+        schema_language = "it-IT"
+    else:
+        og_locale = "en_US"
+        og_locale_alternate = "it_IT"
+        schema_language = "en-US"
+
+    social_meta = f"""\
+    <meta property="og:type" content="article" />
+    <meta
+      property="og:title"
+      content="{escape(title, quote=True)}"
+    />
+    <meta
+      property="og:description"
+      content="{escape(description, quote=True)}"
+    />
+    <meta
+      property="og:url"
+      content="{escape(canonical_url, quote=True)}"
+    />
+    <meta
+      property="og:image"
+      content="{escape(image_url, quote=True)}"
+    />
+    <meta
+      property="og:image:alt"
+      content="{escape(str(meta['image_alt']), quote=True)}"
+    />
+    <meta
+      property="og:site_name"
+      content="Dina Fiorentino"
+    />
+    <meta
+      property="og:locale"
+      content="{og_locale}"
+    />
+    <meta
+      property="og:locale:alternate"
+      content="{og_locale_alternate}"
+    />
+    <meta
+      property="article:published_time"
+      content="{escape(published_date, quote=True)}"
+    />
+    <meta
+      property="article:section"
+      content="{escape(category, quote=True)}"
+    />
+
+    <meta
+      name="twitter:card"
+      content="summary_large_image"
+    />
+    <meta
+      name="twitter:title"
+      content="{escape(title, quote=True)}"
+    />
+    <meta
+      name="twitter:description"
+      content="{escape(description, quote=True)}"
+    />
+    <meta
+      name="twitter:image"
+      content="{escape(image_url, quote=True)}"
+    />
+    <meta
+      name="twitter:image:alt"
+      content="{escape(str(meta['image_alt']), quote=True)}"
+    />"""
+
+    structured_data = {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "headline": title,
+        "description": description,
+        "image": [
+            image_url
+        ],
+        "datePublished": published_date,
+        "inLanguage": schema_language,
+        "articleSection": category,
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": canonical_url,
+        },
+        "author": {
+            "@type": "Person",
+            "name": "Dina Fiorentino",
+            "url": SITE_URL,
+        },
+        "isPartOf": {
+            "@type": "Blog",
+            "name": "Dina Fiorentino Blog",
+            "url": f"{SITE_URL}/blog/",
+        },
+    }
+
+    structured_json = json.dumps(
+        structured_data,
+        ensure_ascii=False,
+        indent=2,
+    ).replace(
+        "</",
+        "<\\/",
+    )
+
+    structured_data_html = (
+        '    <script type="application/ld+json">\n'
+        + structured_json
+        + '\n    </script>'
+    )
+
     replacements = {
         "{{SEO_TITLE}}": escape(
             seo_title
@@ -778,6 +911,10 @@ def render_article_page(article):
         ),
         "{{HREFLANG_ALTERNATES}}":
             hreflang_alternates,
+        "{{SOCIAL_META}}":
+            social_meta,
+        "{{STRUCTURED_DATA}}":
+            structured_data_html,
         "{{LANG_IT_URL}}": escape(
             lang_it_url,
             quote=True,
@@ -1298,6 +1435,143 @@ def generate_archive_en(articles):
     )
 
 
+
+def update_sitemap(articles):
+    sitemap_path = ROOT / "sitemap.xml"
+
+    if not sitemap_path.exists():
+        raise FileNotFoundError(
+            "sitemap.xml non trovato"
+        )
+
+    tree = ET.parse(sitemap_path)
+    root = tree.getroot()
+
+    # Rileva automaticamente il namespace XML esistente.
+    if root.tag.startswith("{"):
+        namespace = root.tag.split(
+            "}",
+            1,
+        )[0][1:]
+
+        ET.register_namespace(
+            "",
+            namespace,
+        )
+
+        def xml_tag(name):
+            return (
+                f"{{{namespace}}}{name}"
+            )
+
+    else:
+        def xml_tag(name):
+            return name
+
+    # ------------------------------------------------------
+    # Rimuove eventuali URL Blog già presenti.
+    # Verranno ricreati dalla fonte dati corrente.
+    # ------------------------------------------------------
+
+    blog_prefix = (
+        f"{SITE_URL}/blog/"
+    )
+
+    for url_element in list(
+        root.findall(xml_tag("url"))
+    ):
+        loc_element = url_element.find(
+            xml_tag("loc")
+        )
+
+        if (
+            loc_element is not None
+            and loc_element.text
+            and loc_element.text.strip().startswith(
+                blog_prefix
+            )
+        ):
+            root.remove(url_element)
+
+    # ------------------------------------------------------
+    # Pagine principali Blog
+    # ------------------------------------------------------
+
+    blog_urls = [
+        f"{SITE_URL}/blog/",
+        f"{SITE_URL}/blog/index-en.html",
+        f"{SITE_URL}/blog/articoli.html",
+        f"{SITE_URL}/blog/articles.html",
+    ]
+
+    # ------------------------------------------------------
+    # Articoli pubblicati IT / EN
+    # ------------------------------------------------------
+
+    published_articles = [
+        article
+        for article in articles
+        if (
+            article["metadata"]["published"]
+            and article["metadata"]["lang"]
+            in {"it", "en"}
+        )
+    ]
+
+    published_articles.sort(
+        key=lambda article: (
+            str(
+                article["metadata"]["slug"]
+            ),
+            0
+            if article["metadata"]["lang"]
+            == "it"
+            else 1,
+        )
+    )
+
+    for article in published_articles:
+        filename = article_filename(
+            article["metadata"]
+        )
+
+        blog_urls.append(
+            f"{SITE_URL}/blog/{filename}"
+        )
+
+    # ------------------------------------------------------
+    # Scrittura URL
+    # ------------------------------------------------------
+
+    for url in blog_urls:
+        url_element = ET.SubElement(
+            root,
+            xml_tag("url"),
+        )
+
+        loc_element = ET.SubElement(
+            url_element,
+            xml_tag("loc"),
+        )
+
+        loc_element.text = url
+
+    ET.indent(
+        tree,
+        space="  ",
+    )
+
+    tree.write(
+        sitemap_path,
+        encoding="utf-8",
+        xml_declaration=True,
+    )
+
+    print(
+        f"✓ sitemap.xml aggiornata "
+        f"con {len(blog_urls)} URL Blog"
+    )
+
 def main():
     article_paths = sorted(
         CONTENT_DIR.glob("*/*.md")
@@ -1392,6 +1666,14 @@ def main():
 
     generate_archive_it(articles)
     generate_archive_en(articles)
+
+    print()
+    print("=" * 60)
+    print("SITEMAP")
+    print("=" * 60)
+    print()
+
+    update_sitemap(articles)
 
 if __name__ == "__main__":
     main()

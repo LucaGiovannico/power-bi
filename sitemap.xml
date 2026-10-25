@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version='1.0' encoding='utf-8'?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://www.dinafiorentino.com/cookie-en.html</loc>
@@ -59,5 +59,35 @@
   </url>
   <url>
     <loc>https://www.dinafiorentino.com/services/reporting-automatizzato.html</loc>
+  </url>
+  <url>
+    <loc>https://www.dinafiorentino.com/blog/</loc>
+  </url>
+  <url>
+    <loc>https://www.dinafiorentino.com/blog/index-en.html</loc>
+  </url>
+  <url>
+    <loc>https://www.dinafiorentino.com/blog/articoli.html</loc>
+  </url>
+  <url>
+    <loc>https://www.dinafiorentino.com/blog/articles.html</loc>
+  </url>
+  <url>
+    <loc>https://www.dinafiorentino.com/blog/5-formule-dax-da-conoscere.html</loc>
+  </url>
+  <url>
+    <loc>https://www.dinafiorentino.com/blog/5-formule-dax-da-conoscere-en.html</loc>
+  </url>
+  <url>
+    <loc>https://www.dinafiorentino.com/blog/data-storytelling-un-buon-grafico-non-basta.html</loc>
+  </url>
+  <url>
+    <loc>https://www.dinafiorentino.com/blog/data-storytelling-un-buon-grafico-non-basta-en.html</loc>
+  </url>
+  <url>
+    <loc>https://www.dinafiorentino.com/blog/power-bi-agosto-2026.html</loc>
+  </url>
+  <url>
+    <loc>https://www.dinafiorentino.com/blog/power-bi-agosto-2026-en.html</loc>
   </url>
 </urlset>
