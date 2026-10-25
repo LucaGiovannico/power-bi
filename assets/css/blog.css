@@ -2144,6 +2144,7 @@ body.blog-page .blog-button--secondary {
 
 .article-card__visual--image {
   overflow: hidden;
+  background: #171064;
 }
 
 .article-card__image {
