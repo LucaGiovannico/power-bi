@@ -30,6 +30,11 @@
 
     <link
       rel="stylesheet"
+      href="../assets/css/contact-modal.css"
+    />
+
+    <link
+      rel="stylesheet"
       href="../assets/css/navigation.css"
     />
 
@@ -285,8 +290,8 @@
     <div class="navbar__actions">
       <div
         class="language-selector"
-        data-it="./index.html"
-        data-en="./index-en.html"
+        data-it="{{LANG_IT_URL}}"
+        data-en="{{LANG_EN_URL}}"
       >
         <button
           type="button"
@@ -296,7 +301,7 @@
           aria-expanded="false"
           aria-controls="languageMenu"
         >
-          🇮🇹
+          🇬🇧
           <span>EN</span>
           <span class="language-selector__arrow">▾</span>
         </button>
@@ -412,12 +417,12 @@
 
           </div>
 
-          <a
-            class="blog-button"
-            href="../index-en.html#contacts__id"
+          <button
+            type="button"
+            class="blog-button js-open-contact-form"
           >
             Let's talk
-          </a>
+          </button>
 
         </div>
 
@@ -428,6 +433,152 @@
   </article>
 
 </main>
+
+<div
+        class="form-modal"
+        id="contactFormModal"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="contactFormTitle"
+      >
+        <div class="form-modal__overlay" id="closeContactForm"></div>
+
+        <div class="form-modal__card">
+          <button
+            type="button"
+            class="form-modal__close"
+            id="closeContactFormButton"
+            aria-label="Close contact form"
+          >
+            ×
+          </button>
+
+          <p class="form-modal__eyebrow">FREE CONSULTATION</p>
+
+          <h2 class="form-modal__title" id="contactFormTitle">
+            Tell me about your project
+          </h2>
+
+          <p class="form-modal__text">
+            Fill out the form and briefly describe your needs. I will get back
+            to you to understand how to make KPIs, reports and dashboards
+            clearer.
+          </p>
+
+          <form
+            id="contactForm"
+            action="https://formspree.io/f/xkoandwa"
+            method="POST"
+            class="contact-form"
+          >
+            <div class="form-grid">
+              <div class="form-group">
+                <label for="name">Full name *</label>
+                <input
+                  id="name"
+                  type="text"
+                  name="name"
+                  placeholder="John Smith"
+                  required
+                />
+              </div>
+
+              <div class="form-group">
+                <label for="email">Email *</label>
+                <input
+                  id="email"
+                  type="email"
+                  name="email"
+                  placeholder="name@company.com"
+                  required
+                />
+              </div>
+
+              <div class="form-group">
+                <label for="phone">Phone / WhatsApp</label>
+                <input
+                  id="phone"
+                  type="tel"
+                  name="phone"
+                  placeholder="+44 7700 900123"
+                />
+              </div>
+
+              <div class="form-group">
+                <label for="company">Company</label>
+                <input
+                  id="company"
+                  type="text"
+                  name="company"
+                  placeholder="Company name"
+                />
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="goal">Main goal *</label>
+              <select id="goal" name="goal" required>
+                <option value="">Select a goal</option>
+                <option value="Power BI Dashboard">Power BI Dashboard</option>
+                <option value="Automated reporting">Automated reporting</option>
+                <option value="KPI and monitoring">KPI and monitoring</option>
+                <option value="Financial analysis">Financial analysis</option>
+                <option value="Data modeling">Data modeling</option>
+                <option value="Other">Other</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="message">Message *</label>
+              <textarea
+                id="message"
+                name="message"
+                rows="5"
+                placeholder="Briefly describe your current situation, the difficulties you are facing and what you would like to improve."
+                required
+              ></textarea>
+            </div>
+
+            <p class="form-privacy-note">
+              The data entered will be used exclusively to respond to your
+              contact request and evaluate a possible collaboration.
+            </p>
+
+            <label class="privacy-check">
+              <input type="checkbox" name="privacy" required />
+              <span>
+                I have read and accept the
+                <a
+                  href="../privacy-en.html"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Privacy Policy
+                </a>
+                and authorize the processing of my data so I can be contacted
+                regarding the request submitted.
+              </span>
+            </label>
+
+            <button type="submit" class="contact-form__button">
+              Book a free consultation
+            </button>
+
+            <p id="formSuccessMessage" class="form-success-message" role="status">
+              Thank you! Your request has been sent successfully. I will get
+              back to you as soon as possible.
+            </p>
+
+            <p id="formErrorMessage"
+              class="form-error-message"
+              role="alert"
+              aria-live="assertive">
+              Your request could not be sent. Please try again shortly or contact me by email.
+            </p>
+
+          </form>
+        </div>
+      </div>
 
     <!-- ======================================================
          FOOTER
@@ -600,7 +751,7 @@
       </a>
 
       <a
-        href="./index.html"
+        href="{{LANG_IT_URL}}"
         class="footer__language"
       >
         Italiano

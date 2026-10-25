@@ -30,6 +30,11 @@
 
     <link
       rel="stylesheet"
+      href="../assets/css/contact-modal.css"
+    />
+
+    <link
+      rel="stylesheet"
       href="../assets/css/navigation.css"
     />
 
@@ -285,8 +290,8 @@
     <div class="navbar__actions">
       <div
         class="language-selector"
-        data-it="./index.html"
-        data-en="./index-en.html"
+        data-it="{{LANG_IT_URL}}"
+        data-en="{{LANG_EN_URL}}"
       >
         <button
           type="button"
@@ -412,12 +417,12 @@
 
           </div>
 
-          <a
-            class="blog-button"
-            href="../index.html#contacts__id"
+          <button
+            type="button"
+            class="blog-button js-open-contact-form"
           >
             Parliamone
-          </a>
+          </button>
 
         </div>
 
@@ -428,6 +433,155 @@
   </article>
 
 </main>
+
+<div
+        class="form-modal"
+        id="contactFormModal"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="contactFormTitle"
+      >
+        <div class="form-modal__overlay" id="closeContactForm"></div>
+
+        <div class="form-modal__card">
+          <button
+            type="button"
+            class="form-modal__close"
+            id="closeContactFormButton"
+            aria-label="Chiudi il modulo di contatto"
+          >
+            ×
+          </button>
+
+          <p class="form-modal__eyebrow">CONSULENZA GRATUITA</p>
+
+          <h2 class="form-modal__title" id="contactFormTitle">
+            Raccontami il tuo progetto
+          </h2>
+
+          <p class="form-modal__text">
+            Compila il modulo e descrivi brevemente le tue esigenze. Ti
+            ricontatterò per capire come rendere più chiari KPI, report e
+            dashboard.
+          </p>
+
+          <form
+            id="contactForm"
+            action="https://formspree.io/f/xkoandwa"
+            method="POST"
+            class="contact-form"
+          >
+            <div class="form-grid">
+              <div class="form-group">
+                <label for="name">Nome e Cognome *</label>
+                <input
+                  id="name"
+                  type="text"
+                  name="name"
+                  placeholder="Mario Rossi"
+                  required
+                />
+              </div>
+
+              <div class="form-group">
+                <label for="email">Email *</label>
+                <input
+                  id="email"
+                  type="email"
+                  name="email"
+                  placeholder="nome@azienda.it"
+                  required
+                />
+              </div>
+
+              <div class="form-group">
+                <label for="phone">Telefono / WhatsApp</label>
+                <input
+                  id="phone"
+                  type="tel"
+                  name="phone"
+                  placeholder="+39 333 1234567"
+                />
+              </div>
+
+              <div class="form-group">
+                <label for="company">Azienda</label>
+                <input
+                  id="company"
+                  type="text"
+                  name="company"
+                  placeholder="Nome azienda"
+                />
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="goal">Obiettivo principale *</label>
+              <select id="goal" name="goal" required>
+                <option value="">Seleziona un obiettivo</option>
+                <option value="Dashboard Power BI">Dashboard Power BI</option>
+                <option value="Reporting automatico">
+                  Reporting automatico
+                </option>
+                <option value="KPI e monitoraggio">KPI e monitoraggio</option>
+                <option value="Analisi finanziaria">Analisi finanziaria</option>
+                <option value="Data modeling">Data modeling</option>
+                <option value="Altro">Altro</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="message">Messaggio *</label>
+              <textarea
+                id="message"
+                name="message"
+                rows="5"
+                placeholder="Descrivi brevemente la situazione attuale, le difficoltà che stai incontrando e cosa vorresti migliorare."
+                required
+              ></textarea>
+            </div>
+
+            <p class="form-privacy-note">
+              I dati inseriti saranno utilizzati esclusivamente per rispondere
+              alla tua richiesta di contatto e valutare una possibile
+              collaborazione.
+            </p>
+
+            <label class="privacy-check">
+              <input type="checkbox" name="privacy" required />
+              <span>
+                Ho letto e accetto la
+                <a
+                  href="../privacy.html"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Privacy Policy
+                </a>
+                e autorizzo il trattamento dei miei dati per essere ricontattato
+                in merito alla richiesta inviata.
+              </span>
+            </label>
+
+            <button type="submit" class="contact-form__button">
+              Prenota una consulenza gratuita
+            </button>
+
+            <p id="formSuccessMessage" class="form-success-message" role="status" aria-live="polite">
+              Grazie! La richiesta è stata inviata correttamente. Ti
+              ricontatterò al più presto.
+            </p>
+
+            <p id="formErrorMessage"
+               class="form-error-message"
+               role="alert"
+               aria-live="assertive">
+               Non è stato possibile inviare la richiesta. Riprova tra poco oppure contattami via email.
+            </p>
+
+          </form>
+        </div>
+      </div>
 
     <!-- ======================================================
          FOOTER
@@ -600,7 +754,7 @@
       </a>
 
       <a
-        href="./index-en.html"
+        href="{{LANG_EN_URL}}"
         class="footer__language"
       >
         English

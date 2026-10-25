@@ -1,0 +1,969 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+<title>Data storytelling: a good chart is not enough | Dina Fiorentino</title>
+
+<meta
+  name="description"
+  content="How to turn charts and dashboards into clearer visual narratives using hierarchy, context, comparison and decision-oriented messages."
+/>
+
+<link
+  rel="canonical"
+  href="https://www.dinafiorentino.com/blog/data-storytelling-un-buon-grafico-non-basta-en.html"
+/>
+
+    <link
+      rel="alternate"
+      hreflang="it"
+      href="https://www.dinafiorentino.com/blog/data-storytelling-un-buon-grafico-non-basta.html"
+    />
+    <link
+      rel="alternate"
+      hreflang="en"
+      href="https://www.dinafiorentino.com/blog/data-storytelling-un-buon-grafico-non-basta-en.html"
+    />
+    <link
+      rel="alternate"
+      hreflang="x-default"
+      href="https://www.dinafiorentino.com/blog/data-storytelling-un-buon-grafico-non-basta.html"
+    />
+
+    <link
+      rel="stylesheet"
+      href="../assets/css/blog.css"
+    />
+
+    <link
+      rel="stylesheet"
+      href="../assets/css/blog-article.css"
+    />
+
+    <link
+      rel="stylesheet"
+      href="../assets/css/contact-modal.css"
+    />
+
+    <link
+      rel="stylesheet"
+      href="../assets/css/navigation.css"
+    />
+
+    <link
+      rel="stylesheet"
+      href="../assets/css/footer.css"
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Limelight&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Poppins:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
+
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="../assets/images/favicon/apple-touch-icon.png"
+    />
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="../assets/images/favicon/favicon-32x32.png"
+    />
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="../assets/images/favicon/favicon-16x16.png"
+    />
+
+    <link
+      rel="manifest"
+      href="../assets/images/favicon/site.webmanifest"
+    />
+
+    <link
+      rel="icon"
+      href="../assets/images/favicon/favicon.ico"
+    />
+  </head>
+
+  <body class="blog-page">
+
+    <!-- ======================================================
+         NAVBAR
+         ====================================================== -->
+
+<header class="site-header">
+  <nav class="navbar" aria-label="Navigazione principale">
+    <a
+      href="../index-en.html"
+      class="navbar__brand"
+      aria-label="Torna alla homepage"
+    >
+      <span class="navbar__monogram" aria-hidden="true">DF</span>
+
+      <span class="navbar__identity">
+        <span class="navbar__name">Dina Fiorentino</span>
+        <span class="navbar__role">
+          Data Analyst &amp; Power BI Consultant
+        </span>
+      </span>
+    </a>
+
+    <button
+      type="button"
+      class="navbar__toggle"
+      aria-expanded="false"
+      aria-controls="mainNavMenu"
+      aria-label="Apri il menu di navigazione"
+    >
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </button>
+
+    <div class="navbar__menu" id="mainNavMenu">
+      <ul class="navbar__list">
+        <!-- SERVIZI -->
+        <li class="navbar__item navbar__item--has-submenu">
+          <div class="navbar__item-control">
+            <a
+              class="navbar__link"
+              href="../index-en.html#services__id"
+            >
+              Services
+            </a>
+
+            <button
+              type="button"
+              class="navbar__submenu-toggle"
+              aria-expanded="false"
+              aria-controls="servicesSubmenu"
+              aria-label="Open Services menu"
+            >
+              <span aria-hidden="true">▾</span>
+            </button>
+          </div>
+
+          <ul
+            class="navbar__submenu navbar__submenu--services"
+            id="servicesSubmenu"
+            aria-label="Pagine servizi"
+          >
+            <li>
+              <a href="../services/dashboard-powerBI.html">
+                <span class="navbar__submenu-title">
+                  Dashboard Power BI su misura
+                </span>
+                <span class="navbar__submenu-description">
+                  Dashboard interattive progettate sui tuoi KPI.
+                </span>
+              </a>
+            </li>
+
+            <li>
+              <a href="../services/kpi-design-monitoraggio.html">
+                <span class="navbar__submenu-title">
+                  KPI Design &amp; Monitoraggio
+                </span>
+                <span class="navbar__submenu-description">
+                  Metriche chiare per monitorare ciò che conta.
+                </span>
+              </a>
+            </li>
+
+            <li>
+              <a href="../services/data-modeling-integrazione.html">
+                <span class="navbar__submenu-title">
+                  Data Modeling &amp; Integrazione
+                </span>
+                <span class="navbar__submenu-description">
+                  Fonti diverse organizzate in un modello affidabile.
+                </span>
+              </a>
+            </li>
+
+            <li>
+              <a href="../services/reporting-automatizzato.html">
+                <span class="navbar__submenu-title">
+                  Reporting automatizzato
+                </span>
+                <span class="navbar__submenu-description">
+                  Processi di reporting più rapidi e ripetibili.
+                </span>
+              </a>
+            </li>
+          </ul>
+        </li>
+
+        <!-- PROGETTI -->
+        <li class="navbar__item navbar__item--has-submenu">
+          <div class="navbar__item-control">
+            <a
+              class="navbar__link"
+              href="../index-en.html#projects__id"
+            >
+              Projects
+            </a>
+
+            <button
+              type="button"
+              class="navbar__submenu-toggle"
+              aria-expanded="false"
+              aria-controls="projectsSubmenu"
+              aria-label="Open Projects menu"
+            >
+              <span aria-hidden="true">▾</span>
+            </button>
+          </div>
+
+          <ul
+            class="navbar__submenu navbar__submenu--projects"
+            id="projectsSubmenu"
+            aria-label="Pagine progetti"
+          >
+            <li>
+              <a href="../projects/business-plan.html">
+                <span class="navbar__submenu-title">
+                  Business Plan &amp; Financial Analysis
+                </span>
+                <span class="navbar__submenu-description">
+                  Pianificazione finanziaria, scenari e sostenibilità economica.
+                </span>
+              </a>
+            </li>
+
+            <li>
+              <a href="../projects/hotel-market-insights.html">
+                <span class="navbar__submenu-title">
+                  Hotel Market Analysis &amp; Revenue Insights
+                </span>
+                <span class="navbar__submenu-description">
+                  Performance alberghiera, booking e distribuzione.
+                </span>
+              </a>
+            </li>
+
+            <li>
+              <a href="../projects/sales-performance-forecast.html">
+                <span class="navbar__submenu-title">
+                  Sales Performance &amp; Forecast
+                </span>
+                <span class="navbar__submenu-description">
+                  Vendite, obiettivi, pipeline e previsioni.
+                </span>
+              </a>
+            </li>
+          </ul>
+        </li>
+
+        <li class="navbar__item">
+          <a
+            class="navbar__link"
+            href="./index-en.html"
+            aria-current="page"
+          >
+            Blog
+          </a>
+        </li>
+
+        <li class="navbar__item">
+          <a
+            class="navbar__link"
+            href="../index-en.html#about__id"
+          >
+            About Me
+          </a>
+        </li>
+
+        <li class="navbar__item">
+          <a
+            class="navbar__link"
+            href="../index-en.html#contacts__id"
+          >
+            Contacts
+          </a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="navbar__actions">
+      <div
+        class="language-selector"
+        data-it="./data-storytelling-un-buon-grafico-non-basta.html"
+        data-en="./data-storytelling-un-buon-grafico-non-basta-en.html"
+      >
+        <button
+          type="button"
+          class="language-selector__button"
+          onclick="toggleLanguageMenu(event);"
+          aria-haspopup="true"
+          aria-expanded="false"
+          aria-controls="languageMenu"
+        >
+          🇬🇧
+          <span>EN</span>
+          <span class="language-selector__arrow">▾</span>
+        </button>
+
+        <div
+          class="language-selector__menu"
+          id="languageMenu"
+        >
+          <button
+            type="button"
+            onclick="setLanguage('it')"
+          >
+            🇮🇹 Italiano
+          </button>
+
+          <button
+            type="button"
+            onclick="setLanguage('en')"
+          >
+            🇬🇧 English
+          </button>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+
+<main>
+
+  <article class="blog-article">
+
+<header class="blog-article__header">
+
+  <div class="blog-shell">
+
+    <div class="blog-article__hero-grid">
+
+      <div class="blog-article__hero-copy">
+
+        <a
+          class="blog-article__back"
+          href="./index-en.html"
+        >
+          ← Back to Blog
+        </a>
+
+        <div class="blog-article__meta">
+          <span>DATA STORYTELLING</span>
+          <span>October 25, 2026</span>
+          <span>6 MIN READ</span>
+        </div>
+
+        <h1 class="blog-article__title">
+          Data storytelling: a good chart is not enough
+        </h1>
+
+        <p class="blog-article__intro">
+          How to turn charts and dashboards into clearer visual narratives using hierarchy, context, comparison and decision-oriented messages.
+        </p>
+
+      </div>
+
+      <figure class="blog-article__hero">
+
+        <img
+          src="../assets/images/blog/hero-data-storytelling.png"
+          alt="Editorial visual focused on data storytelling and effective data communication"
+          loading="eager"
+          decoding="async"
+        />
+
+      </figure>
+
+    </div>
+
+  </div>
+
+</header>
+
+    <div class="blog-shell">
+
+      <div class="blog-article__layout">
+
+        <div class="blog-article__content">
+
+          <section class="blog-article__lead">
+  <span class="blog-article__lead-label">Context</span>
+<p>A chart can be technically correct and still communicate very little.</p>
+
+<p>It may contain accurate data, consistent colors and good formatting, while still leaving users to work out the important message on their own.</p>
+
+<p>This is where data storytelling comes in.</p>
+
+<p>Telling a story with data does not mean adding an artificial narrative to a dashboard. It means designing how information is presented so that people can quickly understand what is happening, why it matters and where they should focus their attention.</p>
+
+<p>In this article, we look at five useful principles for turning charts and dashboards into more effective communication tools.</p>
+</section>
+
+<div class="blog-article__sections-grid">
+<section class="blog-article__section-card">
+<h2>1. Start with the message, not the chart</h2>
+
+<p>One of the most common mistakes is starting with the type of visualization.</p>
+
+<p>A line chart, bar chart, matrix or card is selected first, and only afterwards do we try to understand what message it should communicate.</p>
+
+<p>A more effective approach starts with the question.</p>
+
+<p>What does the user need to understand?</p>
+
+<p>Is performance improving or declining?</p>
+
+<p>Which area is contributing most to the result?</p>
+
+<p>Where is there a variance from target?</p>
+
+<p>Which phenomenon requires attention?</p>
+
+<p>Once the message is clear, choosing the right visualization becomes much easier.</p>
+
+<p>If the main point is to show a trend, a line chart may be enough. If categories need to be compared, a bar chart may be clearer. If the goal is to highlight a single KPI against a target, a well-designed card may communicate more effectively than a complex chart.</p>
+
+<p>The visual should therefore be a consequence of the analytical question, not the starting point.</p>
+</section>
+
+<section class="blog-article__section-card">
+<h2>2. Build a visual hierarchy</h2>
+
+<p>Not every piece of information in a dashboard has the same importance.</p>
+
+<p>If every element uses the same visual weight, contrast and size, users are forced to decide for themselves where to look first.</p>
+
+<p>A good visual hierarchy creates a clear reading order.</p>
+
+<p>The main indicators should stand out first.</p>
+
+<p>Supporting information should remain available without competing with the central message.</p>
+
+<p>Secondary elements should help interpretation rather than increase noise.</p>
+
+<p>Size, position, whitespace, contrast and color can all be used to guide attention.</p>
+
+<p>A critical KPI can occupy a dominant position. A secondary comparison can be more discreet. An operational detail can be placed lower on the page or made available through interaction.</p>
+
+<p>Visual hierarchy therefore does more than make a dashboard look organized.</p>
+
+<p>It communicates implicitly which information should be read first and which should come afterwards.</p>
+</section>
+
+<section class="blog-article__section-card">
+<h2>3. Always give numbers context</h2>
+
+<p>An isolated number rarely tells enough of the story.</p>
+
+<p>Saying that revenue is 2.4 million may be correct, but it does not tell us whether that result is positive, negative or simply normal.</p>
+
+<p>The same value becomes much more informative when it is placed in context.</p>
+
+<p>2.4 million compared with what?</p>
+
+<p>Compared with the previous year?</p>
+
+<p>Compared with budget?</p>
+
+<p>Compared with target?</p>
+
+<p>Compared with the market average or another business area?</p>
+
+<p>Comparison turns a number into information that can be interpreted.</p>
+
+<p>For this reason, KPIs and metrics should often be accompanied by changes, benchmarks, targets or time references.</p>
+
+<p>The way the comparison is expressed also matters.</p>
+
+<p>A change of <code class="blog-article__inline-code">+8%</code> communicates more quickly than two separate values shown without an explicit relationship.</p>
+
+<p>Data storytelling is therefore not about showing more data, but about providing enough context for the main data point to be interpreted correctly.</p>
+</section>
+
+<section class="blog-article__section-card">
+<h2>4. Use color to explain, not decorate</h2>
+
+<p>Color is one of the most powerful tools in data visualization, but it can easily become noise.</p>
+
+<p>Using many different colors without a clear logic forces users to continuously decode what the visual means.</p>
+
+<p>A more controlled palette allows color to work as a signal.</p>
+
+<p>A neutral color can represent most information.</p>
+
+<p>An accent color can highlight what requires attention.</p>
+
+<p>Consistent colors can be associated with specific categories, statuses or KPIs.</p>
+
+<p>The important principle is that color should have a purpose.</p>
+
+<p>If everything is highlighted, nothing is truly highlighted.</p>
+
+<p>The same applies to red and green.</p>
+
+<p>They can be useful for communicating positive and negative performance, but they should not be the only element used to distinguish a status. Labels, icons, symbols and text can make the message more accessible and less ambiguous.</p>
+
+<p>Good use of color therefore reduces the effort required to read a dashboard.</p>
+</section>
+
+<section class="blog-article__section-card">
+<h2>5. Turn analysis into a direction for action</h2>
+
+<p>A dashboard becomes truly useful when it does more than show what happened.</p>
+
+<p>It should help users understand where to look next.</p>
+
+<p>This does not mean automatically recommending a decision, but making clear which elements deserve further investigation.</p>
+
+<p>A decline in sales can be accompanied by the category responsible for it.</p>
+
+<p>A budget variance can be connected to the geographic area generating it.</p>
+
+<p>A KPI outside target can be paired with the dimension most useful for understanding its cause.</p>
+
+<p>Dynamic titles, annotations, callouts and short descriptions can help make this relationship explicit.</p>
+
+<p>For example, instead of using a generic title such as <code class="blog-article__inline-code">Revenue by Region</code>, a visual could communicate the main message directly:</p>
+
+<p><code class="blog-article__inline-code">Southwest generates 45% of revenue</code></p>
+
+<p>The data does not change.</p>
+
+<p>What changes is how it is presented and, above all, how long it takes to understand.</p>
+
+<p>Data storytelling works when users do not have to reconstruct the meaning hidden behind every visual on their own.</p>
+</section>
+</div>
+
+<section class="blog-article__impact">
+  <div class="blog-article__impact-heading">
+    <span class="blog-article__impact-label">In practice</span>
+    <h2>What actually changes in everyday work</h2>
+  </div>
+  <div class="blog-article__impact-body">
+<p>Applying these principles means designing dashboards around the experience of the people who will use them.</p>
+
+<p>Before adding a new chart, it becomes useful to ask which question it should answer.</p>
+
+<p>Before using a color, it is worth checking whether that color actually communicates something.</p>
+
+<p>Before displaying a KPI, it is important to verify whether enough context is available to interpret it correctly.</p>
+
+<p>This approach often leads to simpler dashboards as well.</p>
+
+<p>Many elements that initially seemed necessary become redundant once the main message has been defined more precisely.</p>
+
+<p>The result is not a dashboard with less information, but a dashboard in which every piece of information has a clearer role.</p>
+  </div>
+</section>
+
+<section class="blog-article__summary">
+  <span class="blog-article__summary-label">In summary</span>
+  <h2>In summary</h2>
+<p>A good chart matters, but on its own it does not guarantee good communication.</p>
+
+<p>Data storytelling requires a clear message, visual hierarchy, comparisons that provide context, intentional use of color and a structure that helps users understand where to focus their attention.</p>
+
+<p>The goal is not to make data more spectacular.</p>
+
+<p>It is to make data easier to read, interpret and use.</p>
+
+<p>An effective dashboard does not simply show numbers and charts: it creates a path that helps users reach the information they need to make a decision more quickly.</p>
+</section>
+
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <section
+      class="blog-article__cta"
+      aria-labelledby="article-cta-title"
+    >
+
+      <div class="blog-shell">
+
+        <div class="blog-article__cta-inner">
+
+          <div>
+
+            <p class="blog-article__cta-kicker">
+              Have a Power BI project?
+            </p>
+
+            <h2 id="article-cta-title">
+              Turn your data into a practical tool for better decisions.
+            </h2>
+
+          </div>
+
+          <button
+            type="button"
+            class="blog-button js-open-contact-form"
+          >
+            Let's talk
+          </button>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </article>
+
+</main>
+
+<div
+        class="form-modal"
+        id="contactFormModal"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="contactFormTitle"
+      >
+        <div class="form-modal__overlay" id="closeContactForm"></div>
+
+        <div class="form-modal__card">
+          <button
+            type="button"
+            class="form-modal__close"
+            id="closeContactFormButton"
+            aria-label="Close contact form"
+          >
+            ×
+          </button>
+
+          <p class="form-modal__eyebrow">FREE CONSULTATION</p>
+
+          <h2 class="form-modal__title" id="contactFormTitle">
+            Tell me about your project
+          </h2>
+
+          <p class="form-modal__text">
+            Fill out the form and briefly describe your needs. I will get back
+            to you to understand how to make KPIs, reports and dashboards
+            clearer.
+          </p>
+
+          <form
+            id="contactForm"
+            action="https://formspree.io/f/xkoandwa"
+            method="POST"
+            class="contact-form"
+          >
+            <div class="form-grid">
+              <div class="form-group">
+                <label for="name">Full name *</label>
+                <input
+                  id="name"
+                  type="text"
+                  name="name"
+                  placeholder="John Smith"
+                  required
+                />
+              </div>
+
+              <div class="form-group">
+                <label for="email">Email *</label>
+                <input
+                  id="email"
+                  type="email"
+                  name="email"
+                  placeholder="name@company.com"
+                  required
+                />
+              </div>
+
+              <div class="form-group">
+                <label for="phone">Phone / WhatsApp</label>
+                <input
+                  id="phone"
+                  type="tel"
+                  name="phone"
+                  placeholder="+44 7700 900123"
+                />
+              </div>
+
+              <div class="form-group">
+                <label for="company">Company</label>
+                <input
+                  id="company"
+                  type="text"
+                  name="company"
+                  placeholder="Company name"
+                />
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="goal">Main goal *</label>
+              <select id="goal" name="goal" required>
+                <option value="">Select a goal</option>
+                <option value="Power BI Dashboard">Power BI Dashboard</option>
+                <option value="Automated reporting">Automated reporting</option>
+                <option value="KPI and monitoring">KPI and monitoring</option>
+                <option value="Financial analysis">Financial analysis</option>
+                <option value="Data modeling">Data modeling</option>
+                <option value="Other">Other</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="message">Message *</label>
+              <textarea
+                id="message"
+                name="message"
+                rows="5"
+                placeholder="Briefly describe your current situation, the difficulties you are facing and what you would like to improve."
+                required
+              ></textarea>
+            </div>
+
+            <p class="form-privacy-note">
+              The data entered will be used exclusively to respond to your
+              contact request and evaluate a possible collaboration.
+            </p>
+
+            <label class="privacy-check">
+              <input type="checkbox" name="privacy" required />
+              <span>
+                I have read and accept the
+                <a
+                  href="../privacy-en.html"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Privacy Policy
+                </a>
+                and authorize the processing of my data so I can be contacted
+                regarding the request submitted.
+              </span>
+            </label>
+
+            <button type="submit" class="contact-form__button">
+              Book a free consultation
+            </button>
+
+            <p id="formSuccessMessage" class="form-success-message" role="status">
+              Thank you! Your request has been sent successfully. I will get
+              back to you as soon as possible.
+            </p>
+
+            <p id="formErrorMessage"
+              class="form-error-message"
+              role="alert"
+              aria-live="assertive">
+              Your request could not be sent. Please try again shortly or contact me by email.
+            </p>
+
+          </form>
+        </div>
+      </div>
+
+    <!-- ======================================================
+         FOOTER
+         ====================================================== -->
+
+<!-- INIZIO SEZIONE FOOTER -->
+<footer class="footer">
+
+  <div class="footer__main">
+
+    <div class="footer__brand-block">
+
+      <a
+        href="../index-en.html"
+        class="footer__brand"
+        aria-label="Torna alla homepage"
+      >
+        <span
+          class="footer__monogram"
+          aria-hidden="true"
+        >
+          DF
+        </span>
+
+        <span class="footer__identity">
+          <span class="footer__name">
+            Dina Fiorentino
+          </span>
+
+          <span class="footer__role">
+            Data Analyst &amp; Power BI Consultant
+          </span>
+        </span>
+      </a>
+
+      <p class="footer__description">
+        Dashboard, reporting e modelli dati progettati per trasformare
+        informazioni complesse in decisioni più chiare.
+      </p>
+
+      <div
+        class="footer__socials"
+        aria-label="Professional contacts"
+      >
+        <a
+          href="https://www.linkedin.com/in/dina-fiorentino/"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Profilo LinkedIn di Dina Fiorentino"
+        >
+          <i
+            class="fa-brands fa-linkedin-in"
+            aria-hidden="true"
+          ></i>
+          <span>LinkedIn</span>
+        </a>
+
+        <a
+          href="mailto:dinafiorentino.consulting@outlook.it"
+          aria-label="Invia una email a Dina Fiorentino"
+        >
+          <i
+            class="fa-regular fa-envelope"
+            aria-hidden="true"
+          ></i>
+          <span>Email</span>
+        </a>
+      </div>
+
+    </div>
+
+
+    <nav
+      class="footer__column"
+      aria-label="Navigazione footer"
+    >
+      <p class="footer__heading">
+        Esplora
+      </p>
+
+      <a href="../index-en.html#services__id">
+        Services
+      </a>
+
+      <a href="../index-en.html#projects__id">
+        Projects
+      </a>
+
+      <a href="../index-en.html#about__id">
+        About Me
+      </a>
+
+      <a href="../index-en.html#contacts__id">
+        Contacts
+      </a>
+    </nav>
+
+
+    <div class="footer__column footer__column--services">
+
+      <p class="footer__heading">
+        Services
+      </p>
+
+      <a href="../services/dashboard-powerBI.html">
+        Dashboard Power BI
+      </a>
+
+      <a href="../services/reporting-automatizzato.html">
+        Reporting automatizzato
+      </a>
+
+      <a href="../services/kpi-design-monitoraggio.html">
+        KPI design
+      </a>
+
+      <a href="../services/data-modeling-integrazione.html">
+        Data modeling
+      </a>
+
+    </div>
+
+
+    <div class="footer__column footer__column--contact">
+
+      <p class="footer__heading">
+        Collaboriamo
+      </p>
+
+      <p>
+        Disponibile per progetti di analisi dati, dashboard e reporting
+        aziendale.
+      </p>
+
+      <a
+        href="../index-en.html#contacts__id"
+        class="footer__contact-button"
+      >
+        Parliamo del tuo progetto
+        <span aria-hidden="true">→</span>
+      </a>
+
+    </div>
+
+  </div>
+
+
+  <div class="footer__bottom">
+
+    <p class="copyright__text">
+      © 2026 Dina Fiorentino. Tutti i diritti riservati.
+    </p>
+
+    <nav
+      class="privacy__box"
+      aria-label="Link legali e lingua"
+    >
+      <a
+        href="../privacy-en.html?from=blog-en"
+        class="privacy__text"
+      >
+        Privacy
+      </a>
+
+      <a
+        href="../cookie-en.html?from=blog-en"
+        class="cookie__text"
+      >
+        Cookie
+      </a>
+
+      <a
+        href="./data-storytelling-un-buon-grafico-non-basta.html"
+        class="footer__language"
+      >
+        Italiano
+      </a>
+    </nav>
+
+  </div>
+
+</footer>
+<!-- FINE SEZIONE FOOTER -->
+
+    <script
+      src="../assets/js/script.js"
+      defer
+    ></script>
+
+  </body>
+</html>

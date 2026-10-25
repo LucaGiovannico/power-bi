@@ -320,6 +320,12 @@ def render_inline_markdown(text):
     text = escape(text)
 
     text = re.sub(
+        r"`([^`]+)`",
+        r'<code class="blog-article__inline-code">\1</code>',
+        text,
+    )
+
+    text = re.sub(
         r"\*\*(.+?)\*\*",
         r"<strong>\1</strong>",
         text,
@@ -346,6 +352,10 @@ def render_markdown(body):
     html_parts = []
     paragraph = []
     list_items = []
+
+    in_code_block = False
+    code_language = ""
+    code_lines = []
 
     def flush_paragraph():
         nonlocal paragraph
@@ -379,8 +389,54 @@ def render_markdown(body):
 
             list_items = []
 
+    def flush_code():
+        nonlocal code_lines
+        nonlocal code_language
+
+        code = escape(
+            "\n".join(code_lines)
+        )
+
+        language_class = ""
+
+        if code_language:
+            language_class = (
+                f' class="language-{escape(code_language.lower())}"'
+            )
+
+        html_parts.append(
+            '<pre class="blog-article__code">'
+            f'<code{language_class}>{code}</code>'
+            '</pre>'
+        )
+
+        code_lines = []
+        code_language = ""
+
     for raw_line in lines:
-        line = raw_line.strip()
+        stripped = raw_line.strip()
+
+        if stripped.startswith("```"):
+            flush_paragraph()
+            flush_list()
+
+            if not in_code_block:
+                in_code_block = True
+                code_language = (
+                    stripped[3:].strip()
+                )
+                code_lines = []
+            else:
+                flush_code()
+                in_code_block = False
+
+            continue
+
+        if in_code_block:
+            code_lines.append(raw_line)
+            continue
+
+        line = stripped
 
         if not line:
             flush_paragraph()
@@ -409,7 +465,7 @@ def render_markdown(body):
 
         if line.startswith("# "):
             raise ValueError(
-                "Il corpo dell'articolo non deve contenere "
+                "Il corpo Markdown non deve contenere "
                 "un H1: il titolo viene generato dal template."
             )
 
@@ -425,10 +481,16 @@ def render_markdown(body):
         flush_list()
         paragraph.append(line)
 
+    if in_code_block:
+        raise ValueError(
+            "Blocco di codice Markdown non chiuso"
+        )
+
     flush_paragraph()
     flush_list()
 
     return "\n\n".join(html_parts)
+
 
 def enhance_article_layout(html, lang):
     """
@@ -461,7 +523,7 @@ def enhance_article_layout(html, lang):
     current = labels[lang]
 
     numbered_pattern = re.compile(
-        r"(<h2>([1-6])\.\s.*?</h2>.*?)(?=<h2>|$)",
+        r"(<h2>(\d+)\.\s.*?</h2>.*?)(?=<h2>|$)",
         re.DOTALL,
     )
 
@@ -469,7 +531,7 @@ def enhance_article_layout(html, lang):
         numbered_pattern.finditer(html)
     )
 
-    if len(matches) == 6:
+    if matches:
         intro_html = html[
             :matches[0].start()
         ].strip()
@@ -660,6 +722,14 @@ def render_article_page(article):
         f"{title} | Dina Fiorentino"
     )
 
+    lang_it_url = (
+        f"./{meta['slug']}.html"
+    )
+
+    lang_en_url = (
+        f"./{meta['slug']}-en.html"
+    )
+
     it_url = (
     f"{SITE_URL}/blog/{meta['slug']}.html"
 )
@@ -708,6 +778,14 @@ def render_article_page(article):
         ),
         "{{HREFLANG_ALTERNATES}}":
             hreflang_alternates,
+        "{{LANG_IT_URL}}": escape(
+            lang_it_url,
+            quote=True,
+        ),
+        "{{LANG_EN_URL}}": escape(
+            lang_en_url,
+            quote=True,
+        ),
         "{{CATEGORY}}": escape(
             str(meta["category"])
         ),

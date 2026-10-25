@@ -1034,3 +1034,121 @@
   }
 
 }
+
+/* ==========================================================
+   ARTICLE — DAX CODE BLOCKS
+   ========================================================== */
+
+.blog-article__code {
+  width: 100%;
+  margin: 22px 0;
+  padding: 20px 22px;
+
+  overflow-x: auto;
+
+  border: 1px solid rgba(90, 82, 224, 0.16);
+  border-radius: 14px;
+
+  background: #171064;
+
+  box-shadow: 0 10px 28px rgba(33, 31, 45, 0.08);
+}
+
+.blog-article__code code {
+  display: block;
+
+  min-width: max-content;
+
+  color: #f7f7ff;
+
+  font-family:
+    "SFMono-Regular",
+    Consolas,
+    "Liberation Mono",
+    Menlo,
+    monospace;
+
+  font-size: 14px;
+  line-height: 1.7;
+
+  white-space: pre;
+  tab-size: 2;
+}
+
+@media (max-width: 768px) {
+  .blog-article__code {
+    margin: 18px 0;
+    padding: 17px 18px;
+    border-radius: 12px;
+  }
+
+  .blog-article__code code {
+    font-size: 12.5px;
+    line-height: 1.65;
+  }
+}
+
+.blog-article__inline-code {
+  padding: 0.12em 0.38em;
+
+  border: 1px solid rgba(90, 82, 224, 0.12);
+  border-radius: 5px;
+
+  background: rgba(90, 82, 224, 0.07);
+  color: #3730a3;
+
+  font-family:
+    "SFMono-Regular",
+    Consolas,
+    "Liberation Mono",
+    Menlo,
+    monospace;
+
+  font-size: 0.9em;
+}
+
+@media (min-width: 701px) {
+  .blog-article__hero:has(
+    img[src="../assets/images/blog/5-formule-dax-da-conoscere.png"]
+  ) {
+    height: auto;
+    min-height: 0;
+    aspect-ratio: auto;
+
+    background: transparent;
+  }
+
+  .blog-article__hero
+  img[src="../assets/images/blog/5-formule-dax-da-conoscere.png"] {
+    display: block;
+
+    width: 100%;
+    height: auto;
+
+    object-fit: initial;
+    object-position: center;
+  }
+}
+
+@media (min-width: 701px) {
+  .blog-article__hero:has(
+    img[src="../assets/images/blog/hero-data-storytelling.png"]
+  ) {
+    height: auto;
+    min-height: 0;
+    aspect-ratio: auto;
+
+    background: transparent;
+  }
+
+  .blog-article__hero
+  img[src="../assets/images/blog/hero-data-storytelling.png"] {
+    display: block;
+
+    width: 100%;
+    height: auto;
+
+    object-fit: initial;
+    object-position: center;
+  }
+}
