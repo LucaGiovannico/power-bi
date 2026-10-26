@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="it">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex, follow" />
+    <meta name="description" content="La pagina richiesta non è disponibile. Torna alla Home di Dina Fiorentino oppure visita il Blog." />
+    <title>Pagina non trovata (404) | Dina Fiorentino</title>
+
+    <!-- Percorsi assoluti: la 404 può comparire anche per URL in sottocartelle. -->
+    <link rel="stylesheet" href="/assets/css/style.css" />
+    <link rel="stylesheet" href="/assets/css/navigation.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Limelight&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="icon" href="/assets/images/favicon/favicon.ico" />
+
+    <style>
+      /* Solo elementi della pagina 404; nessuna modifica ai CSS esistenti. */
+      .error-page {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: min(740px, calc(100svh - 190px));
+        padding: clamp(64px, 8vw, 110px) 24px;
+        overflow: hidden;
+        isolation: isolate;
+        background:
+          radial-gradient(circle at 14% 24%, rgba(118, 86, 236, .12), transparent 33%),
+          radial-gradient(circle at 91% 76%, rgba(171, 106, 228, .12), transparent 32%),
+          linear-gradient(160deg, #fff 0%, #f8f7ff 52%, #f5f2ff 100%);
+        color: #15171f;
+        font-family: "Poppins", sans-serif;
+      }
+
+      .error-page__shell {
+        position: relative;
+        z-index: 1;
+        width: min(100%, 860px);
+        text-align: center;
+      }
+
+      .error-page__eyebrow {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        margin: 0 0 20px;
+        padding: 9px 15px;
+        border: 1px solid rgba(90, 82, 224, .16);
+        border-radius: 999px;
+        background: rgba(255, 255, 255, .82);
+        color: #5146cb;
+        font-size: 11px;
+        font-weight: 700;
+        letter-spacing: .1em;
+        text-transform: uppercase;
+      }
+
+      .error-page__eyebrow::before {
+        content: "";
+        width: 7px;
+        height: 7px;
+        border-radius: 50%;
+        background: #5a52e0;
+      }
+
+      .error-page__number {
+        margin: 0 0 4px;
+        background: linear-gradient(135deg, #312a85 0%, #5a52e0 48%, #a17aec 100%);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+        font-size: clamp(108px, 20vw, 205px);
+        font-weight: 800;
+        letter-spacing: -.09em;
+        line-height: .96;
+        padding-right: .09em;
+        filter: drop-shadow(0 16px 28px rgba(90, 82, 224, .10));
+      }
+
+      .error-page__title {
+        margin: 22px auto 0;
+        color: #211f2d;
+        font-size: clamp(30px, 5vw, 48px);
+        font-weight: 700;
+        letter-spacing: -.045em;
+        line-height: 1.17;
+        text-wrap: balance;
+      }
+
+      .error-page__description {
+        max-width: 610px;
+        margin: 22px auto 0;
+        color: #646478;
+        font-size: clamp(15px, 2vw, 17px);
+        line-height: 1.75;
+        text-wrap: pretty;
+      }
+
+      .error-page__actions {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 13px;
+        margin-top: 36px;
+      }
+
+      .error-page__button {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 12px;
+        min-height: 52px;
+        padding: 13px 25px;
+        border: 1px solid transparent;
+        border-radius: 999px;
+        font: inherit;
+        font-size: 14px;
+        font-weight: 700;
+        line-height: 1.25;
+        text-decoration: none;
+        transition: transform .22s ease, box-shadow .22s ease, background .22s ease;
+      }
+
+      .error-page__button:hover {
+        transform: translateY(-2px);
+      }
+
+      .error-page__button:focus-visible,
+      .error-page__help a:focus-visible {
+        outline: 3px solid rgba(90, 82, 224, .38);
+        outline-offset: 3px;
+      }
+
+      .error-page__button--primary {
+        background: linear-gradient(135deg, #5146e8, #7b50ef);
+        color: #fff;
+        box-shadow: 0 15px 34px rgba(91, 61, 245, .22);
+      }
+
+      .error-page__button--primary:hover {
+        box-shadow: 0 20px 40px rgba(91, 61, 245, .3);
+      }
+
+      .error-page__button--secondary {
+        border-color: rgba(91, 61, 245, .2);
+        background: #fff;
+        color: #312a85;
+        box-shadow: 0 12px 30px rgba(52, 45, 122, .06);
+      }
+
+      .error-page__help {
+        margin: 30px 0 0;
+        color: #777386;
+        font-size: 13px;
+        line-height: 1.6;
+      }
+
+      .error-page__help a {
+        color: #5146cb;
+        font-weight: 700;
+        text-underline-offset: 3px;
+      }
+
+      .error-footer .footer__bottom {
+        border-top: 0;
+      }
+
+      .error-footer .privacy__box a {
+        text-decoration: none;
+      }
+
+      .error-footer .privacy__box a:hover {
+        color: #5a52e0;
+      }
+
+      @media (max-width: 880px) {
+        .error-page {
+          min-height: calc(100svh - 180px);
+        }
+      }
+
+      @media (max-width: 600px) {
+        .error-page {
+          min-height: 0;
+          padding: 66px 22px 78px;
+        }
+
+        .error-page__number {
+          font-size: clamp(100px, 28vw, 145px);
+        }
+
+        .error-page__title {
+          margin-top: 20px;
+        }
+
+        .error-page__actions {
+          flex-direction: column;
+          align-items: stretch;
+          gap: 12px;
+          width: min(100%, 340px);
+          margin: 32px auto 0;
+        }
+
+        .error-page__button {
+          width: 100%;
+        }
+
+        .error-footer .footer__bottom {
+          width: calc(100% - 44px);
+          flex-direction: column;
+          align-items: center;
+          gap: 13px;
+          text-align: center;
+        }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        .error-page__button {
+          transition: none;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <header class="site-header">
+      <nav class="navbar" aria-label="Navigazione principale" id="errorNavigation">
+        <a href="/" class="navbar__brand" id="brandLink" aria-label="Torna alla homepage">
+          <span class="navbar__monogram" aria-hidden="true">DF</span>
+          <span class="navbar__identity">
+            <span class="navbar__name">Dina Fiorentino</span>
+            <span class="navbar__role">Data Analyst &amp; Power BI Consultant</span>
+          </span>
+        </a>
+
+        <button type="button" class="navbar__toggle" id="navToggle" aria-expanded="false" aria-controls="mainNavMenu" aria-label="Apri il menu di navigazione">
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </button>
+
+        <div class="navbar__menu" id="mainNavMenu">
+          <ul class="navbar__list">
+            <li class="navbar__item"><a class="navbar__link" data-nav="home" href="/">Home</a></li>
+            <li class="navbar__item"><a class="navbar__link" data-nav="services" href="/#services__id">Servizi</a></li>
+            <li class="navbar__item"><a class="navbar__link" data-nav="projects" href="/#projects__id">Progetti</a></li>
+            <li class="navbar__item"><a class="navbar__link" data-nav="blog" href="/blog/">Blog</a></li>
+          </ul>
+        </div>
+
+        <div class="navbar__actions">
+          <div class="navbar-right">
+            <div class="language-selector" id="errorLanguageSelector">
+              <button type="button" class="language-selector__button" id="languageButton" aria-haspopup="true" aria-expanded="false" aria-controls="languageMenu" aria-label="Seleziona lingua">
+                <span id="languageFlag" aria-hidden="true">🇮🇹</span>
+                <span id="languageCode">IT</span>
+                <span class="language-selector__arrow" aria-hidden="true">▾</span>
+              </button>
+              <div class="language-selector__menu" id="languageMenu">
+                <button type="button" data-select-language="it" lang="it">🇮🇹 Italiano</button>
+                <button type="button" data-select-language="en" lang="en">🇬🇧 English</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="error-page" id="mainContent">
+      <div class="error-page__shell">
+        <p class="error-page__eyebrow" data-i18n="eyebrow">Pagina non disponibile</p>
+        <p class="error-page__number" aria-hidden="true">404</p>
+        <h1 class="error-page__title" data-i18n="heading">Questa pagina è <span class="text-gradient">fuori rotta.</span></h1>
+        <p class="error-page__description" data-i18n="description">
+          Il link potrebbe essere cambiato oppure la pagina non esiste più. Nessun problema: puoi tornare alla Home o continuare a esplorare il Blog.
+        </p>
+        <div class="error-page__actions">
+          <a class="error-page__button error-page__button--primary" data-destination="home" href="/">
+            <span data-i18n="backHome">Torna alla Home</span><span aria-hidden="true">→</span>
+          </a>
+          <a class="error-page__button error-page__button--secondary" data-destination="blog" href="/blog/">
+            <span data-i18n="visitBlog">Esplora il Blog</span><span aria-hidden="true">↗</span>
+          </a>
+        </div>
+        <p class="error-page__help">
+          <span data-i18n="help">Hai bisogno di aiuto?</span>
+          <a data-destination="contact" href="/#contacts__id" data-i18n="contact">Contattami</a>
+        </p>
+      </div>
+    </main>
+
+    <footer class="error-footer">
+      <div class="footer__bottom">
+        <p class="copyright__text" data-i18n="copyright">© 2026 Dina Fiorentino. Tutti i diritti riservati.</p>
+        <nav class="privacy__box" aria-label="Link legali">
+          <a data-destination="privacy" href="/privacy.html">Privacy</a>
+          <a data-destination="cookie" href="/cookie.html">Cookie</a>
+        </nav>
+      </div>
+    </footer>
+
+    <script>
+      (() => {
+        "use strict";
+
+        /* Script isolato: non richiede modifiche al JavaScript globale. */
+        const translations = {
+          it: {
+            title: "Pagina non trovata (404) | Dina Fiorentino",
+            descriptionMeta: "La pagina richiesta non è disponibile. Torna alla Home di Dina Fiorentino oppure visita il Blog.",
+            navLabel: "Navigazione principale",
+            brandLabel: "Torna alla homepage",
+            openNav: "Apri il menu di navigazione",
+            closeNav: "Chiudi il menu di navigazione",
+            languageLabel: "Seleziona lingua",
+            eyebrow: "Pagina non disponibile",
+            heading: 'Questa pagina è <span class="text-gradient">fuori rotta.</span>',
+            description: "Il link potrebbe essere cambiato oppure la pagina non esiste più. Nessun problema: puoi tornare alla Home o continuare a esplorare il Blog.",
+            backHome: "Torna alla Home",
+            visitBlog: "Esplora il Blog",
+            help: "Hai bisogno di aiuto?",
+            contact: "Contattami",
+            copyright: "© 2026 Dina Fiorentino. Tutti i diritti riservati.",
+            home: "Home", services: "Servizi", projects: "Progetti", blog: "Blog"
+          },
+          en: {
+            title: "Page not found (404) | Dina Fiorentino",
+            descriptionMeta: "The requested page is unavailable. Return to Dina Fiorentino's homepage or visit the Blog.",
+            navLabel: "Main navigation",
+            brandLabel: "Back to homepage",
+            openNav: "Open navigation menu",
+            closeNav: "Close navigation menu",
+            languageLabel: "Select language",
+            eyebrow: "Page not found",
+            heading: 'This page is <span class="text-gradient">off course.</span>',
+            description: "The link may have changed, or the page may no longer exist. No worries: you can go back to the homepage or keep exploring the Blog.",
+            backHome: "Back to Home",
+            visitBlog: "Explore the Blog",
+            help: "Need a hand?",
+            contact: "Contact me",
+            copyright: "© 2026 Dina Fiorentino. All rights reserved.",
+            home: "Home", services: "Services", projects: "Projects", blog: "Blog"
+          }
+        };
+
+        const urls = {
+          it: {
+            home: "/", services: "/#services__id", projects: "/#projects__id",
+            blog: "/blog/", contact: "/#contacts__id", privacy: "/privacy.html", cookie: "/cookie.html"
+          },
+          en: {
+            home: "/index-en.html", services: "/index-en.html#services__id", projects: "/index-en.html#projects__id",
+            blog: "/blog/index-en.html", contact: "/index-en.html#contacts__id", privacy: "/privacy-en.html", cookie: "/cookie-en.html"
+          }
+        };
+
+        const navbar = document.getElementById("errorNavigation");
+        const menu = document.getElementById("mainNavMenu");
+        const navToggle = document.getElementById("navToggle");
+        const selector = document.getElementById("errorLanguageSelector");
+        const selectorButton = document.getElementById("languageButton");
+        const selectorMenu = document.getElementById("languageMenu");
+        const selectorHolder = selector.parentNode;
+        const selectorPlaceholder = document.createComment("language-selector-placeholder");
+        selectorHolder.insertBefore(selectorPlaceholder, selector);
+        let currentLanguage = "it";
+
+        function closeLanguageMenu() {
+          selectorMenu.classList.remove("show");
+          selectorButton.setAttribute("aria-expanded", "false");
+        }
+
+        function closeNav() {
+          menu.classList.remove("is-open");
+          navToggle.setAttribute("aria-expanded", "false");
+          navToggle.setAttribute("aria-label", translations[currentLanguage].openNav);
+          closeLanguageMenu();
+        }
+
+        function syncMobileLayout() {
+          if (window.innerWidth <= 880) {
+            menu.appendChild(selector);
+            selector.classList.add("language-selector--mobile");
+          } else {
+            selectorPlaceholder.parentNode.insertBefore(selector, selectorPlaceholder.nextSibling);
+            selector.classList.remove("language-selector--mobile");
+            closeNav();
+          }
+        }
+
+        function renderLanguage(language) {
+          currentLanguage = language === "en" ? "en" : "it";
+          const copy = translations[currentLanguage];
+          const paths = urls[currentLanguage];
+
+          document.documentElement.lang = currentLanguage;
+          document.title = copy.title;
+          document.querySelector('meta[name="description"]').content = copy.descriptionMeta;
+          navbar.setAttribute("aria-label", copy.navLabel);
+          document.getElementById("brandLink").setAttribute("aria-label", copy.brandLabel);
+          selectorButton.setAttribute("aria-label", copy.languageLabel);
+          document.getElementById("languageFlag").textContent = currentLanguage === "it" ? "🇮🇹" : "🇬🇧";
+          document.getElementById("languageCode").textContent = currentLanguage.toUpperCase();
+
+          document.querySelectorAll("[data-i18n]").forEach((element) => {
+            const key = element.dataset.i18n;
+            if (key === "heading") {
+              // I due frammenti HTML sono costanti definite in questo file.
+              element.innerHTML = copy.heading;
+            } else {
+              element.textContent = copy[key];
+            }
+          });
+
+          document.querySelectorAll("[data-nav]").forEach((link) => {
+            link.textContent = copy[link.dataset.nav];
+            link.href = paths[link.dataset.nav];
+          });
+          document.querySelectorAll("[data-destination]").forEach((link) => {
+            link.href = paths[link.dataset.destination];
+          });
+          document.getElementById("brandLink").href = paths.home;
+          closeNav();
+        }
+
+        navToggle.addEventListener("click", () => {
+          const willOpen = !menu.classList.contains("is-open");
+          menu.classList.toggle("is-open", willOpen);
+          navToggle.setAttribute("aria-expanded", String(willOpen));
+          navToggle.setAttribute("aria-label", translations[currentLanguage][willOpen ? "closeNav" : "openNav"]);
+          if (!willOpen) closeLanguageMenu();
+        });
+
+        selectorButton.addEventListener("click", (event) => {
+          event.stopPropagation();
+          const willOpen = !selectorMenu.classList.contains("show");
+          selectorMenu.classList.toggle("show", willOpen);
+          selectorButton.setAttribute("aria-expanded", String(willOpen));
+        });
+
+        document.querySelectorAll("[data-select-language]").forEach((button) => {
+          button.addEventListener("click", () => renderLanguage(button.dataset.selectLanguage));
+        });
+
+        menu.querySelectorAll("a").forEach((link) => link.addEventListener("click", closeNav));
+
+        document.addEventListener("click", (event) => {
+          if (!selector.contains(event.target)) closeLanguageMenu();
+          if (window.innerWidth <= 880 && !navbar.contains(event.target)) closeNav();
+        });
+
+        document.addEventListener("keydown", (event) => {
+          if (event.key === "Escape") {
+            if (selectorMenu.classList.contains("show")) {
+              closeLanguageMenu();
+              selectorButton.focus();
+            } else if (menu.classList.contains("is-open")) {
+              closeNav();
+              navToggle.focus();
+            }
+          }
+        });
+
+        window.addEventListener("resize", syncMobileLayout);
+        syncMobileLayout();
+      })();
+    </script>
+  </body>
+</html>
