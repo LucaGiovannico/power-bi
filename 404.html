@@ -235,7 +235,9 @@
           </span>
         </a>
 
-        <button type="button" class="navbar__toggle" id="navToggle" aria-expanded="false" aria-controls="mainNavMenu" aria-label="Apri il menu di navigazione">
+        <button type="button" class="navbar__toggle" id="navToggle"
+                aria-expanded="false" aria-controls="mainNavMenu"
+                aria-label="Apri il menu di navigazione">
           <span aria-hidden="true"></span>
           <span aria-hidden="true"></span>
           <span aria-hidden="true"></span>
@@ -243,17 +245,71 @@
 
         <div class="navbar__menu" id="mainNavMenu">
           <ul class="navbar__list">
-            <li class="navbar__item"><a class="navbar__link" data-nav="home" href="/">Home</a></li>
-            <li class="navbar__item"><a class="navbar__link" data-nav="services" href="/#services__id">Servizi</a></li>
-            <li class="navbar__item"><a class="navbar__link" data-nav="projects" href="/#projects__id">Progetti</a></li>
-            <li class="navbar__item"><a class="navbar__link" data-nav="blog" href="/blog/">Blog</a></li>
+            <!-- SERVIZI: stessi sottomenu della Home -->
+            <li class="navbar__item navbar__item--has-submenu">
+              <div class="navbar__item-control">
+                <a class="navbar__link" data-destination="services" data-i18n="services" href="/#services__id">Servizi</a>
+                <button type="button" class="navbar__submenu-toggle" aria-expanded="false"
+                        aria-controls="servicesSubmenu" aria-label="Apri il menu Servizi">
+                  <span aria-hidden="true">▾</span>
+                </button>
+              </div>
+              <ul class="navbar__submenu navbar__submenu--services" id="servicesSubmenu" aria-label="Pagine servizi">
+                <li><a data-destination="serviceDashboard" href="/services/dashboard-powerBI.html">
+                  <span class="navbar__submenu-title" data-i18n="serviceDashboardTitle">Dashboard Power BI su misura</span>
+                  <span class="navbar__submenu-description" data-i18n="serviceDashboardDesc">Dashboard interattive progettate sui tuoi KPI.</span>
+                </a></li>
+                <li><a data-destination="serviceKpi" href="/services/kpi-design-monitoraggio.html">
+                  <span class="navbar__submenu-title" data-i18n="serviceKpiTitle">KPI Design &amp; Monitoraggio</span>
+                  <span class="navbar__submenu-description" data-i18n="serviceKpiDesc">Metriche chiare per monitorare ciò che conta.</span>
+                </a></li>
+                <li><a data-destination="serviceModeling" href="/services/data-modeling-integrazione.html">
+                  <span class="navbar__submenu-title" data-i18n="serviceModelingTitle">Data Modeling &amp; Integrazione</span>
+                  <span class="navbar__submenu-description" data-i18n="serviceModelingDesc">Fonti diverse organizzate in un modello affidabile.</span>
+                </a></li>
+                <li><a data-destination="serviceReporting" href="/services/reporting-automatizzato.html">
+                  <span class="navbar__submenu-title" data-i18n="serviceReportingTitle">Reporting automatizzato</span>
+                  <span class="navbar__submenu-description" data-i18n="serviceReportingDesc">Processi di reporting più rapidi e ripetibili.</span>
+                </a></li>
+              </ul>
+            </li>
+
+            <!-- PROGETTI: stessi sottomenu della Home -->
+            <li class="navbar__item navbar__item--has-submenu">
+              <div class="navbar__item-control">
+                <a class="navbar__link" data-destination="projects" data-i18n="projects" href="/#projects__id">Progetti</a>
+                <button type="button" class="navbar__submenu-toggle" aria-expanded="false"
+                        aria-controls="projectsSubmenu" aria-label="Apri il menu Progetti">
+                  <span aria-hidden="true">▾</span>
+                </button>
+              </div>
+              <ul class="navbar__submenu navbar__submenu--projects" id="projectsSubmenu" aria-label="Pagine progetti">
+                <li><a data-destination="projectBusiness" href="/projects/business-plan.html">
+                  <span class="navbar__submenu-title" data-i18n="projectBusinessTitle">Business Plan &amp; Financial Analysis</span>
+                  <span class="navbar__submenu-description" data-i18n="projectBusinessDesc">Pianificazione finanziaria, scenari e sostenibilità economica.</span>
+                </a></li>
+                <li><a data-destination="projectHotel" href="/projects/hotel-market-insights.html">
+                  <span class="navbar__submenu-title" data-i18n="projectHotelTitle">Hotel Market Analysis &amp; Revenue Insights</span>
+                  <span class="navbar__submenu-description" data-i18n="projectHotelDesc">Performance alberghiera, booking e distribuzione.</span>
+                </a></li>
+                <li><a data-destination="projectSales" href="/projects/sales-performance-forecast.html">
+                  <span class="navbar__submenu-title" data-i18n="projectSalesTitle">Sales Performance &amp; Forecast</span>
+                  <span class="navbar__submenu-description" data-i18n="projectSalesDesc">Vendite, obiettivi, pipeline e previsioni.</span>
+                </a></li>
+              </ul>
+            </li>
+            <li class="navbar__item"><a class="navbar__link" data-destination="blog" data-i18n="blog" href="/blog/">Blog</a></li>
+            <li class="navbar__item"><a class="navbar__link" data-destination="about" data-i18n="about" href="/#about__id">Chi sono</a></li>
+            <li class="navbar__item"><a class="navbar__link" data-destination="contact" data-i18n="contacts" href="/#contacts__id">Contatti</a></li>
           </ul>
         </div>
 
         <div class="navbar__actions">
           <div class="navbar-right">
             <div class="language-selector" id="errorLanguageSelector">
-              <button type="button" class="language-selector__button" id="languageButton" aria-haspopup="true" aria-expanded="false" aria-controls="languageMenu" aria-label="Seleziona lingua">
+              <button type="button" class="language-selector__button" id="languageButton"
+                      aria-haspopup="true" aria-expanded="false" aria-controls="languageMenu"
+                      aria-label="Seleziona lingua">
                 <span id="languageFlag" aria-hidden="true">🇮🇹</span>
                 <span id="languageCode">IT</span>
                 <span class="language-selector__arrow" aria-hidden="true">▾</span>
@@ -267,6 +323,7 @@
         </div>
       </nav>
     </header>
+
 
     <main class="error-page" id="mainContent">
       <div class="error-page__shell">
@@ -323,7 +380,16 @@
             help: "Hai bisogno di aiuto?",
             contact: "Contattami",
             copyright: "© 2026 Dina Fiorentino. Tutti i diritti riservati.",
-            home: "Home", services: "Servizi", projects: "Progetti", blog: "Blog"
+            services: "Servizi", projects: "Progetti", blog: "Blog", about: "Chi sono", contacts: "Contatti",
+            serviceDashboardTitle: "Dashboard Power BI su misura", serviceDashboardDesc: "Dashboard interattive progettate sui tuoi KPI.",
+            serviceKpiTitle: "KPI Design & Monitoraggio", serviceKpiDesc: "Metriche chiare per monitorare ciò che conta.",
+            serviceModelingTitle: "Data Modeling & Integrazione", serviceModelingDesc: "Fonti diverse organizzate in un modello affidabile.",
+            serviceReportingTitle: "Reporting automatizzato", serviceReportingDesc: "Processi di reporting più rapidi e ripetibili.",
+            projectBusinessTitle: "Business Plan & Financial Analysis", projectBusinessDesc: "Pianificazione finanziaria, scenari e sostenibilità economica.",
+            projectHotelTitle: "Hotel Market Analysis & Revenue Insights", projectHotelDesc: "Performance alberghiera, booking e distribuzione.",
+            projectSalesTitle: "Sales Performance & Forecast", projectSalesDesc: "Vendite, obiettivi, pipeline e previsioni.",
+            servicesMenu: "Apri il menu Servizi", projectsMenu: "Apri il menu Progetti",
+            servicesPages: "Pagine servizi", projectsPages: "Pagine progetti"
           },
           en: {
             title: "Page not found (404) | Dina Fiorentino",
@@ -341,18 +407,44 @@
             help: "Need a hand?",
             contact: "Contact me",
             copyright: "© 2026 Dina Fiorentino. All rights reserved.",
-            home: "Home", services: "Services", projects: "Projects", blog: "Blog"
+            services: "Services", projects: "Projects", blog: "Blog", about: "About Me", contacts: "Contacts",
+            serviceDashboardTitle: "Custom Power BI Dashboards", serviceDashboardDesc: "Interactive dashboards designed around your KPIs.",
+            serviceKpiTitle: "KPI Design & Monitoring", serviceKpiDesc: "Clear metrics to monitor what matters.",
+            serviceModelingTitle: "Data Modeling & Integration", serviceModelingDesc: "Different sources organized into a reliable model.",
+            serviceReportingTitle: "Automated Reporting", serviceReportingDesc: "Faster and repeatable reporting processes.",
+            projectBusinessTitle: "Business Plan & Financial Analysis", projectBusinessDesc: "Financial planning, scenarios and business sustainability.",
+            projectHotelTitle: "Hotel Market Analysis & Revenue Insights", projectHotelDesc: "Hotel performance, bookings and distribution.",
+            projectSalesTitle: "Sales Performance & Forecast", projectSalesDesc: "Sales, targets, pipeline and forecasts.",
+            servicesMenu: "Open Services menu", projectsMenu: "Open Projects menu",
+            servicesPages: "Service pages", projectsPages: "Project pages"
           }
         };
 
         const urls = {
           it: {
             home: "/", services: "/#services__id", projects: "/#projects__id",
-            blog: "/blog/", contact: "/#contacts__id", privacy: "/privacy.html", cookie: "/cookie.html"
+            blog: "/blog/", about: "/#about__id", contact: "/#contacts__id",
+            serviceDashboard: "/services/dashboard-powerBI.html",
+            serviceKpi: "/services/kpi-design-monitoraggio.html",
+            serviceModeling: "/services/data-modeling-integrazione.html",
+            serviceReporting: "/services/reporting-automatizzato.html",
+            projectBusiness: "/projects/business-plan.html",
+            projectHotel: "/projects/hotel-market-insights.html",
+            projectSales: "/projects/sales-performance-forecast.html",
+            privacy: "/privacy.html", cookie: "/cookie.html"
           },
           en: {
-            home: "/index-en.html", services: "/index-en.html#services__id", projects: "/index-en.html#projects__id",
-            blog: "/blog/index-en.html", contact: "/index-en.html#contacts__id", privacy: "/privacy-en.html", cookie: "/cookie-en.html"
+            home: "/index-en.html", services: "/index-en.html#services__id",
+            projects: "/index-en.html#projects__id", blog: "/blog/index-en.html",
+            about: "/index-en.html#about__id", contact: "/index-en.html#contacts__id",
+            serviceDashboard: "/services/dashboard-powerBI-en.html",
+            serviceKpi: "/services/kpi-design-monitoraggio-en.html",
+            serviceModeling: "/services/data-modeling-integrazione-en.html",
+            serviceReporting: "/services/reporting-automatizzato-en.html",
+            projectBusiness: "/projects/business-plan-en.html",
+            projectHotel: "/projects/hotel-market-insights-en.html",
+            projectSales: "/projects/sales-performance-forecast-en.html",
+            privacy: "/privacy-en.html", cookie: "/cookie-en.html"
           }
         };
 
@@ -372,8 +464,17 @@
           selectorButton.setAttribute("aria-expanded", "false");
         }
 
+        function closeSubmenus(exceptItem = null) {
+          document.querySelectorAll(".navbar__item--has-submenu").forEach((item) => {
+            if (item === exceptItem) return;
+            item.classList.remove("is-open");
+            item.querySelector(".navbar__submenu-toggle")?.setAttribute("aria-expanded", "false");
+          });
+        }
+
         function closeNav() {
           menu.classList.remove("is-open");
+          closeSubmenus();
           navToggle.setAttribute("aria-expanded", "false");
           navToggle.setAttribute("aria-label", translations[currentLanguage].openNav);
           closeLanguageMenu();
@@ -414,10 +515,13 @@
             }
           });
 
-          document.querySelectorAll("[data-nav]").forEach((link) => {
-            link.textContent = copy[link.dataset.nav];
-            link.href = paths[link.dataset.nav];
-          });
+          const submenuButtons = navbar.querySelectorAll(".navbar__submenu-toggle");
+          const submenuLists = navbar.querySelectorAll(".navbar__submenu");
+          submenuButtons[0].setAttribute("aria-label", copy.servicesMenu);
+          submenuButtons[1].setAttribute("aria-label", copy.projectsMenu);
+          submenuLists[0].setAttribute("aria-label", copy.servicesPages);
+          submenuLists[1].setAttribute("aria-label", copy.projectsPages);
+
           document.querySelectorAll("[data-destination]").forEach((link) => {
             link.href = paths[link.dataset.destination];
           });
@@ -436,6 +540,7 @@
         selectorButton.addEventListener("click", (event) => {
           event.stopPropagation();
           const willOpen = !selectorMenu.classList.contains("show");
+          closeSubmenus();
           selectorMenu.classList.toggle("show", willOpen);
           selectorButton.setAttribute("aria-expanded", String(willOpen));
         });
@@ -444,10 +549,44 @@
           button.addEventListener("click", () => renderLanguage(button.dataset.selectLanguage));
         });
 
+        // Stessi stati e interazioni dei sottomenu della navbar principale.
+        const desktopPointer = window.matchMedia("(min-width: 881px) and (hover: hover) and (pointer: fine)");
+        document.querySelectorAll(".navbar__item--has-submenu").forEach((item) => {
+          const toggle = item.querySelector(".navbar__submenu-toggle");
+          function openSubmenu() {
+            closeLanguageMenu();
+            closeSubmenus(item);
+            item.classList.add("is-open");
+            toggle.setAttribute("aria-expanded", "true");
+          }
+          function closeSubmenu() {
+            item.classList.remove("is-open");
+            toggle.setAttribute("aria-expanded", "false");
+          }
+          toggle.addEventListener("click", (event) => {
+            event.preventDefault();
+            event.stopPropagation();
+            if (item.classList.contains("is-open")) closeSubmenu();
+            else openSubmenu();
+          });
+          item.addEventListener("mouseenter", () => {
+            if (desktopPointer.matches) openSubmenu();
+          });
+          item.addEventListener("mouseleave", () => {
+            if (desktopPointer.matches) closeSubmenu();
+          });
+          item.addEventListener("focusout", (event) => {
+            if (event.relatedTarget && item.contains(event.relatedTarget)) return;
+            if (desktopPointer.matches && item.matches(":hover")) return;
+            closeSubmenu();
+          });
+        });
+
         menu.querySelectorAll("a").forEach((link) => link.addEventListener("click", closeNav));
 
         document.addEventListener("click", (event) => {
           if (!selector.contains(event.target)) closeLanguageMenu();
+          if (!event.target.closest(".navbar__item--has-submenu")) closeSubmenus();
           if (window.innerWidth <= 880 && !navbar.contains(event.target)) closeNav();
         });
 
@@ -456,6 +595,10 @@
             if (selectorMenu.classList.contains("show")) {
               closeLanguageMenu();
               selectorButton.focus();
+            } else if (navbar.querySelector(".navbar__item--has-submenu.is-open")) {
+              const active = navbar.querySelector(".navbar__item--has-submenu.is-open");
+              closeSubmenus();
+              active.querySelector(".navbar__submenu-toggle").focus();
             } else if (menu.classList.contains("is-open")) {
               closeNav();
               navToggle.focus();
@@ -463,7 +606,10 @@
           }
         });
 
-        window.addEventListener("resize", syncMobileLayout);
+        window.addEventListener("resize", () => {
+          closeSubmenus();
+          syncMobileLayout();
+        });
         syncMobileLayout();
       })();
     </script>
