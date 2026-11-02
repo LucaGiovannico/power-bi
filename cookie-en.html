@@ -48,7 +48,7 @@
         </p>
 
         <p class="cookie-hero__updated">
-          Last updated: <time datetime="2026-06-22">22 June 2026</time>
+          Last updated: <time datetime="2026-11-02">2 November 2026</time>
         </p>
       </div>
     </header>
@@ -168,11 +168,21 @@
                   correct presentation of the website.
                 </td>
                 <td>
-                  To be assessed based on the actual technical configuration
+                  Not required for simply loading resources, in the absence of non-technical tracking
                 </td>
               </tr>
             </tbody>
           </table>
+
+          <p>
+            The table describes website features and services,
+            not a list of cookies actually installed.
+            No cookies associated with the website domain were
+            detected during checks on the Home page and the main
+            Blog page. These checks do not cover all pages or
+            browsing conditions. External font and icon providers
+            may receive technical connection data, such as IP addresses.
+          </p>
 
           <p class="cookie-note">
             If analytics, marketing, remarketing, or non-technical tracking
@@ -296,7 +306,7 @@
           <p>
             For more information on personal data processing, please also see
             the
-            <a href="./privacy-en.html">Privacy Policy</a>.
+            <a href="./privacy-en.html" id="cookiePrivacyLink">Privacy Policy</a>.
           </p>
         </section>
       </article>
@@ -309,13 +319,16 @@
       </div>
 
       <nav class="cookie-footer__links" aria-label="Legal links">
-        <a href="./privacy-en.html">Privacy</a>
-        <a href="./cookie-en.html">Cookies</a>
+        <a href="./privacy-en.html" id="footerPrivacyLink">Privacy</a>
+        <a href="./cookie-en.html" id="footerCookieLink">Cookies</a>
         <a href="./index-en.html">Portfolio</a>
       </nav>
     </footer>
     <script>
       const backLink = document.getElementById("backToPreviousPage");
+      const cookiePrivacyLink = document.getElementById("cookiePrivacyLink");
+      const footerPrivacyLink = document.getElementById("footerPrivacyLink");
+      const footerCookieLink = document.getElementById("footerCookieLink");
       const params = new URLSearchParams(window.location.search);
       const from = params.get("from");
 
@@ -401,9 +414,24 @@
         },
       };
 
-      if (backLink && backLinks[from]) {
+      if (backLink && from && backLinks[from]) {
         backLink.href = backLinks[from].href;
         backLink.textContent = backLinks[from].label;
+      }
+
+      // Preserve the original page when following the legal notice links.
+      if (from && backLinks[from]) {
+        const encodedFrom = encodeURIComponent(from);
+
+        if (cookiePrivacyLink) {
+          cookiePrivacyLink.href = `./privacy-en.html?from=${encodedFrom}`;
+        }
+        if (footerPrivacyLink) {
+          footerPrivacyLink.href = `./privacy-en.html?from=${encodedFrom}`;
+        }
+        if (footerCookieLink) {
+          footerCookieLink.href = `./cookie-en.html?from=${encodedFrom}`;
+        }
       }
     </script>
   </body>
