@@ -162,7 +162,7 @@
 }
 
 .navbar__submenu-toggle {
-  width: 18px;
+  width: 24px;
   height: 30px;
 
   display: inline-flex;
@@ -933,5 +933,13 @@
     margin-left: 24px;
 
     justify-self: auto;
+  }
+}
+
+/* Allineamento verticale frecce menu mobile */
+@media (max-width: 880px) {
+  .navbar__item-control .navbar__submenu-toggle span {
+    position: relative;
+    top: -3px;
   }
 }
