@@ -22,6 +22,8 @@
       href="https://fonts.googleapis.com/css2?family=Limelight&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Poppins:ital,wght@0,100..900;1,100..900&display=swap"
       rel="stylesheet"
     />
+      <link rel="stylesheet" href="./assets/css/footer-legal.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   </head>
 
   <body>
@@ -312,18 +314,109 @@
       </article>
     </main>
 
-    <footer class="cookie-footer">
-      <div class="cookie-footer__brand">
-        <div class="cookie-footer__logo">DF</div>
-        <p>DINA FIORENTINO</p>
+    <footer class="footer footer--cookie-en">
+      <div class="footer__main">
+        <div class="footer__brand-block">
+          <a
+            href="./index-en.html"
+            class="footer__brand"
+            aria-label="Back to homepage"
+          >
+            <span class="footer__monogram" aria-hidden="true">DF</span>
+
+            <span class="footer__identity">
+              <span class="footer__name">Dina Fiorentino</span>
+              <span class="footer__role"
+                >Data Analyst &amp; Power BI Consultant</span
+              >
+            </span>
+          </a>
+
+          <p class="footer__description">
+            Dashboards, reporting, and data models designed to transform complex
+            information into clearer decisions.
+          </p>
+
+          <div class="footer__socials" aria-label="Contatti professionali">
+            <a
+              href="https://www.linkedin.com/in/dina-fiorentino/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Profilo LinkedIn di Dina Fiorentino"
+            >
+              <i class="fa-brands fa-linkedin-in" aria-hidden="true"></i>
+              <span>LinkedIn</span>
+            </a>
+
+            <a
+              href="mailto:dinafiorentino.consulting@outlook.it"
+              aria-label="Invia una email a Dina Fiorentino"
+            >
+              <i class="fa-regular fa-envelope" aria-hidden="true"></i>
+              <span>Email</span>
+            </a>
+          </div>
+        </div>
+
+        <nav class="footer__column" aria-label="Navigazione footer">
+          <p class="footer__heading">EXPLORE</p>
+          <a href="./index-en.html#services__id">Services</a>
+          <a href="./index-en.html#projects__id">Projects</a>
+          <a href="./index-en.html#about__id">About Me</a>
+          <a href="./index-en.html#contacts__id">Contacts</a>
+        </nav>
+
+        <div class="footer__column footer__column--services">
+          <p class="footer__heading">Services</p>
+          <a href="./services/dashboard-powerBI-en.html">Dashboard Power BI</a>
+          <a href="./services/reporting-automatizzato-en.html"
+            >Automated reporting</a
+          >
+          <a href="./services/kpi-design-monitoraggio-en.html">KPI design</a>
+          <a href="./services/data-modeling-integrazione-en.html"
+            >Data modeling</a
+          >
+        </div>
+
+        <div class="footer__column footer__column--contact">
+          <p class="footer__heading">Let's collaborate.</p>
+          <p>
+            Available for data analysis, dashboard, and corporate reporting
+            projects.
+          </p>
+
+          <a href="./index-en.html#contacts__id" class="footer__contact-button">
+            Let's talk about your project.
+            <span aria-hidden="true">→</span>
+          </a>
+        </div>
       </div>
 
-      <nav class="cookie-footer__links" aria-label="Legal links">
-        <a href="./privacy-en.html" id="footerPrivacyLink">Privacy</a>
-        <a href="./cookie-en.html" id="footerCookieLink">Cookies</a>
-        <a href="./index-en.html">Portfolio</a>
-      </nav>
+      <div class="footer__bottom">
+        <p class="copyright__text">
+          © 2026 Dina Fiorentino. All rights reserved.
+        </p>
+
+        <nav class="privacy__box" aria-label="Link legali e lingua">
+          <a href="./privacy-en.html?from=index-en" class="privacy__text" id="footerPrivacyLink">
+            Privacy
+          </a>
+          <a href="./cookie-en.html?from=index-en" class="cookie__text" id="footerCookieLink">
+            Cookie
+          </a>
+          <a href="./cookie.html" class="footer__language">Italian</a>
+        </nav>
+      </div>
     </footer>
+
+    <button
+      type="button"
+      class="back__to-top"
+      id="back__to-top"
+      aria-label="Back to top"
+      title="Back to top"
+    >↥</button>
+
     <script>
       const backLink = document.getElementById("backToPreviousPage");
       const cookiePrivacyLink = document.getElementById("cookiePrivacyLink");
@@ -434,5 +527,6 @@
         }
       }
     </script>
+      <script src="./assets/js/legal-back-to-top.js" defer></script>
   </body>
 </html>
