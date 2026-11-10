@@ -8,7 +8,7 @@ card_description: How to build an effective visual narrative that helps people u
 category: DATA STORYTELLING
 date: 2026-10-25
 reading_time: 6
-image: ../assets/images/blog/hero-data-storytelling.png
+image: ../assets/images/blog/hero-data-storytelling-optimized.webp
 image_alt: Editorial visual focused on data storytelling and effective data communication
 image_fit: contain
 featured: false

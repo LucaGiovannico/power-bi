@@ -8,7 +8,7 @@ card_description: The most relevant Power BI updates and how they can affect eve
 category: POWER BI
 date: 2026-10-21
 reading_time: 6
-image: ../assets/images/blog/power-bi-agosto-2026.png
+image: ../assets/images/blog/power-bi-agosto-2026-optimized.webp
 image_alt: Editorial visual for Power BI August 2026 featuring six key updates
 featured: true
 published: true

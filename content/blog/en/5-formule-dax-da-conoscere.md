@@ -8,7 +8,7 @@ card_description: Five DAX formulas and patterns that frequently appear in Power
 category: DAX
 date: 2026-10-24
 reading_time: 7
-image: ../assets/images/blog/5-formule-dax-da-conoscere.png
+image: ../assets/images/blog/5-formule-dax-da-conoscere-optimized.webp
 image_alt: Editorial DAX visual featuring five essential formulas for Power BI
 image_fit: contain
 featured: false

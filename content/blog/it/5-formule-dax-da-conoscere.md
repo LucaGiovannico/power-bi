@@ -8,7 +8,7 @@ card_description: Cinque formule e pattern DAX che ricorrono spesso nei modelli 
 category: DAX
 date: 2026-10-24
 reading_time: 7
-image: ../assets/images/blog/5-formule-dax-da-conoscere.png
+image: ../assets/images/blog/5-formule-dax-da-conoscere-optimized.webp
 image_alt: Visual editoriale DAX con cinque formule fondamentali per Power BI
 image_fit: contain
 featured: false

@@ -8,7 +8,7 @@ card_description: Le novità più interessanti dell'aggiornamento Power BI e cos
 category: POWER BI
 date: 2026-10-21
 reading_time: 6
-image: ../assets/images/blog/power-bi-agosto-2026.png
+image: ../assets/images/blog/power-bi-agosto-2026-optimized.webp
 image_alt: Visual editoriale Power BI agosto 2026 con le sei principali novità dell'aggiornamento
 featured: true
 published: true

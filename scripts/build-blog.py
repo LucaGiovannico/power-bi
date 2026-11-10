@@ -188,7 +188,8 @@ def render_card(article, featured_layout=False):
       class="featured-visual__image"
       src="{image}"
       alt="{image_alt}"
-      loading="lazy"
+      loading="eager"
+      fetchpriority="high"
       decoding="async"
     />
 
@@ -1076,7 +1077,7 @@ def update_blog_index_it(articles):
     <picture>
       <img
         class="article-card__story-image"
-        src="../assets/images/blog/hero-data-storytelling.png"
+        src="../assets/images/blog/hero-data-storytelling-optimized.webp"
         alt="Visual di data storytelling"
         loading="lazy"
         decoding="async"
@@ -1239,7 +1240,7 @@ def update_blog_index_en(articles):
     <picture>
       <img
         class="article-card__story-image"
-        src="../assets/images/blog/hero-data-storytelling.png"
+        src="../assets/images/blog/hero-data-storytelling-optimized.webp"
         alt="Data storytelling editorial visual"
         loading="lazy"
         decoding="async"
