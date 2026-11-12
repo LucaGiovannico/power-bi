@@ -545,61 +545,120 @@
       <!--FINE SEZIONE CHI SONO-->
 
       <!--INIZIO SEZIONE IL PROBLEMA-->
-      <section class="problem" aria-labelledby="problem-title">
-        <h3 class="problem__eyebrow">IL PROBLEMA</h3>
+      <section class="problem-results" aria-labelledby="problem-results-title">
+        <div class="problem-results__inner">
+          <header class="problem-results__header">
+            <p class="problem-results__eyebrow">DAI PROBLEMI AI RISULTATI</p>
+            <h2 class="problem-results__title" id="problem-results-title">
+              Quando i dati non sono chiari,
+              <span class="problem-results__highlight">ogni decisione costa di più.</span>
+            </h2>
+            <p class="problem-results__description">
+              Dalle attività manuali alle informazioni frammentate: trasformo le difficoltà quotidiane in strumenti per lavorare meglio e decidere con più sicurezza.
+            </p>
+          </header>
 
-        <h2 class="problem__title" id="problem-title">
-          Quando i dati non sono chiari, <br />
-          ogni decisione <span class="text-gradient">costa di più.</span>
-        </h2>
-
-        <div class="problem__cards">
-          <article class="problem__card">
-            <div class="problem__icon problem__icon--excel">
-              <i class="fa-regular fa-file-excel"></i>
+          <div class="problem-results__grid">
+          <article class="problem-results__card">
+            <div class="problem-results__row problem-results__row--problem">
+              <div class="problem-results__icon problem-results__icon--problem" aria-hidden="true">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" data-icon="clock-3" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="10"/><path d="M12 6v6h6"/></svg>
+              </div>
+              <div class="problem-results__content">
+                <h3 class="problem-results__heading">Report manuali</h3>
+                <p class="problem-results__text">Ore dedicate ad aggiornare file e preparare report.</p>
+              </div>
+              <span class="problem-results__number" aria-hidden="true">01</span>
             </div>
 
-            <p class="card__title">Report manuali</p>
-            <p class="card__text">
-              Ore perse ogni settimana per preparare report che potrebbero
-              essere automatizzati.
-            </p>
+            <div class="problem-results__separator" aria-hidden="true"></div>
+
+            <div class="problem-results__row problem-results__row--result">
+              <div class="problem-results__icon problem-results__icon--result" aria-hidden="true">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" data-icon="timer-reset" aria-hidden="true" focusable="false"><path d="M10 2h4"/><path d="M12 14v-4"/><path d="M4 14a8 8 0 1 0 3-6.25"/><path d="M4 8v6h6"/></svg>
+              </div>
+              <div class="problem-results__content">
+                <h3 class="problem-results__heading problem-results__heading--result">Più tempo per ciò che conta</h3>
+                <p class="problem-results__text">Reporting automatizzato e meno attività ripetitive.</p>
+              </div>
+            </div>
           </article>
 
-          <article class="problem__card">
-            <div class="problem__icon problem__icon--folder">
-              <i class="fa-regular fa-folder-open"></i>
+          <article class="problem-results__card">
+            <div class="problem-results__row problem-results__row--problem">
+              <div class="problem-results__icon problem-results__icon--problem" aria-hidden="true">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" data-icon="layers-3" aria-hidden="true" focusable="false"><path d="m12 2 8 5-8 5-8-5 8-5Z"/><path d="m4 12 8 5 8-5"/><path d="m4 17 8 5 8-5"/></svg>
+              </div>
+              <div class="problem-results__content">
+                <h3 class="problem-results__heading">Dati frammentati</h3>
+                <p class="problem-results__text">Informazioni sparse tra Excel, gestionali e strumenti diversi.</p>
+              </div>
+              <span class="problem-results__number" aria-hidden="true">02</span>
             </div>
 
-            <p class="card__title">Dati sparsi</p>
-            <p class="card__text">
-              Informazioni frammentate in file e strumenti diversi che non
-              comunicano tra loro.
-            </p>
+            <div class="problem-results__separator" aria-hidden="true"></div>
+
+            <div class="problem-results__row problem-results__row--result">
+              <div class="problem-results__icon problem-results__icon--result" aria-hidden="true">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" data-icon="database" aria-hidden="true" focusable="false"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5v14a9 3 0 0 0 18 0V5"/><path d="M3 12a9 3 0 0 0 18 0"/></svg>
+              </div>
+              <div class="problem-results__content">
+                <h3 class="problem-results__heading problem-results__heading--result">Una visione completa del business</h3>
+                <p class="problem-results__text">Dati integrati, coerenti e facilmente consultabili.</p>
+              </div>
+            </div>
           </article>
 
-          <article class="problem__card">
-            <div class="problem__icon problem__icon--question">
-              <i class="fa-regular fa-circle-question"></i>
+          <article class="problem-results__card">
+            <div class="problem-results__row problem-results__row--problem">
+              <div class="problem-results__icon problem-results__icon--problem" aria-hidden="true">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" data-icon="chart-no-axes-column" aria-hidden="true" focusable="false"><path d="M6 20v-8"/><path d="M12 20V4"/><path d="M18 20v-12"/></svg>
+              </div>
+              <div class="problem-results__content">
+                <h3 class="problem-results__heading">KPI poco chiari</h3>
+                <p class="problem-results__text">Numeri difficili da interpretare e performance complesse da monitorare.</p>
+              </div>
+              <span class="problem-results__number" aria-hidden="true">03</span>
             </div>
 
-            <p class="card__title">KPI poco chiari</p>
-            <p class="card__text">
-              Numeri difficili da interpretare e poco collegati agli obiettivi
-              reali.
-            </p>
+            <div class="problem-results__separator" aria-hidden="true"></div>
+
+            <div class="problem-results__row problem-results__row--result">
+              <div class="problem-results__icon problem-results__icon--result" aria-hidden="true">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" data-icon="chart-no-axes-combined" aria-hidden="true" focusable="false"><path d="M12 16v5"/><path d="M16 14v7"/><path d="M20 10v11"/><path d="M2 15 8 9l4 4 9-9"/></svg>
+              </div>
+              <div class="problem-results__content">
+                <h3 class="problem-results__heading problem-results__heading--result">Più controllo sulle performance</h3>
+                <p class="problem-results__text">Indicatori chiari per misurare ciò che conta davvero.</p>
+              </div>
+            </div>
           </article>
 
-          <article class="problem__card">
-            <div class="problem__icon problem__icon--clock">
-              <i class="fa-regular fa-clock"></i>
+          <article class="problem-results__card">
+            <div class="problem-results__row problem-results__row--problem">
+              <div class="problem-results__icon problem-results__icon--problem" aria-hidden="true">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" data-icon="hourglass" aria-hidden="true" focusable="false"><path d="M5 2h14M5 22h14"/><path d="M7 2v4a3 3 0 0 0 1 2l4 4-4 4a3 3 0 0 0-1 2v4"/><path d="M17 2v4a3 3 0 0 1-1 2l-4 4 4 4a3 3 0 0 1 1 2v4"/></svg>
+              </div>
+              <div class="problem-results__content">
+                <h3 class="problem-results__heading">Decisioni lente</h3>
+                <p class="problem-results__text">Informazioni tardive e opportunità difficili da individuare.</p>
+              </div>
+              <span class="problem-results__number" aria-hidden="true">04</span>
             </div>
 
-            <p class="card__title">Decisioni lente</p>
-            <p class="card__text">
-              Problemi scoperti tardi e opportunità perse.
-            </p>
+            <div class="problem-results__separator" aria-hidden="true"></div>
+
+            <div class="problem-results__row problem-results__row--result">
+              <div class="problem-results__icon problem-results__icon--result" aria-hidden="true">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" data-icon="target" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>
+              </div>
+              <div class="problem-results__content">
+                <h3 class="problem-results__heading problem-results__heading--result">Decisioni più rapide e consapevoli</h3>
+                <p class="problem-results__text">Informazioni aggiornate per agire con maggiore sicurezza.</p>
+              </div>
+            </div>
           </article>
+          </div>
         </div>
       </section>
       <!--FINE SEZIONE IL PROBLEMA-->
@@ -909,90 +968,6 @@
       </section>
       <!--FINE SEZIONE IL MIO METODO-->
 
-      <!--INIZIO SEZIONE I BENEFICI-->
-      <section class="benefits-section" aria-labelledby="benefits-title">
-        <div class="benefits">
-          <div class="benefits__intro">
-            <h3 class="benefits__eyebrow">I BENEFICI</h3>
-
-            <h2 class="benefits__title" id="benefits-title">
-              Cosa ottieni con dati <br />
-              chiari, utili e <span class="text-gradient">affidabili.</span>
-            </h2>
-          </div>
-
-          <div class="benefits__cards">
-            <article class="benefits__card">
-              <div class="benefits__icon benefits__icon--time">
-                <i class="fa-regular fa-clock"></i>
-              </div>
-
-              <p class="card__title">Meno tempo perso</p>
-              <p class="card__text">
-                Report automatici e aggiornati, senza attività manuali
-                ripetitive.
-              </p>
-            </article>
-
-            <article class="benefits__card">
-              <div class="benefits__icon benefits__icon--control">
-                <i class="fa-regular fa-eye"></i>
-              </div>
-
-              <p class="card__title">Più controllo</p>
-              <p class="card__text">
-                Numeri, KPI e performance sempre sotto controllo in un'unica
-                vista.
-              </p>
-            </article>
-
-            <article class="benefits__card">
-              <div class="benefits__icon benefits__icon--decision">
-                <i class="fa-regular fa-circle-check"></i>
-              </div>
-
-              <p class="card__title">Decisioni migliori</p>
-              <p class="card__text">
-                Insight chiari per capire cosa sta succedendo e agire prima.
-              </p>
-            </article>
-
-            <article class="benefits__card">
-              <div class="benefits__icon benefits__icon--errors">
-                <i class="fa-solid fa-arrow-trend-down"></i>
-              </div>
-
-              <p class="card__title">Meno errori</p>
-              <p class="card__text">
-                Dati organizzati e modelli solidi riducono incongruenze e dubbi.
-              </p>
-            </article>
-
-            <article class="benefits__card">
-              <div class="benefits__icon benefits__icon--alignment">
-                <i class="fa-solid fa-align-center"></i>
-              </div>
-
-              <p class="card__title">Più allineamento</p>
-              <p class="card__text">
-                Tutti lavorano sugli stessi numeri, con una lettura condivisa.
-              </p>
-            </article>
-
-            <article class="benefits__card">
-              <div class="benefits__icon benefits__icon--serenity">
-                <i class="fa-regular fa-face-smile-beam"></i>
-              </div>
-
-              <p class="card__title">Più serenità</p>
-              <p class="card__text">
-                Sai dove intervenire, cosa migliorare e quali priorità seguire.
-              </p>
-            </article>
-          </div>
-        </div>
-      </section>
-      <!--FINE SEZIONE I BENEFICI-->
 
       <!--INIZIO SEZIONE CTA-->
       <section class="cta" id="contacts__id" aria-labelledby="cta-title">

@@ -5492,3 +5492,239 @@ html {
     justify-self: auto;
   }
 }
+
+/* ==========================================================
+   PROBLEM RESULTS — HOMEPAGE IT/EN
+   ========================================================== */
+/* PROBLEM RESULTS — HOMEPAGE IT/EN */
+
+.problem-results {
+  background: #F8F6FC;
+  padding: 88px 24px 96px;
+}
+
+.problem-results,
+.problem-results * {
+  box-sizing: border-box;
+}
+
+.problem-results__inner {
+  width: 100%;
+  max-width: 1140px;
+  margin: 0 auto;
+}
+
+.problem-results__header {
+  max-width: 890px;
+  margin: 0 auto 44px;
+  text-align: center;
+}
+
+.problem-results__eyebrow {
+  margin: 0 0 18px;
+  color: #6545C9;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.problem-results__title {
+  margin: 0;
+  color: #201D29;
+  font-family: "Plus Jakarta Sans", "Poppins", sans-serif;
+  font-size: clamp(30px, 3.5vw, 42px);
+  font-weight: 750;
+  line-height: 1.2;
+  letter-spacing: -0.035em;
+}
+
+.problem-results__highlight {
+  color: #6545C9;
+}
+
+.problem-results__description {
+  max-width: 790px;
+  margin: 22px auto 0;
+  color: #6B6877;
+  font-family: "Plus Jakarta Sans", "Poppins", sans-serif;
+  font-size: 17px;
+  font-weight: 400;
+  line-height: 1.65;
+}
+
+.problem-results__grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 22px;
+  align-items: stretch;
+}
+
+.problem-results__card {
+  min-width: 0;
+  padding: 24px;
+  background: #FFFFFF;
+  border: 1px solid #E9E3F1;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(76, 52, 116, 0.04);
+  display: flex;
+  flex-direction: column;
+}
+
+.problem-results__row {
+  position: relative;
+  display: grid;
+  grid-template-columns: 56px minmax(0, 1fr);
+  align-items: start;
+  gap: 16px;
+  min-width: 0;
+}
+
+.problem-results__icon {
+  width: 56px;
+  height: 56px;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.problem-results__icon--problem {
+  background: #FFE3E9;
+  color: #D93655;
+}
+
+.problem-results__icon--result {
+  background: #DCF5E8;
+  color: #239B67;
+}
+
+.problem-results__icon svg {
+  display: block;
+  width: 26px;
+  height: 26px;
+  stroke: currentColor;
+  fill: none;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.problem-results__content {
+  min-width: 0;
+}
+
+.problem-results__heading {
+  margin: 0 0 7px;
+  color: #302B39;
+  font-family: "Plus Jakarta Sans", "Poppins", sans-serif;
+  font-size: 19px;
+  font-weight: 700;
+  line-height: 1.35;
+}
+
+.problem-results__heading--result {
+  color: #6545C9;
+}
+
+.problem-results__text {
+  margin: 0;
+  color: #6B6877;
+  font-family: "Plus Jakarta Sans", "Poppins", sans-serif;
+  font-size: 16px;
+  line-height: 1.55;
+}
+
+.problem-results__number {
+  position: absolute;
+  top: 2px;
+  right: 0;
+  color: #B8B3C1;
+  font-size: 13px;
+  font-weight: 400;
+}
+
+.problem-results__row--problem .problem-results__heading {
+  padding-right: 30px;
+}
+
+.problem-results__separator {
+  width: 100%;
+  height: 1px;
+  margin: 24px 0;
+  background: #EDE8F2;
+}
+
+@media (max-width: 768px) {
+  .problem-results {
+    padding: 64px 20px 72px;
+  }
+
+  .problem-results__header {
+    margin-bottom: 34px;
+  }
+
+  .problem-results__grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .problem-results__card {
+    padding: 24px;
+  }
+}
+
+@media (max-width: 567px) {
+  .problem-results {
+    padding: 48px 16px 56px;
+  }
+
+  .problem-results__eyebrow {
+    font-size: 12px;
+    margin-bottom: 16px;
+  }
+
+  .problem-results__title {
+    font-size: clamp(26px, 6vw, 32px);
+    line-height: 1.22;
+  }
+
+  .problem-results__description {
+    margin-top: 20px;
+    font-size: 16px;
+    line-height: 1.55;
+  }
+
+  .problem-results__grid {
+    gap: 16px;
+  }
+
+  .problem-results__row {
+    grid-template-columns: 48px minmax(0, 1fr);
+    gap: 14px;
+  }
+
+  .problem-results__icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 14px;
+  }
+
+  .problem-results__icon svg {
+    width: 24px;
+    height: 24px;
+  }
+
+  .problem-results__heading {
+    font-size: 17px;
+  }
+
+  .problem-results__text {
+    font-size: 15px;
+  }
+
+  .problem-results__separator {
+    margin: 20px 0;
+  }
+}
