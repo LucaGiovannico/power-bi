@@ -3912,13 +3912,17 @@ footer {
 
   .services__card .card__title {
     margin: 20px 0 8px;
+    color: #15171F;
+    font-family: "Plus Jakarta Sans", "Poppins", sans-serif;
     font-size: 18px;
-    line-height: 1.2;
+    line-height: 1.35;
   }
 
   .services__card .card__text {
-    font-size: 14px;
-    line-height: 1.45;
+    color: #6B6E84;
+    font-family: "Plus Jakarta Sans", "Poppins", sans-serif;
+    font-size: 16px;
+    line-height: 1.55;
   }
 
   .button--services {
@@ -5246,14 +5250,14 @@ footer {
   }
 
   .services__card .card__title {
-    font-size: 15.5px;
-    line-height: 1.18;
+    font-size: 18px;
+    line-height: 1.35;
     margin: 13px 0 7px;
   }
 
   .services__card .card__text {
-    font-size: 12.4px;
-    line-height: 1.42;
+    font-size: 16px;
+    line-height: 1.55;
   }
 
   .button--services {
@@ -5522,7 +5526,7 @@ html {
 
 .problem-results__eyebrow {
   margin: 0 0 18px;
-  color: #6545C9;
+  color: #5A52E0;
   font-size: 13px;
   font-weight: 700;
   letter-spacing: 0.08em;
@@ -5531,12 +5535,12 @@ html {
 
 .problem-results__title {
   margin: 0;
-  color: #201D29;
-  font-family: "Plus Jakarta Sans", "Poppins", sans-serif;
+  color: #15171F;
+  font-family: serif;
   font-size: clamp(30px, 3.5vw, 42px);
-  font-weight: 750;
+  font-weight: 700;
   line-height: 1.2;
-  letter-spacing: -0.035em;
+  letter-spacing: normal;
 }
 
 .problem-results__highlight {
@@ -5546,7 +5550,7 @@ html {
 .problem-results__description {
   max-width: 790px;
   margin: 22px auto 0;
-  color: #6B6877;
+  color: #6B6E84;
   font-family: "Plus Jakarta Sans", "Poppins", sans-serif;
   font-size: 17px;
   font-weight: 400;
@@ -5617,9 +5621,9 @@ html {
 
 .problem-results__heading {
   margin: 0 0 7px;
-  color: #302B39;
+  color: #15171F;
   font-family: "Plus Jakarta Sans", "Poppins", sans-serif;
-  font-size: 19px;
+  font-size: 18px;
   font-weight: 700;
   line-height: 1.35;
 }
@@ -5630,7 +5634,7 @@ html {
 
 .problem-results__text {
   margin: 0;
-  color: #6B6877;
+  color: #6B6E84;
   font-family: "Plus Jakarta Sans", "Poppins", sans-serif;
   font-size: 16px;
   line-height: 1.55;
@@ -5717,14 +5721,232 @@ html {
   }
 
   .problem-results__heading {
-    font-size: 17px;
+    font-size: 18px;
   }
 
   .problem-results__text {
-    font-size: 15px;
+    font-size: 16px;
   }
 
   .problem-results__separator {
     margin: 20px 0;
+  }
+}
+
+/* SERVICES CARDS V2 — HOMEPAGE IT/EN */
+
+#services__id .services__cards {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-auto-rows: 1fr;
+  gap: 18px;
+  width: min(100%, 1140px);
+  margin-left: auto;
+  margin-right: auto;
+  align-items: stretch;
+}
+
+#services__id .services__card {
+  position: relative;
+  display: grid;
+  grid-template-columns: 42px minmax(0, 1fr);
+  grid-template-rows: auto 1fr auto;
+  column-gap: 13px;
+  align-content: stretch;
+  box-sizing: border-box;
+  max-width: none;
+  min-width: 0;
+  min-height: 0;
+  height: auto;
+  padding: 19px;
+  border: 1px solid #E9E3F1;
+  border-radius: 18px;
+  background: #FCFCFE;
+}
+
+#services__id .services__icon {
+  grid-column: 1;
+  grid-row: 1 / span 2;
+  width: 42px;
+  height: 42px;
+  margin: 0;
+  color: #5A52E0;
+}
+
+#services__id .services__card .card__title {
+  grid-column: 2;
+  grid-row: 1;
+  margin: 0 0 8px;
+  color: #15171F;
+  font-family: "Plus Jakarta Sans", "Poppins", sans-serif;
+  font-size: 17px;
+  font-weight: 700;
+  line-height: 1.35;
+}
+
+#services__id .services__card .card__text {
+  grid-column: 2;
+  grid-row: 2;
+  margin: 0;
+  color: #6B6E84;
+  font-family: "Plus Jakarta Sans", "Poppins", sans-serif;
+  font-size: 15px;
+  line-height: 1.55;
+}
+
+#services__id .services__link {
+  grid-column: 2;
+  grid-row: 3;
+  justify-self: start;
+  align-self: start;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  box-sizing: border-box;
+  width: 42px;
+  min-width: 42px;
+  max-width: 100%;
+  height: 42px;
+  min-height: 42px;
+  margin: 16px 0 0;
+  padding: 0 10px;
+  border: 1px solid #5A52E0;
+  border-radius: 21px;
+  background: #FFFFFF;
+  color: #15171F;
+  overflow: hidden;
+  white-space: nowrap;
+  text-decoration: none;
+  transform: none;
+  transition:
+    width 0.28s ease,
+    border-radius 0.08s ease,
+    background-color 0.25s ease,
+    color 0.25s ease;
+}
+
+#services__id .services__link::before {
+  content: "Scopri il servizio";
+  display: inline-block;
+  width: 0;
+  max-width: 0;
+  opacity: 0;
+  overflow: hidden;
+  font-family: "Plus Jakarta Sans", "Poppins", sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 1.2;
+  transition:
+    max-width 0.28s ease,
+    opacity 0.2s ease;
+}
+
+html[lang^="en"] #services__id .services__link::before {
+  content: "Explore the service";
+}
+
+#services__id .services__link span {
+  flex: 0 0 auto;
+  line-height: 1;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  #services__id .services__link:hover {
+    width: 185px;
+    border-radius: 13px;
+    background: #5A52E0;
+    border-color: #5A52E0;
+    color: #FFFFFF;
+    transform: none;
+  }
+
+  #services__id .services__link:hover::before {
+    width: auto;
+    max-width: 145px;
+    opacity: 1;
+  }
+}
+
+#services__id .services__link:focus-visible {
+  width: 185px;
+  border-radius: 13px;
+  background: #5A52E0;
+  border-color: #5A52E0;
+  color: #FFFFFF;
+  transform: none;
+  outline: 3px solid #5A52E066;
+  outline-offset: 3px;
+}
+
+#services__id .services__link:focus-visible::before {
+  width: auto;
+  max-width: 145px;
+  opacity: 1;
+}
+
+@media (min-width: 769px) and (max-width: 1200px) {
+  #services__id .services__cards {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  #services__id .services__cards {
+    grid-template-columns: minmax(0, 1fr);
+    grid-auto-rows: auto;
+    gap: 16px;
+  }
+
+  #services__id .services__card {
+    padding: 18px;
+  }
+
+  #services__id .services__card .card__title {
+    font-size: 18px;
+  }
+
+  #services__id .services__card .card__text {
+    font-size: 16px;
+  }
+
+  #services__id .services__link {
+    position: static;
+    width: 185px;
+    min-width: 0;
+    border-radius: 13px;
+    background: #5A52E0;
+    color: #FFFFFF;
+    transform: none;
+  }
+
+  #services__id .services__link::before {
+    width: auto;
+    max-width: 145px;
+    opacity: 1;
+  }
+
+  /* Il collegamento copre tutta la card. */
+  #services__id .services__link::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+  }
+
+  #services__id .services__card:hover {
+    transform: none;
+  }
+
+  #services__id .services__card:focus-within {
+    outline: 2px solid #5A52E0;
+    outline-offset: 3px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #services__id .services__link,
+  #services__id .services__link::before {
+    transition: none;
   }
 }
