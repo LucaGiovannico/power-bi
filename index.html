@@ -68,7 +68,7 @@
     <link rel="icon" href="./assets/images/favicon/favicon.ico" />
   </head>
 
-  <body>
+  <body class="homepage">
     <!--INIZIO SEZIONE NAVBAR-->
     <header class="site-header">
       <nav class="navbar" aria-label="Navigazione principale">
@@ -245,28 +245,7 @@
               data-it="./index.html"
               data-en="./index-en.html"
             >
-              <button
-                type="button"
-                class="language-selector__button"
-                onclick="toggleLanguageMenu(event)"
-                aria-haspopup="true"
-                aria-expanded="false"
-                aria-controls="languageMenu"
-              >
-                🇮🇹
-                <span>IT</span>
-                <span class="language-selector__arrow">▾</span>
-              </button>
-
-              <div class="language-selector__menu" id="languageMenu">
-                <button type="button" onclick="setLanguage('it')">
-                  🇮🇹 Italiano
-                </button>
-
-                <button type="button" onclick="setLanguage('en')">
-                  🇬🇧 English
-                </button>
-              </div>
+              <a class="language-switch__link" href="./index-en.html" hreflang="en" lang="en">SWITCH TO ENGLISH</a>
             </div>
           </div>
         </div>
@@ -302,7 +281,7 @@
         <div class="hero__subtitle">
             <p>
               Quando dati, KPI e report aumentano, Excel e i processi manuali
-              possono non bastare più. <br />
+              possono non bastare&nbsp;più. <br class="hero__subtitle-break" />
               Creo dashboard Power BI e sistemi di reporting chiari, aggiornati
               e facili da usare.
             </p>
@@ -550,7 +529,7 @@
           <header class="problem-results__header">
             <p class="problem-results__eyebrow">DAI PROBLEMI AI RISULTATI</p>
             <h2 class="problem-results__title" id="problem-results-title">
-              Quando i dati non sono chiari,
+              Quando i dati non sono chiari,<br />
               <span class="problem-results__highlight">ogni decisione costa di più.</span>
             </h2>
             <p class="problem-results__description">

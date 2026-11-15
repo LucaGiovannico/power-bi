@@ -307,14 +307,11 @@
         <div class="navbar__actions">
           <div class="navbar-right">
             <div class="language-selector" id="errorLanguageSelector">
-              <button type="button" class="language-selector__button" id="languageButton"
-                      aria-haspopup="true" aria-expanded="false" aria-controls="languageMenu"
-                      aria-label="Seleziona lingua">
-                <span id="languageFlag" aria-hidden="true">🇮🇹</span>
-                <span id="languageCode">IT</span>
-                <span class="language-selector__arrow" aria-hidden="true">▾</span>
-              </button>
-              <div class="language-selector__menu" id="languageMenu">
+              <button type="button"
+                      class="language-switch__link"
+                      id="languageButton"
+                      lang="en">SWITCH TO ENGLISH</button>
+              <div class="language-selector__menu" id="languageMenu" hidden aria-hidden="true">
                 <button type="button" data-select-language="it" lang="it">🇮🇹 Italiano</button>
                 <button type="button" data-select-language="en" lang="en">🇬🇧 English</button>
               </div>
@@ -461,7 +458,6 @@
 
         function closeLanguageMenu() {
           selectorMenu.classList.remove("show");
-          selectorButton.setAttribute("aria-expanded", "false");
         }
 
         function closeSubmenus(exceptItem = null) {
@@ -501,9 +497,19 @@
           document.querySelector('meta[name="description"]').content = copy.descriptionMeta;
           navbar.setAttribute("aria-label", copy.navLabel);
           document.getElementById("brandLink").setAttribute("aria-label", copy.brandLabel);
-          selectorButton.setAttribute("aria-label", copy.languageLabel);
-          document.getElementById("languageFlag").textContent = currentLanguage === "it" ? "🇮🇹" : "🇬🇧";
-          document.getElementById("languageCode").textContent = currentLanguage.toUpperCase();
+          selectorButton.textContent = currentLanguage === "it"
+            ? "SWITCH TO ENGLISH"
+            : "PASSA ALL'ITALIANO";
+
+          selectorButton.setAttribute(
+            "aria-label",
+            selectorButton.textContent
+          );
+
+          selectorButton.setAttribute(
+            "lang",
+            currentLanguage === "it" ? "en" : "it"
+          );
 
           document.querySelectorAll("[data-i18n]").forEach((element) => {
             const key = element.dataset.i18n;
@@ -539,10 +545,11 @@
 
         selectorButton.addEventListener("click", (event) => {
           event.stopPropagation();
-          const willOpen = !selectorMenu.classList.contains("show");
           closeSubmenus();
-          selectorMenu.classList.toggle("show", willOpen);
-          selectorButton.setAttribute("aria-expanded", String(willOpen));
+
+          renderLanguage(
+            currentLanguage === "it" ? "en" : "it"
+          );
         });
 
         document.querySelectorAll("[data-select-language]").forEach((button) => {

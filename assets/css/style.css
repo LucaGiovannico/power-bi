@@ -249,7 +249,7 @@ body {
 
 .hero__subtitle {
   color: #6b6e84;
-  font-size: 19px;
+  font-size: 18px;
   text-align: center;
   max-width: 750px;
   margin: 0 auto;
@@ -5948,5 +5948,456 @@ html[lang^="en"] #services__id .services__link::before {
   #services__id .services__link,
   #services__id .services__link::before {
     transition: none;
+  }
+}
+
+/* HOMEPAGE TYPOGRAPHY SYSTEM — IT/EN */
+
+body.homepage {
+  --home-text: #15171F;
+  --home-muted: #6B6E84;
+  --home-brand: #5A52E0;
+
+  --home-hero-size: 48px;
+  --home-section-size: 40px;
+  --home-cta-size: 36px;
+  --home-intro-size: 17px;
+  --home-eyebrow-size: 13px;
+
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+  color: var(--home-text);
+}
+
+/* HERO */
+
+body.homepage .hero__title-wrapper h1 {
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: -0.025em;
+  color: var(--home-text);
+}
+
+body.homepage .hero__subtitle {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  line-height: 1.6;
+  letter-spacing: normal;
+  color: var(--home-muted);
+}
+
+/* EYEBROW DELLE SEZIONI */
+
+body.homepage :is(
+  .problem-results__eyebrow,
+  .services__eyebrow,
+  .projects__eyebrow,
+  .method__eyebrow
+) {
+  font-family: "Poppins", sans-serif;
+  font-size: var(--home-eyebrow-size);
+  font-weight: 700;
+  line-height: 1.4;
+  letter-spacing: 0.08em;
+  color: var(--home-brand);
+}
+
+/* TITOLI PRINCIPALI DELLE SEZIONI */
+
+body.homepage :is(
+  .problem-results__title,
+  .services__title,
+  .projects__title,
+  .method__title
+) {
+  font-family: "Poppins", sans-serif;
+  font-size: var(--home-section-size);
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.025em;
+  color: var(--home-text);
+}
+
+/* DESCRIZIONI INTRODUTTIVE */
+
+body.homepage :is(
+  .problem-results__description,
+  .projects__subtitle
+) {
+  font-family: "Poppins", sans-serif;
+  font-size: var(--home-intro-size);
+  font-weight: 400;
+  line-height: 1.6;
+  letter-spacing: normal;
+  color: var(--home-muted);
+}
+
+/* TITOLI DELLE CARD */
+
+body.homepage :is(
+  .problem-results__heading,
+  .projects__card .card__title,
+  .method__card .card__title
+),
+body.homepage #services__id .services__card .card__title {
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  line-height: 1.35;
+  letter-spacing: -0.01em;
+  color: var(--home-text);
+}
+
+/* Dimensioni titoli card per sezione */
+body.homepage .projects__card .card__title {
+  font-size: 18px;
+}
+
+body.homepage :is(
+  .problem-results__heading,
+  .method__card .card__title
+),
+body.homepage #services__id .services__card .card__title {
+  font-size: 17px;
+}
+
+/* ECCEZIONE: TITOLI DEI RISULTATI */
+
+body.homepage .problem-results__heading--result {
+  color: #6545C9;
+}
+
+/* DESCRIZIONI DELLE CARD */
+
+body.homepage :is(
+  .problem-results__text,
+  .projects__card .card__text,
+  .method__card .card__text
+),
+body.homepage #services__id .services__card .card__text {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  line-height: 1.55;
+  letter-spacing: normal;
+  color: var(--home-muted);
+}
+
+/* Dimensioni descrizioni card per sezione */
+body.homepage .projects__card .card__text {
+  font-size: 16px;
+}
+
+body.homepage :is(
+  .problem-results__text,
+  .method__card .card__text
+),
+body.homepage #services__id .services__card .card__text {
+  font-size: 15px;
+}
+
+/* CTA FINALE */
+
+body.homepage .cta__title {
+  font-family: "Poppins", sans-serif;
+  font-size: var(--home-cta-size);
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.025em;
+  color: #FFFFFF;
+}
+
+body.homepage .cta__text {
+  font-family: "Poppins", sans-serif;
+  font-size: var(--home-intro-size);
+  font-weight: 400;
+  line-height: 1.6;
+  letter-spacing: normal;
+  color: #FFFFFF;
+}
+
+/* FOOTER */
+
+body.homepage .footer__name {
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.3;
+  color: var(--home-text);
+}
+
+body.homepage .footer__role {
+  font-family: "Poppins", sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  line-height: 1.4;
+  color: var(--home-muted);
+}
+
+body.homepage .footer__description {
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.6;
+  color: var(--home-muted);
+}
+
+body.homepage .footer__heading {
+  font-family: "Poppins", sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 1.4;
+  letter-spacing: 0.08em;
+  color: var(--home-text);
+}
+
+body.homepage .footer__column a {
+  font-family: "Poppins", sans-serif;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 1.6;
+}
+
+body.homepage .footer__bottom {
+  font-family: "Poppins", sans-serif;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+/* FONT DEI CONTROLLI */
+
+body.homepage button,
+body.homepage input,
+body.homepage select,
+body.homepage textarea {
+  font-family: "Poppins", sans-serif;
+}
+
+/* DESKTOP INTERMEDIO E TABLET */
+
+@media (min-width: 769px) and (max-width: 1200px) {
+  body.homepage {
+    --home-hero-size: 44px;
+    --home-section-size: 36px;
+    --home-cta-size: 34px;
+  }
+}
+
+/* MOBILE E TABLET VERTICALI */
+
+@media (max-width: 768px) {
+  body.homepage {
+    --home-hero-size: 36px;
+    --home-section-size: 32px;
+    --home-cta-size: 30px;
+    --home-intro-size: 16px;
+    --home-eyebrow-size: 12px;
+  }
+}
+
+/* SMARTPHONE */
+
+@media (max-width: 567px) {
+  body.homepage {
+    --home-hero-size: clamp(29px, 8vw, 34px);
+    --home-section-size: 28px;
+    --home-cta-size: 28px;
+  }
+}
+
+
+/* HOMEPAGE CARD TYPOGRAPHY 390-567px */
+
+@media (min-width: 390px) and (max-width: 567px) {
+  body.homepage :is(
+    .problem-results__heading,
+    .method__card .card__title
+  ),
+  body.homepage #services__id .services__card .card__title {
+    font-size: 16px;
+  }
+
+  body.homepage :is(
+    .problem-results__text,
+    .method__card .card__text
+  ),
+  body.homepage #services__id .services__card .card__text {
+    font-size: 14px;
+  }
+}
+
+/* HERO TEXT REFINEMENTS — IT/EN */
+
+/* Il testo desktop scorre senza interruzioni forzate. */
+@media (min-width: 769px) {
+  body.homepage .hero__subtitle-break {
+    display: none;
+  }
+}
+
+/* Card sotto la dashboard: caratteri più compatti
+   senza modificare tablet e mobile. */
+@media (min-width: 1201px) {
+  body.homepage .hero__feature-title {
+    font-size: 16px;
+  }
+
+  body.homepage .hero__feature-text {
+    font-size: 14px;
+  }
+}
+
+/* HOMEPAGE CARD GRID 568-768px — IT/EN */
+
+@media (min-width: 568px) and (max-width: 768px) {
+
+  /* Dai problemi ai risultati: 2 colonne */
+  body.homepage .problem-results__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  /* Servizi: 2 colonne con altezze uniformi */
+  body.homepage #services__id .services__cards {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-auto-rows: 1fr;
+  }
+
+}
+
+/* HOMEPAGE EQUAL-HEIGHT CARDS — IT/EN */
+
+/*
+ * Altezza uniforme per tutte le card della
+ * stessa sezione, senza altezza fissa.
+ *
+ * Grid: tutte le righe hanno la stessa altezza.
+ * Flex: gli elementi si estendono verticalmente.
+ */
+
+body.homepage .hero__features,
+body.homepage .problem-results__grid,
+body.homepage #services__id .services__cards,
+body.homepage .method__cards {
+  align-items: stretch;
+  grid-auto-rows: 1fr;
+}
+
+/*
+ * Le card occupano tutta l'altezza disponibile.
+ * height:auto evita conflitti con height:100%
+ * presente in alcuni breakpoint esistenti.
+ */
+
+body.homepage .hero__feature-card,
+body.homepage .problem-results__card,
+body.homepage #services__id .services__card,
+body.homepage .method__card {
+  box-sizing: border-box;
+  align-self: stretch;
+  height: auto;
+}
+
+/* PROBLEM RESULTS ALIGNMENT 390-1200px — IT/EN */
+
+@media (min-width: 390px) and (max-width: 1200px) {
+  body.homepage .problem-results__eyebrow,
+  body.homepage .problem-results__title,
+  body.homepage .problem-results__description {
+    text-align: left;
+  }
+
+  body.homepage .problem-results__eyebrow {
+    margin-left: 0;
+    margin-right: auto;
+    align-self: flex-start;
+    justify-self: start;
+  }
+
+  body.homepage .problem-results__description {
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+
+/* HOMEPAGE METHOD CARDS WIDTH — IT/EN */
+
+/*
+ * Mantiene la griglia centrata e consente
+ * di superare la larghezza precedente.
+ * Non modifica la disposizione delle card.
+ */
+
+@media (min-width: 568px) {
+
+  body.homepage .method__cards {
+    box-sizing: border-box;
+    max-width: none;
+    margin: 0;
+    padding: 0;
+
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  body.homepage .method__card {
+    width: 100%;
+    max-width: none;
+    min-width: 0;
+    box-sizing: border-box;
+  }
+}
+
+/* Desktop: griglia più ampia, sempre centrata */
+@media (min-width: 1201px) {
+
+  body.homepage .method__cards {
+    width: min(
+      calc(100% + 80px),
+      calc(100vw - 48px),
+      1320px
+    );
+  }
+}
+
+/* Laptop e tablet */
+@media (min-width: 769px) and (max-width: 1200px) {
+
+  body.homepage .method__cards {
+    width: min(
+      calc(100% + 56px),
+      calc(100vw - 40px)
+    );
+  }
+}
+
+/* Tablet compatti */
+@media (min-width: 568px) and (max-width: 768px) {
+
+  body.homepage .method__cards {
+    width: min(
+      calc(100% + 32px),
+      calc(100vw - 32px)
+    );
+  }
+}
+
+/* HOMEPAGE METHOD CTA SPACING — IT/EN */
+
+/* Desktop e laptop */
+body.homepage .method {
+  padding-bottom: 64px;
+}
+
+/* Tablet */
+@media (min-width: 568px) and (max-width: 768px) {
+  body.homepage .method {
+    padding-bottom: 48px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 567px) {
+  body.homepage .method {
+    padding-bottom: 40px;
   }
 }

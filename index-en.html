@@ -69,7 +69,7 @@
     <link rel="icon" href="./assets/images/favicon/favicon.ico" />
   </head>
 
-  <body>
+  <body class="homepage">
     <!--START NAVBAR SECTION-->
     <header class="site-header">
       <nav class="navbar" aria-label="Main navigation">
@@ -246,28 +246,7 @@
               data-it="./index.html"
               data-en="./index-en.html"
             >
-              <button
-                type="button"
-                class="language-selector__button"
-                onclick="toggleLanguageMenu(event)"
-                aria-haspopup="true"
-                aria-expanded="false"
-                aria-controls="languageMenu"
-              >
-                🇬🇧
-                <span>EN</span>
-                <span class="language-selector__arrow">▾</span>
-              </button>
-
-              <div class="language-selector__menu" id="languageMenu">
-                <button type="button" onclick="setLanguage('it')">
-                  🇮🇹 Italiano
-                </button>
-
-                <button type="button" onclick="setLanguage('en')">
-                  🇬🇧 English
-                </button>
-              </div>
+              <a class="language-switch__link" href="./index.html" hreflang="it" lang="it">PASSA ALL'ITALIANO</a>
             </div>
           </div>
         </div>
@@ -303,7 +282,7 @@
         <div class="hero__subtitle">
             <p>
               As data volumes, KPIs, and reporting needs increase, Excel and manual processes
-              may no longer be enough. <br />
+              may no longer be&nbsp;enough. <br class="hero__subtitle-break" />
               I build Power BI dashboards and reporting systems that are clear, up-to-date, and easy to use.
             </p>
           </div>
@@ -548,7 +527,7 @@
           <header class="problem-results__header">
             <p class="problem-results__eyebrow">FROM PROBLEMS TO RESULTS</p>
             <h2 class="problem-results__title" id="problem-results-title">
-              When data is unclear,
+              When data is unclear,<br />
               <span class="problem-results__highlight">every decision costs more.</span>
             </h2>
             <p class="problem-results__description">

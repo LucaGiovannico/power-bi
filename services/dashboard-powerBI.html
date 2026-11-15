@@ -255,37 +255,7 @@
         data-it="./dashboard-powerBI.html"
         data-en="./dashboard-powerBI-en.html"
       >
-        <button
-          type="button"
-          class="language-selector__button"
-          onclick="toggleLanguageMenu(event);"
-          aria-haspopup="true"
-          aria-expanded="false"
-          aria-controls="languageMenu"
-        >
-          🇮🇹
-          <span>IT</span>
-          <span class="language-selector__arrow">▾</span>
-        </button>
-
-        <div
-          class="language-selector__menu"
-          id="languageMenu"
-        >
-          <button
-            type="button"
-            onclick="setLanguage('it')"
-          >
-            🇮🇹 Italiano
-          </button>
-
-          <button
-            type="button"
-            onclick="setLanguage('en')"
-          >
-            🇬🇧 English
-          </button>
-        </div>
+        <a class="language-switch__link" href="./dashboard-powerBI-en.html" hreflang="en" lang="en">SWITCH TO ENGLISH</a>
       </div>
     </div>
   </nav>
