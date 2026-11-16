@@ -995,3 +995,13 @@
     transition: none;
   }
 }
+
+/* BLOG DROPDOWN — SITEWIDE IT/EN */
+
+/* Riutilizza gli stili e le interazioni dei sottomenu esistenti. */
+
+@media (min-width: 881px) {
+  .navbar .navbar__submenu--blog {
+    width: min(360px, calc(100vw - 32px));
+  }
+}

@@ -6405,13 +6405,13 @@ body.homepage .method {
 /* HOMEPAGE TESTIMONIALS — IT/EN */
 
 body.homepage .testimonials {
-  padding: 0 24px 64px;
+  padding: 30px 24px 88px;
 }
 
 body.homepage .testimonials__container {
   box-sizing: border-box;
   width: 100%;
-  max-width: 1160px;
+  max-width: 1240px;
   margin: 0 auto;
   padding: 36px;
   border: 1px solid #E9E3F1;
@@ -6473,11 +6473,11 @@ body.homepage .testimonials__card {
 body.homepage .testimonials__card::before {
   content: "“";
   display: block;
-  margin-bottom: 12px;
+  margin-bottom: 2px;
   color: #5A52E0;
   font-family: Georgia, serif;
   font-size: 48px;
-  line-height: 0.9;
+  line-height: 0.65;
 }
 
 body.homepage .testimonials__quote {
@@ -6532,8 +6532,8 @@ body.homepage .testimonials__link {
   font-size: 13px;
   font-weight: 600;
   line-height: 1.5;
-  text-decoration: underline;
-  text-underline-offset: 3px;
+  text-decoration: none;
+  transition: color 0.2s ease;
 }
 
 body.homepage .testimonials__link:hover {
@@ -6555,7 +6555,7 @@ body.homepage .testimonials__translation-note {
 /* Tablet e mobile */
 @media (max-width: 768px) {
   body.homepage .testimonials {
-    padding: 0 20px 48px;
+    padding: 24px 20px 68px;
   }
 
   body.homepage .testimonials__container {
@@ -6580,7 +6580,7 @@ body.homepage .testimonials__translation-note {
 /* Mobile compatto */
 @media (max-width: 567px) {
   body.homepage .testimonials {
-    padding: 0 16px 40px;
+    padding: 18px 16px 56px;
   }
 
   body.homepage .testimonials__container {
@@ -6602,5 +6602,66 @@ body.homepage .testimonials__translation-note {
 
   body.homepage .testimonials__quote p {
     font-size: 15px;
+  }
+}
+
+
+/* HOMEPAGE TESTIMONIALS AVATARS AND ALIGNMENT */
+
+body.homepage .testimonials__author-heading {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  min-width: 0;
+}
+
+body.homepage .testimonials__avatar {
+  display: block;
+  width: 48px;
+  height: 48px;
+  flex: 0 0 48px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+body.homepage .testimonials__author-heading .testimonials__author-info {
+  min-width: 0;
+  flex: 1 1 auto;
+}
+
+/* Desktop oltre 1200px: intestazione centrata */
+@media (min-width: 1201px) {
+  body.homepage .testimonials__intro {
+    text-align: center;
+  }
+
+  body.homepage .testimonials__title br {
+    display: none;
+  }
+}
+
+/* TESTIMONIAL LINKS DESKTOP HOVER — IT/EN */
+
+@media (min-width: 881px) and (hover: hover) and (pointer: fine) {
+  body.homepage .testimonials__link:hover,
+  body.homepage .testimonials__link:focus-visible {
+    text-transform: uppercase;
+  }
+}
+
+/* HERO FEATURE CARDS — DESKTOP ONLY — IT/EN */
+
+/*
+ * Le quattro card sotto la dashboard Hero
+ * sono visibili soltanto da 1201px in su.
+ *
+ * Mobile e tablet: nascoste.
+ * Desktop: layout originale invariato.
+ */
+
+@media (max-width: 1200px) {
+  body.homepage .hero__features {
+    display: none;
   }
 }

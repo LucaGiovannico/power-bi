@@ -1273,3 +1273,62 @@ if (openLanguageButton) {
     init();
   }
 })();
+
+/* BLOG CURRENT PAGE — SITEWIDE */
+
+(() => {
+  "use strict";
+
+  function markCurrentBlogPage() {
+    const menu = document.getElementById("blogSubmenu");
+
+    if (!menu) return;
+
+    const currentLink = Array.from(
+      menu.querySelectorAll("a[href]")
+    ).find((link) => {
+      const target = new URL(
+        link.getAttribute("href"),
+        document.baseURI
+      );
+
+      return (
+        target.origin === window.location.origin &&
+        target.pathname === window.location.pathname
+      );
+    });
+
+    if (!currentLink) return;
+
+    const currentItem = document.createElement("span");
+
+    currentItem.className = "navbar__submenu-current";
+    currentItem.setAttribute("aria-current", "page");
+
+    while (currentLink.firstChild) {
+      currentItem.appendChild(currentLink.firstChild);
+    }
+
+    currentLink.replaceWith(currentItem);
+
+    const blogParent = menu.closest(
+      ".navbar__item--has-submenu"
+    );
+
+    const mainLink = blogParent?.querySelector(
+      ".navbar__item-control > .navbar__link"
+    );
+
+    mainLink?.removeAttribute("aria-current");
+  }
+
+  if (document.readyState === "loading") {
+    document.addEventListener(
+      "DOMContentLoaded",
+      markCurrentBlogPage,
+      { once: true }
+    );
+  } else {
+    markCurrentBlogPage();
+  }
+})();

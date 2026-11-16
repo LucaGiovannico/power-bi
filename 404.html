@@ -298,7 +298,31 @@
                 </a></li>
               </ul>
             </li>
-            <li class="navbar__item"><a class="navbar__link" data-destination="blog" data-i18n="blog" href="/blog/">Blog</a></li>
+            <li class="navbar__item navbar__item--has-submenu">
+                <div class="navbar__item-control">
+                  <a class="navbar__link" data-destination="blog" data-i18n="blog" href="/blog/">Blog</a>
+                  <button type="button" class="navbar__submenu-toggle" id="blogSubmenuToggle" aria-expanded="false" aria-controls="blogSubmenu" aria-label="Apri il menu Blog">
+                    <span aria-hidden="true">▾</span>
+                  </button>
+                </div>
+                <ul class="navbar__submenu navbar__submenu--blog" id="blogSubmenu" aria-label="Articoli del blog">
+                  <li>
+                    <a href="/blog/5-formule-dax-da-conoscere.html" data-destination="blogDax">
+                      <span class="navbar__submenu-title" data-i18n="blogDaxTitle">5 formule DAX da conoscere</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="/blog/data-storytelling-un-buon-grafico-non-basta.html" data-destination="blogStory">
+                      <span class="navbar__submenu-title" data-i18n="blogStoryTitle">Data storytelling: un buon grafico non basta</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="/blog/articoli.html" data-destination="blogAll">
+                      <span class="navbar__submenu-title" data-i18n="blogAllTitle">Tutti gli articoli</span>
+                    </a>
+                  </li>
+                </ul>
+            </li>
             <li class="navbar__item"><a class="navbar__link" data-destination="about" data-i18n="about" href="/#about__id">Chi sono</a></li>
             <li class="navbar__item"><a class="navbar__link" data-destination="contact" data-i18n="contacts" href="/#contacts__id">Contatti</a></li>
           </ul>
@@ -377,7 +401,7 @@
             help: "Hai bisogno di aiuto?",
             contact: "Contattami",
             copyright: "© 2026 Dina Fiorentino. Tutti i diritti riservati.",
-            services: "Servizi", projects: "Progetti", blog: "Blog", about: "Chi sono", contacts: "Contatti",
+            services: "Servizi", projects: "Progetti", blog: "Blog", blogDaxTitle: "5 formule DAX da conoscere", blogStoryTitle: "Data storytelling: un buon grafico non basta", blogAllTitle: "Tutti gli articoli", about: "Chi sono", contacts: "Contatti",
             serviceDashboardTitle: "Dashboard Power BI su misura", serviceDashboardDesc: "Dashboard interattive progettate sui tuoi KPI.",
             serviceKpiTitle: "KPI Design & Monitoraggio", serviceKpiDesc: "Metriche chiare per monitorare ciò che conta.",
             serviceModelingTitle: "Data Modeling & Integrazione", serviceModelingDesc: "Fonti diverse organizzate in un modello affidabile.",
@@ -404,7 +428,7 @@
             help: "Need a hand?",
             contact: "Contact me",
             copyright: "© 2026 Dina Fiorentino. All rights reserved.",
-            services: "Services", projects: "Projects", blog: "Blog", about: "About Me", contacts: "Contacts",
+            services: "Services", projects: "Projects", blog: "Blog", blogDaxTitle: "5 DAX formulas worth knowing", blogStoryTitle: "Data storytelling: a good chart is not enough", blogAllTitle: "All articles", about: "About Me", contacts: "Contacts",
             serviceDashboardTitle: "Custom Power BI Dashboards", serviceDashboardDesc: "Interactive dashboards designed around your KPIs.",
             serviceKpiTitle: "KPI Design & Monitoring", serviceKpiDesc: "Clear metrics to monitor what matters.",
             serviceModelingTitle: "Data Modeling & Integration", serviceModelingDesc: "Different sources organized into a reliable model.",
@@ -420,7 +444,7 @@
         const urls = {
           it: {
             home: "/", services: "/#services__id", projects: "/#projects__id",
-            blog: "/blog/", about: "/#about__id", contact: "/#contacts__id",
+            blog: "/blog/", blogDax: "/blog/5-formule-dax-da-conoscere.html", blogStory: "/blog/data-storytelling-un-buon-grafico-non-basta.html", blogAll: "/blog/articoli.html", about: "/#about__id", contact: "/#contacts__id",
             serviceDashboard: "/services/dashboard-powerBI.html",
             serviceKpi: "/services/kpi-design-monitoraggio.html",
             serviceModeling: "/services/data-modeling-integrazione.html",
@@ -432,7 +456,7 @@
           },
           en: {
             home: "/index-en.html", services: "/index-en.html#services__id",
-            projects: "/index-en.html#projects__id", blog: "/blog/index-en.html",
+            projects: "/index-en.html#projects__id", blog: "/blog/index-en.html", blogDax: "/blog/5-formule-dax-da-conoscere-en.html", blogStory: "/blog/data-storytelling-un-buon-grafico-non-basta-en.html", blogAll: "/blog/articles.html",
             about: "/index-en.html#about__id", contact: "/index-en.html#contacts__id",
             serviceDashboard: "/services/dashboard-powerBI-en.html",
             serviceKpi: "/services/kpi-design-monitoraggio-en.html",
@@ -491,6 +515,22 @@
           currentLanguage = language === "en" ? "en" : "it";
           const copy = translations[currentLanguage];
           const paths = urls[currentLanguage];
+          const blogToggle = document.getElementById("blogSubmenuToggle");
+          const blogList = document.getElementById("blogSubmenu");
+
+          blogToggle.setAttribute(
+            "aria-label",
+            currentLanguage === "it"
+              ? "Apri il menu Blog"
+              : "Open Blog menu"
+          );
+
+          blogList.setAttribute(
+            "aria-label",
+            currentLanguage === "it"
+              ? "Articoli del blog"
+              : "Blog articles"
+          );
 
           document.documentElement.lang = currentLanguage;
           document.title = copy.title;

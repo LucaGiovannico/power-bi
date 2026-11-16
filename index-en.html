@@ -225,8 +225,30 @@
       </ul>
     </li>
 
-    <li class="navbar__item">
-      <a class="navbar__link" href="./blog/index-en.html">Blog</a>
+    <li class="navbar__item navbar__item--has-submenu">
+        <div class="navbar__item-control">
+          <a class="navbar__link" href="./blog/index-en.html">Blog</a>
+          <button type="button" class="navbar__submenu-toggle" aria-expanded="false" aria-controls="blogSubmenu" aria-label="Open Blog menu">
+            <span aria-hidden="true">▾</span>
+          </button>
+        </div>
+        <ul class="navbar__submenu navbar__submenu--blog" id="blogSubmenu" aria-label="Blog articles">
+          <li>
+            <a href="./blog/5-formule-dax-da-conoscere-en.html">
+              <span class="navbar__submenu-title">5 DAX formulas worth knowing</span>
+            </a>
+          </li>
+          <li>
+            <a href="./blog/data-storytelling-un-buon-grafico-non-basta-en.html">
+              <span class="navbar__submenu-title">Data storytelling: a good chart is not enough</span>
+            </a>
+          </li>
+          <li>
+            <a href="./blog/articles.html">
+              <span class="navbar__submenu-title">All articles</span>
+            </a>
+          </li>
+        </ul>
     </li>
 
     <li class="navbar__item">
@@ -951,7 +973,8 @@
           <div class="testimonials__intro">
             <p class="testimonials__eyebrow">TESTIMONIALS</p>
             <h2 class="testimonials__title" id="testimonials-title">
-              Trust built <span class="text-gradient">on results.</span>
+              Trust built<br />
+              <span class="text-gradient">on results.</span>
             </h2>
             <p class="testimonials__description">
               What people who have worked with me say.
@@ -962,40 +985,46 @@
 
             <figure class="testimonials__card">
               <blockquote class="testimonials__quote">
-                <p>“Her DAX and data modeling skills are solid and deep, but what truly sets her apart is her ability to go beyond the dashboard.”</p>
+                <p>“The integration into our dashboards was valuable […] we know that the next time we have a suitable project, we'll know who to turn to.”</p>
               </blockquote>
 
               <figcaption class="testimonials__author">
-                <div class="testimonials__author-info">
-                  <span class="testimonials__name">Francesco Bergamaschi</span>
-                  <span class="testimonials__role">Data Scientist · Co-Founder KUBISCO</span>
-                  <span class="testimonials__source">LinkedIn recommendation</span>
-                </div>
-                <a class="testimonials__link"
-                   href="https://www.linkedin.com/in/francescobergamaschi/"
-                   target="_blank"
-                   rel="noopener noreferrer">
-                  LinkedIn profile
-                </a>
-              </figcaption>
-            </figure>
-
-            <figure class="testimonials__card">
-              <blockquote class="testimonials__quote">
-                <p>“… we know that the next time we have a suitable project, we'll know who to turn to.”</p>
-              </blockquote>
-
-              <figcaption class="testimonials__author">
-                <div class="testimonials__author-info">
-                  <span class="testimonials__name">Alessandro Mattavelli</span>
-                  <span class="testimonials__role">Italian Chartered Accountant · Strategic Consultant</span>
-                  <span class="testimonials__source">LinkedIn post</span>
+                <div class="testimonials__author-heading">
+                  <img class="testimonials__avatar" src="./assets/images/testimonials/alessandro-mattavelli.webp" alt="Foto di Alessandro Mattavelli" width="48" height="48" loading="lazy" decoding="async" />
+                  <div class="testimonials__author-info">
+                    <span class="testimonials__name">Alessandro Mattavelli</span>
+                    <span class="testimonials__role">Italian Chartered Accountant · Strategic Consultant</span>
+                    <span class="testimonials__source">LinkedIn post</span>
+                  </div>
                 </div>
                 <a class="testimonials__link"
                    href="https://www.linkedin.com/feed/update/urn:li:share:7459887217617039360/"
                    target="_blank"
                    rel="noopener noreferrer">
                   Read the original post
+                </a>
+              </figcaption>
+            </figure>
+
+            <figure class="testimonials__card">
+              <blockquote class="testimonials__quote">
+                <p>“Her DAX and data modeling skills are solid and deep, but what truly sets her apart is her ability to go beyond the dashboard.”</p>
+              </blockquote>
+
+              <figcaption class="testimonials__author">
+                <div class="testimonials__author-heading">
+                  <img class="testimonials__avatar" src="./assets/images/testimonials/francesco-bergamaschi.webp" alt="Foto di Francesco Bergamaschi" width="48" height="48" loading="lazy" decoding="async" />
+                  <div class="testimonials__author-info">
+                    <span class="testimonials__name">Francesco Bergamaschi</span>
+                    <span class="testimonials__role">Data Scientist · Co-Founder KUBISCO</span>
+                    <span class="testimonials__source">LinkedIn recommendation</span>
+                  </div>
+                </div>
+                <a class="testimonials__link"
+                   href="https://www.linkedin.com/in/dina-fiorentino/details/recommendations/"
+                   target="_blank"
+                   rel="noopener noreferrer">
+                  Read the recommendation
                 </a>
               </figcaption>
             </figure>

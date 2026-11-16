@@ -258,14 +258,36 @@
           </ul>
         </li>
 
-        <li class="navbar__item">
-          <a
+        <li class="navbar__item navbar__item--has-submenu">
+            <div class="navbar__item-control">
+              <a
             class="navbar__link"
             href="./index-en.html"
             aria-current="page"
           >
             Blog
           </a>
+              <button type="button" class="navbar__submenu-toggle" aria-expanded="false" aria-controls="blogSubmenu" aria-label="Open Blog menu">
+                <span aria-hidden="true">▾</span>
+              </button>
+            </div>
+            <ul class="navbar__submenu navbar__submenu--blog" id="blogSubmenu" aria-label="Blog articles">
+              <li>
+                <a href="./5-formule-dax-da-conoscere-en.html">
+                  <span class="navbar__submenu-title">5 DAX formulas worth knowing</span>
+                </a>
+              </li>
+              <li>
+                <a href="./data-storytelling-un-buon-grafico-non-basta-en.html">
+                  <span class="navbar__submenu-title">Data storytelling: a good chart is not enough</span>
+                </a>
+              </li>
+              <li>
+                <a href="./articles.html">
+                  <span class="navbar__submenu-title">All articles</span>
+                </a>
+              </li>
+            </ul>
         </li>
 
         <li class="navbar__item">
