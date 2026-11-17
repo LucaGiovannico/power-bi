@@ -1,0 +1,1035 @@
+<!DOCTYPE html>
+<html lang="it">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+<title>Power BI lento? 5 cause e come migliorare le prestazioni | Dina Fiorentino</title>
+
+<meta
+  name="description"
+  content="Power BI lento? Scopri 5 aspetti che influenzano le prestazioni: visualizzazioni, modello dati, DAX, connessioni e risorse. Ecco come misurarle."
+/>
+
+<link
+  rel="canonical"
+  href="https://www.dinafiorentino.com/blog/power-bi-lento-prestazioni.html"
+/>
+
+<link rel="alternate" hreflang="it" href="https://www.dinafiorentino.com/blog/power-bi-lento-prestazioni.html" />
+    <link rel="alternate" hreflang="en" href="https://www.dinafiorentino.com/blog/power-bi-lento-prestazioni-en.html" />
+    <link rel="alternate" hreflang="x-default" href="https://www.dinafiorentino.com/blog/power-bi-lento-prestazioni.html" />
+
+<meta property="og:type" content="article" />
+    <meta property="og:title" content="Power BI lento? 5 aspetti da controllare per migliorare le prestazioni" />
+    <meta property="og:description" content="Power BI lento? Scopri 5 aspetti che influenzano le prestazioni: visualizzazioni, modello dati, DAX, connessioni e risorse. Ecco come misurarle." />
+    <meta property="og:url" content="https://www.dinafiorentino.com/blog/power-bi-lento-prestazioni.html" />
+    <meta property="og:image" content="https://www.dinafiorentino.com/assets/images/blog/blog-hero-data-magazine.webp" />
+    <meta property="og:image:alt" content="Illustrazione editoriale dedicata a Power BI e all&#x27;analisi dei dati" />
+    <meta property="og:site_name" content="Dina Fiorentino" />
+    <meta property="og:locale" content="it_IT" />
+    <meta property="og:locale:alternate" content="en_US" />
+    <meta property="article:published_time" content="2026-11-17" />
+    <meta property="article:section" content="POWER BI" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Power BI lento? 5 aspetti da controllare per migliorare le prestazioni" />
+    <meta name="twitter:description" content="Power BI lento? Scopri 5 aspetti che influenzano le prestazioni: visualizzazioni, modello dati, DAX, connessioni e risorse. Ecco come misurarle." />
+    <meta name="twitter:image" content="https://www.dinafiorentino.com/assets/images/blog/blog-hero-data-magazine.webp" />
+    <meta name="twitter:image:alt" content="Illustrazione editoriale dedicata a Power BI e all&#x27;analisi dei dati" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Power BI lento? 5 aspetti da controllare per migliorare le prestazioni",
+  "description": "Power BI lento? Scopri 5 aspetti che influenzano le prestazioni: visualizzazioni, modello dati, DAX, connessioni e risorse. Ecco come misurarle.",
+  "datePublished": "2026-11-17",
+  "dateModified": "2026-11-17",
+  "inLanguage": "it",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://www.dinafiorentino.com/blog/power-bi-lento-prestazioni.html"
+  },
+  "image": [
+    "https://www.dinafiorentino.com/assets/images/blog/blog-hero-data-magazine.webp"
+  ],
+  "author": {
+    "@type": "Person",
+    "name": "Dina Fiorentino",
+    "url": "https://www.dinafiorentino.com/"
+  },
+  "publisher": {
+    "@type": "Person",
+    "name": "Dina Fiorentino"
+  }
+}
+</script>
+
+    <link
+      rel="stylesheet"
+      href="../assets/css/blog.css"
+    />
+
+    <link
+      rel="stylesheet"
+      href="../assets/css/blog-article.css"
+    />
+
+    <link
+      rel="stylesheet"
+      href="../assets/css/contact-modal.css"
+    />
+
+    <link
+      rel="stylesheet"
+      href="../assets/css/navigation.css"
+    />
+
+    <link
+      rel="stylesheet"
+      href="../assets/css/footer.css"
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Limelight&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Poppins:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+
+
+
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="../assets/images/favicon/apple-touch-icon.png"
+    />
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="../assets/images/favicon/favicon-32x32.png"
+    />
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="../assets/images/favicon/favicon-16x16.png"
+    />
+
+    <link
+      rel="manifest"
+      href="../assets/images/favicon/site.webmanifest"
+    />
+
+    <link
+      rel="icon"
+      href="../assets/images/favicon/favicon.ico"
+    />
+  </head>
+
+  <body class="blog-page">
+
+    <!-- ======================================================
+         NAVBAR
+         ====================================================== -->
+
+<header class="site-header">
+  <nav class="navbar" aria-label="Navigazione principale">
+    <a
+      href="../index.html"
+      class="navbar__brand"
+      aria-label="Torna alla homepage"
+    >
+      <span class="navbar__monogram" aria-hidden="true">DF</span>
+
+      <span class="navbar__identity">
+        <span class="navbar__name">Dina Fiorentino</span>
+        <span class="navbar__role">
+          Data Analyst &amp; Power BI Consultant
+        </span>
+      </span>
+    </a>
+
+    <button
+      type="button"
+      class="navbar__toggle"
+      aria-expanded="false"
+      aria-controls="mainNavMenu"
+      aria-label="Apri il menu di navigazione"
+    >
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </button>
+
+    <div class="navbar__menu" id="mainNavMenu">
+      <ul class="navbar__list">
+        <!-- SERVIZI -->
+        <li class="navbar__item navbar__item--has-submenu">
+          <div class="navbar__item-control">
+            <a
+              class="navbar__link"
+              href="../index.html#services__id"
+            >
+              Servizi
+            </a>
+
+            <button
+              type="button"
+              class="navbar__submenu-toggle"
+              aria-expanded="false"
+              aria-controls="servicesSubmenu"
+              aria-label="Apri il menu Servizi"
+            >
+              <span aria-hidden="true">▾</span>
+            </button>
+          </div>
+
+          <ul
+            class="navbar__submenu navbar__submenu--services"
+            id="servicesSubmenu"
+            aria-label="Pagine servizi"
+          >
+            <li>
+              <a href="../services/dashboard-powerBI.html">
+                <span class="navbar__submenu-title">
+                  Dashboard Power BI su misura
+                </span>
+                <span class="navbar__submenu-description">
+                  Dashboard interattive progettate sui tuoi KPI.
+                </span>
+              </a>
+            </li>
+
+            <li>
+              <a href="../services/kpi-design-monitoraggio.html">
+                <span class="navbar__submenu-title">
+                  KPI Design &amp; Monitoraggio
+                </span>
+                <span class="navbar__submenu-description">
+                  Metriche chiare per monitorare ciò che conta.
+                </span>
+              </a>
+            </li>
+
+            <li>
+              <a href="../services/data-modeling-integrazione.html">
+                <span class="navbar__submenu-title">
+                  Data Modeling &amp; Integrazione
+                </span>
+                <span class="navbar__submenu-description">
+                  Fonti diverse organizzate in un modello affidabile.
+                </span>
+              </a>
+            </li>
+
+            <li>
+              <a href="../services/reporting-automatizzato.html">
+                <span class="navbar__submenu-title">
+                  Reporting automatizzato
+                </span>
+                <span class="navbar__submenu-description">
+                  Processi di reporting più rapidi e ripetibili.
+                </span>
+              </a>
+            </li>
+          </ul>
+        </li>
+
+        <!-- PROGETTI -->
+        <li class="navbar__item navbar__item--has-submenu">
+          <div class="navbar__item-control">
+            <a
+              class="navbar__link"
+              href="../index.html#projects__id"
+            >
+              Progetti
+            </a>
+
+            <button
+              type="button"
+              class="navbar__submenu-toggle"
+              aria-expanded="false"
+              aria-controls="projectsSubmenu"
+              aria-label="Apri il menu Progetti"
+            >
+              <span aria-hidden="true">▾</span>
+            </button>
+          </div>
+
+          <ul
+            class="navbar__submenu navbar__submenu--projects"
+            id="projectsSubmenu"
+            aria-label="Pagine progetti"
+          >
+            <li>
+              <a href="../projects/business-plan.html">
+                <span class="navbar__submenu-title">
+                  Business Plan &amp; Financial Analysis
+                </span>
+                <span class="navbar__submenu-description">
+                  Pianificazione finanziaria, scenari e sostenibilità economica.
+                </span>
+              </a>
+            </li>
+
+            <li>
+              <a href="../projects/hotel-market-insights.html">
+                <span class="navbar__submenu-title">
+                  Hotel Market Analysis &amp; Revenue Insights
+                </span>
+                <span class="navbar__submenu-description">
+                  Performance alberghiera, booking e distribuzione.
+                </span>
+              </a>
+            </li>
+
+            <li>
+              <a href="../projects/sales-performance-forecast.html">
+                <span class="navbar__submenu-title">
+                  Sales Performance &amp; Forecast
+                </span>
+                <span class="navbar__submenu-description">
+                  Vendite, obiettivi, pipeline e previsioni.
+                </span>
+              </a>
+            </li>
+          </ul>
+        </li>
+
+        <li class="navbar__item navbar__item--has-submenu">
+            <div class="navbar__item-control">
+              <a
+            class="navbar__link"
+            href="./index.html"
+            aria-current="page"
+          >
+            Blog
+          </a>
+              <button type="button" class="navbar__submenu-toggle" aria-expanded="false" aria-controls="blogSubmenu" aria-label="Apri il menu Blog">
+                <span aria-hidden="true">▾</span>
+              </button>
+            </div>
+            <ul class="navbar__submenu navbar__submenu--blog" id="blogSubmenu" aria-label="Articoli del blog">
+              <li>
+                <a href="./5-formule-dax-da-conoscere.html">
+                  <span class="navbar__submenu-title">5 formule DAX da conoscere</span>
+                </a>
+              </li>
+              <li>
+                <a href="./data-storytelling-un-buon-grafico-non-basta.html">
+                  <span class="navbar__submenu-title">Data storytelling: un buon grafico non basta</span>
+                </a>
+              </li>
+              <li>
+                <a href="./articoli.html">
+                  <span class="navbar__submenu-title">Tutti gli articoli</span>
+                </a>
+              </li>
+            </ul>
+        </li>
+
+        <li class="navbar__item">
+          <a
+            class="navbar__link"
+            href="../index.html#about__id"
+          >
+            Chi sono
+          </a>
+        </li>
+
+        <li class="navbar__item">
+          <a
+            class="navbar__link"
+            href="../index.html#contacts__id"
+          >
+            Contatti
+          </a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="navbar__actions">
+      <div
+        class="language-selector"
+        data-it="https://www.dinafiorentino.com/blog/power-bi-lento-prestazioni.html"
+        data-en="https://www.dinafiorentino.com/blog/power-bi-lento-prestazioni-en.html"
+      >
+        <a class="language-switch__link" href="https://www.dinafiorentino.com/blog/power-bi-lento-prestazioni-en.html" hreflang="en" lang="en">SWITCH TO ENGLISH</a>
+      </div>
+    </div>
+  </nav>
+</header>
+
+<main>
+
+  <article class="blog-article">
+
+<header class="blog-article__header">
+
+  <div class="blog-shell">
+
+    <div class="blog-article__hero-grid">
+
+      <div class="blog-article__hero-copy">
+
+        <a
+          class="blog-article__back"
+          href="./index.html"
+        >
+          ← Torna al Blog
+        </a>
+
+        <div class="blog-article__meta">
+          <span>POWER BI</span>
+          <span>17 novembre 2026</span>
+          <span>10 MIN DI LETTURA</span>
+        </div>
+
+        <h1 class="blog-article__title">
+          Power BI lento? 5 aspetti da controllare per migliorare le prestazioni
+        </h1>
+
+        <p class="blog-article__intro">
+          Power BI lento? Scopri 5 aspetti che influenzano le prestazioni: visualizzazioni, modello dati, DAX, connessioni e risorse. Ecco come misurarle.
+        </p>
+
+      </div>
+
+      <figure class="blog-article__hero">
+
+        <img
+          src="../assets/images/blog/blog-hero-data-magazine.webp"
+          alt="Illustrazione editoriale dedicata a Power BI e all&#x27;analisi dei dati"
+          loading="eager"
+          decoding="async"
+        />
+
+      </figure>
+
+    </div>
+
+  </div>
+
+</header>
+
+    <div class="blog-shell">
+
+      <div class="blog-article__layout">
+
+        <div class="blog-article__content">
+
+          <!-- PERFORMANCE ARTICLE — EDITORIAL LAYOUT --><section class="blog-article__lead blog-article__lead--performance">
+<span class="blog-article__lead-label">IL CONTESTO</span>
+<p>Un report Power BI può essere ben progettato, avere KPI corretti e visualizzazioni efficaci, ma risultare comunque difficile da utilizzare. Succede quando le pagine impiegano troppo tempo a caricarsi, i filtri rispondono lentamente o ogni interazione richiede qualche secondo di attesa. Il problema non riguarda soltanto l’esperienza dell’utente. Una dashboard poco reattiva interrompe il flusso dell’analisi, rende più complicata l’esplorazione dei dati e rischia di ridurre la fiducia nello strumento. Le prestazioni sono quindi parte integrante della qualità di un report, esattamente come la correttezza dei calcoli e la chiarezza delle visualizzazioni.</p>
+<p>Quando Power BI diventa lento, la prima reazione è spesso attribuire il problema alla quantità di dati. In realtà, un modello con milioni di righe può funzionare bene, mentre un report con molti meno record può mostrare rallentamenti significativi. La differenza dipende da diversi fattori: struttura del modello semantico, complessità delle misure DAX, numero di visualizzazioni, modalità di connessione e risorse disponibili.</p>
+<p>Prima di intervenire, però, è importante distinguere due situazioni. Un conto è un report lento durante la consultazione, ad esempio quando si applica un filtro. Un altro è un aggiornamento dei dati particolarmente lungo, che può dipendere dalle trasformazioni in Power Query o dalle prestazioni della sorgente.</p>
+<p>Le due situazioni possono avere cause differenti. Vediamo cinque aspetti che meritano attenzione quando un report Power BI non offre le prestazioni attese.</p>
+</section>
+
+<div class="blog-article__sections-grid blog-article__sections-grid--performance-pairs">
+<section class="blog-article__section-card blog-article__performance-problem">
+<h2>1. Troppe visualizzazioni nella stessa pagina</h2>
+<p>Uno degli errori più comuni consiste nel cercare di concentrare tutte le informazioni disponibili in un’unica dashboard.</p>
+    <p>KPI, grafici a barre, tabelle, matrici, slicer e visualizzazioni di dettaglio vengono aggiunti progressivamente, con l’obiettivo di offrire un quadro sempre più completo.</p>
+    <p>Il risultato, però, può diventare controproducente.</p>
+    <p>Ogni visualizzazione può generare una query verso il modello semantico. Quando l’utente modifica un filtro, più elementi della pagina possono richiedere una nuova elaborazione.</p>
+    <p>Il problema non è quindi semplicemente il numero di grafici, ma il lavoro complessivo necessario per aggiornarli.</p>
+    <p>Una pagina con molte visualizzazioni complesse può richiedere più risorse rispetto a una struttura progettata con maggiore attenzione.</p>
+</section>
+<section class="blog-article__section-card blog-article__performance-solution">
+<h2>1. Come intervenire?</h2>
+<p>Prima di aggiungere un nuovo elemento, chiediti se quell’informazione è davvero necessaria nella vista principale.</p>
+    <p>Le analisi secondarie possono essere organizzate in pagine dedicate, mentre il drillthrough consente di approfondire un dettaglio soltanto quando serve.</p>
+    <p>Anche le interazioni tra visualizzazioni meritano attenzione: non tutti i grafici devono necessariamente reagire a ogni selezione.</p>
+    <p>Ridurre gli elementi superflui può migliorare le prestazioni, ma produce anche un altro vantaggio.</p>
+    <p>Una dashboard più essenziale è spesso più semplice da leggere e interpretare.</p>
+    <p>È lo stesso principio alla base del data storytelling: ogni elemento dovrebbe avere una funzione precisa, non occupare spazio soltanto perché il dato è disponibile.</p>
+</section>
+<section class="blog-article__section-card blog-article__performance-problem">
+<h2>2. Un modello dati poco efficiente</h2>
+<p>Le prestazioni di Power BI dipendono in larga parte da come sono organizzati i dati.</p>
+    <p>Un modello con relazioni complesse, tabelle inutilmente grandi o percorsi di filtro difficili da gestire può rendere più costosa l’esecuzione delle query.</p>
+    <p>Immaginiamo un modello commerciale che contiene informazioni su vendite, clienti, prodotti e calendario.</p>
+    <p>Una struttura ben progettata permette di distinguere chiaramente gli eventi da analizzare dalle informazioni utilizzate per filtrarli.</p>
+    <p>È il principio dello schema a stella.</p>
+    <p>La tabella dei fatti contiene, ad esempio, le transazioni di vendita.</p>
+    <p>Le tabelle dimensionali descrivono invece clienti, prodotti, date e altre caratteristiche utili all’analisi.</p>
+    <p>Questa organizzazione facilita la comprensione del modello e può favorire l’efficienza delle interrogazioni.</p>
+</section>
+<section class="blog-article__section-card blog-article__performance-solution">
+<h2>2. Come intervenire?</h2>
+<p>Controlla la cardinalità delle relazioni, verifica la presenza di tabelle e colonne non necessarie e presta attenzione ai filtri bidirezionali.</p>
+    <p>Questi ultimi possono essere indispensabili in scenari specifici, ma utilizzarli senza una reale esigenza può aumentare il lavoro richiesto al modello.</p>
+    <p>Anche la granularità è importante.</p>
+    <p>Se l’analisi richiede dati mensili aggregati, non sempre è necessario interrogare ogni singola transazione attraverso tutte le visualizzazioni.</p>
+    <p>Il punto fondamentale è che le prestazioni non si ottimizzano soltanto nei grafici: iniziano dalla progettazione del modello semantico.</p>
+</section>
+<section class="blog-article__section-card blog-article__performance-problem">
+<h2>3. Misure DAX più complesse del necessario</h2>
+<p>DAX permette di realizzare calcoli avanzati e analisi dinamiche, ma non tutte le formule richiedono lo stesso lavoro per essere eseguite.</p>
+    <p>Funzioni come CALCULATE, FILTER e SUMX sono fondamentali in molti modelli.</p>
+    <p>Il loro utilizzo, però, deve essere coerente con il tipo di calcolo richiesto.</p>
+    <p>Consideriamo un esempio.</p>
+    <p>Se una tabella Sales contiene già una colonna con l’importo di ogni transazione, il totale può essere calcolato direttamente:</p>
+    <pre class="blog-article__code"><code class="language-dax">Total Sales =
+SUM(Sales[Sales Amount])</code></pre>
+    <p>Se invece il valore deve essere ottenuto moltiplicando quantità e prezzo unitario, possiamo utilizzare:</p>
+    <pre class="blog-article__code"><code class="language-dax">Total Sales =
+SUMX(
+    Sales,
+    Sales[Quantity] *
+        Sales[Unit Price]
+)</code></pre>
+    <p>Entrambe le formule possono essere corrette, ma rispondono a strutture dati differenti.</p>
+    <p>Quando il valore da aggregare è già disponibile e affidabile, una somma diretta evita di ricalcolare l’espressione per ogni riga.</p>
+    <p>Questo non significa che SUMX sia una funzione da evitare.</p>
+    <p>Significa scegliere il pattern DAX più appropriato per il problema.</p>
+</section>
+<section class="blog-article__section-card blog-article__performance-solution">
+<h2>3. Come intervenire?</h2>
+<p>Controlla le misure che eseguono iterazioni su tabelle molto grandi, verifica eventuali filtri complessi e cerca di identificare calcoli ripetuti inutilmente.</p>
+    <p>L’utilizzo delle variabili può migliorare la leggibilità delle formule e, in alcuni casi, evitare valutazioni ridondanti.</p>
+    <p>Per analisi più approfondite è possibile utilizzare strumenti come DAX Studio, che permettono di esaminare l’esecuzione delle query.</p>
+    <p>Il vero obiettivo non è scrivere formule più brevi, ma costruire misure corrette, leggibili ed efficienti.</p>
+</section>
+<section class="blog-article__section-card blog-article__performance-problem">
+<h2>4. Modalità di connessione e gestione dei dati</h2>
+<p>Un altro aspetto importante riguarda il modo in cui Power BI accede alle informazioni.</p>
+    <p>Con la modalità Import, i dati vengono caricati nel modello semantico e le interrogazioni possono sfruttare il motore di archiviazione interno.</p>
+    <p>Con DirectQuery, invece, molte operazioni richiedono interrogazioni all’origine dati.</p>
+    <p>Questo significa che le prestazioni possono dipendere anche dalla velocità del database e dalla complessità delle query generate.</p>
+    <p>Se la sorgente risponde lentamente, anche le visualizzazioni possono impiegare più tempo ad aggiornarsi.</p>
+    <p>In modalità Import, invece, un problema diverso può presentarsi durante il refresh.</p>
+    <p>Trasformazioni particolarmente onerose in Power Query, grandi volumi di dati e passaggi che impediscono il query folding possono allungare i tempi di aggiornamento.</p>
+    <p>Il query folding consente, quando supportato, di delegare parte delle trasformazioni direttamente alla sorgente, evitando elaborazioni non necessarie nel motore Power Query.</p>
+</section>
+<section class="blog-article__section-card blog-article__performance-solution">
+<h2>4. Come intervenire?</h2>
+<p>Verifica innanzitutto se il rallentamento riguarda l’interazione con il report oppure il caricamento dei dati.</p>
+    <p>Nel primo caso, controlla la modalità di connessione e le prestazioni delle query.</p>
+    <p>Nel secondo, analizza i passaggi di Power Query, elimina le colonne superflue e valuta eventuali strategie di aggiornamento incrementale.</p>
+    <p>La distinzione è importante: ottimizzare il refresh di un modello Import non significa necessariamente rendere più veloce la navigazione delle dashboard.</p>
+</section>
+<section class="blog-article__section-card blog-article__performance-problem">
+<h2>5. Risorse disponibili e ambiente di esecuzione</h2>
+<p>Non tutti i problemi di performance nascono all’interno del file Power BI.</p>
+    <p>Può capitare che un report funzioni correttamente in Power BI Desktop, ma risulti meno reattivo dopo la pubblicazione nel servizio.</p>
+    <p>In questi casi, le cause possono riguardare le risorse disponibili, il numero di utenti contemporanei, la rete o le caratteristiche dell’ambiente.</p>
+    <p>Nei modelli DirectQuery possono entrare in gioco anche il gateway e il sistema sorgente.</p>
+    <p>È quindi importante non dare per scontato che ogni rallentamento dipenda dalle misure DAX.</p>
+</section>
+<section class="blog-article__section-card blog-article__performance-solution">
+<h2>5. Come intervenire?</h2>
+<p>Confronta il comportamento del report in Desktop e nel servizio, cercando di mantenere condizioni di test simili.</p>
+    <p>Verifica se il problema si presenta sempre oppure soltanto in determinati momenti della giornata.</p>
+    <p>Quando disponibile, il monitoraggio delle capacità Microsoft Fabric può aiutare a identificare situazioni di pressione sulle risorse.</p>
+    <p>Un report può essere progettato correttamente e risentire comunque dei limiti dell’infrastruttura che lo ospita.</p>
+    <p>Per questo motivo, l’analisi delle prestazioni dovrebbe considerare l’intera soluzione, non soltanto il livello di visualizzazione.</p>
+</section>
+</div><section class="blog-article__impact blog-article__impact--performance">
+<div class="blog-article__impact-heading">
+  <span class="blog-article__impact-label">NELLA PRATICA</span>
+  <h2>Come individuare cosa rallenta davvero un report</h2>
+</div>
+<div class="blog-article__impact-body blog-article__impact-body--performance">
+  <div class="blog-article__impact-panel">
+<h3 class="blog-article__practice-desktop-title">1. Misura le prestazioni</h3><p>Conoscere le possibili cause è utile, ma il passaggio più importante consiste nel capire quale problema si sta verificando nel proprio report.</p>
+    <p>Power BI mette a disposizione uno strumento specifico: Analizzatore prestazioni (Performance Analyzer).</p>
+    <p>In Power BI Desktop puoi aprirlo dalla scheda Ottimizza, selezionando Analizzatore prestazioni.</p>
+    <p>Il procedimento è semplice:</p>
+    <ol>
+  <li>Apri la pagina del report che risulta lenta.</li>
+  <li>Seleziona Avvia registrazione.</li>
+  <li>Clicca su Aggiorna oggetti visivi oppure riproduci l’interazione problematica.</li>
+  <li>Espandi le visualizzazioni registrate per analizzare i tempi.</li>
+  <li>Identifica l’elemento che richiede maggiore attenzione.</li>
+</ol>
+    <h3 class="blog-article__practice-desktop-title">2. Interpreta i tempi</h3>
+<p>Per ogni visualizzazione, lo strumento distingue diverse componenti.</p>
+    <p>Query DAX indica il tempo necessario per ottenere i risultati della query dal modello semantico.</p>
+    <p>Visualizzazione riguarda il tempo necessario per mostrare il risultato sullo schermo.</p>
+    <p>Direct query, quando presente, permette di osservare il tempo richiesto dalle interrogazioni esterne.</p>
+    <p>Altro comprende attività come la preparazione delle query, le attese e ulteriori operazioni.</p>
+    <p>I tempi devono essere interpretati con attenzione, perché possono includere attese legate ad altre attività della pagina.</p>
+    </div>
+  <div class="blog-article__impact-panel">
+<h3 class="blog-article__practice-desktop-title">3. Esamina un esempio concreto</h3><p>Facciamo un esempio.</p>
+    <p>Immaginiamo una dashboard commerciale con alcune card KPI, un grafico sull’andamento delle vendite e una matrice dettagliata per prodotto.</p>
+    <p>Quando viene modificato il filtro temporale, la pagina risulta lenta.</p>
+    <p>Utilizzando Performance Analyzer, scopriamo che la matrice richiede molto più tempo delle altre visualizzazioni.</p>
+    <p>Se la componente principale è la query DAX, potrebbe essere necessario approfondire le misure, il numero di raggruppamenti richiesti o la struttura del modello.</p>
+    <p>Se invece il tempo è concentrato nella visualizzazione, conviene verificare la complessità della matrice e il numero di elementi da mostrare.</p>
+    <p>La differenza è importante.</p>
+    <p>Senza questa analisi, potremmo trascorrere tempo a ottimizzare formule che non rappresentano la causa principale del problema.</p>
+    <p>Un buon approccio consiste nel misurare, intervenire su un elemento alla volta e ripetere il test.</p>
+    <p>Solo confrontando i risultati prima e dopo una modifica possiamo valutare se l’intervento è stato realmente efficace.</p></div>
+</div>
+</section>
+
+<section class="blog-article__impact">
+<div class="blog-article__impact-heading">
+  <span class="blog-article__impact-label">NEL LAVORO QUOTIDIANO</span>
+  <h2>Cosa cambia davvero nel lavoro quotidiano</h2>
+</div>
+<div class="blog-article__impact-body">
+<p>Lavorare sulle prestazioni significa cambiare il modo in cui vengono progettati e mantenuti i report.</p>
+    <p>Prima di aggiungere una nuova visualizzazione, diventa utile valutare quanto contribuisca all’analisi.</p>
+    <p>Prima di costruire una misura complessa, bisogna verificare se esiste una soluzione più semplice e coerente con il modello.</p>
+    <p>Prima di attribuire un rallentamento alla quantità di dati, è opportuno capire dove si trova effettivamente il collo di bottiglia.</p>
+    <p>Queste verifiche non riguardano soltanto gli sviluppatori.</p>
+    <p>Una dashboard reattiva permette agli utenti di esplorare i dati con maggiore continuità, confrontare scenari e approfondire le informazioni senza interruzioni.</p>
+    <p>Le prestazioni influenzano quindi anche l’efficacia della comunicazione.</p>
+    <p>Se un report è lento, il problema non è soltanto tecnico: può diventare un ostacolo all’utilizzo dei dati nei processi decisionali.</p>
+</div>
+</section>
+
+<section class="blog-article__summary blog-article__summary--performance">
+<span class="blog-article__summary-label">IN SINTESI</span>
+  <h2>In sintesi</h2>
+<p>Un report Power BI lento non è necessariamente il risultato di un dataset troppo grande. Le cause possono trovarsi nella quantità di visualizzazioni, nella struttura del modello, nelle misure DAX, nella modalità di connessione o nell’ambiente in cui il report viene eseguito.</p>
+<p>Non esiste una singola soluzione valida per ogni situazione. Il punto di partenza dovrebbe essere sempre la misurazione delle prestazioni, utilizzando strumenti come Performance Analyzer per identificare gli elementi che richiedono maggiore attenzione. Ottimizzare Power BI non significa eliminare funzionalità o rinunciare alla profondità dell’analisi.</p>
+<p>Significa progettare una soluzione in cui dati, calcoli e visualizzazioni lavorino insieme nel modo più efficiente possibile. Perché una dashboard efficace non deve soltanto mostrare le informazioni giuste. Deve permettere alle persone di accedervi, esplorarle e comprenderle senza ostacoli.</p>
+</section>
+
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <section
+      class="blog-article__cta"
+      aria-labelledby="article-cta-title"
+    >
+
+      <div class="blog-shell">
+
+        <div class="blog-article__cta-inner">
+
+          <div>
+
+            <p class="blog-article__cta-kicker">
+              Hai un progetto Power BI?
+            </p>
+
+            <h2 id="article-cta-title">
+              Trasformiamo i dati in uno strumento utile per decidere.
+            </h2>
+
+          </div>
+
+          <button
+            type="button"
+            class="blog-button js-open-contact-form"
+          >
+            Parliamone
+          </button>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </article>
+
+</main>
+
+<div
+        class="form-modal"
+        id="contactFormModal"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="contactFormTitle"
+      >
+        <div class="form-modal__overlay" id="closeContactForm"></div>
+
+        <div class="form-modal__card">
+          <button
+            type="button"
+            class="form-modal__close"
+            id="closeContactFormButton"
+            aria-label="Chiudi il modulo di contatto"
+          >
+            ×
+          </button>
+
+          <p class="form-modal__eyebrow">CONSULENZA GRATUITA</p>
+
+          <h2 class="form-modal__title" id="contactFormTitle">
+            Raccontami il tuo progetto
+          </h2>
+
+          <p class="form-modal__text">
+            Compila il modulo e descrivi brevemente le tue esigenze. Ti
+            ricontatterò per capire come rendere più chiari KPI, report e
+            dashboard.
+          </p>
+
+          <form
+            id="contactForm"
+            action="https://formspree.io/f/xkoandwa"
+            method="POST"
+            class="contact-form"
+          >
+            <div class="form-grid">
+              <div class="form-group">
+                <label for="name">Nome e Cognome *</label>
+                <input
+                  id="name"
+                  type="text"
+                  name="name"
+                  placeholder="Mario Rossi"
+                  required
+                />
+              </div>
+
+              <div class="form-group">
+                <label for="email">Email *</label>
+                <input
+                  id="email"
+                  type="email"
+                  name="email"
+                  placeholder="nome@azienda.it"
+                  required
+                />
+              </div>
+
+              <div class="form-group">
+                <label for="phone">Telefono / WhatsApp</label>
+                <input
+                  id="phone"
+                  type="tel"
+                  name="phone"
+                  placeholder="+39 333 1234567"
+                />
+              </div>
+
+              <div class="form-group">
+                <label for="company">Azienda</label>
+                <input
+                  id="company"
+                  type="text"
+                  name="company"
+                  placeholder="Nome azienda"
+                />
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="goal">Obiettivo principale *</label>
+              <select id="goal" name="goal" required>
+                <option value="">Seleziona un obiettivo</option>
+                <option value="Dashboard Power BI">Dashboard Power BI</option>
+                <option value="Reporting automatico">
+                  Reporting automatico
+                </option>
+                <option value="KPI e monitoraggio">KPI e monitoraggio</option>
+                <option value="Analisi finanziaria">Analisi finanziaria</option>
+                <option value="Data modeling">Data modeling</option>
+                <option value="Altro">Altro</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="message">Messaggio *</label>
+              <textarea
+                id="message"
+                name="message"
+                rows="5"
+                placeholder="Descrivi brevemente la situazione attuale, le difficoltà che stai incontrando e cosa vorresti migliorare."
+                required
+              ></textarea>
+            </div>
+
+            <p class="form-privacy-note">
+              I dati inseriti saranno utilizzati esclusivamente per rispondere
+              alla tua richiesta di contatto e valutare una possibile
+              collaborazione.
+            </p>
+
+            <label class="privacy-check">
+              <input type="checkbox" name="privacy" required />
+              <span>
+                Ho preso visione della
+                <a
+                  href="../privacy.html"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Privacy Policy
+                </a>.
+              </span>
+            </label>
+
+            <button type="submit" class="contact-form__button">
+              Prenota una consulenza gratuita
+            </button>
+
+            <p id="formSuccessMessage" class="form-success-message" role="status" aria-live="polite">
+              Grazie! La richiesta è stata inviata correttamente. Ti
+              ricontatterò al più presto.
+            </p>
+
+            <p id="formErrorMessage"
+               class="form-error-message"
+               role="alert"
+               aria-live="assertive">
+               Non è stato possibile inviare la richiesta. Riprova tra poco oppure contattami via email.
+            </p>
+
+          </form>
+        </div>
+      </div>
+
+    <!-- ======================================================
+         FOOTER
+         ====================================================== -->
+
+<!-- INIZIO SEZIONE FOOTER -->
+<footer class="footer">
+
+  <div class="footer__main">
+
+    <div class="footer__brand-block">
+
+      <a
+        href="../index.html"
+        class="footer__brand"
+        aria-label="Torna alla homepage"
+      >
+        <span
+          class="footer__monogram"
+          aria-hidden="true"
+        >
+          DF
+        </span>
+
+        <span class="footer__identity">
+          <span class="footer__name">
+            Dina Fiorentino
+          </span>
+
+          <span class="footer__role">
+            Data Analyst &amp; Power BI Consultant
+          </span>
+        </span>
+      </a>
+
+      <p class="footer__description">
+        Dashboard, reporting e modelli dati progettati per trasformare
+        informazioni complesse in decisioni più chiare.
+      </p>
+
+      <div
+        class="footer__socials"
+        aria-label="Contatti professionali"
+      >
+        <a
+          href="https://www.linkedin.com/in/dina-fiorentino/"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Profilo LinkedIn di Dina Fiorentino"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="16" height="16"
+            viewBox="0 0 24 24"
+            fill="currentColor"
+            aria-hidden="true"
+            focusable="false"
+          >
+            <path d="M5.25 3a2.25 2.25 0 1 0 0 4.5 2.25 2.25 0 0 0 0-4.5ZM3.25 9h4v12h-4V9Zm6.5 0h3.8v1.75c.7-1.2 1.9-2 3.6-2 3.1 0 4.6 2 4.6 5.4V21h-4v-6.25c0-1.55-.45-2.55-1.9-2.55-1.35 0-2.1 1-2.1 2.55V21h-4V9Z"/>
+          </svg>
+          <span>LinkedIn</span>
+        </a>
+
+        <a
+          href="mailto:dinafiorentino.consulting@outlook.it"
+          aria-label="Invia una email a Dina Fiorentino"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="16" height="16"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.7"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            aria-hidden="true"
+            focusable="false"
+          >
+            <rect x="2" y="4.5" width="20" height="15" rx="2"/>
+            <path d="M3 6.5 12 13l9-6.5"/>
+          </svg>
+          <span>Email</span>
+        </a>
+      </div>
+
+    </div>
+
+
+    <nav
+      class="footer__column"
+      aria-label="Navigazione footer"
+    >
+      <p class="footer__heading">
+        Esplora
+      </p>
+
+      <a href="../index.html#services__id">
+        Servizi
+      </a>
+
+      <a href="../index.html#projects__id">
+        Progetti
+      </a>
+
+      <a href="../index.html#about__id">
+        Chi sono
+      </a>
+
+      <a href="../index.html#contacts__id">
+        Contatti
+      </a>
+    </nav>
+
+
+    <div class="footer__column footer__column--services">
+
+      <p class="footer__heading">
+        Servizi
+      </p>
+
+      <a href="../services/dashboard-powerBI.html">
+        Dashboard Power BI
+      </a>
+
+      <a href="../services/reporting-automatizzato.html">
+        Reporting automatizzato
+      </a>
+
+      <a href="../services/kpi-design-monitoraggio.html">
+        KPI design
+      </a>
+
+      <a href="../services/data-modeling-integrazione.html">
+        Data modeling
+      </a>
+
+    </div>
+
+
+    <div class="footer__column footer__column--contact">
+
+      <p class="footer__heading">
+        Collaboriamo
+      </p>
+
+      <p>
+        Disponibile per progetti di analisi dati, dashboard e reporting
+        aziendale.
+      </p>
+
+      <a
+        href="../index.html#contacts__id"
+        class="footer__contact-button"
+      >
+        Parliamo del tuo progetto
+        <span aria-hidden="true">→</span>
+      </a>
+
+    </div>
+
+  </div>
+
+
+  <div class="footer__bottom">
+
+    <p class="copyright__text">
+      © 2026 Dina Fiorentino. Tutti i diritti riservati.
+    </p>
+
+    <nav
+      class="privacy__box"
+      aria-label="Link legali e lingua"
+    >
+      <a
+        href="../privacy.html?from=blog"
+        class="privacy__text"
+      >
+        Privacy
+      </a>
+
+      <a
+        href="../cookie.html?from=blog"
+        class="cookie__text"
+      >
+        Cookie
+      </a>
+
+      <a
+        href="https://www.dinafiorentino.com/blog/power-bi-lento-prestazioni-en.html"
+        class="footer__language"
+      >
+        English
+      </a>
+    </nav>
+
+  </div>
+
+</footer>
+<!-- FINE SEZIONE FOOTER -->
+
+    <script
+      src="../assets/js/script.js"
+      defer
+    ></script>
+
+  <script>
+/* BLOG RETURN CONTEXT — ARTICLE TEMPLATES */
+(() => {
+  "use strict";
+
+  const match = window.location.pathname.match(
+    /\/blog\/([a-z0-9-]+\.html)$/
+  );
+
+  if (!match) return;
+
+  const origin = "blog/" + match[1];
+
+  document.querySelectorAll("a[href]").forEach(
+    (link) => {
+      const url = new URL(
+        link.getAttribute("href"),
+        document.baseURI
+      );
+
+      const filename = url.pathname.split("/").pop();
+
+      if (
+        url.origin !== window.location.origin ||
+        !/^(privacy|cookie)(-en)?\.html$/.test(filename)
+      ) {
+        return;
+      }
+
+      url.searchParams.set("from", origin);
+
+      link.href = (
+        url.pathname + url.search + url.hash
+      );
+    }
+  );
+})();
+</script>
+</body>
+</html>
