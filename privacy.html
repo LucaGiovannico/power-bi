@@ -569,5 +569,112 @@
       }
     </script>
       <script src="./assets/js/legal-back-to-top.js" defer></script>
-  </body>
+  <script>
+/* BLOG RETURN CONTEXT — LEGAL PAGES */
+(() => {
+  "use strict";
+
+  const origin = new URLSearchParams(
+    window.location.search
+  ).get("from");
+
+  // Ammette soltanto percorsi di file HTML interni
+  // alla cartella blog: niente URL esterni.
+  if (
+    !origin ||
+    !/^blog\/[a-z0-9-]+\.html$/.test(origin)
+  ) {
+    return;
+  }
+
+  const back = document.getElementById(
+    "backToPreviousPage"
+  );
+
+  if (!back) return;
+
+  const filename = origin.slice("blog/".length);
+
+  const english = document.documentElement.lang
+    .toLowerCase()
+    .startsWith("en");
+
+  const isBlogHome = /^index(?:-en)?\.html$/.test(
+    filename
+  );
+
+  const isArchive = /^(?:articoli|articles)\.html$/.test(
+    filename
+  );
+
+  let label;
+
+  if (isBlogHome) {
+    label = english
+      ? "↤ Back to blog"
+      : "↤ Torna al blog";
+  } else if (isArchive) {
+    label = english
+      ? "↤ Back to all articles"
+      : "↤ Torna a tutti gli articoli";
+  } else {
+    let subject = "";
+
+    if (filename.startsWith("5-formule-dax-")) {
+      subject = "DAX";
+    } else if (filename.startsWith("data-storytelling-")) {
+      subject = "Data Storytelling";
+    } else if (filename.startsWith("power-bi-agosto-")) {
+      subject = "Power BI";
+    }
+
+    label = english
+      ? (subject
+          ? `↤ Back to the ${subject} article`
+          : "↤ Back to the article")
+      : (subject
+          ? `↤ Torna all'articolo ${subject}`
+          : "↤ Torna all'articolo");
+  }
+
+  back.href = "./" + origin;
+  back.textContent = label;
+
+  // Conserva la provenienza anche passando
+  // da Privacy a Cookie o cambiando lingua.
+  const legalNames = new Set([
+    "privacy.html",
+    "privacy-en.html",
+    "cookie.html",
+    "cookie-en.html"
+  ]);
+
+  document.querySelectorAll("a[href]").forEach(
+    (link) => {
+      if (link === back) return;
+
+      const url = new URL(
+        link.getAttribute("href"),
+        document.baseURI
+      );
+
+      const name = url.pathname.split("/").pop();
+
+      if (
+        url.origin !== window.location.origin ||
+        !legalNames.has(name)
+      ) {
+        return;
+      }
+
+      url.searchParams.set("from", origin);
+
+      link.href = (
+        url.pathname + url.search + url.hash
+      );
+    }
+  );
+})();
+</script>
+</body>
 </html>

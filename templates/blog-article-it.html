@@ -779,5 +779,43 @@
       defer
     ></script>
 
-  </body>
+  <script>
+/* BLOG RETURN CONTEXT — ARTICLE TEMPLATES */
+(() => {
+  "use strict";
+
+  const match = window.location.pathname.match(
+    /\/blog\/([a-z0-9-]+\.html)$/
+  );
+
+  if (!match) return;
+
+  const origin = "blog/" + match[1];
+
+  document.querySelectorAll("a[href]").forEach(
+    (link) => {
+      const url = new URL(
+        link.getAttribute("href"),
+        document.baseURI
+      );
+
+      const filename = url.pathname.split("/").pop();
+
+      if (
+        url.origin !== window.location.origin ||
+        !/^(privacy|cookie)(-en)?\.html$/.test(filename)
+      ) {
+        return;
+      }
+
+      url.searchParams.set("from", origin);
+
+      link.href = (
+        url.pathname + url.search + url.hash
+      );
+    }
+  );
+})();
+</script>
+</body>
 </html>
