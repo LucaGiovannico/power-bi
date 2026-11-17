@@ -1332,3 +1332,63 @@ if (openLanguageButton) {
     markCurrentBlogPage();
   }
 })();
+
+/* PROJECT CARDS — MOBILE CLICK NAVIGATION */
+
+(() => {
+  "use strict";
+
+  document.addEventListener("click", (event) => {
+
+    if (!document.body.classList.contains("homepage")) {
+      return;
+    }
+
+    if (!window.matchMedia("(max-width: 767px)").matches) {
+      return;
+    }
+
+    if (
+      event.defaultPrevented ||
+      event.button !== 0 ||
+      event.ctrlKey ||
+      event.metaKey ||
+      event.shiftKey ||
+      event.altKey
+    ) {
+      return;
+    }
+
+    if (!(event.target instanceof Element)) {
+      return;
+    }
+
+    const card = event.target.closest(
+      ".projects__cards > .projects__card"
+    );
+
+    if (!card) return;
+
+    // Non interferisce con i link e gli altri
+    // eventuali elementi interattivi.
+    if (
+      event.target.closest(
+        "a, button, input, select, textarea, " +
+        "summary, [role='button']"
+      )
+    ) {
+      return;
+    }
+
+    const link = card.querySelector(
+      "a.projects__link[href]"
+    );
+
+    if (!link) return;
+
+    // Naviga alla pagina del progetto corretto.
+    window.location.assign(link.href);
+
+  });
+
+})();
