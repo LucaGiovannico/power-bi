@@ -2220,3 +2220,14 @@ body.blog-page .blog-button--secondary {
   color: var(--blog-purple);
   text-decoration: none;
 }
+
+/* BLOG DESKTOP — EQUAL SMALL ARTICLE CARDS */
+@media (min-width: 1201px) {
+  .article-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  .article-grid > .article-card--featured {
+    grid-column: span 2;
+  }
+}
