@@ -24,8 +24,8 @@
     <meta property="og:title" content="Power BI lento? 5 aspetti da controllare per migliorare le prestazioni" />
     <meta property="og:description" content="Power BI lento? Scopri 5 aspetti che influenzano le prestazioni: visualizzazioni, modello dati, DAX, connessioni e risorse. Ecco come misurarle." />
     <meta property="og:url" content="https://www.dinafiorentino.com/blog/power-bi-lento-prestazioni.html" />
-    <meta property="og:image" content="https://www.dinafiorentino.com/assets/images/blog/blog-hero-data-magazine.webp" />
-    <meta property="og:image:alt" content="Illustrazione editoriale dedicata a Power BI e all&#x27;analisi dei dati" />
+    <meta property="og:image" content="https://www.dinafiorentino.com/assets/images/blog/power-bi-lento-prestazioni-card.webp" />
+    <meta property="og:image:alt" content="Copertina Power BI lento con laptop e dashboard di analisi delle vendite" />
     <meta property="og:site_name" content="Dina Fiorentino" />
     <meta property="og:locale" content="it_IT" />
     <meta property="og:locale:alternate" content="en_US" />
@@ -34,8 +34,8 @@
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="Power BI lento? 5 aspetti da controllare per migliorare le prestazioni" />
     <meta name="twitter:description" content="Power BI lento? Scopri 5 aspetti che influenzano le prestazioni: visualizzazioni, modello dati, DAX, connessioni e risorse. Ecco come misurarle." />
-    <meta name="twitter:image" content="https://www.dinafiorentino.com/assets/images/blog/blog-hero-data-magazine.webp" />
-    <meta name="twitter:image:alt" content="Illustrazione editoriale dedicata a Power BI e all&#x27;analisi dei dati" />
+    <meta name="twitter:image" content="https://www.dinafiorentino.com/assets/images/blog/power-bi-lento-prestazioni-card.webp" />
+    <meta name="twitter:image:alt" content="Copertina Power BI lento con laptop e dashboard di analisi delle vendite" />
 
 <script type="application/ld+json">
 {
@@ -51,7 +51,7 @@
     "@id": "https://www.dinafiorentino.com/blog/power-bi-lento-prestazioni.html"
   },
   "image": [
-    "https://www.dinafiorentino.com/assets/images/blog/blog-hero-data-magazine.webp"
+    "https://www.dinafiorentino.com/assets/images/blog/power-bi-lento-prestazioni-card.webp"
   ],
   "author": {
     "@type": "Person",
@@ -359,7 +359,7 @@
         data-it="https://www.dinafiorentino.com/blog/power-bi-lento-prestazioni.html"
         data-en="https://www.dinafiorentino.com/blog/power-bi-lento-prestazioni-en.html"
       >
-        <a class="language-switch__link" href="https://www.dinafiorentino.com/blog/power-bi-lento-prestazioni-en.html" hreflang="en" lang="en">SWITCH TO ENGLISH</a>
+        <a class="language-switch__link" href="./power-bi-lento-prestazioni-en.html" hreflang="en" lang="en">SWITCH TO ENGLISH</a>
       </div>
     </div>
   </nav>
@@ -403,8 +403,8 @@
       <figure class="blog-article__hero">
 
         <img
-          src="../assets/images/blog/blog-hero-data-magazine.webp"
-          alt="Illustrazione editoriale dedicata a Power BI e all&#x27;analisi dei dati"
+          src="../assets/images/blog/power-bi-lento-prestazioni-card.webp"
+          alt="Copertina Power BI lento con laptop e dashboard di analisi delle vendite"
           loading="eager"
           decoding="async"
         />
@@ -537,7 +537,7 @@ SUMX(
   <h2>Come individuare cosa rallenta davvero un report</h2>
 </div>
 <div class="blog-article__impact-body blog-article__impact-body--performance">
-  <div class="blog-article__impact-panel">
+  <div class="blog-article__impact-panel"><div class="blog-article__practice-phase">
 <h3 class="blog-article__practice-desktop-title">1. Misura le prestazioni</h3><p>Conoscere le possibili cause è utile, ma il passaggio più importante consiste nel capire quale problema si sta verificando nel proprio report.</p>
     <p>Power BI mette a disposizione uno strumento specifico: Analizzatore prestazioni (Performance Analyzer).</p>
     <p>In Power BI Desktop puoi aprirlo dalla scheda Ottimizza, selezionando Analizzatore prestazioni.</p>
@@ -549,14 +549,14 @@ SUMX(
   <li>Espandi le visualizzazioni registrate per analizzare i tempi.</li>
   <li>Identifica l’elemento che richiede maggiore attenzione.</li>
 </ol>
-    <h3 class="blog-article__practice-desktop-title">2. Interpreta i tempi</h3>
+    </div><div class="blog-article__practice-phase"><h3 class="blog-article__practice-desktop-title">2. Interpreta i tempi</h3>
 <p>Per ogni visualizzazione, lo strumento distingue diverse componenti.</p>
     <p>Query DAX indica il tempo necessario per ottenere i risultati della query dal modello semantico.</p>
     <p>Visualizzazione riguarda il tempo necessario per mostrare il risultato sullo schermo.</p>
     <p>Direct query, quando presente, permette di osservare il tempo richiesto dalle interrogazioni esterne.</p>
     <p>Altro comprende attività come la preparazione delle query, le attese e ulteriori operazioni.</p>
     <p>I tempi devono essere interpretati con attenzione, perché possono includere attese legate ad altre attività della pagina.</p>
-    </div>
+    </div></div>
   <div class="blog-article__impact-panel">
 <h3 class="blog-article__practice-desktop-title">3. Esamina un esempio concreto</h3><p>Facciamo un esempio.</p>
     <p>Immaginiamo una dashboard commerciale con alcune card KPI, un grafico sull’andamento delle vendite e una matrice dettagliata per prodotto.</p>
@@ -976,7 +976,7 @@ SUMX(
       </a>
 
       <a
-        href="https://www.dinafiorentino.com/blog/power-bi-lento-prestazioni-en.html"
+        href="./power-bi-lento-prestazioni-en.html"
         class="footer__language"
       >
         English

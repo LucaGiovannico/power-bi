@@ -526,16 +526,17 @@
 
     margin: 0;
 
-    aspect-ratio: 3 / 2;
+    aspect-ratio: auto;
+    height: auto;
 
     border-radius: 16px;
   }
 
   .blog-article__hero img {
     width: 100%;
-    height: 100%;
+    height: auto;
 
-    object-fit: cover;
+    object-fit: contain;
     object-position: center;
   }
 
@@ -1346,4 +1347,111 @@
   .blog-article__impact--performance .blog-article__impact-body--performance .blog-article__impact-panel li + li {
     margin-top: 9px;
   }
+}
+
+/* POWER BI PERFORMANCE — PRACTICE ORDER 1-2 DESKTOP */
+/* Fino a 899px i due nuovi wrapper non alterano il layout precedente. */
+.blog-article__impact--performance .blog-article__practice-phase {
+  display: contents;
+}
+
+@media (min-width: 900px) {
+  /* Ordine di lettura: 1 a sinistra, 2 a destra, 3 sotto. */
+  .blog-article__impact--performance .blog-article__impact-body--performance {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    align-items: start;
+    gap: 24px;
+    max-width: 1100px;
+  }
+
+  .blog-article__impact--performance .blog-article__impact-body--performance > .blog-article__impact-panel:first-child {
+    display: contents;
+  }
+
+  .blog-article__impact--performance .blog-article__impact-body--performance .blog-article__practice-phase {
+    display: block;
+    box-sizing: border-box;
+    min-width: 0;
+    padding: 22px 24px;
+    border: 1px solid rgba(90, 82, 224, 0.14);
+    border-radius: 16px;
+    background: #fff;
+  }
+
+  .blog-article__impact--performance .blog-article__impact-body--performance > .blog-article__impact-panel + .blog-article__impact-panel {
+    grid-column: 1 / -1;
+    box-sizing: border-box;
+    min-width: 0;
+    width: 100%;
+    margin: 0;
+    padding: 22px 24px;
+    border: 1px solid rgba(90, 82, 224, 0.14);
+    border-radius: 16px;
+    background: #fff;
+  }
+
+  .blog-article__impact--performance .blog-article__impact-body--performance .blog-article__practice-desktop-title {
+    margin-top: 0;
+  }
+}
+
+/* PERFORMANCE PRACTICE - RESTORE SINGLE CARD */
+/* Modifica solo desktop. Mobile e tablet invariati. */
+
+@media (min-width: 900px) {
+
+  .blog-article__impact--performance
+  .blog-article__impact-body--performance {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 34px 42px;
+    align-items: start;
+    width: 100%;
+    max-width: none;
+    margin: 0;
+  }
+
+  /* Il pannello originale contiene le fasi 1 e 2. */
+  .blog-article__impact--performance
+  .blog-article__impact-body--performance
+  > .blog-article__impact-panel:first-child {
+    display: contents;
+  }
+
+  /* Fasi 1 e 2: nessuna card interna. */
+  .blog-article__impact--performance
+  .blog-article__impact-body--performance
+  .blog-article__practice-phase {
+    display: block;
+    box-sizing: border-box;
+    min-width: 0;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    border-radius: 0;
+    background: transparent;
+    box-shadow: none;
+  }
+
+  /* Fase 3: sotto, centrata rispetto alle prime due. */
+  .blog-article__impact--performance
+  .blog-article__impact-body--performance
+  > .blog-article__impact-panel
+  + .blog-article__impact-panel {
+    grid-column: 1 / -1;
+    justify-self: center;
+    width: 100%;
+    max-width: 720px;
+    min-width: 0;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 28px 0 0;
+    border: 0;
+    border-top: 1px solid rgba(90, 82, 224, 0.16);
+    border-radius: 0;
+    background: transparent;
+    box-shadow: none;
+  }
+
 }
