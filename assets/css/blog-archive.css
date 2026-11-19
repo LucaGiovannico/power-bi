@@ -293,3 +293,145 @@ body.blog-page a.blog-article__back:focus-visible {
   }
 
 }
+
+/* POWER BI UPDATES - ARCHIVE CALLOUT V1 */
+
+.blog-archive__updates {
+  margin-top: clamp(36px, 5vw, 56px);
+}
+
+.blog-archive__updates-link {
+  display: grid;
+  grid-template-columns: minmax(0, 320px) minmax(0, 1fr);
+  align-items: center;
+  gap: 28px;
+
+  padding: 20px;
+  border: 1px solid #e7e3f5;
+  border-radius: 22px;
+
+  background: #ffffff;
+  box-shadow: 0 12px 35px rgba(50, 35, 110, 0.06);
+
+  color: inherit;
+  text-decoration: none;
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.blog-archive__updates-media {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  border-radius: 15px;
+  background: #10065a;
+}
+
+.blog-archive__updates-media img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.blog-archive__updates-copy {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+  min-width: 0;
+}
+
+.blog-archive__updates-eyebrow {
+  color: #6550ca;
+  font-family: "Poppins", sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+}
+
+.blog-archive__updates-title {
+  color: #211f2d;
+  font-family: "Poppins", sans-serif;
+  font-size: clamp(24px, 3vw, 34px);
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.025em;
+}
+
+.blog-archive__updates-description {
+  color: #5c5865;
+  font-size: 15px;
+  line-height: 1.65;
+}
+
+.blog-archive__updates-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+
+  box-sizing: border-box;
+  width: fit-content;
+  max-width: 100%;
+  min-height: 44px;
+  margin-top: 6px;
+  padding: 11px 20px;
+
+  border-radius: 999px;
+  background: linear-gradient(135deg, #5748e7, #a86ce8);
+
+  color: #ffffff;
+  font-family: "Poppins", sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  text-align: center;
+}
+
+/* Desktop hover */
+
+@media (hover: hover) and (pointer: fine) {
+  .blog-archive__updates-link:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 18px 40px rgba(50, 35, 110, 0.11);
+    text-decoration: none;
+  }
+}
+
+.blog-archive__updates-link:focus-visible {
+  outline: 3px solid #5748e7;
+  outline-offset: 4px;
+}
+
+/* Mobile e tablet */
+
+@media (max-width: 768px) {
+  .blog-archive__updates-link {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 20px;
+    padding: 14px;
+  }
+
+  .blog-archive__updates-copy {
+    padding: 4px 6px 8px;
+  }
+
+  .blog-archive__updates-description {
+    font-size: 14px;
+  }
+
+  .blog-archive__updates-cta {
+    width: 100%;
+    min-height: 48px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .blog-archive__updates-link {
+    transition: none;
+  }
+}
