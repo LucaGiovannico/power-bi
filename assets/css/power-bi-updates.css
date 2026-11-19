@@ -1,0 +1,52 @@
+/* Power BI Updates — cover verticale ottimizzata per la card featured.
+   Mantiene la grafica originale e non ingrandisce l'immagine su mobile. */
+.article-card--featured .featured-visual__image--updates {
+  object-fit: cover;
+  object-position: center center;
+  transform: none;
+}
+
+/* Updates archive: deliberately reuses the main blog's archive system. */
+.pb-updates-archive .blog-archive__header {
+  max-width: 830px;
+  margin-bottom: 34px;
+}
+
+.pb-updates-archive__meta {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin: 0 0 22px;
+  color: #5a52e0;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: .04em;
+}
+
+.pb-updates-archive__meta span {
+  display: inline-block;
+  padding: 8px 12px;
+  border: 1px solid rgba(85,71,231,.14);
+  border-radius: 999px;
+  background: #f2f0ff;
+}
+
+.pb-updates-archive__grid {
+  margin-bottom: 32px;
+}
+
+.pb-updates-archive__note {
+  margin: 0;
+  padding: 20px 22px;
+  border: 1px solid rgba(85,71,231,.12);
+  border-radius: 12px;
+  background: linear-gradient(105deg, #f8f7ff, #fff);
+  color: #5c5865;
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+.pb-updates-archive__note strong {
+  color: #3426a8;
+}

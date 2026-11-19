@@ -2231,3 +2231,218 @@ body.blog-page .blog-button--secondary {
     grid-column: span 2;
   }
 }
+
+/* BLOG — ALL ARTICLES PILL CTA IT / EN */
+/* Riprende gradiente e forma del selettore lingua, con misure da sezione. */
+body.blog-page .articles-heading__aside > a.articles-heading__link,
+body.blog-page .articles-heading__aside > a.articles-heading__link:visited {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 auto;
+  gap: 9px;
+  width: fit-content;
+  min-height: 42px;
+  padding: 10px 19px;
+  border-radius: 999px;
+  background: linear-gradient(135deg, hsl(245 75% 60%), hsl(265 80% 68%));
+  color: #ffffff;
+  font-family: "Poppins", sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 1.25;
+  white-space: nowrap;
+  text-align: center;
+  text-decoration: none;
+  box-shadow: 0 5px 15px rgba(85, 71, 231, 0.17);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  body.blog-page .articles-heading__aside > a.articles-heading__link:hover {
+    color: #ffffff;
+    text-decoration: none;
+    transform: translateY(-2px);
+    box-shadow: 0 9px 21px rgba(85, 71, 231, 0.23);
+  }
+}
+
+body.blog-page .articles-heading__aside > a.articles-heading__link:focus-visible {
+  color: #ffffff;
+  text-decoration: none;
+  outline: 3px solid #3129a0;
+  outline-offset: 3px;
+}
+
+/* A larghezze intermedie il titolo e il pulsante non si comprimono. */
+@media (min-width: 1025px) and (max-width: 1150px) {
+  body.blog-page .articles-heading {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 16px;
+  }
+}
+
+/* Il pulsante resta compatto, sotto il testo, sui telefoni. */
+@media (max-width: 768px) {
+  body.blog-page .articles-heading__aside {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 13px;
+  }
+
+  body.blog-page .articles-heading__aside > a.articles-heading__link {
+    align-self: flex-start;
+    min-height: 44px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body.blog-page .articles-heading__aside > a.articles-heading__link {
+    transition: none;
+  }
+}
+
+/* BLOG — CTA ARCHIVIO DOPO LE CARD / 390–768px */
+/* Il duplicato non e' visibile fuori dal breakpoint richiesto. */
+body.blog-page .blog-articles a.articles-heading__link--bottom {
+  display: none;
+}
+
+@media (min-width: 390px) and (max-width: 768px) {
+  /* Qui la CTA resta nel DOM per desktop, ma e' nascosta alla vista su mobile. */
+  body.blog-page .blog-articles .articles-heading__aside > a.articles-heading__link {
+    display: none;
+  }
+
+  /* CTA collocata subito dopo l'ultimo articolo e larga quanto la blog-shell. */
+  body.blog-page .blog-articles a.articles-heading__link--bottom,
+  body.blog-page .blog-articles a.articles-heading__link--bottom:visited {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 11px;
+    width: 100%;
+    max-width: 100%;
+    min-height: 48px;
+    margin-top: 26px;
+    padding: 12px 20px;
+    border-radius: 999px;
+    background: linear-gradient(135deg, hsl(245 75% 60%), hsl(265 80% 68%));
+    color: #fff;
+    font-family: "Poppins", sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    line-height: 1.3;
+    text-align: center;
+    white-space: normal;
+    text-decoration: none;
+    box-shadow: 0 5px 15px rgba(85, 71, 231, 0.17);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  body.blog-page .blog-articles a.articles-heading__link--bottom:focus-visible {
+    outline: 3px solid #3129a0;
+    outline-offset: 3px;
+  }
+}
+
+@media (min-width: 390px) and (max-width: 768px) and (hover: hover) and (pointer: fine) {
+  body.blog-page .blog-articles a.articles-heading__link--bottom:hover {
+    color: #fff;
+    transform: translateY(-2px);
+    box-shadow: 0 9px 21px rgba(85, 71, 231, 0.23);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body.blog-page .blog-articles a.articles-heading__link--bottom {
+    transition: none;
+  }
+}
+
+/* POWER BI UPDATES — RESPONSIVE COVER FIX START */
+
+@media (min-width: 390px) and (max-width: 768px) {
+
+  .blog-articles .article-card--featured
+  .featured-visual--image {
+    width: 100%;
+    height: auto !important;
+    min-height: 0 !important;
+    max-height: none !important;
+    aspect-ratio: auto !important;
+    padding: 0;
+    overflow: hidden;
+  }
+
+  .blog-articles .article-card--featured
+  .featured-visual--image picture {
+    display: block;
+    width: 100%;
+    height: auto !important;
+    aspect-ratio: auto !important;
+  }
+
+  .blog-articles .article-card--featured
+  .featured-visual__image {
+    display: block;
+    width: 100%;
+    height: auto !important;
+    max-height: none !important;
+    aspect-ratio: auto !important;
+    object-fit: contain !important;
+    object-position: center;
+  }
+
+}
+
+/* POWER BI UPDATES — RESPONSIVE COVER FIX END */
+
+/* POWER BI UPDATES - FIX COMPACT V2 */
+
+@media (min-width: 390px) and (max-width: 768px) {
+
+  .blog-articles .article-card--featured
+  .featured-visual--image {
+    position: relative;
+    width: 100%;
+    height: clamp(235px, 54vw, 340px) !important;
+    min-height: 0 !important;
+    max-height: 340px !important;
+    aspect-ratio: auto !important;
+    padding: 0 !important;
+    overflow: hidden;
+    background: linear-gradient(
+      135deg,
+      #0b0557 0%,
+      #2415a4 55%,
+      #673ce1 100%
+    ) !important;
+  }
+
+  .blog-articles .article-card--featured
+  .featured-visual--image picture {
+    position: relative;
+    z-index: 1;
+    display: block;
+    width: 100%;
+    height: 100% !important;
+    max-height: 100% !important;
+    aspect-ratio: auto !important;
+    background: transparent !important;
+  }
+
+  .blog-articles .article-card--featured
+  .featured-visual__image {
+    display: block;
+    width: 100% !important;
+    height: 100% !important;
+    max-height: 100% !important;
+    aspect-ratio: auto !important;
+    object-fit: contain !important;
+    object-position: center center !important;
+    transform: none !important;
+    background: transparent !important;
+  }
+
+}
