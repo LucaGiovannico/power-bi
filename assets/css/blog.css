@@ -2360,89 +2360,88 @@ body.blog-page .blog-articles a.articles-heading__link--bottom {
   }
 }
 
-/* POWER BI UPDATES — RESPONSIVE COVER FIX START */
-
-@media (min-width: 390px) and (max-width: 768px) {
-
-  .blog-articles .article-card--featured
+/* POWER BI UPDATES — MOBILE LANDSCAPE FINAL */
+@media (max-width: 768px) {
+  .blog-articles .article-card--updates-feature
   .featured-visual--image {
+    position: relative;
     width: 100%;
     height: auto !important;
     min-height: 0 !important;
     max-height: none !important;
-    aspect-ratio: auto !important;
-    padding: 0;
+    aspect-ratio: 16 / 9 !important;
+    padding: 0 !important;
     overflow: hidden;
+    background: #0c075e;
   }
 
-  .blog-articles .article-card--featured
-  .featured-visual--image picture {
+  .blog-articles .article-card--updates-feature
+  .featured-updates-picture {
     display: block;
+    position: absolute;
+    inset: 0;
     width: 100%;
-    height: auto !important;
-    aspect-ratio: auto !important;
+    height: 100% !important;
   }
 
-  .blog-articles .article-card--featured
-  .featured-visual__image {
+  .blog-articles .article-card--updates-feature
+  .featured-visual__image--updates {
+    display: block;
+    width: 100% !important;
+    height: 100% !important;
+    max-height: none !important;
+    object-fit: cover !important;
+    object-position: center !important;
+    transform: none !important;
+  }
+}
+
+/* FIX POWER BI LENTO - MOBILE 619PX */
+
+@media (min-width: 390px) and (max-width: 619px) {
+
+  body.blog-page .blog-articles
+  .article-card__visual--performance {
+    height: auto !important;
+    min-height: 0 !important;
+    max-height: none !important;
+    aspect-ratio: 1672 / 941;
+  }
+
+  body.blog-page .blog-articles
+  .article-card__visual--performance > img {
     display: block;
     width: 100%;
     height: auto !important;
     max-height: none !important;
-    aspect-ratio: auto !important;
     object-fit: contain !important;
     object-position: center;
   }
 
 }
 
-/* POWER BI UPDATES — RESPONSIVE COVER FIX END */
+/* FIX DAX CARD - RESPONSIVE 390-619 */
 
-/* POWER BI UPDATES - FIX COMPACT V2 */
+@media (min-width: 390px) and (max-width: 619px) {
 
-@media (min-width: 390px) and (max-width: 768px) {
-
-  .blog-articles .article-card--featured
-  .featured-visual--image {
-    position: relative;
-    width: 100%;
-    height: clamp(235px, 54vw, 340px) !important;
+  body.blog-page .blog-articles
+  .article-card__visual--dax-responsive {
+    height: auto !important;
     min-height: 0 !important;
-    max-height: 340px !important;
-    aspect-ratio: auto !important;
-    padding: 0 !important;
+    max-height: none !important;
+    aspect-ratio: 16 / 9;
     overflow: hidden;
-    background: linear-gradient(
-      135deg,
-      #0b0557 0%,
-      #2415a4 55%,
-      #673ce1 100%
-    ) !important;
   }
 
-  .blog-articles .article-card--featured
-  .featured-visual--image picture {
-    position: relative;
-    z-index: 1;
+  body.blog-page .blog-articles
+  .article-card__visual--dax-responsive
+  > .article-card__image {
     display: block;
     width: 100%;
-    height: 100% !important;
-    max-height: 100% !important;
-    aspect-ratio: auto !important;
-    background: transparent !important;
-  }
-
-  .blog-articles .article-card--featured
-  .featured-visual__image {
-    display: block;
-    width: 100% !important;
-    height: 100% !important;
-    max-height: 100% !important;
-    aspect-ratio: auto !important;
+    height: auto !important;
+    max-height: none !important;
     object-fit: contain !important;
-    object-position: center center !important;
-    transform: none !important;
-    background: transparent !important;
+    object-position: center;
   }
 
 }

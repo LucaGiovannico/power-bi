@@ -188,3 +188,108 @@
   object-fit: contain;
   object-position: center;
 }
+
+/* BLOG BACK LINKS - RESPONSIVE PILL V1 */
+
+/* Stile condiviso IT / EN */
+
+body.blog-page a.blog-archive__back,
+body.blog-page a.blog-archive__back:visited,
+body.blog-page a.blog-article__back,
+body.blog-page a.blog-article__back:visited {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  width: fit-content;
+  max-width: 100%;
+  min-height: 44px;
+
+  padding: 11px 20px;
+
+  border: 0;
+  border-radius: 999px;
+
+  background: linear-gradient(
+    135deg,
+    hsl(245 75% 60%),
+    hsl(265 80% 68%)
+  );
+
+  color: #ffffff;
+
+  font-family: "Poppins", sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 1.35;
+
+  text-align: center;
+  text-decoration: none;
+
+  box-shadow:
+    0 5px 15px rgba(85, 71, 231, 0.17);
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+/* Hover desktop */
+
+@media (hover: hover) and (pointer: fine) {
+
+  body.blog-page a.blog-archive__back:hover,
+  body.blog-page a.blog-article__back:hover {
+    color: #ffffff;
+    text-decoration: none;
+
+    transform: translateY(-2px);
+
+    box-shadow:
+      0 9px 21px rgba(85, 71, 231, 0.23);
+  }
+
+}
+
+/* Accessibilità tastiera */
+
+body.blog-page a.blog-archive__back:focus-visible,
+body.blog-page a.blog-article__back:focus-visible {
+  color: #ffffff;
+  text-decoration: none;
+
+  outline: 3px solid #3129a0;
+  outline-offset: 3px;
+}
+
+/* Mobile e tablet: 390px - 768px */
+
+@media (min-width: 390px) and (max-width: 768px) {
+
+  body.blog-page a.blog-archive__back,
+  body.blog-page a.blog-article__back {
+    display: flex;
+
+    width: 100%;
+    max-width: 100%;
+    min-height: 48px;
+
+    padding: 12px 20px;
+
+    font-size: 13px;
+    white-space: normal;
+    text-align: center;
+  }
+
+}
+
+/* Riduzione animazioni */
+
+@media (prefers-reduced-motion: reduce) {
+
+  body.blog-page a.blog-archive__back,
+  body.blog-page a.blog-article__back {
+    transition: none;
+  }
+
+}
