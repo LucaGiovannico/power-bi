@@ -1281,44 +1281,29 @@ if (openLanguageButton) {
 
   function markCurrentBlogPage() {
     const menu = document.getElementById("blogSubmenu");
-
     if (!menu) return;
 
-    const currentLink = Array.from(
-      menu.querySelectorAll("a[href]")
-    ).find((link) => {
-      const target = new URL(
-        link.getAttribute("href"),
-        document.baseURI
-      );
-
+    // Si usa il link HTML esistente: non si creano o sostituiscono voci.
+    const matches = Array.from(menu.querySelectorAll("a[href]")).filter((link) => {
+      const target = new URL(link.getAttribute("href"), document.baseURI);
       return (
         target.origin === window.location.origin &&
         target.pathname === window.location.pathname
       );
     });
 
-    if (!currentLink) return;
+    // In caso di markup inatteso, non toccare il menu.
+    if (matches.length !== 1) return;
 
-    const currentItem = document.createElement("span");
+    const currentLink = matches[0];
+    currentLink.setAttribute("aria-current", "page");
+    currentLink.removeAttribute("href");
+    currentLink.classList.add("navbar__submenu-current");
 
-    currentItem.className = "navbar__submenu-current";
-    currentItem.setAttribute("aria-current", "page");
-
-    while (currentLink.firstChild) {
-      currentItem.appendChild(currentLink.firstChild);
-    }
-
-    currentLink.replaceWith(currentItem);
-
-    const blogParent = menu.closest(
-      ".navbar__item--has-submenu"
-    );
-
+    const blogParent = menu.closest(".navbar__item--has-submenu");
     const mainLink = blogParent?.querySelector(
       ".navbar__item-control > .navbar__link"
     );
-
     mainLink?.removeAttribute("aria-current");
   }
 

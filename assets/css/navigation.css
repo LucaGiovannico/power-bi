@@ -1005,3 +1005,10 @@
     width: min(360px, calc(100vw - 32px));
   }
 }
+
+/* BLOG SUBMENU - ACTIVE TEXT COLOR FIX */
+
+#blogSubmenu a.navbar__submenu-current[aria-current="page"],
+#blogSubmenu a.navbar__submenu-current[aria-current="page"] .navbar__submenu-title {
+  color: #5a52e0 !important;
+}
