@@ -1,0 +1,89 @@
+/* BLOG ARTICLE BACK TO TOP — HOMEPAGE STYLE */
+/* CSS derivato da: assets/css/style.css */
+.blog-article-back-to-top {
+position: fixed;
+  right: 24px;
+  bottom: 24px;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: none;
+  background: #5a52e0;
+  color: #ffffff;
+  font-size: 16px;
+  cursor: pointer;
+  box-shadow: 0 10px 25px rgba(91, 44, 255, 0.25);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px);
+  transition: opacity 0.22s ease, visibility 0.22s ease, transform 0.22s ease;
+  z-index: 999;
+}
+
+.blog-article-back-to-top.show {
+opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.blog-article-back-to-top:hover {
+background: #4a20d8;
+  transform: translateY(-3px);
+}
+
+/* Visibilita' gestita solo negli articoli, sia scendendo sia risalendo. */
+.blog-article-back-to-top {
+  opacity: 0 !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+}
+.blog-article-back-to-top.is-visible {
+  opacity: 1 !important;
+  visibility: visible !important;
+  pointer-events: auto !important;
+}
+@media (prefers-reduced-motion: reduce) {
+  .blog-article-back-to-top { transition: none !important; }
+}
+
+/* BLOG ARTICLE BACK TO TOP - VISIBILITY FIX */
+
+.blog-article-back-to-top {
+  position: fixed !important;
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+
+  right: 24px;
+  bottom: 24px;
+  z-index: 9999;
+
+  min-width: 48px;
+  min-height: 48px;
+
+  opacity: 0 !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+  transform: translateY(8px);
+}
+
+.blog-article-back-to-top.is-visible {
+  display: flex !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  pointer-events: auto !important;
+  transform: translateY(0);
+}
+
+@media (max-width: 768px) {
+  .blog-article-back-to-top {
+    right: 16px;
+    bottom: 16px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .blog-article-back-to-top {
+    transition: none !important;
+  }
+}
