@@ -47,7 +47,8 @@
     <link rel="manifest" href="../assets/images/favicon/site.webmanifest" />
 
     <link rel="icon" href="../assets/images/favicon/favicon.ico" />
-  </head>
+      <link rel="stylesheet" href="../assets/css/footer-homepage-unified.css" />
+</head>
   <body class="service-page">
 
 <!-- INIZIO NAVBAR GLOBALE -->
@@ -1315,11 +1316,12 @@
       <div class="footer__main">
         <div class="footer__brand-block">
           <a
-            aria-label="Torna alla homepage"
-            class="footer__brand"
             href="../index.html"
+            class="footer__brand"
+            aria-label="Torna alla homepage"
           >
-            <span aria-hidden="true" class="footer__monogram">DF</span>
+            <span class="footer__monogram" aria-hidden="true">DF</span>
+
             <span class="footer__identity">
               <span class="footer__name">Dina Fiorentino</span>
               <span class="footer__role"
@@ -1331,81 +1333,78 @@
             Dashboard, reporting e modelli dati progettati per trasformare
             informazioni complesse in decisioni più chiare.
           </p>
-          <div aria-label="Contatti professionali" class="footer__socials">
+
+          <div class="footer__socials" aria-label="Contatti professionali">
             <a
-              aria-label="Profilo LinkedIn di Dina Fiorentino"
               href="https://www.linkedin.com/in/dina-fiorentino/"
-              rel="noopener noreferrer"
               target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Profilo LinkedIn di Dina Fiorentino"
             >
-              <i aria-hidden="true" class="fa-brands fa-linkedin-in"></i>
+              <i class="fa-brands fa-linkedin-in" aria-hidden="true"></i>
               <span>LinkedIn</span>
             </a>
+
             <a
-              aria-label="Invia una email a Dina Fiorentino"
               href="mailto:dinafiorentino.consulting@outlook.it"
+              aria-label="Invia una email a Dina Fiorentino"
             >
-              <i aria-hidden="true" class="fa-regular fa-envelope"></i>
+              <i class="fa-regular fa-envelope" aria-hidden="true"></i>
               <span>Email</span>
             </a>
           </div>
         </div>
-        <nav aria-label="Navigazione footer" class="footer__column">
+
+        <nav class="footer__column" aria-label="Navigazione footer">
           <p class="footer__heading">Esplora</p>
           <a href="../index.html#services__id">Servizi</a>
           <a href="../index.html#projects__id">Progetti</a>
           <a href="../index.html#about__id">Chi sono</a>
           <a href="../index.html#contacts__id">Contatti</a>
         </nav>
+
         <div class="footer__column footer__column--services">
           <p class="footer__heading">Servizi</p>
-          <a href="../services/dashboard-powerBI.html">Dashboard Power BI</a>
-          <a href="../services/reporting-automatizzato.html"
+          <a href="./dashboard-powerBI.html">Dashboard Power BI</a>
+          <a href="./reporting-automatizzato.html"
             >Reporting automatizzato</a
           >
-          <a href="../services/kpi-design-monitoraggio.html">KPI design</a>
-          <a href="../services/data-modeling-integrazione.html"
+          <a href="./kpi-design-monitoraggio.html">KPI design</a>
+          <a href="./data-modeling-integrazione.html"
             >Data modeling</a
           >
         </div>
+
         <div class="footer__column footer__column--contact">
           <p class="footer__heading">Collaboriamo</p>
           <p>
             Disponibile per progetti di analisi dati, dashboard e reporting
             aziendale.
           </p>
+
           <button
-            class="footer__contact-button js-open-contact-form"
             type="button"
+            class="footer__contact-button js-open-contact-form"
           >
             Parliamo del tuo progetto
             <span aria-hidden="true">→</span>
           </button>
         </div>
       </div>
+
       <div class="footer__bottom">
         <p class="copyright__text">
           © 2026 Dina Fiorentino. Tutti i diritti riservati.
         </p>
-        <nav aria-label="Link legali e lingua" class="privacy__box">
-          <a
-            class="privacy__text"
-            href="../privacy.html?from=data-modeling-integrazione"
-          >
+
+        <nav class="privacy__box" aria-label="Link legali e lingua">
+          <a href="../privacy.html?from=data-modeling-integrazione" class="privacy__text">
             Privacy
           </a>
-          <a
-            class="cookie__text"
-            href="../cookie.html?from=data-modeling-integrazione"
-          >
+          <a href="../cookie.html?from=data-modeling-integrazione" class="cookie__text">
             Cookie
           </a>
-          <a
-            class="footer__language"
-            href="./data-modeling-integrazione-en.html"
-          >
-            English
-          </a>
+          <a href="./data-modeling-integrazione-en.html" class="footer__language">English</a>
         </nav>
       </div>
     </footer>

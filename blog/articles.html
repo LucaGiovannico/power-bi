@@ -92,7 +92,11 @@
       rel="icon"
       href="../assets/images/favicon/favicon.ico"
     />
-  </head>
+      <link rel="stylesheet" href="../assets/css/footer-homepage-unified.css" />
+    <!-- Icone social del footer, come nella homepage -->
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" /></noscript>
+</head>
 
   <body class="blog-page">
 
@@ -535,195 +539,98 @@
 
 <!-- INIZIO SEZIONE FOOTER -->
 <footer class="footer">
-
-  <div class="footer__main">
-
-    <div class="footer__brand-block">
-
-      <a
-        href="../index-en.html"
-        class="footer__brand"
-        aria-label="Back to homepage"
-      >
-        <span
-          class="footer__monogram"
-          aria-hidden="true"
-        >
-          DF
-        </span>
-
-        <span class="footer__identity">
-          <span class="footer__name">
-            Dina Fiorentino
-          </span>
-
-          <span class="footer__role">
-            Data Analyst &amp; Power BI Consultant
-          </span>
-        </span>
-      </a>
-
-      <p class="footer__description">
-        Dashboards, reporting, and data models designed to transform complex information into clearer decisions.
-      </p>
-
-      <div
-        class="footer__socials"
-        aria-label="Professional contacts"
-      >
-        <a
-          href="https://www.linkedin.com/in/dina-fiorentino/"
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label="Dina Fiorentino's LinkedIn profile"
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="16" height="16"
-            viewBox="0 0 24 24"
-            fill="currentColor"
-            aria-hidden="true"
-            focusable="false"
+      <div class="footer__main">
+        <div class="footer__brand-block">
+          <a
+            href="../index-en.html"
+            class="footer__brand"
+            aria-label="Back to homepage"
           >
-            <path d="M5.25 3a2.25 2.25 0 1 0 0 4.5 2.25 2.25 0 0 0 0-4.5ZM3.25 9h4v12h-4V9Zm6.5 0h3.8v1.75c.7-1.2 1.9-2 3.6-2 3.1 0 4.6 2 4.6 5.4V21h-4v-6.25c0-1.55-.45-2.55-1.9-2.55-1.35 0-2.1 1-2.1 2.55V21h-4V9Z"/>
-          </svg>
-          <span>LinkedIn</span>
-        </a>
+            <span class="footer__monogram" aria-hidden="true">DF</span>
 
-        <a
-          href="mailto:dinafiorentino.consulting@outlook.it"
-          aria-label="Send an email to Dina Fiorentino"
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="16" height="16"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="1.7"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            aria-hidden="true"
-            focusable="false"
+            <span class="footer__identity">
+              <span class="footer__name">Dina Fiorentino</span>
+              <span class="footer__role"
+                >Data Analyst &amp; Power BI Consultant</span
+              >
+            </span>
+          </a>
+
+          <p class="footer__description">
+            Dashboards, reporting, and data models designed to transform complex
+            information into clearer decisions.
+          </p>
+
+          <div class="footer__socials" aria-label="Contatti professionali">
+            <a
+              href="https://www.linkedin.com/in/dina-fiorentino/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Profilo LinkedIn di Dina Fiorentino"
+            >
+              <i class="fa-brands fa-linkedin-in" aria-hidden="true"></i>
+              <span>LinkedIn</span>
+            </a>
+
+            <a
+              href="mailto:dinafiorentino.consulting@outlook.it"
+              aria-label="Invia una email a Dina Fiorentino"
+            >
+              <i class="fa-regular fa-envelope" aria-hidden="true"></i>
+              <span>Email</span>
+            </a>
+          </div>
+        </div>
+
+        <nav class="footer__column" aria-label="Navigazione footer">
+          <p class="footer__heading">EXPLORE</p>
+          <a href="../index-en.html#services__id">Services</a>
+          <a href="../index-en.html#projects__id">Projects</a>
+          <a href="../index-en.html#about__id">About Me</a>
+          <a href="../index-en.html#contacts__id">Contact</a>
+        </nav>
+
+        <div class="footer__column footer__column--services">
+          <p class="footer__heading">Services</p>
+          <a href="../services/dashboard-powerBI-en.html">Dashboard Power BI</a>
+          <a href="../services/reporting-automatizzato-en.html"
+            >Automated reporting</a
           >
-            <rect x="2" y="4.5" width="20" height="15" rx="2"/>
-            <path d="M3 6.5 12 13l9-6.5"/>
-          </svg>
-          <span>Email</span>
-        </a>
+          <a href="../services/kpi-design-monitoraggio-en.html">KPI design</a>
+          <a href="../services/data-modeling-integrazione-en.html"
+            >Data modeling</a
+          >
+        </div>
+
+        <div class="footer__column footer__column--contact">
+          <p class="footer__heading">Let's collaborate.</p>
+          <p>
+            Available for data analysis, dashboard development, and business reporting projects.
+          </p>
+
+          <a href="../index-en.html#contacts__id" class="footer__contact-button">
+            Let's talk about your project.
+            <span aria-hidden="true">→</span>
+          </a>
+        </div>
       </div>
 
-    </div>
+      <div class="footer__bottom">
+        <p class="copyright__text">
+          © 2026 Dina Fiorentino. All rights reserved.
+        </p>
 
-
-    <nav
-      class="footer__column"
-      aria-label="Footer navigation"
-    >
-      <p class="footer__heading">
-        EXPLORE
-      </p>
-
-      <a href="../index-en.html#services__id">
-        Services
-      </a>
-
-      <a href="../index-en.html#projects__id">
-        Projects
-      </a>
-
-      <a href="../index-en.html#about__id">
-        About Me
-      </a>
-
-      <a href="../index-en.html#contacts__id">
-        Contacts
-      </a>
-    </nav>
-
-
-    <div class="footer__column footer__column--services">
-
-      <p class="footer__heading">
-        Services
-      </p>
-
-      <a href="../services/dashboard-powerBI-en.html">
-        Dashboard Power BI
-      </a>
-
-      <a href="../services/reporting-automatizzato-en.html">
-        Automated reporting
-      </a>
-
-      <a href="../services/kpi-design-monitoraggio-en.html">
-        KPI design
-      </a>
-
-      <a href="../services/data-modeling-integrazione-en.html">
-        Data modeling
-      </a>
-
-    </div>
-
-
-    <div class="footer__column footer__column--contact">
-
-      <p class="footer__heading">
-        Let's collaborate.
-      </p>
-
-      <p>
-        Available for data analysis, dashboard development, and business reporting projects.
-      </p>
-
-      <a
-        href="../index-en.html#contacts__id"
-        class="footer__contact-button"
-      >
-        Let's talk about your project.
-        <span aria-hidden="true">→</span>
-      </a>
-
-    </div>
-
-  </div>
-
-
-  <div class="footer__bottom">
-
-    <p class="copyright__text">
-      © 2026 Dina Fiorentino. All rights reserved.
-    </p>
-
-    <nav
-      class="privacy__box"
-      aria-label="Legal and language links"
-    >
-      <a
-        href="../privacy-en.html?from=blog%2Farticles.html"
-        class="privacy__text"
-      >
-        Privacy
-      </a>
-
-      <a
-        href="../cookie-en.html?from=blog%2Farticles.html"
-        class="cookie__text"
-      >
-        Cookie
-      </a>
-
-<a
-  href="./articoli.html"
-  class="footer__language"
->
-  Italian
-</a>    </nav>
-
-  </div>
-
-</footer>
+        <nav class="privacy__box" aria-label="Link legali e lingua">
+          <a href="../privacy-en.html?from=blog%2Farticles.html" class="privacy__text">
+            Privacy
+          </a>
+          <a href="../cookie-en.html?from=blog%2Farticles.html" class="cookie__text">
+            Cookie
+          </a>
+          <a href="./articoli.html" class="footer__language">Italian</a>
+        </nav>
+      </div>
+    </footer>
 <!-- FINE SEZIONE FOOTER -->
 
     <script
