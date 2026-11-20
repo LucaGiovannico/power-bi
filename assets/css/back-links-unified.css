@@ -1,0 +1,59 @@
+/* SHARED BACK BUTTON — SERVICES PROJECTS LEGAL V3 */
+/* Link di ritorno: stesso trattamento pill del blog, senza cambiare la navigazione. */
+a.site-back-pill, button.site-back-pill {
+  display: inline-flex;
+  box-sizing: border-box;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: fit-content;
+  max-width: 100%;
+  min-height: 44px;
+  padding: 11px 20px;
+  border: 0;
+  border-radius: 999px;
+  background: linear-gradient(135deg, #5748e7, #a86ce8);
+  box-shadow: 0 5px 16px rgba(87, 72, 231, .17);
+  color: #fff !important;
+  font-family: "Poppins", sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 1.4;
+  text-align: center;
+  text-decoration: none !important;
+  white-space: normal;
+  cursor: pointer;
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+a.site-back-pill:visited, a.site-back-pill:hover,
+a.site-back-pill:focus-visible, button.site-back-pill:hover,
+button.site-back-pill:focus-visible,
+a.site-back-pill *, button.site-back-pill * {
+  color: #fff !important;
+  text-decoration: none !important;
+}
+@media (hover: hover) and (pointer: fine) {
+  a.site-back-pill:hover, button.site-back-pill:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 9px 20px rgba(87, 72, 231, .23);
+  }
+}
+a.site-back-pill:focus-visible, button.site-back-pill:focus-visible {
+  outline: 3px solid #3225a4;
+  outline-offset: 3px;
+}
+@media (min-width:390px) and (max-width:768px) {
+  a.site-back-pill, button.site-back-pill {
+    display: flex;
+    width: 100%;
+    min-width: 0;
+    max-width: none;
+    min-height: 48px;
+    flex: 1 1 100%;
+    align-self: stretch;
+    justify-self: stretch;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  a.site-back-pill, button.site-back-pill { transition: none; }
+}
