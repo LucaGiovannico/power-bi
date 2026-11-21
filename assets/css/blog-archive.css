@@ -435,3 +435,50 @@ body.blog-page a.blog-article__back:focus-visible {
     transition: none;
   }
 }
+
+/* ALL ARTICLES - REAL COVER FILL FIX */
+
+.article-card__visual--archive-fill {
+  position: relative !important;
+  display: block !important;
+  box-sizing: border-box !important;
+
+  width: 100% !important;
+  height: auto !important;
+  aspect-ratio: 16 / 9 !important;
+
+  min-height: 0 !important;
+  max-height: none !important;
+  flex: none !important;
+
+  padding: 0 !important;
+  overflow: hidden !important;
+}
+
+.article-card__visual--archive-fill > img.article-card__image {
+  position: absolute !important;
+  inset: 0 !important;
+
+  display: block !important;
+  width: 100% !important;
+  height: 100% !important;
+
+  max-width: none !important;
+  max-height: none !important;
+
+  margin: 0 !important;
+  padding: 0 !important;
+
+  object-fit: cover !important;
+  object-position: center center !important;
+}
+
+/* STORYTELLING COVER - FULL IMAGE FIX */
+
+/* Mostra l'intera illustrazione senza ritagli laterali */
+.article-card__visual--archive-fill
+> img.article-card__image[src$="hero-data-storytelling-optimized.webp"] {
+  object-fit: contain !important;
+  object-position: center center !important;
+  background-color: #151b83 !important;
+}

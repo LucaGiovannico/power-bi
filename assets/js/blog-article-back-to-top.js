@@ -20,6 +20,43 @@
     }
     if (button.dataset.blogTopReady === "true") return;
     button.dataset.blogTopReady = "true";
+
+    /* BLOG BACK TO TOP HOMEPAGE VISUAL FIX */
+    const homeStyles = {
+      "appearance": "none",
+      "-webkit-appearance": "none",
+      "box-sizing": "border-box",
+      "width": "44px",
+      "height": "44px",
+      "min-width": "44px",
+      "min-height": "44px",
+      "max-width": "44px",
+      "max-height": "44px",
+      "padding": "1px 6px",
+      "margin": "0",
+      "background": "#5a52e0",
+      "background-image": "none",
+      "color": "#ffffff",
+      "border": "0",
+      "border-radius": "50%",
+      "box-shadow": "0 10px 25px rgba(91,44,255,0.25)",
+      "font-family": "Poppins, sans-serif",
+      "font-size": "16px",
+      "font-weight": "400",
+      "line-height": "normal",
+      "display": "flex",
+      "align-items": "center",
+      "justify-content": "center",
+      "cursor": "pointer"
+    };
+
+    for (const [property, value] of Object.entries(homeStyles)) {
+      button.style.setProperty(property, value, "important");
+    }
+
+    button.textContent = "↥";
+    button.setAttribute("data-direction", "up");
+
     button.hidden = false;
     button.type = "button";
     button.style.setProperty("display", "flex", "important");

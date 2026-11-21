@@ -87,3 +87,56 @@ background: #4a20d8;
     transition: none !important;
   }
 }
+
+/* HOMEPAGE BACK TO TOP - EXACT VISUAL MATCH */
+
+button.blog-article-back-to-top {
+  position: fixed !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+
+  box-sizing: border-box !important;
+
+  width: 44px !important;
+  height: 44px !important;
+  min-width: 44px !important;
+  min-height: 44px !important;
+  max-width: 44px !important;
+  max-height: 44px !important;
+
+  padding: 1px 6px !important;
+  margin: 0 !important;
+
+  background: #5a52e0 !important;
+  color: #ffffff !important;
+
+  border: 0 !important;
+  border-radius: 50% !important;
+
+  box-shadow:
+    0 10px 25px rgba(91, 44, 255, 0.25) !important;
+
+  font-family: "Poppins", sans-serif !important;
+  font-size: 16px !important;
+  font-weight: 400 !important;
+  line-height: normal !important;
+
+  text-align: center !important;
+  cursor: pointer !important;
+  z-index: 9999 !important;
+}
+
+/* Manteniamo la visibilità gestita dallo scroll */
+
+button.blog-article-back-to-top:not(.is-visible) {
+  opacity: 0 !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+}
+
+button.blog-article-back-to-top.is-visible {
+  opacity: 1 !important;
+  visibility: visible !important;
+  pointer-events: auto !important;
+}
