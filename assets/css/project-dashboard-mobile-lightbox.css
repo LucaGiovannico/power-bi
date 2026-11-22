@@ -1,0 +1,251 @@
+/* MOBILE DASHBOARD LIGHTBOX - TEST */
+
+/* Smartphone verticale */
+@media screen and (max-width: 767px)
+  and (orientation: portrait) {
+
+  .dashboard-lightbox {
+    padding: 0 !important;
+    background: #0b0d18 !important;
+  }
+
+  .dashboard-lightbox__content {
+    position: relative !important;
+    width: 100vw !important;
+    height: 100vh !important;
+    height: 100dvh !important;
+    max-height: none !important;
+    overflow: hidden !important;
+    border-radius: 0 !important;
+    background: transparent !important;
+    box-shadow: none !important;
+  }
+
+  .dashboard-lightbox__image {
+    position: absolute !important;
+    top: 50% !important;
+    left: 50% !important;
+
+    width: 100dvh !important;
+    height: 100vw !important;
+
+    max-width: none !important;
+    max-height: none !important;
+
+    padding: 0 !important;
+    margin: 0 !important;
+    border-radius: 0 !important;
+    background: transparent !important;
+
+    object-fit: contain !important;
+    object-position: center !important;
+
+    transform: translate(-50%, -50%) rotate(90deg) !important;
+  }
+
+  .dashboard-lightbox__close {
+    top: max(12px, env(safe-area-inset-top)) !important;
+    right: 12px !important;
+    width: 44px !important;
+    height: 44px !important;
+  }
+
+  .dashboard-lightbox__arrow {
+    top: auto !important;
+    bottom: max(12px, env(safe-area-inset-bottom)) !important;
+    width: 44px !important;
+    height: 44px !important;
+    transform: none !important;
+  }
+
+  .dashboard-lightbox__arrow--left {
+    left: calc(50% - 64px) !important;
+    right: auto !important;
+  }
+
+  .dashboard-lightbox__arrow--right {
+    left: calc(50% + 20px) !important;
+    right: auto !important;
+  }
+}
+
+/* Smartphone ruotato fisicamente in orizzontale */
+@media screen and (orientation: landscape)
+  and (max-height: 600px) {
+
+  .dashboard-lightbox {
+    padding: 0 !important;
+    background: #0b0d18 !important;
+  }
+
+  .dashboard-lightbox__content {
+    width: 100vw !important;
+    height: 100dvh !important;
+    max-height: none !important;
+    overflow: hidden !important;
+    border-radius: 0 !important;
+    background: transparent !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+  }
+
+  .dashboard-lightbox__image {
+    width: 100% !important;
+    height: 100% !important;
+    max-width: 100% !important;
+    max-height: 100% !important;
+    padding: 0 !important;
+    object-fit: contain !important;
+    background: transparent !important;
+  }
+}
+
+/* MOBILE LIGHTBOX NAVIGATION TEST */
+@media screen and (max-width: 767px) and (orientation: portrait) {
+
+  .dashboard-lightbox.is-open .dashboard-lightbox__arrow {
+    display: flex !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    pointer-events: auto !important;
+    position: fixed !important;
+    z-index: 10005 !important;
+
+    top: auto !important;
+    bottom: max(18px, env(safe-area-inset-bottom)) !important;
+
+    width: 46px !important;
+    height: 46px !important;
+
+    background: #ffffff !important;
+    color: #5a52e0 !important;
+    transform: none !important;
+  }
+
+  .dashboard-lightbox.is-open .dashboard-lightbox__arrow--left {
+    left: calc(50% - 64px) !important;
+    right: auto !important;
+  }
+
+  .dashboard-lightbox.is-open .dashboard-lightbox__arrow--right {
+    left: calc(50% + 18px) !important;
+    right: auto !important;
+  }
+
+  .dashboard-lightbox__image {
+    -webkit-user-select: none;
+    user-select: none;
+    -webkit-user-drag: none;
+  }
+}
+
+/* MOBILE LIGHTBOX COUNTER */
+@media screen and (max-width: 767px) and (orientation: portrait),
+       screen and (orientation: landscape) and (max-height: 600px) {
+
+  /* Nasconde le frecce, senza disattivare lo swipe */
+  .dashboard-lightbox.is-open .dashboard-lightbox__arrow {
+    display: none !important;
+  }
+
+  .dashboard-lightbox__counter {
+    display: none;
+    position: fixed;
+    left: 50%;
+    bottom: max(18px, env(safe-area-inset-bottom));
+    transform: translateX(-50%);
+    z-index: 10005;
+
+    padding: 8px 13px;
+    border-radius: 999px;
+
+    background: rgba(15, 18, 35, 0.88);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: #ffffff;
+
+    font-family: "Poppins", sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    line-height: 1;
+
+    pointer-events: none;
+  }
+
+  .dashboard-lightbox.is-open .dashboard-lightbox__counter {
+    display: block;
+  }
+}
+
+/* MOBILE LIGHTBOX COUNTER OVERRIDE */
+@media screen and (max-width: 767px) {
+  .dashboard-lightbox__arrow {
+    display: none !important;
+  }
+
+  .dashboard-lightbox__counter {
+    position: fixed !important;
+    left: 50% !important;
+    right: auto !important;
+    top: auto !important;
+    bottom: max(14px, env(safe-area-inset-bottom, 0px)) !important;
+    transform: translateX(-50%) !important;
+    z-index: 10030 !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    min-width: 54px !important;
+    height: 30px !important;
+    padding: 0 12px !important;
+    border-radius: 999px !important;
+    background: rgba(21, 23, 31, 0.78) !important;
+    color: #ffffff !important;
+    font-family: "Poppins", sans-serif !important;
+    font-size: 12px !important;
+    font-weight: 600 !important;
+    line-height: 1 !important;
+    letter-spacing: 0.02em !important;
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.22) !important;
+    pointer-events: none !important;
+  }
+}
+
+/* BUSINESS PLAN IT - COUNTER ON ROTATED IMAGE & VERTICAL DEVICE SWIPE */
+@media screen and (max-width: 767px) and (orientation: portrait) {
+  /* La dashboard è ruotata di 90 gradi: il suo bordo inferiore
+     corrisponde al lato sinistro del telefono verticale. */
+  .dashboard-lightbox.is-open .dashboard-lightbox__counter {
+    display: inline-flex !important;
+    position: fixed !important;
+    top: 50% !important;
+    bottom: auto !important;
+    left: max(10px, env(safe-area-inset-left, 0px)) !important;
+    right: auto !important;
+    transform: translateY(-50%) rotate(90deg) !important;
+    transform-origin: center center !important;
+    z-index: 10030 !important;
+    align-items: center !important;
+    justify-content: center !important;
+    min-width: 52px !important;
+    height: 30px !important;
+    padding: 0 10px !important;
+    border-radius: 999px !important;
+    background: rgba(32, 28, 100, 0.88) !important;
+    color: #fff !important;
+    font: 600 13px/1 Poppins, sans-serif !important;
+    letter-spacing: 0.01em !important;
+    pointer-events: none !important;
+  }
+
+  .dashboard-lightbox.is-open .dashboard-lightbox__arrow {
+    display: none !important;
+  }
+}
+
+/* Badge visibile esclusivamente nella lightbox mobile aperta */
+.dashboard-lightbox:not(.is-open) .dashboard-lightbox__counter {
+  display: none !important;
+}
+@media screen and (min-width: 768px) and (min-height: 601px) {
+  .dashboard-lightbox__counter { display: none !important; }
+}
