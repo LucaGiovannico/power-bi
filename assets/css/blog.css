@@ -2445,3 +2445,21 @@ body.blog-page .blog-articles a.articles-heading__link--bottom {
   }
 
 }
+
+
+/* BLOG CARD READING LEVEL COLORS */
+.article-meta .article-meta__level--beginner {
+  color: #00883B;
+}
+
+.article-meta .article-meta__level--intermediate {
+  color: #B16200;
+}
+
+.article-meta .article-meta__level--advanced {
+  color: #C62828;
+}
+
+.article-meta .article-meta__level--update {
+  color: #2458A8;
+}

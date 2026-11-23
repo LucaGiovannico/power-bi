@@ -399,6 +399,7 @@
           <span>POWER BI</span>
           <span>November 17, 2026</span>
           <span>10 MIN READ</span>
+          <span class="blog-article__classification">Intermediate</span>
         </div>
 
         <h1 class="blog-article__title">
@@ -480,34 +481,46 @@
     <p>If the analysis requires aggregated monthly figures, it is not always necessary for every visual to work through individual transactions.</p>
     <p>The key point is that performance optimization does not begin with the charts: it begins with the design of the semantic model.</p>
 </section>
-<section class="blog-article__section-card blog-article__performance-problem">
-<h2>3. DAX measures that are more complex than necessary</h2>
-<p>DAX makes advanced calculations and dynamic analysis possible, but not every formula requires the same amount of work to execute.</p>
-    <p>Functions such as CALCULATE, FILTER and SUMX are essential in many models.</p>
-    <p>Their use, however, should match the calculation you actually need.</p>
-    <p>Consider an example.</p>
-    <p>If a Sales table already contains a column with the amount of each transaction, the total can be calculated directly:</p>
-    <pre class="blog-article__code"><code class="language-dax">Total Sales =
+<section class="blog-article__section-card blog-article__performance-problem"><h2>3. DAX measures that are not optimized</h2>
+      <p>DAX supports advanced calculations and dynamic analysis, but the performance of a measure does not depend solely on the functions it uses.</p>
+      <p>The semantic model structure, filter context, and the way expressions are written can all affect how long a calculation takes.</p>
+      <p>Functions such as <code>CALCULATE</code>, <code>FILTER</code>, and <code>SUMX</code> are essential in many models. The goal is not to avoid them, but to use them appropriately.</p>
+      <p>Consider an example.</p>
+      <p>If a Sales table already contains a column storing the amount of each transaction, we can calculate the total directly:</p>
+      <pre class="blog-article__code"><code class="language-dax">Total Sales =
 SUM(Sales[Sales Amount])</code></pre>
-    <p>If the value instead needs to be calculated by multiplying quantity by unit price, we can use:</p>
-    <pre class="blog-article__code"><code class="language-dax">Total Sales =
+      <p>If the amount instead needs to be calculated by multiplying quantity by unit price for each transaction, we can use:</p>
+      <pre class="blog-article__code"><code class="language-dax">Total Sales =
 SUMX(
     Sales,
     Sales[Quantity] *
         Sales[Unit Price]
 )</code></pre>
-    <p>Both formulas can be correct, but they apply to different data structures.</p>
-    <p>When the value to aggregate is already available and reliable, a direct sum avoids recalculating an expression for every row.</p>
-    <p>That does not mean SUMX is a function to avoid.</p>
-    <p>It means choosing the most appropriate DAX pattern for the problem.</p>
-</section>
+      <p>Both formulas are appropriate in their respective scenarios because they reflect different data structures.</p>
+      <p><code>SUMX</code> is not inherently slow: it evaluates an expression over the rows of a table when that calculation is needed.</p>
+      <p>Another important consideration is the use of <strong>DAX variables (<code>VAR</code>)</strong>. When an intermediate result is reused, a variable can avoid repeated evaluations and make the code easier to read.</p>
+      <p>For example, to calculate sales growth compared with the previous year:</p>
+      <pre class="blog-article__code"><code class="language-dax">Sales Growth % =
+VAR SalesPreviousYear =
+    CALCULATE(
+        [Total Sales],
+        SAMEPERIODLASTYEAR('Date'[Date])
+    )
+RETURN
+    DIVIDE(
+        [Total Sales] - SalesPreviousYear,
+        SalesPreviousYear
+    )</code></pre>
+      <p>This example assumes a properly configured date table. Variables do not automatically improve performance: their impact depends on the evaluation context and the measure.</p>
+      <p>Optimizing DAX therefore means choosing the appropriate calculation, avoiding redundant work, and measuring results rather than blaming a single function for slow performance.</p>
+    </section>
 <section class="blog-article__section-card blog-article__performance-solution">
 <h2>3. What can you do?</h2>
-<p>Review measures that iterate over very large tables, inspect complex filters and look for unnecessary repeated calculations.</p>
-    <p>Using variables can make formulas easier to read and, in some cases, avoid redundant evaluations.</p>
-    <p>For deeper analysis, tools such as DAX Studio can help you examine query execution.</p>
-    <p>The goal is not to write shorter formulas, but to build measures that are correct, readable and efficient.</p>
-</section>
+      <p>Review DAX measures that perform complex calculations, especially when they involve large tables. Check the filter context, whether iterations are necessary, and whether expressions are evaluated repeatedly.</p>
+      <p>Using <code>VAR</code> can improve readability and, when the same result is reused, sometimes avoid redundant calculations. Variables do not, however, guarantee better performance.</p>
+      <p>To identify bottlenecks, use Power BI <strong>Performance Analyzer</strong> and, for more detailed investigation, <strong>DAX Studio</strong> to examine query execution times and behavior.</p>
+      <p>The goal is not to avoid functions such as <code>SUMX</code> or simply write shorter formulas, but to build correct, readable, and efficient measures and validate optimizations with actual measurements.</p>
+    </section>
 <section class="blog-article__section-card blog-article__performance-problem">
 <h2>4. Connection mode and data management</h2>
 <p>Another important factor is how Power BI accesses the data.</p>

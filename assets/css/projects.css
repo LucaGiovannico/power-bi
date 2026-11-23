@@ -5780,3 +5780,8 @@ body {
 .footer {
   padding: 30px 20px !important;
 }
+
+/* PROJECT CONTENT TYPOGRAPHY CONSISTENCY */
+main {
+  font-family: "Poppins", sans-serif;
+}

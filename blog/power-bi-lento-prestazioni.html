@@ -399,6 +399,7 @@
           <span>POWER BI</span>
           <span>17 novembre 2026</span>
           <span>10 MIN DI LETTURA</span>
+          <span class="blog-article__classification">Intermedio</span>
         </div>
 
         <h1 class="blog-article__title">
@@ -480,34 +481,46 @@
     <p>Se l’analisi richiede dati mensili aggregati, non sempre è necessario interrogare ogni singola transazione attraverso tutte le visualizzazioni.</p>
     <p>Il punto fondamentale è che le prestazioni non si ottimizzano soltanto nei grafici: iniziano dalla progettazione del modello semantico.</p>
 </section>
-<section class="blog-article__section-card blog-article__performance-problem">
-<h2>3. Misure DAX più complesse del necessario</h2>
-<p>DAX permette di realizzare calcoli avanzati e analisi dinamiche, ma non tutte le formule richiedono lo stesso lavoro per essere eseguite.</p>
-    <p>Funzioni come CALCULATE, FILTER e SUMX sono fondamentali in molti modelli.</p>
-    <p>Il loro utilizzo, però, deve essere coerente con il tipo di calcolo richiesto.</p>
-    <p>Consideriamo un esempio.</p>
-    <p>Se una tabella Sales contiene già una colonna con l’importo di ogni transazione, il totale può essere calcolato direttamente:</p>
-    <pre class="blog-article__code"><code class="language-dax">Total Sales =
+<section class="blog-article__section-card blog-article__performance-problem"><h2>3. Misure DAX non ottimizzate</h2>
+      <p>DAX permette di realizzare calcoli avanzati e analisi dinamiche, ma le prestazioni di una misura non dipendono soltanto dalle funzioni utilizzate.</p>
+      <p>La struttura del modello semantico, il contesto di filtro e il modo in cui vengono costruite le espressioni possono influire sul tempo necessario per restituire un risultato.</p>
+      <p>Funzioni come <code>CALCULATE</code>, <code>FILTER</code> e <code>SUMX</code> sono fondamentali in molti modelli. Il punto non è evitarle, ma utilizzarle in modo appropriato.</p>
+      <p>Consideriamo un esempio.</p>
+      <p>Se una tabella Sales contiene già una colonna con l’importo di ogni transazione, possiamo calcolare il totale direttamente:</p>
+      <pre class="blog-article__code"><code class="language-dax">Total Sales =
 SUM(Sales[Sales Amount])</code></pre>
-    <p>Se invece il valore deve essere ottenuto moltiplicando quantità e prezzo unitario, possiamo utilizzare:</p>
-    <pre class="blog-article__code"><code class="language-dax">Total Sales =
+      <p>Se invece l’importo deve essere ottenuto moltiplicando quantità e prezzo unitario per ogni transazione, possiamo utilizzare:</p>
+      <pre class="blog-article__code"><code class="language-dax">Total Sales =
 SUMX(
     Sales,
     Sales[Quantity] *
         Sales[Unit Price]
 )</code></pre>
-    <p>Entrambe le formule possono essere corrette, ma rispondono a strutture dati differenti.</p>
-    <p>Quando il valore da aggregare è già disponibile e affidabile, una somma diretta evita di ricalcolare l’espressione per ogni riga.</p>
-    <p>Questo non significa che SUMX sia una funzione da evitare.</p>
-    <p>Significa scegliere il pattern DAX più appropriato per il problema.</p>
-</section>
+      <p>Entrambe le formule sono corrette nei rispettivi scenari, perché rispondono a strutture dati differenti.</p>
+      <p><code>SUMX</code> non è quindi una funzione intrinsecamente lenta: permette di valutare un’espressione sulle righe di una tabella quando il calcolo lo richiede.</p>
+      <p>Un altro aspetto importante riguarda le <strong>variabili DAX (<code>VAR</code>)</strong>. Quando un risultato intermedio viene utilizzato più volte, una variabile può evitare valutazioni ripetute e rendere il codice più leggibile.</p>
+      <p>Ad esempio, per calcolare la crescita delle vendite rispetto all’anno precedente:</p>
+      <pre class="blog-article__code"><code class="language-dax">Sales Growth % =
+VAR SalesPreviousYear =
+    CALCULATE(
+        [Total Sales],
+        SAMEPERIODLASTYEAR('Date'[Date])
+    )
+RETURN
+    DIVIDE(
+        [Total Sales] - SalesPreviousYear,
+        SalesPreviousYear
+    )</code></pre>
+      <p>L’esempio presuppone una tabella calendario correttamente configurata. Anche le variabili non garantiscono automaticamente prestazioni migliori: il beneficio dipende dal contesto di valutazione e dalla misura.</p>
+      <p>Ottimizzare DAX significa quindi scegliere il calcolo appropriato, evitare elaborazioni ridondanti e verificare i risultati, anziché attribuire i rallentamenti a una singola funzione.</p>
+    </section>
 <section class="blog-article__section-card blog-article__performance-solution">
 <h2>3. Come intervenire?</h2>
-<p>Controlla le misure che eseguono iterazioni su tabelle molto grandi, verifica eventuali filtri complessi e cerca di identificare calcoli ripetuti inutilmente.</p>
-    <p>L’utilizzo delle variabili può migliorare la leggibilità delle formule e, in alcuni casi, evitare valutazioni ridondanti.</p>
-    <p>Per analisi più approfondite è possibile utilizzare strumenti come DAX Studio, che permettono di esaminare l’esecuzione delle query.</p>
-    <p>Il vero obiettivo non è scrivere formule più brevi, ma costruire misure corrette, leggibili ed efficienti.</p>
-</section>
+      <p>Analizza le misure DAX che richiedono calcoli complessi, soprattutto quando coinvolgono tabelle di grandi dimensioni. Verifica il contesto di filtro, la necessità delle iterazioni e l’eventuale presenza di espressioni valutate ripetutamente.</p>
+      <p>L’utilizzo delle variabili <code>VAR</code> può rendere le formule più leggibili e, quando uno stesso risultato viene riutilizzato, evitare in alcuni casi elaborazioni ridondanti. Le variabili, però, non garantiscono automaticamente un miglioramento delle prestazioni.</p>
+      <p>Per individuare i rallentamenti, puoi utilizzare <strong>Performance Analyzer</strong> di Power BI e, per analisi più approfondite, <strong>DAX Studio</strong>, che consente di esaminare i tempi di esecuzione delle query e comprenderne il comportamento.</p>
+      <p>Il vero obiettivo non è evitare funzioni come <code>SUMX</code> o scrivere formule più brevi, ma progettare misure corrette, leggibili ed efficienti, verificando con dati concreti l’effetto delle ottimizzazioni.</p>
+    </section>
 <section class="blog-article__section-card blog-article__performance-problem">
 <h2>4. Modalità di connessione e gestione dei dati</h2>
 <p>Un altro aspetto importante riguarda il modo in cui Power BI accede alle informazioni.</p>
