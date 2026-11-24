@@ -6,7 +6,8 @@
   const CLASS = "blog-article-back-to-top";
 
   function init() {
-    let button = document.querySelector("button." + CLASS);
+    let button = document.getElementById("blog-article-back-to-top")
+      || document.querySelector("button." + CLASS);
     if (!button) {
       const language = (document.documentElement.lang || "it").toLowerCase();
       const template = document.createElement("template");
@@ -18,6 +19,8 @@
       }
       document.body.appendChild(button);
     }
+    button.classList.remove("back__to-top");
+    button.classList.add(CLASS);
     if (button.dataset.blogTopReady === "true") return;
     button.dataset.blogTopReady = "true";
 
@@ -65,6 +68,7 @@
 
     function update() {
       const mobile = window.innerWidth <= 768;
+      button.style.setProperty("left", "auto", "important");
       button.style.setProperty("right", mobile ? "16px" : "24px", "important");
       button.style.setProperty("bottom", mobile ? "16px" : "24px", "important");
       const threshold = Math.max(320, Math.round(window.innerHeight * 0.55));
